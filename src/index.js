@@ -1,4 +1,4 @@
-
+import './utils/name'
 
 let age = { '23' : 22};
 
