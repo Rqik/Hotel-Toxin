@@ -1,6 +1,9 @@
-import './utils/name'
-
-let age = { '23' : 22};
+import '@/pug/utils/name';
+import '@/assets/scss.scss'
+import '@/assets/scssopy.css'
+let age = {
+  '23': 22
+};
 
 
 
@@ -8,9 +11,9 @@ let objFunc = {
 
   'age': 'возраст',
   'name': 'имя',
-  'fuc': ()=> {
+  'fuc': () => {
     console.log(age);
-    console.log(this.name);
+    console.log(name);
   }
 }
 objFunc.fuc();
