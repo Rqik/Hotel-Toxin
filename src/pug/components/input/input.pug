@@ -1,0 +1,53 @@
+.input_text  
+  label.label(for="in")
+    | TEXT field
+  input.input#in(type="text" placeholder='Email')
+
+.select_block
+  label.label(for='sel')
+    | dropdown
+  select.select#sel(name="dropdown")
+    option(value="") Ноябрь
+    option(value="") Ноябрь2
+    option(value="") Ноябрь3
+    option(value="") Ноябрь4
+  i.material-icons expand_more
+
+.check_box
+  | checkbox buttons
+  .check_item
+    input#se(type="checkbox" ) 
+    label.label(for='se') Можно курить
+  .check_item
+    input#se2(type="checkbox") 
+    label.label(for='se2') Можно с питомцами
+  .check_item
+    input#se3(type="checkbox") 
+    label.label(for='se3') Можно пригласить гостей (до 10 человек)
+  .check_item
+    input#se4(type="checkbox") 
+    label.label(for='se4') Можно пригласить гостей 
+  .check_item
+    input#se5(type="checkbox") 
+    label.label(for='se5') Можно пригласить гостей 
+  .check_item
+    input#se6(type="checkbox") 
+    label.label(for='se6') Можно пригласить гостей 
+
+.radio_box
+  | Radio Buttons
+  .radio__items
+    .radio__item
+      input#r1(type="radio" name='gender')
+      label(for="r1" class='radio__label') Мужчина
+    .radio__item
+      input#r2(type="radio" name='gender' )
+      label(for="r2" class='radio__label') Женщина
+  
+
+.toogle_box
+  | toogle
+  input#t1(type="checkbox" name='gender')
+  label(for="t1" class='radio__label') Получать спецпредложения
+  input#t3(type="checkbox" name='gender')
+  label(for="t3" class='radio__label') Получать спецпредложения

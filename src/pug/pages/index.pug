@@ -1,8 +1,10 @@
-doctype html
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title Document
-  body
-    h1.csss Заголовок первого уровня 
+extends ../layouts/main
+
+block variables
+    - var title = 'Главная'
+
+block content
+    include ../components/input/input
+    include ../components/button/button
+    include ../components/list/list
+    div Заголовок еssрвого уровня

@@ -1,13 +1,16 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const {
+    CleanWebpackPlugin
+} = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 
 const fs = require('fs')
+const loader = require('sass-loader')
 
 const PATHS = {
     src: path.join(__dirname, './src'),
@@ -18,21 +21,14 @@ const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.p
 
 const plugins = () => {
     const base = [
-        // new HtmlWebpackPlugin({
-        //     template: "./index.html",
-        //     minify: {
-        //         collapseWhitespace: isProd
-        //     }
-        // }),
-        ...PAGES.map(page => new HtmlWebpackPlugin ({
+        ...PAGES.map(page => new HtmlWebpackPlugin({
             template: `${PAGES_DIR}/${page}`,
-            filename: `./${page.replace(/\.pug/,'.html')}`
-          })),
-        new CleanWebpackPlugin()
-        ,
+            filename: `./${page.replace(/\.pug/, '.html')}`
+        })),
+
         new MiniCssExtractPlugin({
             filename: "css/[name]-[hash:5]-bundle.css",
-        }),
+        }), new CleanWebpackPlugin(),
     ]
 
     if (isDev) {
@@ -50,12 +46,13 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: "development",
     entry: {
-      
         app: './index.js'
     },
     output: {
         filename: "js/[name]-[hash:5]-bundle.js",
-        path: path.resolve(__dirname, "dist")
+        path: path.resolve(__dirname, "dist"),
+        publicPath: ''
+
     },
     optimization: {
         splitChunks: {
@@ -64,20 +61,19 @@ module.exports = {
     },
     resolve: {
         alias: {
-            
+
             '@': path.resolve(__dirname, 'src'),
-          }
+        }
     },
     devServer: {
         contentBase: path.join(__dirname, 'dist'),
-        compress: true,
+        // compress: true,
         port: 8008,
         hot: true,
     },
     plugins: plugins(),
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.css$/,
                 use: [
                     isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -85,7 +81,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.s[ca]ss$/,
+                test: /\.(s[ca]ss|css)$/,
                 use: [
 
                     isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
@@ -96,11 +92,23 @@ module.exports = {
             },
             {
                 test: /\.(png|jpg|svg|gif)$/,
-                use: ['file-loader']
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'img/'
+                    }
+                }
             },
             {
-                test: /\.(ttf|woff|woff2|eot)$/,
-                use: ['file-loader']
+                test: /\.(ttf|woff|woff2|eot|svg)$/,
+                use: {
+                    loader: 'file-loader',
+                    options: {
+                        name: '[name].[ext]',
+                        outputPath: 'fonts/'
+                    }
+                }
             },
             {
                 test: /\.js$/,
@@ -108,10 +116,8 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-
                         "presets": ["@babel/preset-env"],
                         "plugins": ["@babel/plugin-proposal-class-properties"]
-
                     }
                 },
             },
@@ -121,7 +127,7 @@ module.exports = {
                 options: {
                     pretty: true
                 }
-              }
+            }
         ]
     }
 
