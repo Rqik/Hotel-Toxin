@@ -51,7 +51,7 @@ module.exports = {
     output: {
         filename: "js/[name]-[contenthash:5]-bundle.js",
         path: path.resolve(__dirname, "dist"),
-        publicPath: ""
+        publicPath: "./"
 
     },
     
