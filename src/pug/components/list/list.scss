@@ -5,10 +5,11 @@
   font-weight: 700;
   margin-bottom: 1rem;
   text-transform: uppercase;
-display: flex;
-flex-direction: column;
-justify-content: flex-start;
-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 300px;
+
   ul {
     margin-top: -1px;
     font-weight: normal;
@@ -18,10 +19,12 @@ width: 300px;
     list-style: none;
     text-transform: none;
     padding: 0;
+
     li {
       position: relative;
-padding-left: 21px;
-margin-top: 10px;
+      padding-left: 21px;
+      margin-top: 10px;
+
       &::before {
         content: '';
         position: absolute;
