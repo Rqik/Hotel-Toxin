@@ -51,7 +51,7 @@ module.exports = {
     output: {
         filename: "js/[name]-[contenthash:5]-bundle.js",
         path: path.resolve(__dirname, "dist"),
-        publicPath: '/'
+        publicPath: "/"
 
     },
     
@@ -86,7 +86,13 @@ module.exports = {
                 test: /\.(s[ca]ss|css)$/,
                 use: [
 
-                    isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
+                    isDev ? 'style-loader' 
+                    : {
+                        loader: MiniCssExtractPlugin.loader,
+                        options: {
+                          publicPath: '../',
+                        },
+                      },
                     'css-loader',
                     'postcss-loader',
                     'sass-loader'
