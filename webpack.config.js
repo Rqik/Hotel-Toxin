@@ -49,11 +49,12 @@ module.exports = {
         app: './index.js'
     },
     output: {
-        filename: "js/[name]-[hash:5]-bundle.js",
+        filename: "js/[name]-[contenthash:5]-bundle.js",
         path: path.resolve(__dirname, "dist"),
         publicPath: ''
 
     },
+    
     optimization: {
         splitChunks: {
             chunks: "all"
@@ -61,7 +62,8 @@ module.exports = {
     },
     resolve: {
         alias: {
-
+            '@assets': path.resolve(__dirname, 'src/assets'),
+            '@fonts': path.resolve(__dirname, 'src/assets/fonts'),
             '@': path.resolve(__dirname, 'src'),
         }
     },
@@ -95,7 +97,7 @@ module.exports = {
                 use: {
                     loader: 'file-loader',
                     options: {
-                        name: '[name].[ext]',
+                        name: '[name][contenthash].[ext]',
                         outputPath: 'img/'
                     }
                 }
@@ -105,7 +107,7 @@ module.exports = {
                 use: {
                     loader: 'file-loader',
                     options: {
-                        name: '[name].[ext]',
+                        name: '[name][contenthash:5].[ext]',
                         outputPath: 'fonts/'
                     }
                 }

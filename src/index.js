@@ -1,2 +1,2 @@
 import '@/pug/utils/name';
-import '@/assets/main.scss';
+import '@/assets/css/main.scss';

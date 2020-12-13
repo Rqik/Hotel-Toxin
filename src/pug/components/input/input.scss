@@ -153,7 +153,7 @@
       appearance: none;
       position: absolute;
       &:checked~label::before {
-        background: url('../assets/img/check.png') no-repeat center;
+        background: url('~@assets/img/check.png') no-repeat center;
         background-size: 10px 11px;
         background-position: 4px 2px;
       }
