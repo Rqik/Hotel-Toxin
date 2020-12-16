@@ -36,7 +36,7 @@
   }
 
 
-  .select_block {
+  .select__block {
     display: flex;
     flex-direction: column;
     margin-bottom: 1rem;
@@ -66,8 +66,17 @@
       }
 
       option {
-        margin: 0;
-        padding: 0;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 12px;
+        line-height: 15px;
+
+        text-transform: uppercase;
+      
+        height: 30px;
+        color: $dark-1;
+        margin: 7px;
+        padding: 6px;
       }
     }
 
@@ -90,7 +99,36 @@
 
 
 
+  .check_box.checkbox__expan {
+    position: relative;
+    width: 266px;
+    cursor: pointer;
 
+    .material-icons {
+      transition: all .3s ease-in-out;
+      padding: 0;
+      margin: 0;
+      
+      top: -5px;
+      right: 14px;
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      transform: rotateX(0deg);
+      cursor: pointer;
+      z-index: -1;
+    }
+  }
+
+  .check_box.checkbox__expan.exp_active {
+    .material-icons {
+
+      top: 0;
+      right: 14px;
+      transform: rotateX(180deg);
+
+    }
+  }
 
   .check_box {
     width: 222px;
@@ -107,7 +145,7 @@
     margin-bottom: 1rem;
 
     .check_item {
-      &:first-child {
+      &:nth-of-type(1) {
         margin-top: 17px;
       }
 
@@ -130,7 +168,7 @@
       font-size: 14px;
       line-height: 19px;
       margin: 0;
-      transition: color 0.3s ease-in-out ;
+      transition: color 0.3s ease-in-out;
 
       cursor: pointer;
 
@@ -143,8 +181,8 @@
         height: 20px;
         top: 0;
         left: 0;
-       
-        
+
+
       }
 
     }
@@ -152,15 +190,16 @@
     input {
       appearance: none;
       position: absolute;
+
       &:checked~label::before {
         background: url('~@assets/img/check.png') no-repeat center;
         background-size: 10px 11px;
         background-position: 4px 2px;
       }
 
-      
+
       &:checked~label {
-       color: $dark-2;
+        color: $dark-2;
       }
     }
 
@@ -179,10 +218,10 @@
     text-transform: uppercase;
     padding: 0;
     margin-bottom: 1rem;
-    
-  
+
+
     label {
-        margin-top: 10px;
+      margin-top: 10px;
       padding-left: 50px;
       position: relative;
       vertical-align: middle;
@@ -194,6 +233,7 @@
       text-transform: none;
       line-height: 24px;
       color: $dark-3;
+
       &::before {
         content: '';
         position: absolute;
@@ -206,7 +246,7 @@
         transition: border 0.3s ease-in-out;
         transition: all 0.3s ease-in-out;
       }
-  
+
       &::after {
         position: absolute;
         content: '';
@@ -217,24 +257,26 @@
         top: 6px;
         background: $dark-4;
         transition: all 0.3s ease-in-out;
-  
+
       }
     }
-  
+
     input {
       appearance: none;
       position: absolute;
-  
+
       &:checked+label::before {
         border: 1px solid $purple;
       }
+
       &:checked+label {
         color: $dark-2;
       }
+
       &:checked+label::after {
         background: $purple-gradient;
         left: 24px;
       }
-  
+
     }
   }

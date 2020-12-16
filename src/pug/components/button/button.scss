@@ -28,18 +28,16 @@ button {
   &_secondary {
     padding: 10px 17px;
     box-sizing: border-box;
-    position: relative;
-    height: 40px;
     background-color: #ffffff;
     color: $purple;
-    background-clip: padding-box;
-    border: solid $dark-1 transparent;
-    border-radius: 22px;
+    border: 2px solid transparent;
+    opacity: 1;
+    position: relative;
+    vertical-align: middle;
+    background-clip: padding-box; 
 
-    &:hover,
-    &:focus {
-      &::before {
-
+    &:hover {
+      &::before{
         opacity: .5;
       }
     }
@@ -47,11 +45,11 @@ button {
     &::before {
       content: '';
       position: absolute;
-      background: $purple-gradient;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
+      background-image: $purple-gradient;
+      top: 0px;
+      left: 0px;
+      right: 0px;
+      bottom: 0px;
       border-radius: 22px;
       margin: -2px;
       z-index: -1;
@@ -63,12 +61,13 @@ button {
     width: 320px;
     background: $purple-gradient;
     position: relative;
-    &:hover
-    {
-       i{
-          right: 14px;
-        }
+
+    &:hover {
+      i {
+        right: 14px;
+      }
     }
+
     i {
       position: absolute;
       right: 10px;
@@ -77,4 +76,119 @@ button {
       transition: right .3s ease-in-out;
     }
   }
+
+
+  &_like {
+    padding: 0;
+    width: 40px;
+    height: 20px;
+    border-radius: 10px;
+    border: 1px solid $dark-4;
+    color: $dark-4;
+    background-color: #ffffff;
+    margin: 0;
+    font-size: 10px;
+    box-sizing: border-box;
+    display: inline-flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    transition:  .3s ease-in-out;
+    transition-property: border color;
+    i {
+      font-family: Material Icons;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      margin-left: 4px;
+      line-height: 8px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+    span {
+      vertical-align: middle;
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 10px;
+      line-height: 9px;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+      min-width: 20px;
+    }
+  }
+
+  &_like-active {
+    border: 1px solid transparent;
+    color: $purple;
+    position: relative;
+    background-clip: padding-box; 
+    &::before{
+      content: '';
+      border-radius: 15px;
+      background-image: $purple-gradient;
+      position: absolute;
+      top: 0px;
+      bottom: 0px;
+      right: 0px;
+      left: 0px;
+      margin: -1px;
+      z-index: -2;
+    }
+  }
 }
+
+
+.rate{
+position: relative;
+display: flex;
+
+&__star{
+  appearance: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: 20;
+  background-color: transparent;
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+
+}
+label{
+  position: relative;
+  overflow: hidden;
+
+  .star{
+    position:absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 40%;
+  }
+
+  .star_border{
+
+  }
+  i {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background-image: $purple-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+}
+
+}
+
+

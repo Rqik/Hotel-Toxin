@@ -51,7 +51,7 @@ module.exports = {
     output: {
         filename: "js/[name]-[contenthash:5]-bundle.js",
         path: path.resolve(__dirname, "dist"),
-        publicPath: "./"
+        publicPath: ''
 
     },
     
@@ -99,13 +99,21 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|jpg|svg|gif)$/,
+                test: /\.(png|jpg|gif)$/,
                 use: {
                     loader: 'file-loader',
                     options: {
                         name: '[name][contenthash].[ext]',
                         outputPath: 'img/'
                     }
+                }
+            },
+            {
+                test: /\.svg$/,
+                loader: 'svg-inline-loader',
+                options: {
+                    name: '[name][contenthash].[ext]',
+                    outputPath: 'img/'
                 }
             },
             {

@@ -1,13 +1,59 @@
-button.button
-  | CLICK ME
+div.span_stong button
+  div
+    button.button
+      | CLICK ME
 
-button.button_secondary
-  | CLICK ME
+    button.button_secondary
+      | CLICK ME
 
-button.button_long
-  | перейти к оплате
-  i.material-icons arrow_forward
+    button.button_long
+      | перейти к оплате
+      i.material-icons arrow_forward
 
-button.button_like
-  i.material-icons favorite
-  span 1
+div.span_stong like button
+  div
+    button.button_like
+      i.material-icons favorite_border
+      span 2
+    button.button_like.button_like-active
+      i.material-icons favorite
+      span 12
+
+div.span_stong like button
+  div
+    //- .rate
+    //-   .rate__current
+    //-     label
+    //-       i.material-icons.star star
+    //-       i.material-icons star_border    
+    //-     label
+    //-       i.material-icons star
+    //-     label
+    //-       i.material-icons star
+    //-     label
+    //-       i.material-icons.star star
+    //-       i.material-icons star_border    
+    
+    form.rate(data-rate='3.78')
+      label
+        input(type="radio" class='rate__star' checked name='rate' value=1  aria-label='Ужасно')
+        i.material-icons star_border
+      label
+        input(type="radio" class='rate__star' name='rate' value=2 aria-label='Сносно')
+        i.material-icons star_border
+      label
+        input(type="radio" class='rate__star' name='rate' value=3 aria-label='Нормально')
+        i.material-icons star_border
+      label
+        input(type="radio" class='rate__star' name='rate' value=4 aria-label='Хорошо')
+        i.material-icons star_border
+      label
+        input(type="radio" class='rate__star' name='rate' value=5 aria-label='Отлично')
+        i.material-icons star_border
+
+
+  //- div
+  //-    i.material-icons star
+  //-    i.material-icons star_border
+
+
