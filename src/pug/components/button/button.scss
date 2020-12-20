@@ -12,8 +12,8 @@ button {
   text-transform: uppercase;
   color: #ffffff;
   margin-bottom: 1rem;
-  word-wrap: none;
   cursor: pointer;
+  white-space: nowrap;
 }
 
 .button {
