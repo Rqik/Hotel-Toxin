@@ -29,6 +29,11 @@ const plugins = () => {
         new MiniCssExtractPlugin({
             filename: "css/[name]-[hash:5]-bundle.css",
         }), new CleanWebpackPlugin(),
+        new webpack.ProvidePlugin({
+            $: 'jquery',
+            jQuery: 'jquery',
+            'windows.jQuery': 'jquery'
+          })
     ]
 
     if (isDev) {

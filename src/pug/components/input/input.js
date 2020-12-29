@@ -1,5 +1,3 @@
-var $ = require('jquery')
-
 $(document).ready(
   () => {
     $('.checkbox__expan')
@@ -43,7 +41,6 @@ $(document).ready(
       $(selector).find('.dropdown__select_button-reset')
         .on('click', function (e) {
           e.preventDefault
-          // console.log($(this))
           $(selector).find('.dropdown__select_current > span').text('Сколько гостей')
           $(selector).find('.dropdown__control > span').text(0)
           $(selector).find('.dropdown__control_button.control_minus').addClass('disable')
@@ -89,7 +86,11 @@ $(document).ready(
             ? textCurrent =  `${length }` + `${ length <= 1 ? ' гость': length <= 4 ? ' гостя' : ' гостей'  } `:
             '';
         })
-
+      if (length <= 0) {
+          $(selector).find('.dropdown__select_button-reset').css('opacity'  , 0 )
+        } else {
+          $(selector).find('.dropdown__select_button-reset').css('opacity'  , 1)
+        }
       $(`${selector} .dropdown__select_current span`).text(textCurrent)
     }
 
@@ -147,10 +148,9 @@ $(document).ready(
 
 
         // textCurentNew(current)
-
+        let text = $(this).children('span').text()
         $(this).children('.dropdown__control_button')
           .on('click', (e) => {
-            let text = $(this).children('span').text()
             let sum = e.currentTarget.textContent
 
             sum == '+' ? ++text : --text;
@@ -170,12 +170,14 @@ $(document).ready(
 
             textModify(current)
           
-            if (text <= 0) {
-              $(current).find('.dropdown__select_button-reset').css('opacity'  , 0 )
-            } else {
-              $(current).find('.dropdown__select_button-reset').css('opacity'  , 1)
-            }
+           
           })
+        
+        //  if (text >= 0) {
+        //       $(current).find('.dropdown__select_button-reset').css('opacity'  , 0 )
+        //     } else {
+        //       $(current).find('.dropdown__select_button-reset').css('opacity'  , 1)
+        //     }
       })
     }
   }

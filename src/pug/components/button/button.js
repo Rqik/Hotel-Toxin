@@ -1,6 +1,3 @@
-var $ = require("jquery");
-
-
 let buttonLike = document.querySelectorAll('.button_like');
 
 buttonLike.forEach((el) => {

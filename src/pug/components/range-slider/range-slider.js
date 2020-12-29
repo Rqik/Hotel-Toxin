@@ -1,7 +1,6 @@
 var $ = require('jquery')
 
 $(document).ready(function () {
-  console.log('range slide')
   $("#slider-range").slider({
     range: true,
     min: 0,

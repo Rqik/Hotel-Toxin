@@ -1,6 +1,8 @@
 @import "~normalize.css";
 @import "~@assets/css/variables.scss";
 @import "~@assets/css/stylesheet.scss";
+@import '~air-datepicker/dist/css/datepicker.min.css';
+@import '~@/pug/components/data-select/data-select.scss';
 @import "~@/pug/components/button/button.scss";
 @import "~@/pug/components/input/input.scss";
 @import "~@/pug/components/list/list.scss";

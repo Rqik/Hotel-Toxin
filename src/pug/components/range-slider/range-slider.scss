@@ -1,7 +1,8 @@
 .range__slider {
+  display: block;
   width: 266px;
-  height: 200px;
-
+  // height: 100px;
+  margin-bottom: 20px;
   &_value {
     display: flex;
     justify-content: space-between;
@@ -30,7 +31,7 @@
     border: 1px solid $dark-4;
     height: 6px;
     border-radius: 3px;
-    margin-top: 20px;
+    margin-top: 23px;
 
   }
 
@@ -43,7 +44,6 @@
     height: 16px;
     border-radius: 50%;
     top: -6px;
-
   }
 
   .ui-slider-range {
