@@ -1,5 +1,69 @@
 .data__select {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  position: relative;
+  .date_picker{
+    position: absolute;
+    width: 320px;
+    height: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border:0;
+    background-color: $dark-2;
+    top: 55px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    // transform: translate(50%, 50%);
 
+
+    z-index: 200;
+  }
+  &_label{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $dark-1;
+  }
+    &_input{
+      width: 150px;
+      height: 44px;
+      border: 1px solid $dark-4;
+      border-radius: 4px;
+      padding-left: 15px;
+      font-size: 14px;
+      line-height: 18px;
+      text-transform: uppercase;
+      margin-top:5px ;
+    }
+    i {
+      width: 24px;
+      height: 24px;
+      font-size: 24px;
+      line-height: 24px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: $dark-3;
+      position: absolute;
+      bottom: 9px;
+      right: 9px;
+      cursor: pointer;
+      pointer-events: none;
+      z-index: 1;
+    }
+ 
+}
+
+.datepickers-container{
   .datepicker {
     padding: 20px;
     width: 320px;
@@ -9,6 +73,9 @@
     display: flex;
     flex-direction: column;
     // justify-content: space-between ;
+    .datepicker--pointer{
+      display: none;
+    }
     &--nav{
       padding: 0;
       border: none;
@@ -19,7 +86,7 @@
       width: auto;
       border-radius: 50%;
       transition: transform 0.3s ease-in-out;
-
+  
     }
     &--nav-action[data-action='prev']:hover{
       transform: translateX(5px);
@@ -66,21 +133,21 @@
       margin: 0;
       }
     &--day {
-
+  
       display: flex;
       justify-content: center;
       align-items: center;
-
+  
     }
     &--days-names{
       justify-content: center;
       align-items: center;
       width: 280px;
       margin: 0 auto;
-
+  
     }
     &--day-name{
-
+  
       width: 39.88px;
       height: 40px;
       font-family: Montserrat;
@@ -101,10 +168,12 @@
       margin: 0 auto;
     }
     &--cell {
+      font-style: normal;
+      font-weight: normal;
       border-radius: 50%;
       width: 39.88px;
       height: 40px;
-
+      color: $dark-3;
       &-day {
         +.-current- {
           color: white;
@@ -114,7 +183,7 @@
           color: #fff;
           background: $purple-gradient;
         }
-
+  
         +.-range-from-{
           position: relative;
           &::after{
@@ -164,3 +233,4 @@
     }
   }
 }
+
