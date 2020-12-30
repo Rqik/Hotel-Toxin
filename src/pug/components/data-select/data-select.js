@@ -6,13 +6,10 @@ let props = {
   navTitles: {
     days: 'MM <br>yyyy',
   },
-  language: {
-    today: 'Применить',
-  },
+  
   clearButton: true,
   prevHtml: '<i class="material-icons">arrow_back</i>',
   nextHtml: '<i class="material-icons">arrow_forward</i>',
-  todayButton: true,
   minDate: new Date(),
   keyboardNav: false,
   multipleDates: 2
@@ -42,8 +39,11 @@ $(".data__select_input-right").change(function () {
   ss.selectDate([pervDay, nexDay])
 })
 
-
-
+$('.datepicker--buttons').append('<span class=" datepicker--button-apply " >Применить</span>')
+$('.datepicker--button-apply').click(function (e) {
+  e.preventDefault()
+  center.data('datepicker').hide()
+})
 center.datepicker({
   onSelect: function (fd, date, picker) {
     let el = picker.$el.siblings('.data__select_label')
