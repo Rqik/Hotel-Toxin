@@ -5,7 +5,7 @@ const {
     CleanWebpackPlugin
 } = require('clean-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-
+const CopyPlugin = require("copy-webpack-plugin");
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 
@@ -18,13 +18,17 @@ const PATHS = {
 }
 const PAGES_DIR = `${PATHS.src}/pug/pages/`
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
-
+let s= []
 const plugins = () => {
     const base = [
-        ...PAGES.map(page => new HtmlWebpackPlugin({
+        ...PAGES.map(page =>{
+           s.push(`${page.replace(/\.pug/, ' ')}`)
+         return  new HtmlWebpackPlugin({
             template: `${PAGES_DIR}/${page}`,
-            filename: `./${page.replace(/\.pug/, '.html')}`
-        })),
+             filename: `./${page.replace(/\.pug/, '.html')}`,
+             // костыль вроде [1]
+             chunks: [`${page.replace(/\.pug/, '')}`]
+        })}),
 
         new MiniCssExtractPlugin({
             filename: "css/[name]-[hash:5]-bundle.css",
@@ -33,7 +37,16 @@ const plugins = () => {
             $: 'jquery',
             jQuery: 'jquery',
             'windows.jQuery': 'jquery'
-          })
+        }),
+        new CopyPlugin({
+            patterns: [{
+                from: `${PATHS.src}/assets/img`,
+                to: `${PATHS.dist}/img`,
+            }],
+            options: {
+                concurrency: 100,
+            }
+        })
     ]
 
     if (isDev) {
@@ -51,7 +64,9 @@ module.exports = {
     context: path.resolve(__dirname, 'src'),
     mode: "development",
     entry: {
-        app: './index.js'
+         // костыль вроде [1]
+        index: './index.js',
+        cards: './cards.js'
     },
     output: {
         filename: "js/[name]-[contenthash:5]-bundle.js",
@@ -59,7 +74,7 @@ module.exports = {
         publicPath: ''
 
     },
-    
+
     optimization: {
         splitChunks: {
             chunks: "all"
@@ -91,13 +106,12 @@ module.exports = {
                 test: /\.(s[ca]ss|css)$/,
                 use: [
 
-                    isDev ? 'style-loader' 
-                    : {
+                    isDev ? 'style-loader' : {
                         loader: MiniCssExtractPlugin.loader,
                         options: {
-                          publicPath: '../',
+                            publicPath: '../',
                         },
-                      },
+                    },
                     'css-loader',
                     'postcss-loader',
                     'sass-loader'
@@ -153,3 +167,4 @@ module.exports = {
     }
 
 }
+console.log(s);

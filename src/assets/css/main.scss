@@ -1,12 +1,22 @@
 @import "~normalize.css";
 @import "~@assets/css/variables.scss";
+@import "~@assets/css/cards.scss";
 @import "~@assets/css/stylesheet.scss";
 @import '~air-datepicker/dist/css/datepicker.min.css';
 @import '~@/pug/components/data-select/data-select.scss';
 @import "~@/pug/components/button/button.scss";
+@import "~@/pug/components/like-button/like-button.scss";
 @import "~@/pug/components/input/input.scss";
+@import "~@/pug/components/select/select.scss";
 @import "~@/pug/components/list/list.scss";
 @import "~@/pug/components/range-slider/range-slider.scss";
+@import "~@/pug/components/radio-box/radio-box.scss";
+@import "~@/pug/components/drop-down/drop-down.scss";
+@import "~@/pug/components/icon-text/icon-text.scss";
+@import "~@/pug/components/check-box/check-box.scss";
+@import "~@/pug/components/review/review.scss";
+@import "~@/pug/components/pagination/pagination.scss";
+@import "~@/pug/components/toggle/toggle.scss";
 @import '~@assets/css/jquery-ui.structure.min.css';
 *,
 ::after,
@@ -63,7 +73,7 @@ h3 {
   flex-direction: column;
   margin-bottom: 1rem;
 
-  div {
+  .span_stong_div{
     margin-top: 1rem;
     display: flex;
     flex-direction: row;
@@ -72,11 +82,12 @@ h3 {
 }
 
 .wrapper {
-  margin: 100px 100px;
-  width: 1200px;
-
+  padding: 100px;
 }
-
+.wrapper_grey{
+  padding: 30px;
+  background-color: #e5e5e5;
+}
 .label {
   font-family: 'Montserrat';
   font-size: 12px;
@@ -85,83 +96,4 @@ h3 {
   margin-bottom: 5px;
   text-transform: uppercase;
   color: $dark-1;
-}
-
-.radio_box {
-  font-family: 'Montserrat';
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-transform: uppercase;
-
-  .radio {
-    &__items {
-      display: flex;
-      flex-direction: row;
-      gap: 20px;
-    }
-
-    &__item {
-      margin-top: 8px;
-
-      .radio__label {
-        padding-left: 30px;
-        cursor: pointer;
-        font-family: Montserrat;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        text-transform: none;
-        line-height: 24px;
-        color: $dark-3;
-        position: relative;
-
-        &::before {
-          content: '';
-          position: absolute;
-          width: 20px;
-          height: 20px;
-          border-radius: 50%;
-          border: 1px solid $dark-4;
-          left: 0;
-          top: 0;
-          transition: border 0.3s ease-in-out;
-
-        }
-
-        &::after {
-          position: absolute;
-          content: '';
-          width: 12px;
-          height: 12px;
-          border-radius: 50%;
-          left: 4px;
-          top: 4px;
-          background: $purple-gradient;
-          opacity: 0;
-          transition: all 0.3s ease-in-out;
-
-        }
-      }
-
-      input {
-        position: absolute;
-        appearance: none;
-
-        &:checked~.radio__label::after {
-          opacity: 1;
-        }
-
-        &:checked~.radio__label::before {
-          border: 1px solid $purple;
-        }
-
-        &:checked~.radio__label {
-          color: $dark-2;
-        }
-      }
-
-    }
-  }
 }

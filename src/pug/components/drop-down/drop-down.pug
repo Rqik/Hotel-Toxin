@@ -1,0 +1,34 @@
+mixin dropdownSelect(active,  name,current , ...text )
+  .dropdown
+    h3=name
+    div( class= active ? 'dropdown__select drop_active' : 'dropdown__select')
+      .dropdown__select_current
+        i.material-icons expand_more
+        span= current
+      .dropdown__select_items
+        each item in text
+          .dropdown__select_item
+            span=  item
+            .dropdown__control
+              .dropdown__control_button.control_minus -
+              span= 0
+              .dropdown__control_button.control_plus +
+mixin dropdownSelectModify(active,name, current, ...text)
+  .dropdown
+    h3= name
+    div(class= active ? 'dropdown__select_modify drop_active' : 'dropdown__select_modify' , )
+      .dropdown__select_current
+        i.material-icons expand_more
+        span= current
+      .dropdown__select_items
+        each item in text
+          .dropdown__select_item
+            span=  item
+            .dropdown__control
+              .dropdown__control_button.control_minus -
+              span= 0
+              .dropdown__control_button.control_plus +
+        .dropdown__select_button 
+          button(type='reset').dropdown__select_button-reset очистить
+          button(type='submit').dropdown__select_button-submit применить
+

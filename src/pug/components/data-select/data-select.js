@@ -1,5 +1,6 @@
 import 'air-datepicker'
 import 'jquery-mask-plugin'
+
 let props = {
   position: "bottom center",
   range: true,
@@ -39,6 +40,7 @@ $(".data__select_input-right").change(function () {
   ss.selectDate([pervDay, nexDay])
 })
 
+// кнопка применить
 $('.datepicker--buttons').append('<span class=" datepicker--button-apply " >Применить</span>')
 $('.datepicker--button-apply').click(function (e) {
   e.preventDefault()

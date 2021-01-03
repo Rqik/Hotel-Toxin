@@ -1,0 +1,7 @@
+mixin selectBlock(name , ...text )
+  .select__block
+    label.label(for= name)= name
+    select.select(id= name name="dropdown")
+      each item in text
+        option(value= item)= item 
+    i.material-icons expand_more

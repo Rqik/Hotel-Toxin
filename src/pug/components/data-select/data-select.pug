@@ -1,11 +1,3 @@
-div.data__select
-  input.date_picker
-  label(class='data__select_label') date dropdown
-    input(type="data" class="data__select_input data__select_input-left" placeholder='ДД.ММ.ГГГГ')
-    i.material-icons expand_more
-  label(class='data__select_label') date dropdown
-    input(type="data" class="data__select_input data__select_input-right" placeholder='ДД.ММ.ГГГГ')  
-    i.material-icons expand_more 
 mixin datepicker(title1, title2)
   div.data__select
     input.date_picker
@@ -15,4 +7,3 @@ mixin datepicker(title1, title2)
     label(class='data__select_label')= title2
       input(type="data" class="data__select_input data__select_input-right" placeholder='ДД.ММ.ГГГГ')  
       i.material-icons expand_more 
-+datepicker('c' , 'по')

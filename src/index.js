@@ -1,7 +1,11 @@
 import '@/pug/utils/jquery-ui.min'
-import '@/pug/utils/name';
 import '@/assets/css/main.scss';
 import '@/pug/components/button/button.js';
+import '@/pug/components/like-button/like-button.js';
 import '@/pug/components/input/input.js';
+import '@/pug/components/select/select.js';
 import '@/pug/components/range-slider/range-slider.js'
 import '@/pug/components/data-select/data-select.js'
+import '@/pug/components/drop-down/drop-down.js'
+import '@/pug/components/check-box/check-box.js'
+import '@/pug/components/toggle/toggle.js'

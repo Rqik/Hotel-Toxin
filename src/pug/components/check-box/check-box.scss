@@ -1,0 +1,119 @@
+.check_box.checkbox__expan {
+  position: relative;
+  width: 266px;
+  cursor: pointer;
+
+  .material-icons {
+    transition: all .3s ease-in-out;
+    padding: 0;
+    margin: 0;
+
+    top: -5px;
+    right: 14px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transform: rotateX(0deg);
+    cursor: pointer;
+    z-index: -1;
+  }
+}
+
+.check_box.checkbox__expan.exp_active {
+  .material-icons {
+
+    top: 0;
+    right: 14px;
+    transform: rotateX(180deg);
+
+  }
+}
+.check_box.check_box_rich{
+  width: 266px;
+}
+.check_box {
+  width: 222px;
+  font-family: 'Montserrat';
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 15px;
+  margin-bottom: 5px;
+  text-transform: uppercase;
+  color: $dark-1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  .check_item {
+    &:nth-of-type(1) {
+      margin-top: 17px;
+    }
+
+    min-height: 20px;
+    vertical-align: middle;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .label {
+    position: relative;
+    padding-left: 30px;
+    color: $dark-3;
+    text-transform: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+    transition: color 0.3s ease-in-out;
+
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      border: 1px solid $purple;
+      border-radius: 4px;
+      width: 20px;
+      height: 20px;
+      top: 0px;
+      left: 0;
+
+    }
+    &_rich{
+      color: $dark-2;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 20px;
+      display: flex;
+      flex-direction: column;
+      span{
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        color: $dark-3;
+        margin-top: 5px;
+      }
+    }
+
+  }
+
+  input {
+    appearance: none;
+    position: absolute;
+
+    &:checked~label::before {
+      background: url('~@assets/img/check.png') no-repeat center;
+      background-size: 10px 11px;
+      background-position: 4px 2px;
+    }
+
+
+    &:checked~label {
+      color: $dark-2;
+    }
+  }
+}

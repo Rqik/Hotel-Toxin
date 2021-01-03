@@ -1,0 +1,73 @@
+extends ../layouts/grey
+include ../components/data-select/data-select
+include ../components/drop-down/drop-down
+include ../components/button/button
+include ../components/input/input
+include ../components/radio-box/radio-box
+include ../components/toggle/toggle
+include ../components/data-select/data-select
+
+block variables
+    - var title = 'Cards'
+
+block content
+   
+   
+    .card__block 
+        .card__title Найдём номера под ваши пожелания
+        +datepicker('прибытие' , 'выезд')
+        +dropdownSelectModify(false,'гости','Сколько гостей', 'взрослые', 'дети', 'младенцы')
+        +button(3,'подобрать номер')
+
+    .card__block
+        .card__title Регистрация аккаунта
+        +input('name','', 'Имя')
+        +input('name','', 'Фамилия')
+        +radioBox('', 'gender','Мужчина', 'Женщина' )
+        +input('date','Дата рождения', 'ДД.ММ.ГГГГ')
+        .card__auth
+            +input('email','Данный для входа в сервис', 'Email')
+            +input('name','', 'пароль')
+            +toogleBox('', 'toogle', 'Получать спецпредложения' )
+        +button(3,'перейти к оплате')
+        .card__bot
+            .card__bot_text Уже есть аккаунт на Toxin
+            +button(2,'Войти')
+
+    .card__block
+        .card__title Войти
+        +input('email','', 'Email')
+        +input('name','', 'пароль')
+        .card__auth_in
+            +button(3,'войти')
+            .card__bot
+                .card__bot_text Нет аккаунта на Toxin
+                +button(2,'Создать')
+
+    .card__block
+        .card__header
+            .room
+                .room_number 
+                    span №
+                    | 888
+                .room_category люкс
+            .price 9900₽ 
+                span
+                    |  в сутки
+        .card__reg
+            +datepicker('прибытие' , 'выезд')
+            +dropdownSelectModify(true,'гости','Сколько гостей', 'взрослые', 'дети', 'младенцы')
+        .card__info
+            .card__info_item 
+                .card__info_name 9990₽
+                .card__info_sum 39000₽
+            .card__info_item 
+                .card__info_name Сбор за услуги
+                .card__info_sum 0₽
+            .card__info_item
+                .card__info_name Сбор за дополнительные услуги
+                .card__info_sum 3000₽
+            .card__info_result
+                .card__info_result_name Итого
+                .card__info_result_sum 3890000₽
+        +button(3,'забронировать')

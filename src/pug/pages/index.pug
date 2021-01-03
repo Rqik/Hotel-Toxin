@@ -4,8 +4,40 @@ block variables
     - var title = 'Главная'
 
 block content
-    include ../components/data-select/data-select
     include ../components/input/input
+    +input('email','text field', 'Email')
+    include ../components/select/select
+    +selectBlock('dropdown' , 'декабрь', 'ноябрь', 'декабрь', 'ноябрь')
     include ../components/button/button
-    include ../components/list/list
+    div.span_stong button
+        div
+            +button(1 , 'CLICK ME')
+            +button(2 , 'CLICK ME')
+            +button(3 , 'перейти к оплате')
+
+    div.span_stong rate button
+        div
+            +rate('3.78')
+    include ../components/like-button/like-button
+
+    div.span_stong like button
+        .span_stong_div
+            +likeButton( false , 2)
+            +likeButton( true , 12)
+
+    include ../components/pagination/pagination
+    include ../components/review/review
     include ../components/range-slider/range-slider
+    include ../components/toggle/toggle
+    +toogleBox('toogle', 'toogle','Получать спецпредложения', 'Получать спецпредложения' )
+    include ../components/radio-box/radio-box
+    +radioBox('Radio Buttons', 'gender','Мужчина', 'Женщина' )
+    include ../components/data-select/data-select
+    +datepicker('date dropdown' , 'date dropdown')
+
+    include ../components/drop-down/drop-down
+    +dropdownSelect( true,'dropdown','2 спальни, 2 кровати', 'спальни', 'кровати', 'ванные комнаты')
+    +dropdownSelectModify(true,'dropdown','Сколько гостей', 'взрослые', 'дети', 'младенцы')
+    include ../components/check-box/check-box
+    include ../components/list/list
+    include ../components/icon-text/icon-text
