@@ -49,6 +49,7 @@
     "jquery-mask-plugin": "^1.14.16",
     "normalize.css": "^8.0.1",
     "sass": "^1.30.0",
-    "svg-inline-loader": "^0.8.2"
+    "svg-inline-loader": "^0.8.2",
+    "swiper": "^6.4.5"
   }
 }

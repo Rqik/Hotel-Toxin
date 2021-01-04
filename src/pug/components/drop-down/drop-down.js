@@ -3,10 +3,10 @@ $(document).ready(
     $('.dropdown__select').each(
       function (i, el) {
         el.classList.add(`dropdown__select-${i}`)
-
+        active(`.dropdown__select-${i}`)
         slideDrop(`.dropdown__select-${i} .dropdown__select_current`)
         actionDropDown(` .dropdown__select-${i} .dropdown__control`, ` .dropdown__select-${i}`)
-        $(this).click(() => $(this).toggleClass('drop_active'))
+        $('.dropdown__select_current').click(() => $(this).toggleClass('drop_active'))
       }
 
     )
@@ -21,7 +21,7 @@ $(document).ready(
         actionDropDownModify(` .dropdown__select_modify-${i} .dropdown__control`, ` .dropdown__select_modify-${i}`)
         buttonAction(`.dropdown__select_modify-${i}`)
 
-        $(this).click(() => $(this).toggleClass('drop_active'))
+        $('.dropdown__select_current').click(() => $(this).toggleClass('drop_active'))
 
       }
 
@@ -40,8 +40,8 @@ $(document).ready(
 
     function active(selector) {
       if (!$(selector).hasClass('drop_active')) {
-        $(`.dropdown__select_items`).slideToggle(0);
-      }
+        $(`${selector} .dropdown__select_items`).slideToggle(0);
+      } 
     }
 
     function slideDrop(selector) {

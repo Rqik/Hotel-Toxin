@@ -7,20 +7,43 @@ let props = {
   navTitles: {
     days: 'MM <br>yyyy',
   },
-  
   clearButton: true,
   prevHtml: '<i class="material-icons">arrow_back</i>',
   nextHtml: '<i class="material-icons">arrow_forward</i>',
   minDate: new Date(),
   keyboardNav: false,
-  multipleDates: 2
+  multipleDates: 2,
+  onSelect: function (fd, date, picker) {
+        let el = picker.$el.siblings('.data__select_label')
+        el.children(".data__select_input-left").val(fd.split(",")[0]);
+        el.children(".data__select_input-right").val(fd.split(",")[1]);
+      }
 }
+let selectDate = {}
 
-let center = $('.date_picker').datepicker(props)
-center.data('datepicker').hide()
+ $('.date_picker').each(function (i, el) {
+  $(this).addClass(`date_picker-${i}`)
+  // $(this).datepicker(props)
+  selectDate[`date_picker-${i}`]= $(this).datepicker(props)
+})
+
 $('.data__select_label').click(function () {
   $(this).siblings(".date_picker").data('datepicker').show()
 })
+
+// кнопка применить
+$('.datepicker--buttons').append('<span class=" datepicker--button-apply " >Применить</span>')
+
+$('.datepicker--button-apply').each(function (ind, el) {
+  $(this).click(function (e) {
+    e.preventDefault()
+    $(`.date_picker-${ind}`).data('datepicker').hide()
+  })
+})
+
+$('.data__select_input').mask('00.00.0000')
+
+
 
 // попытка реализовать изменение в datepicker через инпут
 let pervDay =  new Date()
@@ -39,20 +62,3 @@ $(".data__select_input-right").change(function () {
   nexDay = new Date(...date) > new Date()? new Date(...date):new Date()
   ss.selectDate([pervDay, nexDay])
 })
-
-// кнопка применить
-$('.datepicker--buttons').append('<span class=" datepicker--button-apply " >Применить</span>')
-$('.datepicker--button-apply').click(function (e) {
-  e.preventDefault()
-  center.data('datepicker').hide()
-})
-center.datepicker({
-  onSelect: function (fd, date, picker) {
-    let el = picker.$el.siblings('.data__select_label')
-    console.log(fd);
-    el.children(".data__select_input-left").val(fd.split(",")[0]);
-    el.children(".data__select_input-right").val(fd.split(",")[1]);
-  }
-})
-
-$('.data__select_input').mask('00.00.0000')
