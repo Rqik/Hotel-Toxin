@@ -16,9 +16,9 @@ const PATHS = {
     src: path.join(__dirname, './src'),
     dist: path.join(__dirname, './dist'),
 }
-const PAGES_DIR = `${PATHS.src}/pug/pages/`
+const PAGES_DIR = `${PATHS.src}/pug/pages/.`
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
-let s= []
+let s= [PAGES]
 const plugins = () => {
     const base = [
         ...PAGES.map(page =>{
@@ -66,7 +66,8 @@ module.exports = {
     entry: {
          // костыль вроде [1]
         index: './index.js',
-        cards: './cards.js'
+        cards: './cards.js',
+        hf: './hf.js'
     },
     output: {
         filename: "js/[name]-[contenthash:5]-bundle.js",

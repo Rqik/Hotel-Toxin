@@ -1,9 +1,9 @@
 @import "~normalize.css";
 @import "~swiper/swiper-bundle.min.css";
 @import "~@assets/css/variables.scss";
-@import "~@assets/css/cards.scss";
 @import "~@assets/css/stylesheet.scss";
 @import '~air-datepicker/dist/css/datepicker.min.css';
+@import "~@/pug/pages/cards/cards.scss";
 @import '~@/pug/components/data-select/data-select.scss';
 @import "~@/pug/components/button/button.scss";
 @import "~@/pug/components/like-button/like-button.scss";
@@ -19,6 +19,9 @@
 @import "~@/pug/components/pagination/pagination.scss";
 @import "~@/pug/components/toggle/toggle.scss";
 @import '~@assets/css/jquery-ui.structure.min.css';
+
+@import "~@/pug/components/header/header.scss";
+
 *,
 ::after,
 ::before {
@@ -81,7 +84,11 @@ h3 {
     gap: 6px;
   }
 }
-
+.df{
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
 .wrapper {
   padding: 100px;
 }
