@@ -7,20 +7,3 @@ mixin button( num , text)
      button.button_long= text
       i.material-icons arrow_forward
 
-mixin rate( data, num)
-  form.rate(data-rate=data)
-    label
-      input(type="radio" class='rate__star' checked name='rate' value=1  aria-label='Ужасно')
-      i.material-icons star_border
-    label
-      input(type="radio" class='rate__star' name='rate' value=2 aria-label='Сносно')
-      i.material-icons star_border
-    label
-      input(type="radio" class='rate__star' name='rate' value=3 aria-label='Нормально')
-      i.material-icons star_border
-    label
-      input(type="radio" class='rate__star' name='rate' value=4 aria-label='Хорошо')
-      i.material-icons star_border
-    label
-      input(type="radio" class='rate__star' name='rate' value=5 aria-label='Отлично')
-      i.material-icons star_border

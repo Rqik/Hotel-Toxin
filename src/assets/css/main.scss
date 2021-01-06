@@ -18,6 +18,8 @@
 @import "~@/pug/components/review/review.scss";
 @import "~@/pug/components/pagination/pagination.scss";
 @import "~@/pug/components/toggle/toggle.scss";
+@import "~@/pug/components/card-slider/card-slider.scss";
+@import "~@/pug/components/star-rate/star-rate.scss";
 @import '~@assets/css/jquery-ui.structure.min.css';
 
 @import "~@/pug/components/header/header.scss";
@@ -91,6 +93,14 @@ h3 {
 }
 .wrapper {
   padding: 100px;
+}
+.container{
+  margin: 0;
+  padding: 0;
+}
+.container-content{
+  max-width: 1160px;
+  margin: 0 auto;
 }
 .wrapper_grey{
   padding: 30px;

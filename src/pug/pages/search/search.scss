@@ -1,0 +1,47 @@
+@import "~@assets/css/variables.scss";
+.search__block{
+  max-width: 1160px;
+  margin: 30px auto;
+  height: 100%;
+  display: flex;
+  .dropdown__select_modify{
+    width: 266px;
+  }
+  .search__cards_result{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px 12px;
+  }
+  .search__panel{
+    margin-right: 60px;
+    display: flex;
+    flex-direction: column;
+    .data__select{
+      margin-bottom: 20px;
+    }
+    .dropdown{
+      margin-bottom: 15px ;
+    }
+    .range__slider{
+      margin-bottom: 58px;
+    }
+    .check_box{
+      margin-bottom: 30px;
+      &_rich{
+        margin-bottom: 27px;
+      }
+    }
+
+  }
+
+  .search__cards-title{
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 29px;
+     color: $dark-1;
+     margin-top: 0;
+     margin-bottom: 23px;
+  }
+
+}

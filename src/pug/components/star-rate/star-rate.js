@@ -1,5 +1,4 @@
-$(document).ready(
-  () => {
+$(() => {
     // ratind
     $('.rate').each(
       (i, el) => {
@@ -14,7 +13,6 @@ $(document).ready(
       let flor_rating = Math.floor(rating) // rate cell
       let num = Math.round((rating % 1) * 100) // width 
       let child = $(selector).children('label')
-
       for (let i = 0; i < child.length; i++) {
         child[i].querySelector('i').textContent = 'star_border'
       }
@@ -28,7 +26,7 @@ $(document).ready(
 
         let rating_last = child[flor_rating].querySelector('i')
         rating_last.textContent = 'star'
-        rating_last.style.width = num
+        rating_last.style.width = `${num}%`
         rating_last.classList.add('star')
 
         if (!child[flor_rating].querySelector('.star_border')) {
@@ -54,7 +52,5 @@ $(document).ready(
 
       })
     }
-
   }
-
 )

@@ -2,10 +2,9 @@
   width: 100%;
   height: 70px;
   padding: 15px 0;
-  margin: 0;
   background-color: white;
   box-shadow: 0px 10px 20px $dark-5;
-  // text-align: center;
+  text-align: center;
   vertical-align: middle;
 }
 
@@ -33,6 +32,9 @@
     a {
       color: inherit;
       text-decoration: none;
+      &:hover{
+        text-decoration: underline;
+      }
     }
 
     button {
@@ -77,6 +79,7 @@
       border-left: 1px solid $dark-6;
       font-size: 14px;
       color: $dark-3;
+      
     }
   }
 }
@@ -86,13 +89,13 @@ footer{
   width: 100%;
   padding-top: 100px ;
   box-shadow: 0px 1px 0px $dark-6;
-
+  border-top: 1px solid $dark-4 ;
 }
 .footer__container {
   max-width: 1160px;
   margin: 0 auto;
   .footer-top {
-    margin-bottom: 100px;
+    margin-bottom: 83px;
     display: flex;
     flex-direction: row;
     .footer-top__info {
@@ -119,6 +122,9 @@ footer{
       a {
         color: inherit;
         text-decoration: none;
+        &:hover{
+          text-decoration: underline;
+        }
       }
       margin-left: 40px;
       margin-top: 4px;
@@ -168,9 +174,18 @@ footer{
           font-size: 14px;
           line-height: 24px;
           color: $dark-2;
+          margin-bottom: 23px;
+        }
+     
+        
+      }
+      .form_submit{
+        .form_input{
+          width: 260px;
+          .input_sub{
+          }
         }
       }
-
     }
 
   }
@@ -183,13 +198,48 @@ footer{
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 25px 0;
+    padding: 24px 0;
     font-size: 14px;
     color: $dark-2;
     .footer-social{
       display: flex;
-      gap: 20px;
+      gap: 22px;
+      align-items: center;
+      padding: 0;
+      a{
+        vertical-align: middle;
+        align-self: center;
+        img{
+          display: block;
+        margin:  auto;
+        }
+      }
     }
   }
 
+}
+
+
+.fm{
+  max-width: 768px;
+  margin: 0 auto;
+}
+.footer__mobile{
+  background-color: white;
+  max-width: 768px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 21px;
+  margin-bottom: 120px;
+ .footer-copyright{
+   margin-top: 10px;
+   margin-bottom: 22px;
+ }
+ .footer-social {
+   width: 112px;
+   display: flex;
+   justify-content: space-between;
+ }
 }

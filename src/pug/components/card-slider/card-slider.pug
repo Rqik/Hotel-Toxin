@@ -1,0 +1,29 @@
+include ../star-rate/star-rate
+
+mixin cardSlide(url, num , category, price, review, rate)
+  .card__slider
+        .img__slider
+            .swiper-wrapper
+              each key in url
+                .swiper-slide 
+                  img(src=key.src, alt=key.alt)
+            .swiper-pagination-img
+        .bottom__pannel
+            .card__header
+                .room
+                    .room_number 
+                        span № 
+                        =num
+                    .room_category 
+                        |&nbsp
+                        =category
+                .price 
+                    span=price
+                      | ₽
+                    | в сутки
+            .card__rate
+                +rate(rate)
+                .card__review
+                    span=review
+                      |&nbsp 
+                    | Отзывов

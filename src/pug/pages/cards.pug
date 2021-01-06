@@ -6,7 +6,7 @@ include ../components/input/input
 include ../components/radio-box/radio-box
 include ../components/toggle/toggle
 include ../components/data-select/data-select
-
+include ../components/card-slider/card-slider
 block variables
     - var title = 'Cards'
 
@@ -71,62 +71,5 @@ block content
                     .card__info_result_name Итого
                     .card__info_result_sum 3890000₽
             +button(3,'забронировать')
-
-        .card__slider
-            .img__slider
-                .swiper-wrapper
-                    .swiper-slide 
-                        img(src="img/slider.png", alt="alt")
-                    .swiper-slide 
-                        img(src="img/slider2.png", alt="alt")
-                    .swiper-slide 
-                        img(src="img/slider.png", alt="alt")
-                    .swiper-slide 
-                        img(src="img/slider2.png", alt="alt")
-                .swiper-pagination-img
-            
-            .bottom__pannel
-                .card__header
-                    .room
-                        .room_number 
-                            span № 
-                            | 840
-                        .room_category 
-                    .price 
-                        span 9900₽
-                        | в сутки
-                .card__rate
-                    +rate('3.78')
-                    .card__review
-                        span 65 
-                        | Отзывов
-
-        .card__slider
-            .img__slider
-                .swiper-wrapper
-                    .swiper-slide 
-                        img(src="img/slider.png", alt="alt")
-                    .swiper-slide 
-                        img(src="img/slider2.png", alt="alt")
-                    .swiper-slide 
-                        img(src="img/slider.png", alt="alt")
-                    .swiper-slide 
-                        img(src="img/slider2.png", alt="alt")
-                .swiper-pagination-img
-            
-            .bottom__pannel
-                .card__header
-                    .room
-                        .room_number 
-                            span № 
-                            | 840
-                        .room_category 
-                            | люкс
-                    .price 
-                        span 9900₽
-                        | в сутки
-                .card__rate
-                    +rate('3.78')
-                    .card__review
-                        span 65 
-                        | Отзывов
+        +cardSlide([{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'},{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'} ], '840', 'люкс', '9900', 65 , '3.4' )
+        +cardSlide([{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'},{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'} ], '840', '', '9900', 65 , '3.4' )

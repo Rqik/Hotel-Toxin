@@ -1,8 +1,8 @@
 import '@/pug/utils/jquery-ui.min'
 import '@/assets/css/main.scss';
-import '@/pug/components/button/button.js';
-import '@/pug/components/like-button/like-button.js';
+import '@/pug/components/star-rate/star-rate.js';
 import '@/pug/components/input/input.js';
+import '@/pug/components/like-button/like-button.js';
 import '@/pug/components/select/select.js';
 import '@/pug/components/range-slider/range-slider.js'
 import '@/pug/components/data-select/data-select.js'

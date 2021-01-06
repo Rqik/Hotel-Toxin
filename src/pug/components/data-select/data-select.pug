@@ -7,3 +7,8 @@ mixin datepicker(title1, title2)
     label(class='data__select_label')= title2
       input(type="data" class="data__select_input data__select_input-right" placeholder='ДД.ММ.ГГГГ')  
       i.material-icons expand_more 
+mixin filterDate(title1)
+  div.data__select
+    label( class='data__select_label-s')= title1
+      input.date__range( type="data" , placeholder='ДД ММ - ДД ММ')
+      i.material-icons expand_more

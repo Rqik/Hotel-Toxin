@@ -1,0 +1,16 @@
+extends ../layouts/landing-page
+include ../components/input/input
+include ../components/data-select/data-select
+include ../components/drop-down/drop-down
+include ../components/button/button
+block variables
+  - var title = 'Landing'
+
+block content
+  .main__header
+    .main__header_content
+      .card__block 
+        .card__title Найдём номера под ваши пожелания
+        +datepicker('прибытие' , 'выезд')
+        +dropdownSelectModify(false,'гости','Сколько гостей', 'взрослые', 'дети', 'младенцы')
+        +button(3,'подобрать номер')

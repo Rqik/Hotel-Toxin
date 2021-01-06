@@ -6,6 +6,7 @@ block variables
 block content
     include ../components/input/input
     +input('email','text field', 'Email')
+    +inputSub('','email','text field', 'Email')
     include ../components/select/select
     +selectBlock('dropdown' , 'декабрь', 'ноябрь', 'декабрь', 'ноябрь')
     include ../components/button/button
@@ -14,10 +15,10 @@ block content
             +button(1 , 'CLICK ME')
             +button(2 , 'CLICK ME')
             +button(3 , 'перейти к оплате')
-
+    include ../components/star-rate/star-rate
     div.span_stong rate button
         div
-            +rate('3.78')
+            +rate('3.38')
     include ../components/like-button/like-button
 
     div.span_stong like button
@@ -26,19 +27,41 @@ block content
             +likeButton( true , 12)
 
     include ../components/pagination/pagination
+    div.span_stong pagination
+        .span_stong_div 
+            +pagination(false,[{current: 1},2,3, '..' , 15], true , ' 1 – 12 из 100+ вариантов аренды')
     include ../components/review/review
     include ../components/range-slider/range-slider
+    +rangeSlider('range slider')
+
     include ../components/toggle/toggle
     +toogleBox('toogle', 'toogle','Получать спецпредложения', 'Получать спецпредложения' )
     include ../components/radio-box/radio-box
     +radioBox('Radio Buttons', 'gender','Мужчина', 'Женщина' )
     include ../components/data-select/data-select
     +datepicker('date dropdown' , 'date dropdown')
-    +datepicker('date dropdown' , 'date dropdown')
+    +filterDate('date dropdown' )
+    +filterDate('date dropdown' )
 
     include ../components/drop-down/drop-down
     +dropdownSelect( true,'dropdown','2 спальни, 2 кровати', 'спальни', 'кровати', 'ванные комнаты')
     +dropdownSelectModify(true,'dropdown','Сколько гостей', 'взрослые', 'дети', 'младенцы')
     include ../components/check-box/check-box
+    +checkBox( 'checkbox buttons','le', 
+    ['Можно курить' , 'Можно с питомцами ' , 
+    'Можно пригласить гостей (до 10 человек)', 
+    'Можно пригласить гостей ', 'Можно пригласить гостей' ,
+    'Можно пригласить гостей'
+    ])
+    +checkBoxExpandable( 'expandable checkbox list','exp', ['Завтрак' , 'Письменный стол' , 
+    'Стул для кормления', 
+    'Кроватка', 'Телевизор' ,
+    'Шампунь','Телевизор' ,
+    'Шампунь'
+    ])
+    +richCheckBoxButtons( 'rich checkbox buttons','info', 
+    [['Широкий коридор', 'Ширина коридоров в номере не менее 91 см.'] , ['Помощник для инвалидов' , 'На 1 этаже вас встретит специалист  и проводит до номера.']
+    ])
     include ../components/list/list
     include ../components/icon-text/icon-text
+    +iconText([['insert_emoticon', 'Комфорт', 'Шумопоглощающие стены'], ['location_city', 'Удобство', 'Окно в каждой из спален'] ] )

@@ -21,7 +21,7 @@
 
     z-index: 200;
   }
-  &_label{
+  &_label, &_label-s{
     position: relative;
     display: flex;
     flex-direction: column;
@@ -33,13 +33,13 @@
     text-transform: uppercase;
     color: $dark-1;
     &:hover{
-      .data__select_input{ border: 1px solid $dark-3;}
+      .data__select_input , .date__range{ border: 1px solid $dark-3;}
       i.material-icons{
         color: $dark-2;
       }
     }
   }
-    &_input{
+    &_input, .date__range{
       width: 150px;
       height: 44px;
       border: 1px solid $dark-4;
@@ -52,6 +52,11 @@
       cursor: pointer;
       transition: border .3s ease-in-out;
 
+    }
+    .date__range{
+      width: 266px;
+      text-transform: lowercase;
+      color: $dark-2;
     }
     i.material-icons {
       width: 24px;

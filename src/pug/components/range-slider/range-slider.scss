@@ -3,6 +3,7 @@
   width: 266px;
   // height: 100px;
   margin-bottom: 20px;
+
   &_value {
     display: flex;
     justify-content: space-between;
@@ -12,6 +13,10 @@
     line-height: 15px;
     color: $dark-1;
     text-transform: uppercase;
+
+    label {
+      white-space: nowrap;
+    }
 
     input {
       font-style: normal;
@@ -25,6 +30,13 @@
       border: none;
       box-sizing: border-box;
     }
+  }
+
+  &_sub {
+    margin-top: 15px;
+    font-weight: normal;
+    font-size: 12px;
+    line-height: 14px;
   }
 
   .ui-slider {

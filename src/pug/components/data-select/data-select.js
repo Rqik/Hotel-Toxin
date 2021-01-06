@@ -19,6 +19,7 @@ let props = {
         el.children(".data__select_input-right").val(fd.split(",")[1]);
       }
 }
+
 let selectDate = {}
 
  $('.date_picker').each(function (i, el) {
@@ -45,6 +46,7 @@ $('.data__select_input').mask('00.00.0000')
 
 
 
+
 // попытка реализовать изменение в datepicker через инпут
 let pervDay =  new Date()
 let nexDay  =  new Date()
@@ -61,4 +63,28 @@ $(".data__select_input-right").change(function () {
   date[1] = +date[1] - 1
   nexDay = new Date(...date) > new Date()? new Date(...date):new Date()
   ss.selectDate([pervDay, nexDay])
+})
+
+let propsRange = {
+  position: "bottom center",
+  range: true,
+  navTitles: {
+    days: 'MM <br>yyyy',
+  },
+  dateFormat: 'd M',
+  clearButton: true,
+  prevHtml: '<i class="material-icons">arrow_back</i>',
+  nextHtml: '<i class="material-icons">arrow_forward</i>',
+  minDate: new Date(),
+  keyboardNav: false,
+  multipleDates: 2,
+  multipleDatesSeparator: ' - '
+}
+$('.date__range').datepicker(propsRange)
+$('.date__range').mask('00 ZZZ - 00 ZZZ', {
+  translation: {
+    'Z': {
+      pattern: /[A-zА-я]/
+    }
+  }
 })

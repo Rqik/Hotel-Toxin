@@ -80,52 +80,6 @@ button {
 
 }
 
-.rate{
-position: relative;
-display: flex;
 
-&__star{
-  appearance: none;
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  z-index: 20;
-  background-color: transparent;
-  cursor: pointer;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-
-}
-label{
-  position: relative;
-  overflow: hidden;
-
-  .star{
-    position:absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    width: 40%;
-  }
-
-  .star_border{
-
-  }
-  i {
-    display: block;
-    position: relative;
-    overflow: hidden;
-    background-image: $purple-gradient;
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    }
-}
-
-}
 
 

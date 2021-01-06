@@ -6,12 +6,10 @@ $(document).ready(
         active(`.dropdown__select-${i}`)
         slideDrop(`.dropdown__select-${i} .dropdown__select_current`)
         actionDropDown(` .dropdown__select-${i} .dropdown__control`, ` .dropdown__select-${i}`)
-        $('.dropdown__select_current').click(() => $(this).toggleClass('drop_active'))
+        $(`.dropdown__select-${i} .dropdown__select_current`).click(()=> $(`.dropdown__select-${i}`).toggleClass('drop_active') )
       }
 
     )
-
-
 
     $('.dropdown__select_modify').each(
       function (i, el) {
@@ -21,7 +19,7 @@ $(document).ready(
         actionDropDownModify(` .dropdown__select_modify-${i} .dropdown__control`, ` .dropdown__select_modify-${i}`)
         buttonAction(`.dropdown__select_modify-${i}`)
 
-        $('.dropdown__select_current').click(() => $(this).toggleClass('drop_active'))
+        $(`.dropdown__select_modify-${i} .dropdown__select_current`).click(()=> $(`.dropdown__select_modify-${i}`).toggleClass('drop_active'))
 
       }
 
@@ -69,15 +67,26 @@ $(document).ready(
     function textModify(selector) {
       let textCurrent = "Сколько гостей"
       let length = 0
+      let child = 0
+
       $(` ${selector} .dropdown__select_item `)
         .each(function (i, el) {
           let text = el.querySelector(`${selector} .dropdown__control > span`).textContent
-
-
-          text > 0 ? length += +text : false
+          let name = el.querySelector(`${selector} .dropdown__select_item span`).textContent 
+          
+          if (name == 'младенцы') {
+            
+            text > 0 ? child = text : false
+            
+          }
+          else {
+            text > 0 ? length += +text : false
+           
+          }
           text > 0 ?
-            textCurrent = `${length }` + `${ length <= 1 ? ' гость': length <= 4 ? ' гостя' : ' гостей'  } ` :
-            '';
+            textCurrent = `${length}` + `${length <= 1 ? ' гость' : length <= 4 ? ' гостя' : ' гостей'} ` + 
+                          `${child > 0 ? ', '+ child + `${child <= 1 ? 'младенец' : child <= 2 ? ' младенца' : ' младенцев'} `: '' } `             
+            : '';
         })
       if (length <= 0) {
         $(selector).find('.dropdown__select_button-reset').css('opacity', 0)

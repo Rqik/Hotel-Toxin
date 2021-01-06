@@ -13,10 +13,10 @@
   margin-bottom: 1rem;
   position: relative;
   width: 266px;
-  height: 100%;
   background-color: white;
   border-radius: 4px;
-
+  .material-icons {
+    transition: transform .3s ease-in-out;}
   &:hover,
   &:focus {
 
@@ -158,7 +158,6 @@
 
 .dropdown__select_modify {
   width: 320px;
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -170,7 +169,8 @@
     margin: 5px 0;
     line-height: 14px;
   }
-
+  .material-icons {
+    transition: transform .3s ease-in-out;}
   &:hover,
   &:focus {
 
@@ -311,5 +311,11 @@
   .dropdown__select_current{
    
     border-radius: 4px 4px 0 0;
+  }
+  .material-icons {
+    transition: all .3s ease-in-out;
+    padding: 0;
+    margin: 0;
+    transform: rotateX(180deg);
   }
 }

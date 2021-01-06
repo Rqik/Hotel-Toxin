@@ -36,3 +36,73 @@
     }
   }
 }
+
+.form_submit{
+  .form_title{
+    font-weight: bold;
+font-size: 12px;
+line-height: 15px;
+text-transform: uppercase;
+color: $dark-1;
+  }
+  .form_input{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    margin-top: 5px;
+    align-items: flex-start;
+    border: 1px solid $dark-4;
+    border-radius: 4px;
+    width: 267px;
+    height: 44px;
+    box-sizing: border-box;
+    &:hover,
+    &:focus {
+      border: 1px solid $dark-3;
+      cursor: pointer;
+      font-style: normal;
+      font-weight: normal;
+      line-height: 18px;
+      outline: none;
+    }
+    .input_btn{
+      width: 44px;
+      background-color: white;
+      color: $dark-1;
+      background-image: $purple-gradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-align: center;
+      vertical-align: middle;
+      padding: 0;
+      border: none;
+    }
+
+    .input_sub{
+      width: 223px;
+      height: 100%;
+      vertical-align: middle;
+      background: #FFFFFF;
+      border: none;
+      box-sizing: border-box;
+      border-radius: 4px;
+      padding-left: 15px;
+      font-size: 14px;
+      color: $dark-2;
+      border-right: 0px;
+      &::placeholder {
+        color: $dark-4;
+        font-family: 'Montserrat', sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        height: 18px;
+      }
+  
+    
+    }
+
+    }
+
+}

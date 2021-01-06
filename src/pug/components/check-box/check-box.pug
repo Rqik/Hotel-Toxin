@@ -1,20 +1,9 @@
-// checkbox list
-mixin checkBox( text, name, ...label  )
+mixin checkBox( text, name, label  )
   .check_box= text
     each item , indx in label
       .check_item
         input(id=name+'-'+indx)(type="checkbox" ) 
         label.label(for=name+'-'+indx)= item 
-
-
-+checkBox( 'checkbox buttons','le', 
-    ...['Можно курить' , 'Можно с питомцами ' , 
-    'Можно пригласить гостей (до 10 человек)', 
-    'Можно пригласить гостей ', 'Можно пригласить гостей' ,
-    'Можно пригласить гостей'
-    ])
-
-// expandable checkbox list
 mixin checkBoxExpandable(text, name, label )
   .check_box.checkbox__expan.exp_active= text 
     i.material-icons expand_more
@@ -23,14 +12,6 @@ mixin checkBoxExpandable(text, name, label )
         .check_item
           input(id=name+'-'+indx)(type="checkbox" ) 
           label.label(for=name+'-'+indx)= item 
-
-+checkBoxExpandable( 'expandable checkbox list','exp', ['Завтрак' , 'Письменный стол' , 
-    'Стул для кормления', 
-    'Кроватка', 'Телевизор' ,
-    'Шампунь','Телевизор' ,
-    'Шампунь'
-    ])
-
 mixin richCheckBoxButtons(text, name, label )
   .check_box.check_box_rich= text 
     each item , indx in label
@@ -38,8 +19,3 @@ mixin richCheckBoxButtons(text, name, label )
         input(id=name+'-'+indx name=name)(type="checkbox" ) 
         label.label.label_rich(for=name+'-'+indx)= item[0]
           span= item[1]
-         
-       
-+richCheckBoxButtons( 'rich checkbox buttons','info', 
-    [['Широкий коридор', 'Ширина коридоров в номере не менее 91 см.'] , ['Помощник для инвалидов' , 'На 1 этаже вас встретит специалист  и проводит до номера.']
-    ])

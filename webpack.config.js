@@ -18,11 +18,19 @@ const PATHS = {
 }
 const PAGES_DIR = `${PATHS.src}/pug/pages/.`
 const PAGES = fs.readdirSync(PAGES_DIR).filter(fileName => fileName.endsWith('.pug'))
-let s= [PAGES]
+let pageName = '';
+
+// точки входа
+let entryName = {}
+function entryPoints(page) {
+    pageName = `${page.replace(/\.pug/, '')}`
+    entryName[pageName] = `./${pageName}.js` 
+}
+
 const plugins = () => {
     const base = [
-        ...PAGES.map(page =>{
-           s.push(`${page.replace(/\.pug/, ' ')}`)
+        ...PAGES.map(page => {
+          entryPoints(page)
          return  new HtmlWebpackPlugin({
             template: `${PAGES_DIR}/${page}`,
              filename: `./${page.replace(/\.pug/, '.html')}`,
@@ -63,12 +71,7 @@ module.exports = {
     // target: "web",
     context: path.resolve(__dirname, 'src'),
     mode: "development",
-    entry: {
-         // костыль вроде [1]
-        index: './index.js',
-        cards: './cards.js',
-        hf: './hf.js'
-    },
+    entry: entryName,
     output: {
         filename: "js/[name]-[contenthash:5]-bundle.js",
         path: path.resolve(__dirname, "dist"),
@@ -168,4 +171,4 @@ module.exports = {
     }
 
 }
-console.log(s);
+console.log(entryName);

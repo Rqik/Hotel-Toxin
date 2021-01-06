@@ -74,7 +74,7 @@
       vertical-align: middle;
       color: white;
       font-size: 24px;
-      transform:rotateZ(180deg);
+      transform: rotateZ(180deg);
     }
   }
 
@@ -84,5 +84,6 @@
     text-transform: none;
     font-size: 14px;
     line-height: normal;
+    color: $dark-2;
   }
 }
