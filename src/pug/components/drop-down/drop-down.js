@@ -85,7 +85,7 @@ $(document).ready(
           }
           text > 0 ?
             textCurrent = `${length}` + `${length <= 1 ? ' гость' : length <= 4 ? ' гостя' : ' гостей'} ` + 
-                          `${child > 0 ? ', '+ child + `${child <= 1 ? 'младенец' : child <= 2 ? ' младенца' : ' младенцев'} `: '' } `             
+                          `${child > 0 ? ', '+ child + `${child <= 1 ? ' младенец' : child <= 4 ? ' младенца' : ' младенцев'} `: '' } `             
             : '';
         })
       if (length <= 0) {

@@ -1,0 +1,17 @@
+extends ../layouts/landing-page
+include ../components/input/input
+include ../components/button/button
+block variables
+  - var title = 'Registration'
+
+block content
+  .register
+    .card__block
+      .card__title Войти
+      +input('email','', 'Email')
+      +input('name','', 'Пароль')
+      .card__auth_in
+          +button(3,'войти')
+          .card__bot
+              .card__bot_text Нет аккаунта на Toxin
+              +button(2,'Создать')

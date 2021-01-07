@@ -28,6 +28,7 @@
     height: 40px;
     text-align: center;
     vertical-align: middle;
+    cursor: pointer;
 
     &_current {
       background-image: $purple-gradient;
@@ -51,6 +52,7 @@
     vertical-align: middle;
     background-image: $Green-gradient;
     border-radius: 50%;
+    cursor: pointer;
 
     i.material-icons {
       text-align: center;
@@ -68,6 +70,7 @@
     vertical-align: middle;
     background-image: $Green-gradient;
     border-radius: 50%;
+    cursor: pointer;
 
     i.material-icons {
       text-align: center;

@@ -31,6 +31,8 @@ block content
         .span_stong_div 
             +pagination(false,[{current: 1},2,3, '..' , 15], true , ' 1 – 12 из 100+ вариантов аренды')
     include ../components/review/review
+    +review('img/avatar.png' , true , 'Мурад Сарафанов', '5 дней назад'  , 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
+
     include ../components/range-slider/range-slider
     +rangeSlider('range slider')
 
@@ -63,5 +65,7 @@ block content
     [['Широкий коридор', 'Ширина коридоров в номере не менее 91 см.'] , ['Помощник для инвалидов' , 'На 1 этаже вас встретит специалист  и проводит до номера.']
     ])
     include ../components/list/list
+    +bulletList('bullet list', ['Нельзя с питомцами' , "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
+    
     include ../components/icon-text/icon-text
     +iconText([['insert_emoticon', 'Комфорт', 'Шумопоглощающие стены'], ['location_city', 'Удобство', 'Окно в каждой из спален'] ] )

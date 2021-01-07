@@ -1,0 +1,126 @@
+.diagram_img {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 170px;
+ 
+  .unit {
+    animation-name: render;
+    animation-duration: 1.5s;
+    stroke-width: 2;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+      stroke-width: 4;
+    }
+
+    z-index: 20;
+  }
+  .hovered {
+    stroke-width: 4;
+  }
+  .legend {
+    padding: 0;
+    list-style: none;
+    font-size: 14px;
+    line-height: 24px;
+    color: $dark-2;
+    align-self: center;
+    margin-left: 25px;
+
+    &-el {
+      position: relative;
+      cursor: pointer;
+      &::before {
+        content: '';
+        top: 7px;
+        left: -15px;
+        // right: 10px;
+        position: absolute;
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: #BC9CFF;
+      }
+
+      &:nth-child(1) {
+        &::before {
+          background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+        }
+        .unit:nth-child(1){
+          stroke-width: 4;
+        }
+      }
+
+      &:nth-child(2) {
+        &::before {
+          background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+        }
+       
+      }
+
+      &:nth-child(3) {
+        &::before {
+          background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+        }
+      }
+
+      &:nth-child(4) {
+        &::before {
+          background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+        }
+      }
+    }
+  }
+
+
+
+  .chart-number {
+    font: "Montserrat", Arial, sans-serif;
+    font-size: 6px;
+    line-height: 29px;
+    font-weight: bold;
+
+    fill: #BC9CFF;
+    -moz-transform: translateY(-0.25em);
+    -ms-transform: translateY(-0.25em);
+    -webkit-transform: translateY(-0.25em);
+    transform: translateY(-0.25em);
+    text-anchor: middle;
+  }
+
+  .chart-label {
+    font: "Montserrat", Arial, sans-serif;
+    font-weight: bold;
+    font-size: 3px;
+    line-height: 19px;
+    text-anchor: middle;
+    text-transform: uppercase;
+    -moz-transform: translateY(1em);
+    -ms-transform: translateY(01em);
+    -webkit-transform: translateY(1em);
+    transform: translateY(1.2em);
+    fill: $purple;
+  }
+}
+
+.diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  .diagram_title {
+    margin-left: 15px;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 23px;
+    color: $dark-1;
+  }
+}
+
+@keyframes render {
+  0% {
+    stroke-dasharray: 0 100;
+  }
+}

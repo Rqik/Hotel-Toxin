@@ -1,9 +1,6 @@
-.bullet_list
-  | bullet list
-  ul
-    li Нельзя с питомцами
-    li Без вечеринок и мероприятий
-    li 
-      | Время прибытия — после 13:00,
-      | а выезд до 12:00
-
+mixin bulletList( title , text)
+  .bullet_list
+    h3.bullet_list-title=title
+    ul
+      each item in text
+        li=item

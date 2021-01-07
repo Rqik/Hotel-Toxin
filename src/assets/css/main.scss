@@ -4,6 +4,7 @@
 @import "~@assets/css/stylesheet.scss";
 @import '~air-datepicker/dist/css/datepicker.min.css';
 @import "~@/pug/pages/cards/cards.scss";
+
 @import '~@/pug/components/data-select/data-select.scss';
 @import "~@/pug/components/button/button.scss";
 @import "~@/pug/components/like-button/like-button.scss";
@@ -20,8 +21,8 @@
 @import "~@/pug/components/toggle/toggle.scss";
 @import "~@/pug/components/card-slider/card-slider.scss";
 @import "~@/pug/components/star-rate/star-rate.scss";
+@import "~@/pug/components/diagram/diagram.scss";
 @import '~@assets/css/jquery-ui.structure.min.css';
-
 @import "~@/pug/components/header/header.scss";
 
 *,

@@ -5,7 +5,6 @@ include ../components/button/button
 include ../components/input/input
 include ../components/radio-box/radio-box
 include ../components/toggle/toggle
-include ../components/data-select/data-select
 include ../components/card-slider/card-slider
 block variables
     - var title = 'Cards'
@@ -53,7 +52,6 @@ block content
                 .price 
                     span 9900₽
                     | в сутки
-        
             .card__reg
                 +datepicker('прибытие' , 'выезд')
                 +dropdownSelectModify(false,'гости','Сколько гостей', 'взрослые', 'дети', 'младенцы')

@@ -9,6 +9,9 @@
     display: flex;
     flex-direction: row;
     gap: 10px;
+    &:last-child{
+      border: none;
+    }
     i.material-icons{
      font-size: 48px;
      background-image: $purple-gradient;
