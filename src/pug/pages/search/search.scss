@@ -1,26 +1,86 @@
 @import "~@assets/css/variables.scss";
+@import "~@assets/css/mixin.scss";
+
 .search__block{
   max-width: 1160px;
-  margin: 30px auto;
+  margin: 0 auto;
+  padding: 30px 0;
   height: 100%;
   display: flex;
+  flex-direction: row;
+  justify-content: center;
+  position: relative;
+  
+ .btn_fixed{
+   display: none;
+   @include md{
+      display: block;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right:   0px;
+      width: 20px;
+      border-radius: 0 20px 20px 0;
+      color: white;
+      background-image: $Green-gradient;
+      text-align: center;
+      z-index: 20;
+      // display: flex;
+      // align-items: center;
+      // justify-content: center;
+      
+      .material-icons{
+        position: absolute;
+        margin: auto;
+        top: 50%;
+        left: 0;
+        right: 0;
+        text-align: center;
+        line-height: 40px;
+        transform: rotateZ(-90deg);
+        z-index: 2;
+      }
+  }
+ }
   .dropdown__select_modify{
     width: 266px;
   }
+
   .search__cards_result{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     gap: 20px 12px;
     margin-bottom: 40px;
+    @include md {
+      flex-direction: column;
+      align-items: center;
+    }
   }
   .pagination{
    align-items: center;
   }
+  
   .search__panel{
     margin-right: 60px;
     display: flex;
     flex-direction: column;
+    position: relative;
+    transition: transform .3s ease-in-out;
+    @include lg{
+      margin-left: 15px;
+    }
+    @include md{
+      position: fixed; left: 0;top: 0;   
+      background-color: white;
+      z-index: 300; 
+      padding: 50px 30px;
+      padding-right: 60px;
+      margin: 0;
+      overflow-y: scroll;
+      height: 100%;
+      transform: translateX(-95%);
+    }
     .data__select{
       margin-bottom: 20px;
     }
@@ -38,6 +98,10 @@
     }
 
   }
+  .search__panel_fixed{
+    transform: translateX(0%);
+    max-width: 80vw;
+  }
 
   .search__cards-title{
     font-weight: bold;
@@ -48,4 +112,11 @@
      margin-bottom: 23px;
   }
 
+}
+
+
+@include md {
+  .search__cards{
+    padding-left: 30px;
+  }
 }

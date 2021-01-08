@@ -19,8 +19,14 @@ mixin header
             a(href='#') Новости
           li.nav__menu_item.nav__menu_item-more 
             a(href='#') Соглашения
-        +button(2 , 'войти')   
-        +button(1 , 'зарегистрироваться')
+          li.nav__menu_item
+            +button(2 , 'войти') 
+          li.nav__menu_item
+            +button(1 , 'зарегистрироваться')
+        .menu_burger
+          i.material-icons menu
+        
+          
 
 mixin headerAuth
   .header
@@ -39,6 +45,8 @@ mixin headerAuth
             a(href='#') Новости
           li.nav__menu_item.nav__menu_item-more 
             a(href='#') Соглашения
+        .menu_burger
+          i.material-icons menu
         .nav_auth
           a(href='#') Юлий Цезарь
 

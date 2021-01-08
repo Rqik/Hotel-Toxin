@@ -1,6 +1,7 @@
 @import "~normalize.css";
 @import "~swiper/swiper-bundle.min.css";
 @import "~@assets/css/variables.scss";
+@import "~@assets/css/mixin.scss";
 @import "~@assets/css/stylesheet.scss";
 @import '~air-datepicker/dist/css/datepicker.min.css';
 @import "~@/pug/pages/cards/cards.scss";
@@ -97,7 +98,9 @@ h3 {
 }
 .container{
   margin: 0;
-  padding: 0;
+  padding: 0;display: flex;
+  flex-direction: column;
+  background-color: white;
 }
 .container-content{
   max-width: 1160px;
@@ -106,6 +109,9 @@ h3 {
 .wrapper_grey{
   padding: 30px;
   background-color: #e5e5e5;
+  @include sl{
+    padding: 0;
+  }
 }
 .label {
   font-family: 'Montserrat';

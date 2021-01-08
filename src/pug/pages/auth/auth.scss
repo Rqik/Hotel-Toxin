@@ -2,8 +2,12 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: url('~@assets/img/regback.png') no-repeat center ;
+  width: 100%;
+  background: url('~@assets/img/regback.png') no-repeat  center center ;
   background-size: cover;
-  height: 100%;
-  padding: 70px 0;
+  min-height: 580px;
+  padding: 20px 0;
+  .card__block{
+    margin-bottom: 0;
+  }
 }
