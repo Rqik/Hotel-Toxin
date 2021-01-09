@@ -2,7 +2,7 @@
 
 ## GitHub Pages
 
-[index.html](https://rqik.github.io/FSD/dist/index.html)
+[**index.html**](https://rqik.github.io/FSD/dist/index.html)
 [cards](https://rqik.github.io/FSD/dist/cards.html)
 [header-footer](https://rqik.github.io/FSD/dist/hf.html)
 [landing](https://rqik.github.io/FSD/dist/landing.html)
