@@ -61,7 +61,9 @@ button {
     width: 320px;
     background: $purple-gradient;
     position: relative;
-
+    @include ss{
+      width: 100%;
+    }
     &:hover {
       i {
         right: 14px;

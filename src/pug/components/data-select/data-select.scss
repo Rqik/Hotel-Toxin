@@ -32,6 +32,9 @@
     line-height: 15px;
     text-transform: uppercase;
     color: $dark-1;
+    @include ss{
+      width: 100%;
+    }
     &:hover{
       .data__select_input , .date__range{ border: 1px solid $dark-3;}
       i.material-icons{
@@ -51,12 +54,18 @@
       margin-top:5px ;
       cursor: pointer;
       transition: border .3s ease-in-out;
+      @include ss{
+        width: 100%;
+        font-size: 12px;
+      }
 
     }
     .date__range{
       width: 266px;
-      text-transform: lowercase;
       color: $dark-2;
+      @include ss{
+        width: 100%;
+      }
     }
     i.material-icons {
       width: 24px;

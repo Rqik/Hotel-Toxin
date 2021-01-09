@@ -95,6 +95,9 @@ h3 {
 }
 .wrapper {
   padding: 100px;
+  @include md{
+    padding: 30px 15px;
+  }
 }
 .container{
   margin: 0;

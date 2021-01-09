@@ -3,7 +3,12 @@
   flex-direction: row;
   align-items: center;
   height: 170px;
- 
+ @include ss{
+flex-direction: column;
+height: 280px;
+width: 100%;
+justify-content: center;
+ }
   .unit {
     animation-name: render;
     animation-duration: 1.5s;
@@ -116,6 +121,9 @@
     font-size: 19px;
     line-height: 23px;
     color: $dark-1;
+    @include sl{
+      margin: 0;
+    }
   }
 }
 

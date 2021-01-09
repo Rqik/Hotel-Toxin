@@ -15,6 +15,9 @@
   width: 266px;
   background-color: white;
   border-radius: 4px;
+  @include ss{
+    width: 100%;
+  }
   .material-icons {
     transition: transform .3s ease-in-out;}
   &:hover,
@@ -165,6 +168,12 @@
   position: relative;
   background-color: white;
   border-radius: 4px;
+  @include sl{
+    // width: 266px;
+  }
+  @include ss{
+    width: 100%;
+  }
   h3 {
     margin: 5px 0;
     line-height: 14px;
