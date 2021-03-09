@@ -98,6 +98,8 @@
 
       .active_burger {
         display: flex;
+        min-width: 230px;
+        border-right: 1px solid rgba(184, 184, 184, .2);
       }
 
       .nav__menu_item {
