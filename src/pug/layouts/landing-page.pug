@@ -7,6 +7,9 @@ html(lang="en")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     title= title
   body.container
-    +header
+    +header({src: "img/logo.png" } , [{text: 'О нас', active: true} ,
+		{text: 'Услуги', more: [{text: 'Дополнительные пункты'} ,{text: 'Дополнительные пункты большие'} ,{text: 'Дополнительные пункты'}]}
+		,{text: 'Вакансии'} ,{text: 'Новости'} ,
+		{text: 'Соглашения', more: [{text: 'Дополнительные пункты'} ,{text: 'Дополнительные пункты большие'} ,{text: 'Дополнительные пункты'}]} ])
     block content
     +footer

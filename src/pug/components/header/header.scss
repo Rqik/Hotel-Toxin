@@ -6,7 +6,7 @@
   box-shadow: 0px 10px 20px $dark-5;
   text-align: center;
   vertical-align: middle;
- 
+
 }
 
 
@@ -19,14 +19,16 @@
   align-items: center;
   flex-direction: row;
   justify-content: space-between;
-  
+
   .header__logo {
     margin-top: 9px;
-    img{
+
+    img {
       width: 100%;
       object-fit: contain;
     }
-    @include sl{
+
+    @include sl {
       width: 80px;
     }
   }
@@ -35,13 +37,13 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    z-index: 100;
     gap: 20px;
-   
+
     a {
       color: inherit;
       text-decoration: none;
-      &:hover{
+
+      &:hover {
         text-decoration: underline;
       }
     }
@@ -63,20 +65,22 @@
       line-height: 17px;
       color: $dark-3;
       gap: 20px;
-      
+
     }
-    .menu_burger{
+
+    .menu_burger {
       display: none;
     }
+
     @include md {
-      .menu_burger{
+      .menu_burger {
         display: flex;
 
       }
-     
-          flex-direction: row-reverse;
-      
-      .nav__menu_items{
+
+      flex-direction: row-reverse;
+
+      .nav__menu_items {
         position: fixed;
         flex-direction: column;
         align-items: center;
@@ -89,16 +93,19 @@
         margin: 0;
         padding: 0;
         width: 50vw;
-        z-index: 4000 ;
+        z-index: 1000;
       }
-      .active_burger{
+
+      .active_burger {
         display: flex;
       }
-      .nav__menu_item{
+
+      .nav__menu_item {
         align-self: center;
         text-align: center;
       }
     }
+
     &_item {
       vertical-align: middle;
       margin: 0;
@@ -114,6 +121,43 @@
     &_item-more {
       display: flex;
       align-items: center;
+      position: relative;
+
+      ul {
+        min-width: 100px;
+        border: 1px solid $dark-6;
+        border-radius: 6px;
+        position: absolute;
+        display: none;
+        flex-direction: row;
+        padding: 0;
+        align-items: center;
+        list-style: none;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+        color: $dark-3;
+        gap: 2px;
+        top: 30px;
+        background-color: white;
+        z-index: 1430;
+
+        li {
+          padding: 7px 30px;
+          width: 100%;
+          text-align: center;
+
+          &:hover {
+            background-color: rgba(184, 184, 184, .2);
+          }
+
+          a {
+            text-align: center;
+            width: 100%;
+          }
+        }
+      }
     }
 
     .nav_auth {
@@ -121,46 +165,54 @@
       border-left: 1px solid $dark-6;
       font-size: 14px;
       color: $dark-3;
-      
+
     }
   }
 }
 
-footer{
+footer {
   background-color: white;
   width: 100%;
-  padding: 100px 30px 0px 30px  ;
+  padding: 100px 30px 0px 30px;
   box-shadow: 0px 1px 0px $dark-6;
-  border-top: 1px solid $dark-4 ;
-  @include sm{
+  border-top: 1px solid $dark-4;
+
+  @include sm {
     box-shadow: none;
   }
 }
+
 .footer__container {
   max-width: 1160px;
   margin: 0 auto;
+
   .footer-top {
     margin-bottom: 83px;
     display: flex;
     flex-direction: row;
-    @include lg{
-     justify-content: center;
+
+    @include lg {
+      justify-content: center;
     }
 
-    @include sm{
+    @include sm {
       margin-bottom: 0;
       align-items: center;
-      .footer-top__subscribe{
+
+      .footer-top__subscribe {
         display: none;
       }
-      .footer-top__info{
+
+      .footer-top__info {
         text-align: center
       }
-      .footer-top__info_text{
+
+      .footer-top__info_text {
         display: none;
       }
 
     }
+
     .footer-top__info {
       width: 260px;
 
@@ -183,16 +235,19 @@ footer{
 
     .footer-top__nav {
 
-      @include lg{
+      @include lg {
         display: none;
       }
+
       a {
         color: inherit;
         text-decoration: none;
-        &:hover{
+
+        &:hover {
           text-decoration: underline;
         }
       }
+
       margin-left: 40px;
       margin-top: 4px;
       display: flex;
@@ -200,6 +255,7 @@ footer{
       align-items: flex-start;
       justify-content: space-between;
       width: 549px;
+
       .footer__nav-title {
         font-weight: bold;
         font-size: 12px;
@@ -216,7 +272,8 @@ footer{
         line-height: 19px;
         color: $dark-3;
       }
-      .footer__nav-item{
+
+      .footer__nav-item {
         margin-top: 20px;
       }
     }
@@ -224,9 +281,10 @@ footer{
     .footer-top__subscribe {
       width: 260px;
       margin-left: 50px;
+
       .footer__subscribe {
         &-title {
-        margin-top: 4px;
+          margin-top: 4px;
 
           font-weight: bold;
           font-size: 12px;
@@ -243,21 +301,22 @@ footer{
           color: $dark-2;
           margin-bottom: 23px;
         }
-     
-        
+
+
       }
-      .form_submit{
-        .form_input{
+
+      .form_submit {
+        .form_input {
           width: 260px;
-          .input_sub{
-          }
+
+          .input_sub {}
         }
       }
     }
 
   }
 
-  .footer-bot{
+  .footer-bot {
     position: relative;
     border-top: 1px solid $dark-6;
 
@@ -268,21 +327,25 @@ footer{
     padding: 24px 0;
     font-size: 14px;
     color: $dark-2;
-    .footer-social{
+
+    .footer-social {
       display: flex;
       gap: 22px;
       align-items: center;
       padding: 0;
-      a{
+
+      a {
         vertical-align: middle;
         align-self: center;
-        img{
+
+        img {
           display: block;
-        margin:  auto;
+          margin: auto;
         }
       }
     }
-    @include sm{
+
+    @include sm {
       padding: 0;
       background-color: white;
       max-width: 768px;
@@ -292,27 +355,30 @@ footer{
       align-items: center;
       margin-top: 21px;
       margin-bottom: 120px;
-     .footer-copyright{
-       margin-top: 10px;
-       margin-bottom: 22px;
-       text-align: center;
-     }
-     .footer-social {
-       width: 112px;
-       display: flex;
-       justify-content: space-between;
-     }
+
+      .footer-copyright {
+        margin-top: 10px;
+        margin-bottom: 22px;
+        text-align: center;
+      }
+
+      .footer-social {
+        width: 112px;
+        display: flex;
+        justify-content: space-between;
+      }
     }
   }
 
 }
 
 
-.fm{
+.fm {
   max-width: 768px;
   margin: 0 auto;
 }
-.footer__mobile{
+
+.footer__mobile {
   background-color: white;
   max-width: 768px;
   margin: 0 auto;
@@ -321,13 +387,15 @@ footer{
   align-items: center;
   margin-top: 21px;
   margin-bottom: 120px;
- .footer-copyright{
-   margin-top: 10px;
-   margin-bottom: 22px;
- }
- .footer-social {
-   width: 112px;
-   display: flex;
-   justify-content: space-between;
- }
+
+  .footer-copyright {
+    margin-top: 10px;
+    margin-bottom: 22px;
+  }
+
+  .footer-social {
+    width: 112px;
+    display: flex;
+    justify-content: space-between;
+  }
 }

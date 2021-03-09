@@ -2,23 +2,27 @@
 include ../button/button
 include ../input/input
 
-mixin header
+mixin header(logo, items)
   .header
     .nav_bar
       .header__logo
-        img(src="img/logo.png", alt="alt")
+        img(src=logo.src, alt=logo.alt? logo.alt: 'logo')
       .nav__menu
         ul.nav__menu_items
-          li.nav__menu_item.nav__menu_item-active 
-            a(href='#') О нас   
-          li.nav__menu_item.nav__menu_item-more 
-            a(href='#') Услуги
-          li.nav__menu_item 
-            a(href='#') Вакансии
-          li.nav__menu_item 
-            a(href='#') Новости
-          li.nav__menu_item.nav__menu_item-more 
-            a(href='#') Соглашения
+          if items
+            each item in items 
+              li.nav__menu_item(
+                class=item.active?'nav__menu_item-active':'' 
+                class=item.more?'nav__menu_item-more':'')
+                a(href=item.href?item.href:'#')= item.text
+                if item.more
+                  ul
+                    each elem in item.more
+                      li
+                        a(href=elem.href?elem.href:'#')=elem.text
+          else 
+            li.nav__menu_item.nav__menu_item-active 
+              a(href='#') нет элементов
           li.nav__menu_item
             +button(2 , 'войти') 
           li.nav__menu_item
@@ -28,27 +32,32 @@ mixin header
         
           
 
-mixin headerAuth
+mixin headerAuth(logo, items, name)
   .header
     .nav_bar
       .header__logo
-        img(src="img/logo.png", alt="alt")
+        img(src=logo.src, alt=logo.alt? logo.alt: 'logo')
       .nav__menu
         ul.nav__menu_items
-          li.nav__menu_item.nav__menu_item-active 
-            a(href='#') О нас   
-          li.nav__menu_item.nav__menu_item-more 
-            a(href='#') Услуги
-          li.nav__menu_item 
-            a(href='#') Вакансии
-          li.nav__menu_item 
-            a(href='#') Новости
-          li.nav__menu_item.nav__menu_item-more 
-            a(href='#') Соглашения
+          if items
+            each item in items 
+              li.nav__menu_item(
+                class=item.active?'nav__menu_item-active':'' 
+                class=item.more?'nav__menu_item-more':'')
+                a(href=item.href?item.href:'#')= item.text
+                if item.more
+                  ul
+                    each elem in item.more
+                      li
+                        a(href=elem.href?elem.href:'#')=elem.text
+
+          else 
+            li.nav__menu_item.nav__menu_item-active 
+              a(href='#') нет элементов
         .menu_burger
           i.material-icons menu
         .nav_auth
-          a(href='#') Юлий Цезарь
+          a(href=name.href?name.href:'#')= name.text
 
 mixin footer
   footer

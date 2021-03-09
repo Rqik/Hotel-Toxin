@@ -4,8 +4,8 @@ $(function () {
     '<i class="material-icons"> expand_more </i>'
   );
 
-  $('.menu_burger').on('click', () => {
-    $('.nav__menu_items').toggleClass('active_burger');
+  $('.menu_burger').on('click', function () {
+    $(this).siblings('.nav__menu_items').toggleClass('active_burger');
   });
 
   $(document).click(function (e) {
@@ -16,5 +16,16 @@ $(function () {
       return;
     }
     $('.nav__menu_items').removeClass('active_burger');
+  });
+  $('.nav__menu_item-more').hover(
+    function () {
+      $('ul', this).stop().slideDown(200);
+    },
+    function () {
+      $('ul', this).stop().slideUp(200);
+    }
+  );
+  $('.nav__menu_item-more').on('click', function () {
+    console.log($(this));
   });
 });
