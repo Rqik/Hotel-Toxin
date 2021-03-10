@@ -1,17 +1,14 @@
-$(
-  function () {
-    let unitsList = $('.unit')
-    console.log(unitsList)
-    $(".legend-el ").each(function (i, el) {
-      $(this).on('mouseover', function () {
-        unitsList[i].classList.add('hovered')
-        console.log(unitsList[i]);
-      })
+$(() => {
+  $('.legend-el ').each(diagramMove);
 
-      $(this).on('mouseout', function () {
-        unitsList[i].classList.remove('hovered')
-      })
-    })
+  const unitsList = $('.unit');
+  function diagramMove(i) {
+    $(this).on('mouseover', () => {
+      unitsList[i].classList.add('hovered');
+    });
+
+    $(this).on('mouseout', () => {
+      unitsList[i].classList.remove('hovered');
+    });
   }
-
-)
+});

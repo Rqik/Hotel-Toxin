@@ -1,6 +1,6 @@
-$(function () {
+$(() => {
   function rep(el) {
-    return el.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, '$1' + ' ');
+    return el.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, '$1 ');
   }
 
   $('.card__info_sum').text((i, el) => rep(el));
@@ -8,17 +8,16 @@ $(function () {
   $('.card__info_result_sum').text((i, el) => rep(el));
   $('.card__header .price span').text((i, el) => rep(el));
 
-  let card = $('.card__reg .date_picker').data('datepicker').selectedDates;
+  $('.datepicker--button-apply').each(buttonApply);
 
-  $('.datepicker--button-apply').each(function (ind, el) {
+  function buttonApply(ind) {
     let date = 0;
     let select = [];
-    $(this).click(function (e) {
+    $(this).click(() => {
       select = $(`.date_picker-${ind}`).data('datepicker').selectedDates;
-
-      if ($(`.date_picker-${ind}`).closest('.card__reg')) {
+      if ($(`.date_picker-${ind}`).closest('.card__reg').length) {
         date = Math.ceil((select[1] - select[0]) / 1000 / 60 / 60 / 24);
-        let block = $(`.date_picker-${ind}`).closest('.card__block');
+        const block = $(`.date_picker-${ind}`).closest('.card__block');
         let pay = block
           .find('.card-pay1')
           .text()
@@ -39,8 +38,8 @@ $(function () {
         sale = parseInt(sale[0].replace(/\s+/g, ''), 10);
 
         block.find('.card-pay2').text(`${pay} ₽`);
-        block.find('.card__info_result_sum').text(+pay + dop - sale + '₽');
+        block.find('.card__info_result_sum').text(`${+pay + dop - sale}₽`);
       }
     });
-  });
+  }
 });
