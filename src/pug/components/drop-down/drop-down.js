@@ -1,46 +1,47 @@
-$(document).ready(() => {
-  $('.dropdown__select').each(function (i, el) {
+/* eslint-disable no-plusplus */
+/* eslint-disable no-unused-expressions */
+/* eslint-disable indent */
+$(() => {
+  $('.dropdown__select').each((i, el) => {
     el.classList.add(`dropdown__select-${i}`);
     active(`.dropdown__select-${i}`);
     slideDrop(`.dropdown__select-${i} .dropdown__select_current`);
     actionDropDown(
       ` .dropdown__select-${i} .dropdown__control`,
-      ` .dropdown__select-${i}`
+      ` .dropdown__select-${i}`,
     );
-    $(`.dropdown__select-${i} .dropdown__select_current`).click(() =>
-      $(`.dropdown__select-${i}`).toggleClass('drop_active')
-    );
+    $(`.dropdown__select-${i} .dropdown__select_current`).click(() => {
+      $(`.dropdown__select-${i}`).toggleClass('drop_active');
+    });
   });
 
-  $('.dropdown__select_modify').each(function (i, el) {
+  $('.dropdown__select_modify').each((i, el) => {
     el.classList.add(`dropdown__select_modify-${i}`);
     active(`.dropdown__select_modify-${i}`);
     slideDrop(`.dropdown__select_modify-${i} .dropdown__select_current`);
     actionDropDownModify(
       ` .dropdown__select_modify-${i} .dropdown__control`,
-      ` .dropdown__select_modify-${i}`
+      ` .dropdown__select_modify-${i}`,
     );
     buttonAction(`.dropdown__select_modify-${i}`);
 
-    $(`.dropdown__select_modify-${i} .dropdown__select_current`).click(() =>
-      $(`.dropdown__select_modify-${i}`).toggleClass('drop_active')
-    );
+    $(`.dropdown__select_modify-${i} .dropdown__select_current`).click(() => {
+      $(`.dropdown__select_modify-${i}`).toggleClass('drop_active');
+    });
   });
 
   function buttonAction(selector) {
-    $(selector)
-      .find('.dropdown__select_button-reset')
-      .on('click', function (e) {
-        e.preventDefault;
-        $(selector)
-          .find('.dropdown__select_current > span')
-          .text('Сколько гостей');
-        $(selector).find('.dropdown__control > span').text(0);
-        $(selector)
-          .find('.dropdown__control_button.control_minus')
-          .addClass('disable');
-        $(this).css('opacity', 0);
-      });
+    $(selector).find('.dropdown__select_button-reset').on('click', eventMain);
+    function eventMain() {
+      $(selector)
+        .find('.dropdown__select_current > span')
+        .text('Сколько гостей');
+      $(selector).find('.dropdown__control > span').text(0);
+      $(selector)
+        .find('.dropdown__control_button.control_minus')
+        .addClass('disable');
+      $(this).css('opacity', 0);
+    }
   }
 
   function active(selector) {
@@ -50,8 +51,7 @@ $(document).ready(() => {
   }
 
   function slideDrop(selector) {
-    $(selector).on('click', function (e) {
-      e.preventDefault;
+    $(selector).on('click', () => {
       $(` ${selector} ~ .dropdown__select_items`).slideToggle(300);
     });
   }
@@ -59,17 +59,14 @@ $(document).ready(() => {
   function textCurentNew(selector) {
     let textCurrent = '';
     let length = 0;
-    $(` ${selector} .dropdown__select_item `).each(function (i, el) {
-      let text = el.querySelector(`${selector} .dropdown__control > span`)
+    $(` ${selector} .dropdown__select_item `).each((i, el) => {
+      const text = el.querySelector(`${selector} .dropdown__control > span`)
         .textContent;
       text > 0 ? length++ : false;
       text > 0
-        ? (textCurrent =
-            textCurrent +
-            `${length >= 2 ? ', ' : ' '}` +
-            text +
-            ' ' +
-            el.querySelector(' span').textContent)
+        ? (textCurrent = `${textCurrent}${length >= 2 ? ', ' : ' '}${text} ${
+            el.querySelector(' span').textContent
+          }`)
         : ' s';
     });
 
@@ -81,26 +78,23 @@ $(document).ready(() => {
     let length = 0;
     let child = 0;
 
-    $(` ${selector} .dropdown__select_item `).each(function (i, el) {
-      let text = el.querySelector(`${selector} .dropdown__control > span`)
+    $(` ${selector} .dropdown__select_item `).each((i, el) => {
+      const text = el.querySelector(`${selector} .dropdown__control > span`)
         .textContent;
-      let name = el.querySelector(`${selector} .dropdown__select_item span`)
+      const name = el.querySelector(`${selector} .dropdown__select_item span`)
         .textContent;
 
-      if (name == 'младенцы') {
+      if (name === 'младенцы') {
         text > 0 ? (child = text) : false;
       } else {
         text > 0 ? (length += +text) : false;
       }
       text > 0
-        ? (textCurrent =
-            `${length}` +
-            `${length <= 1 ? ' гость' : length <= 4 ? ' гостя' : ' гостей'} ` +
-            `${
+        ? (textCurrent = `${length}`
+            + `${length <= 1 ? ' гость' : length <= 4 ? ' гостя' : ' гостей'} `
+            + `${
               child > 0
-                ? ', ' +
-                  child +
-                  `${
+                ? `, ${child}${
                     child <= 1
                       ? ' младенец'
                       : child <= 4
@@ -120,37 +114,37 @@ $(document).ready(() => {
   }
 
   function disableButton(el) {
-    el.querySelector('span').textContent <= 0
-      ? el
-          .querySelector('.dropdown__control_button.control_minus')
-          .classList.add('disable')
-      : el
-          .querySelector('.dropdown__control_button.control_minus')
-          .classList.remove('disable');
+    if (el.querySelector('span').textContent <= 0) {
+      el.querySelector('.dropdown__control_button.control_minus').classList.add(
+        'disable',
+      );
+    } else {
+      el.querySelector(
+        '.dropdown__control_button.control_minus',
+      ).classList.remove('disable');
+    }
   }
 
   function actionDropDown(selector, current) {
     $(selector).each(function (i, el) {
       disableButton(el);
-
-      el.querySelector('span').textContent <= 0
-        ? el
-            .querySelector('.dropdown__control_button.control_minus')
-            .classList.add('disable')
-        : el
-            .querySelector('.dropdown__control_button.control_minus')
-            .classList.remove('disable');
-
-      // textCurentNew(current)
+      if (el.querySelector('span').textContent <= 0) {
+        el.querySelector(
+          '.dropdown__control_button.control_minus',
+        ).classList.add('disable');
+      } else {
+        el.querySelector(
+          '.dropdown__control_button.control_minus',
+        ).classList.remove('disable');
+      }
 
       $(this)
         .children('.dropdown__control_button')
         .on('click', (e) => {
           let text = $(this).children('span').text();
-          let sum = e.currentTarget.textContent;
+          const sum = e.currentTarget.textContent;
 
-          sum == '+' ? ++text : --text;
-
+          sum === '+' ? text++ : text--;
           if (text <= 0) {
             text = 0;
             $(this)
@@ -186,9 +180,9 @@ $(document).ready(() => {
       $(this)
         .children('.dropdown__control_button')
         .on('click', (e) => {
-          let sum = e.currentTarget.textContent;
+          const sum = e.currentTarget.textContent;
 
-          sum == '+' ? ++text : --text;
+          sum === '+' ? ++text : --text;
 
           if (text <= 0) {
             text = 0;
@@ -206,11 +200,11 @@ $(document).ready(() => {
           textModify(current);
         });
 
-      //  if (text >= 0) {
-      //       $(current).find('.dropdown__select_button-reset').css('opacity'  , 0 )
-      //     } else {
-      //       $(current).find('.dropdown__select_button-reset').css('opacity'  , 1)
-      //     }
+      if (text >= 0) {
+        $(current).find('.dropdown__select_button-reset').css('opacity', 0);
+      } else {
+        $(current).find('.dropdown__select_button-reset').css('opacity', 1);
+      }
     });
   }
 });

@@ -1,17 +1,18 @@
-import '../input/input.js';
-$(function () {
+import '../input/input';
+
+$(() => {
   $('.nav__menu_item-more').append(
-    '<i class="material-icons"> expand_more </i>'
+    '<i class="material-icons"> expand_more </i>',
   );
 
   $('.menu_burger').on('click', function () {
     $(this).siblings('.nav__menu_items').toggleClass('active_burger');
   });
 
-  $(document).click(function (e) {
+  $(document).click((e) => {
     if (
-      $(e.target).closest('.nav__menu_items').length ||
-      $(e.target).closest('.menu_burger').length
+      $(e.target).closest('.nav__menu_items').length
+      || $(e.target).closest('.menu_burger').length
     ) {
       return;
     }
@@ -23,9 +24,6 @@ $(function () {
     },
     function () {
       $('ul', this).stop().slideUp(200);
-    }
+    },
   );
-  $('.nav__menu_item-more').on('click', function () {
-    console.log($(this));
-  });
 });
