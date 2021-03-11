@@ -5,10 +5,11 @@ $(() => {
     '<i class="material-icons"> expand_more </i>',
   );
 
-  $('.menu_burger').on('click', function () {
-    $(this).siblings('.nav__menu_items').toggleClass('active_burger');
-  });
+  $('.menu_burger').on('click', toggleMenuBurger);
 
+  function toggleMenuBurger() {
+    $(this).siblings('.nav__menu_items').toggleClass('active_burger');
+  }
   $(document).click((e) => {
     if (
       $(e.target).closest('.nav__menu_items').length

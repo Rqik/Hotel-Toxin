@@ -19,6 +19,7 @@ $(() => {
     el.classList.add(`dropdown__select_modify-${i}`);
     active(`.dropdown__select_modify-${i}`);
     slideDrop(`.dropdown__select_modify-${i} .dropdown__select_current`);
+
     actionDropDownModify(
       ` .dropdown__select_modify-${i} .dropdown__control`,
       ` .dropdown__select_modify-${i}`,
@@ -90,9 +91,10 @@ $(() => {
         text > 0 ? (length += +text) : false;
       }
       text > 0
-        ? (textCurrent = `${length}`
-            + `${length <= 1 ? ' гость' : length <= 4 ? ' гостя' : ' гостей'} `
-            + `${
+        ? (textCurrent =
+            `${length}` +
+            `${length <= 1 ? ' гость' : length <= 4 ? ' гостя' : ' гостей'} ` +
+            `${
               child > 0
                 ? `, ${child}${
                     child <= 1
@@ -105,6 +107,7 @@ $(() => {
             } `)
         : '';
     });
+
     if (length <= 0) {
       $(selector).find('.dropdown__select_button-reset').css('opacity', 0);
     } else {
