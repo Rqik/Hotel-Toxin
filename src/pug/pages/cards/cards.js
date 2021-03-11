@@ -14,6 +14,7 @@ $(() => {
     let date = 0;
     let select = [];
     $(this).click(() => {
+      console.log('222');
       select = $(`.date_picker-${ind}`).data('datepicker').selectedDates;
       if ($(`.date_picker-${ind}`).closest('.card__reg').length) {
         date = Math.ceil((select[1] - select[0]) / 1000 / 60 / 60 / 24);

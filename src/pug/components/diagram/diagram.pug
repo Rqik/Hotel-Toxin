@@ -18,20 +18,20 @@ mixin diagram( first, seconde, third,  fourth, num)
             stop( offset="100%" style="stop-color:rgb(61,73,117);stop-opacity:1" )
 
       
-        circle(class="unit" cx="21" cy="21" r="15.91549430918954" fill="#fff" stroke='url(#lgrad)'
+        circle(class="unit js-unit" cx="21" cy="21" r="15.91549430918954" fill="#fff" stroke='url(#lgrad)'
         stroke-dasharray=`${first} ${100 - first}` stroke-dashoffset='25')
-        circle(class="unit" cx="21" cy="21" r="15.91549430918954" fill='transparent' stroke='url(#lgrad2)'  
+        circle(class="unit js-unit" cx="21" cy="21" r="15.91549430918954" fill='transparent' stroke='url(#lgrad2)'  
         stroke-dasharray=`${seconde} ${100 - seconde}` stroke-dashoffset=`${100 - first + 25}`)
-        circle(class="unit" cx="21" cy="21" r="15.91549430918954" fill='transparent' stroke='url(#lgrad3)' 
+        circle(class="unit js-unit" cx="21" cy="21" r="15.91549430918954" fill='transparent' stroke='url(#lgrad3)' 
         stroke-dasharray=`${third} ${100 - third}` stroke-dashoffset=`${100 - seconde- first + 25}`)
-        circle(class="unit" cx="21" cy="21" r="15.91549430918954" fill='transparent' stroke='url(#lgrad4)' 
+        circle(class="unit js-unit" cx="21" cy="21" r="15.91549430918954" fill='transparent' stroke='url(#lgrad4)' 
        stroke-dasharray=`${fourth} ${100 - fourth}` stroke-dashoffset=`${100 - third - seconde - first + 25}`)
 
         g
           text(x="50%" y="50%" class="chart-number")=num
           text(x="50%" y="50%" class="chart-label") голосов
-      ul.legend
-        li.legend-el Великолепно
-        li.legend-el Хорошо
-        li.legend-el Удовлетворительно 
-        li.legend-el Разочарован
+      ul.legend.js-legend
+        li.legend-el.js-legend-el Великолепно
+        li.legend-el.js-legend-el Хорошо
+        li.legend-el.js-legend-el Удовлетворительно 
+        li.legend-el.js-legend-el Разочарован
