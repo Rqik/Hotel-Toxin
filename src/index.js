@@ -1,5 +1,5 @@
-import '@/pug/utils/jquery-ui.min';
 import '@/assets/css/main.scss';
+import '@/libs/js/jquery-ui.min';
 import '@/pug/components/star-rate/star-rate';
 import '@/pug/components/input/input';
 import '@/pug/components/like-button/like-button';
