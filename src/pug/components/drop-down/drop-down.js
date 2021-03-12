@@ -91,10 +91,9 @@ $(() => {
         text > 0 ? (length += +text) : false;
       }
       text > 0
-        ? (textCurrent =
-            `${length}` +
-            `${length <= 1 ? ' гость' : length <= 4 ? ' гостя' : ' гостей'} ` +
-            `${
+        ? (textCurrent = `${length}`
+            + `${length <= 1 ? ' гость' : length <= 4 ? ' гостя' : ' гостей'} `
+            + `${
               child > 0
                 ? `, ${child}${
                     child <= 1

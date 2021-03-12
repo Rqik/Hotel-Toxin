@@ -41,6 +41,18 @@ npm install
 npm run start
 ```
 
+5.  Eslint
+
+```console
+npm run lint
+```
+
+6.  Build
+
+```console
+npm run build
+```
+
 ---
 
 **Отдельно ссылки**
