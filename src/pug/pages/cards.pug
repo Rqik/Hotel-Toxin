@@ -11,7 +11,7 @@ block variables
 
 block content
     .cards
-        .card__block 
+        .card__block
             .card__title Найдём номера под ваши пожелания
             +datepicker('прибытие' , 'выезд')
             +dropdownSelectModify(false,'гости','Сколько гостей', 'взрослые', 'дети', 'младенцы')
@@ -45,21 +45,21 @@ block content
         .card__block
             .card__header
                 .room
-                    .room_number 
-                        span № 
+                    .room_number
+                        span №
                         | 888
                     .room_category люкс
-                .price 
+                .price
                     span 9900₽
                     | в сутки
             .card__reg
                 +datepicker('прибытие' , 'выезд')
                 +dropdownSelectModify(false,'гости','Сколько гостей', 'взрослые', 'дети', 'младенцы')
             .card__info
-                .card__info_item 
+                .card__info_item
                     .card__info_name.card-pay1 9990₽
                     .card__info_sum.card-pay2 39000₽
-                .card__info_item 
+                .card__info_item
                     .card__info_name.card-sale1 Сбор за услуги: скидка 2 179₽
                     .card__info_sum.card-sale2 0₽
                 .card__info_item

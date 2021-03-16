@@ -1,10 +1,11 @@
 .input_text {
-  .label{
+  .label {
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin: 0;
   }
+
   .input {
     width: 320px;
     height: 44px;
@@ -15,9 +16,10 @@
     padding-left: 14px;
     font-size: 14px;
     color: $dark-2;
-@include ss{
-  width: 100%;
-}
+    @include ss {
+      width: 100%;
+    }
+
     &::placeholder {
       color: $dark-4;
       font-family: 'Montserrat', sans-serif;
@@ -39,15 +41,16 @@
   }
 }
 
-.form_submit{
-  .form_title{
+.form_submit {
+  .form_title {
     font-weight: bold;
-font-size: 12px;
-line-height: 15px;
-text-transform: uppercase;
-color: $dark-1;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $dark-1;
   }
-  .form_input{
+
+  .form_input {
     display: flex;
     flex-direction: row;
     margin: 0;
@@ -58,9 +61,10 @@ color: $dark-1;
     width: 267px;
     height: 44px;
     box-sizing: border-box;
-    @include ss{
+    @include ss {
       width: 100%;
     }
+
     &:hover,
     &:focus {
       border: 1px solid $dark-3;
@@ -70,7 +74,8 @@ color: $dark-1;
       line-height: 18px;
       outline: none;
     }
-    .input_btn{
+
+    .input_btn {
       width: 44px;
       background-color: white;
       color: $dark-1;
@@ -84,7 +89,7 @@ color: $dark-1;
       border: none;
     }
 
-    .input_sub{
+    .input_sub {
       width: 223px;
       height: 100%;
       vertical-align: middle;
@@ -96,9 +101,10 @@ color: $dark-1;
       font-size: 14px;
       color: $dark-2;
       border-right: 0px;
-      @include ss{
+      @include ss {
         width: 100%;
       }
+
       &::placeholder {
         color: $dark-4;
         font-family: 'Montserrat', sans-serif;
@@ -107,10 +113,10 @@ color: $dark-1;
         font-size: 14px;
         height: 18px;
       }
-  
-    
-    }
+
 
     }
+
+  }
 
 }

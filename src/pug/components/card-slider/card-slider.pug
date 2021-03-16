@@ -5,19 +5,19 @@ mixin cardSlide(url, num , category, price, review, rate)
         .img__slider
             .swiper-wrapper
               each key in url
-                .swiper-slide 
+                .swiper-slide
                   img(src=key.src, alt=key.alt)
             .swiper-pagination-img
         .bottom__pannel
             .card__header
                 .room
-                    .room_number 
-                        span № 
+                    .room_number
+                        span №
                         =num
-                    .room_category 
+                    .room_category
                         |&nbsp
                         =category
-                .price 
+                .price
                     span=price
                       | ₽
                     | в сутки
@@ -25,5 +25,5 @@ mixin cardSlide(url, num , category, price, review, rate)
                 +rate(rate)
                 .card__review
                     span=review
-                      |&nbsp 
+                      |&nbsp
                     | Отзывов

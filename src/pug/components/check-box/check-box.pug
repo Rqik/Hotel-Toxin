@@ -2,20 +2,20 @@ mixin checkBox( text, name, label  )
   .check_box= text
     each item , indx in label
       .check_item
-        input(id=name+'-'+indx)(type="checkbox" ) 
-        label.label(for=name+'-'+indx)= item 
+        input(id=name+'-'+indx)(type="checkbox" )
+        label.label(for=name+'-'+indx)= item
 mixin checkBoxExpandable(text, name, label )
-  .check_box.checkbox__expan.exp_active= text 
+  .check_box.checkbox__expan.exp_active= text
     i.material-icons expand_more
     .checkbox__items
       each item , indx in label
         .check_item
-          input(id=name+'-'+indx)(type="checkbox" ) 
-          label.label(for=name+'-'+indx)= item 
+          input(id=name+'-'+indx)(type="checkbox" )
+          label.label(for=name+'-'+indx)= item
 mixin richCheckBoxButtons(text, name, label )
-  .check_box.check_box_rich= text 
+  .check_box.check_box_rich= text
     each item , indx in label
       .check_item
-        input(id=name+'-'+indx name=name)(type="checkbox" ) 
+        input(id=name+'-'+indx name=name)(type="checkbox" )
         label.label.label_rich(for=name+'-'+indx)= item[0]
           span= item[1]

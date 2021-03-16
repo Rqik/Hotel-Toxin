@@ -1,8 +1,8 @@
-.rate{
+.rate {
   position: relative;
   display: flex;
-  
-  &__star{
+
+  &__star {
     appearance: none;
     position: absolute;
     top: 0;
@@ -15,24 +15,26 @@
     cursor: pointer;
     -webkit-appearance: none;
     -moz-appearance: none;
-  
+
   }
-  label{
+
+  label {
     position: relative;
     overflow: hidden;
-  
-    .star{
-      position:absolute;
+
+    .star {
+      position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
       width: 40%;
     }
-  
-    .star_border{
-  
+
+    .star_border {
+
     }
+
     i {
       display: block;
       position: relative;
@@ -41,7 +43,6 @@
       background-clip: text;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      }
+    }
   }
-  
-  }
+}

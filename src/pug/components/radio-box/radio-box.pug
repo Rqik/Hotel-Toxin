@@ -1,7 +1,7 @@
 mixin radioBox(text, name, ...label )
-  .radio_box= text 
+  .radio_box= text
     .radio__items
       each item , indx in label
         .radio__item
           input(id=name+'-'+indx type="radio" name=name)
-          label(for=name+'-'+indx class='radio__label')= item 
+          label(for=name+'-'+indx class='radio__label')= item

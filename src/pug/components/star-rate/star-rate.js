@@ -2,10 +2,10 @@ $(() => {
   $('.rate').each((i, el) => {
     el.classList.add(`rate-${i}`);
     rateInput(`.rate-${i}`);
-    rateInstal(`.rate-${i}`);
+    rateInstall(`.rate-${i}`);
   });
 
-  function rateInstal(selector) {
+  function rateInstall(selector) {
     const rating = $(selector).data().rate;
     const florRating = Math.floor(rating); // rate cell
     const num = Math.round((rating % 1) * 100); // width
@@ -41,7 +41,7 @@ $(() => {
       el.addEventListener('click', () => {
         $(selector).attr('data-rate', el.value);
         $(selector).data().rate = el.value;
-        rateInstal(selector);
+        rateInstall(selector);
       });
     });
   }

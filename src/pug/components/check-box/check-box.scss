@@ -108,13 +108,13 @@
     appearance: none;
     position: absolute;
 
-    &:checked ~ label::before {
-      background-size: 10px 11px;
+    &:checked~label::before {
       background: url('~@assets/img/check.png') no-repeat 4px 2px;
+      background-size: 10px 11px;
     }
 
 
-    &:checked ~ label {
+    &:checked~label {
       color: $dark-2;
     }
   }

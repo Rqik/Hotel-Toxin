@@ -5,7 +5,7 @@ button {
   height: 44px;
   // height: auto;
   padding: 14px 19px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -44,12 +44,11 @@ button {
     &::before {
       content: '';
       position: absolute;
+      top: 0;
       background-image: $purple-gradient;
-      top: 0px;
-      background: $purple-gradient;
-      left: 0px;
-      right: 0px;
-      bottom: 0px;
+      left: 0;
+      right: 0;
+      bottom: 0;
       border-radius: 22px;
       margin: -2px;
       z-index: -1;
