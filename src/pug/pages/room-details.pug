@@ -7,58 +7,58 @@ include ../components/list/list
 include ../components/diagram/diagram
 
 block variables
-  - var title = 'Landing'
+    - var title = 'Landing'
 
 block content
-  .gallery__detail
-    .gallery_item-1
-      img(src="img/slider4.png", alt="alt")
-    .gallery_item-2
-      img(src="img/slider5.png", alt="alt")
-    .gallery_item-3
-      img(src="img/slider3.png", alt="alt")
-  .detail__block
-    .detail__info
-      .detail__view
-        .block
-          h3.block-title Cведения о номере
-          +iconText([['insert_emoticon', 'Комфорт', 'Шумопоглощающие стены'], ['location_city', 'Удобство', 'Окно в каждой из спален'] , ['whatshot', 'Уют', 'Номер оснащён камином']] )
-        +diagram(50, 25,25,0,260)
-      .block
-        h3.block-title Отзывы посетителей номера
-      +review('img/avatar.png' , true , 'Мурад Сарафанов', '5 дней назад'  , 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
-      +review('img/avatar2.png' , false , 'Патрисия Стёклышкова', 'Неделю назад'  , 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент')
-      
-      .detail_bottom
-        +bulletList('Правила', ['Нельзя с питомцами' , "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
-        .block 
-          h3.block-title Отмена
-          .block-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-      
-    .card__block
-      .card__header
-          .room
-              .room_number 
-                  span № 
-                  | 888
-              .room_category люкс
-          .price 
-              span 9900₽
-              | в сутки
-      .card__reg
-          +datepicker('прибытие' , 'выезд')
-          +dropdownSelectModify(false,'гости','Сколько гостей', 'взрослые', 'дети', 'младенцы')
-      .card__info
-        .card__info_item 
-            .card__info_name.card-pay1 9990₽
-            .card__info_sum.card-pay2 39000₽
-        .card__info_item 
-            .card__info_name.card-sale1 Сбор за услуги: скидка 2 179₽
-            .card__info_sum.card-sale2 0₽
-        .card__info_item
-            .card__info_name.card-dop1 Сбор за дополнительные услуги
-            .card__info_sum.card-dop2 3000₽
-        .card__info_result
-            .card__info_result_name Итого
-            .card__info_result_sum 3890000₽
-      +button(3,'забронировать')
+    .gallery__detail
+        .gallery_item-1
+            img(src="img/slider4.png", alt="alt")
+        .gallery_item-2
+            img(src="img/slider5.png", alt="alt")
+        .gallery_item-3
+            img(src="img/slider3.png", alt="alt")
+    .detail__block
+        .detail__info
+            .detail__view
+                .block
+                    h3.block-title Cведения о номере
+                    +iconText([['insert_emoticon', 'Комфорт', 'Шумопоглощающие стены'], ['location_city', 'Удобство', 'Окно в каждой из спален'], ['whatshot', 'Уют', 'Номер оснащён камином']] )
+                +diagram(50, 25,25,0,260)
+            .block
+                h3.block-title Отзывы посетителей номера
+            +review('img/avatar.png' , true , 'Мурад Сарафанов', '5 дней назад'  , 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
+            +review('img/avatar2.png' , false , 'Патрисия Стёклышкова', 'Неделю назад'  , 'Обслуживание на высоте! Всё аккуратно, чисто. Завтраки в номер советую заказать, каждый день новое блюдо и десерт как комплимент')
+
+            .detail_bottom
+                +bulletList('Правила', ['Нельзя с питомцами', "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
+                .block
+                    h3.block-title Отмена
+                    .block-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+
+        .card__block
+            .card__header
+                .room
+                    .room_number
+                        span №
+                        | 888
+                    .room_category люкс
+                .price
+                    span 9900₽
+                    | в сутки
+            .card__reg
+                +datepicker('прибытие' , 'выезд')
+                +dropdownSelectModify(false,'гости','Сколько гостей', 'взрослые', 'дети', 'младенцы')
+            .card__info
+                .card__info_item
+                    .card__info_name.card-pay1 9990₽
+                    .card__info_sum.card-pay2 39000₽
+                .card__info_item
+                    .card__info_name.card-sale1 Сбор за услуги: скидка 2 179₽
+                    .card__info_sum.card-sale2 0₽
+                .card__info_item
+                    .card__info_name.card-dop1 Сбор за дополнительные услуги
+                    .card__info_sum.card-dop2 3000₽
+                .card__info_result
+                    .card__info_result_name Итого
+                    .card__info_result_sum 3890000₽
+            +button(3,'забронировать')

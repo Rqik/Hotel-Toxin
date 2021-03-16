@@ -1,27 +1,30 @@
-.icon__box{
+.icon__box {
   width: 291px;
-  
-  &_item{
+
+  &_item {
     width: 100%;
     padding-top: 20px;
     padding-bottom: 20px;
-    border-bottom: 2px solid $dark-6 ;
+    border-bottom: 2px solid $dark-6;
     display: flex;
     flex-direction: row;
     gap: 10px;
-    &:last-child{
+
+    &:last-child {
       border: none;
     }
-    i.material-icons{
-     font-size: 48px;
-     background-image: $purple-gradient;
-     background-clip: text;
-     -webkit-background-clip: text;
-     -webkit-text-fill-color: transparent;
+
+    i.material-icons {
+      font-size: 48px;
+      background-image: $purple-gradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
   }
-  &_text{
-    font-family: Montserrat;
+
+  &_text {
+    font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
@@ -29,11 +32,11 @@
     color: $dark-2;
     display: flex;
     flex-direction: column;
-    span{
+
+    span {
       font-weight: normal;
       font-size: 14px;
       line-height: 24px;
     }
   }
-  
 }

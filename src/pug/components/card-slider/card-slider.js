@@ -1,5 +1,5 @@
 /* eslint-disable no-new */
-import Swiper, { Pagination, EffectFade } from 'swiper';
+import Swiper, { EffectFade, Pagination } from 'swiper';
 import '../star-rate/star-rate';
 
 Swiper.use([Pagination, EffectFade]);

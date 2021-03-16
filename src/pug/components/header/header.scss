@@ -9,7 +9,6 @@
 
 }
 
-
 .nav_bar {
   margin: 0 auto;
   max-width: 1160px;
@@ -175,8 +174,8 @@
 footer {
   background-color: white;
   width: 100%;
-  padding: 100px 30px 0px 30px;
-  box-shadow: 0px 1px 0px $dark-6;
+  padding: 100px 30px 0 30px;
+  box-shadow: 0 1px 0 $dark-6;
   border-top: 1px solid $dark-4;
 
   @include sm {
@@ -311,7 +310,8 @@ footer {
         .form_input {
           width: 260px;
 
-          .input_sub {}
+          .input_sub {
+          }
         }
       }
     }
@@ -351,12 +351,10 @@ footer {
       padding: 0;
       background-color: white;
       max-width: 768px;
-      margin: 0 auto;
       border: none;
       flex-direction: column;
       align-items: center;
-      margin-top: 21px;
-      margin-bottom: 120px;
+      margin: 21px auto 120px;
 
       .footer-copyright {
         margin-top: 10px;
@@ -383,12 +381,10 @@ footer {
 .footer__mobile {
   background-color: white;
   max-width: 768px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 21px;
-  margin-bottom: 120px;
+  margin: 21px auto 120px;
 
   .footer-copyright {
     margin-top: 10px;

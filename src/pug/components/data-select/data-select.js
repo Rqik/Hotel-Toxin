@@ -66,6 +66,7 @@ function changeSelectInput() {
   pervDay = new Date(...date) > new Date() ? new Date(...date) : new Date();
   ss.selectDate([pervDay, nexDay]);
 }
+
 const propsRange = {
   position: 'bottom center',
   range: true,

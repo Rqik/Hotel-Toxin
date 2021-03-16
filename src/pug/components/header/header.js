@@ -10,10 +10,11 @@ $(() => {
   function toggleMenuBurger() {
     $(this).siblings('.nav__menu_items').toggleClass('active_burger');
   }
+
   $(document).click((e) => {
     if (
       $(e.target).closest('.nav__menu_items').length
-      || $(e.target).closest('.menu_burger').length
+            || $(e.target).closest('.menu_burger').length
     ) {
       return;
     }

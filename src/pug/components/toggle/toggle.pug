@@ -1,5 +1,5 @@
 mixin toogleBox(text, name, ...label )
-  .toogle_box= text 
+  .toogle_box= text
       each item , indx in label
         input(id=name+'-'+indx type="checkbox" name=name)
-        label(for=name+'-'+indx class='radio__label')= item 
+        label(for=name+'-'+indx class='radio__label')= item

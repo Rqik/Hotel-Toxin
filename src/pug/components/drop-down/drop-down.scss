@@ -41,7 +41,7 @@
     box-sizing: border-box;
     border-radius: 4px;
     padding: 0 14px;
-    font-family: Montserrat;
+    font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
@@ -61,7 +61,7 @@
 
   &_items {
     // padding: 10px 14px  0 14px;
-    // 
+    //
     border: 1px solid $dark-4;
     border-top: none;
     box-sizing: border-box;
@@ -190,10 +190,10 @@
     }
 
   }
- 
+
   &_items {
     // padding: 10px 14px  0 14px;
-    // 
+    //
     border: 1px solid $dark-4;
     border-top: none;
     box-sizing: border-box;
@@ -289,14 +289,14 @@
     pointer-events: none;
     z-index: 1;
   }
- 
- 
+
+
   .dropdown__select_button {
 
     display: flex;
     justify-content: space-between;
     padding: 0 6px 0 14px;
-   
+
     button{
       background-color: transparent;
       color: $purple;
@@ -308,7 +308,7 @@
     .dropdown__select_button-reset {}
 
     .dropdown__select_button-submit {
-     
+
     }
   }
 
@@ -318,7 +318,7 @@
   box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
   transition: border .3s ease-in-out;
   .dropdown__select_current{
-   
+
     border-radius: 4px 4px 0 0;
   }
   .material-icons {

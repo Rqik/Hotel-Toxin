@@ -1,7 +1,7 @@
 @import "~@assets/css/variables.scss";
 @import "~@assets/css/mixin.scss";
 
-.search__block{
+.search__block {
   max-width: 1160px;
   margin: 0 auto;
   padding: 30px 0;
@@ -10,15 +10,15 @@
   flex-direction: row;
   justify-content: center;
   position: relative;
-  
- .btn_fixed{
-   display: none;
-   @include md{
+
+  .btn_fixed {
+    display: none;
+    @include md {
       display: block;
       position: absolute;
       top: 0;
       bottom: 0;
-      right:   0px;
+      right: 0;
       width: 20px;
       border-radius: 0 20px 20px 0;
       color: white;
@@ -28,8 +28,8 @@
       // display: flex;
       // align-items: center;
       // justify-content: center;
-      
-      .material-icons{
+
+      .material-icons {
         position: absolute;
         margin: auto;
         top: 50%;
@@ -40,13 +40,14 @@
         transform: rotateZ(-90deg);
         z-index: 2;
       }
+    }
   }
- }
-  .dropdown__select_modify{
+
+  .dropdown__select_modify {
     width: 266px;
   }
 
-  .search__cards_result{
+  .search__cards_result {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
@@ -57,66 +58,74 @@
       align-items: center;
     }
   }
-  .pagination{
-   align-items: center;
+
+  .pagination {
+    align-items: center;
   }
-  
-  .search__panel{
+
+  .search__panel {
     margin-right: 60px;
     display: flex;
     flex-direction: column;
     position: relative;
     transition: transform .3s ease-in-out;
-    @include lg{
+    @include lg {
       margin-left: 15px;
     }
-    @include md{
-      position: fixed; left: 0;top: 0;   
+    @include md {
+      position: fixed;
+      left: 0;
+      top: 0;
       background-color: white;
-      z-index: 300; 
-      padding: 50px 30px;
-      padding-right: 60px;
+      z-index: 300;
+      padding: 50px 60px 50px 30px;
       margin: 0;
       overflow-y: scroll;
       height: 100%;
       transform: translateX(-95%);
     }
-    .data__select{
+
+    .data__select {
       margin-bottom: 20px;
     }
-    .dropdown{
-      margin-bottom: 15px ;
+
+    .dropdown {
+      margin-bottom: 15px;
     }
-    .range__slider{
+
+    .range__slider {
       margin-bottom: 58px;
     }
-    .check_box{
+
+    .check_box {
       margin-bottom: 30px;
-      &_rich{
+
+      &_rich {
         margin-bottom: 27px;
       }
     }
 
   }
-  .search__panel_fixed{
+
+  .search__panel_fixed {
     transform: translateX(0%);
     max-width: 80vw;
   }
 
-  .search__cards-title{
+  .search__cards-title {
     font-weight: bold;
     font-size: 24px;
     line-height: 29px;
-     color: $dark-1;
-     margin-top: 0;
-     margin-bottom: 23px;
+    color: $dark-1;
+    margin-top: 0;
+    margin-bottom: 23px;
   }
 
 }
 
 
 @include md {
-  .search__cards{
+  .search__cards {
     padding-left: 30px;
   }
 }

@@ -2,30 +2,29 @@
   width: 270px;
   background-color: white;
   border-radius: 4px;
-  
-  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
 
   .img__slider {
     overflow: hidden;
     height: 150px;
-    border-radius: 4px 4px 0 0 ;
+    border-radius: 4px 4px 0 0;
     z-index: 10;
     position: relative;
-    img{
+
+    img {
       border: 4px;
       width: 100%;
       object-fit: contain;
     }
 
-    .swiper-pagination-img{
+    .swiper-pagination-img {
       position: absolute;
       display: flex;
       justify-content: flex-end;
       z-index: 500;
-      padding: 0;
-      padding-right: 10px;
-      padding-bottom: 4px;
-      .swiper-pagination-bullet{
+      padding: 0 10px 4px 0;
+
+      .swiper-pagination-bullet {
         width: 7.5px;
         height: 7.5px;
         margin: 0 2px;
@@ -33,8 +32,8 @@
         opacity: 1;
         border: 1px solid white;
       }
-      
-      .swiper-pagination-bullet-active{
+
+      .swiper-pagination-bullet-active {
         background-color: white;
       }
     }
@@ -72,7 +71,7 @@
         }
       }
 
-      
+
     }
 
     .card__rate {
@@ -80,11 +79,13 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+
       .card__review {
         font-weight: normal;
         font-size: 14px;
         line-height: 18px;
         color: $dark-3;
+
         span {
           font-weight: bold;
           line-height: 18px;

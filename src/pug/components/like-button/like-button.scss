@@ -4,7 +4,7 @@ button {
   border-radius: 22px;
   height: 44px;
   padding: 14px 19px;
-  font-family: Montserrat;
+  font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
@@ -40,9 +40,9 @@ button {
     justify-content: flex-start;
     align-items: center;
     transition:  .3s ease-in-out;
-    transition-property: border color;
+    transition-property: border ,color;
     i {
-      font-family: Material Icons;
+      font-family: Material Icons, sans-serif;
       font-style: normal;
       font-weight: normal;
       font-size: 10px;
@@ -72,16 +72,16 @@ button {
     border: 1px solid transparent;
     color: $purple;
     position: relative;
-    background-clip: padding-box; 
+    background-clip: padding-box;
     &::before{
       content: '';
       border-radius: 15px;
       background-image: $purple-gradient;
       position: absolute;
-      top: 0px;
-      bottom: 0px;
-      right: 0px;
-      left: 0px;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
       margin: -1px;
       z-index: -2;
     }

@@ -1,5 +1,5 @@
 .bullet_list {
-  font-family: 'Montserrat';
+  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
@@ -20,7 +20,7 @@
     list-style: none;
     text-transform: none;
     padding: 0;
-    
+
     li {
       position: relative;
       padding-left: 21px;
@@ -36,8 +36,8 @@
         top: 5px;
         background-color: $dark-4;
       }
-      
+
     }
-   
+
   }
 }
