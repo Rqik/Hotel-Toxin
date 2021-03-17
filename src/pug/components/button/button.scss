@@ -1,31 +1,38 @@
-button {
+.button,
+.link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: auto;
+  margin: 0;
+  background: $purple-gradient;
+  transition: opacity .3s ease-in-out;
   outline: none;
   border: none;
   border-radius: 22px;
   height: 44px;
-  // height: auto;
   padding: 14px 19px;
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: bold;
   font-size: 12px;
-  line-height: 15px;
   text-transform: uppercase;
+  text-decoration: none;
   color: #ffffff;
   cursor: pointer;
   white-space: nowrap;
-}
 
-.button {
-  background: $purple-gradient;
-  transition: opacity .3s ease-in-out;
+  &_small {
 
-  &:hover,
-  &:focus {
-    opacity: .5;
+    &:hover,
+    &:focus {
+      opacity: .5;
+    }
   }
 
-  &_secondary {
+
+  &_outline {
     padding: 10px 17px;
     box-sizing: border-box;
     background-color: #ffffff;
@@ -35,11 +42,8 @@ button {
     position: relative;
     vertical-align: middle;
     background-clip: padding-box;
-    &:hover {
-      &::before{
-        opacity: .5;
-      }
-    }
+    background-image: none;
+
 
     &::before {
       content: '';
@@ -54,33 +58,53 @@ button {
       z-index: -1;
       transition: opacity .3s ease-in-out;
     }
+
+    &:hover {
+      &::before {
+        opacity: .5;
+      }
+    }
   }
 
   &_long {
     width: 320px;
     background: $purple-gradient;
     position: relative;
-    @include ss{
+
+    @include ss {
       width: 100%;
     }
+
+    &:hover,
+    &:focus {
+      opacity: .5;
+    }
+
     &:hover {
-      i {
-        right: 14px;
+      .material-icons {
+        right: 16px;
       }
     }
 
-    i {
+    .material-icons {
       position: absolute;
       right: 10px;
       top: 50%;
+      color: white;
       transform: translateY(-50%);
       transition: right .3s ease-in-out;
     }
   }
 
+  &_border-none {
+    border: none;
 
+    &::before {
+      content: none;
+    }
+
+    &:hover {
+      color: $dark-3;
+    }
+  }
 }
-
-
-
-

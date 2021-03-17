@@ -1,6 +1,6 @@
-include ../star-rate/star-rate
+include ../star-rating/star-rating
 
-mixin cardSlide(url, num , category, price, review, rate)
+mixin cardSlide(url, roomNumber , category, price, review, rating)
   .card__slider
         .img__slider
             .swiper-wrapper
@@ -13,7 +13,7 @@ mixin cardSlide(url, num , category, price, review, rate)
                 .room
                     .room_number
                         span №
-                        =num
+                        =roomNumber
                     .room_category
                         |&nbsp
                         =category
@@ -22,7 +22,7 @@ mixin cardSlide(url, num , category, price, review, rate)
                       | ₽
                     | в сутки
             .card__rate
-                +rate(rate)
+                +starRating(rating)
                 .card__review
                     span=review
                       |&nbsp

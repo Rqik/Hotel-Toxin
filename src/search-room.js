@@ -5,6 +5,6 @@ import '@/pug/pages/search/search';
 import '@/pug/components/data-select/data-select';
 import '@/pug/components/drop-down/drop-down';
 import '@/pug/components/header/header';
-import '@/pug/components/check-box/check-box';
+import '@/pug/components/check-box-list/check-box-list';
 import '@/pug/components/range-slider/range-slider';
 import '@/pug/components/card-slider/card-slider';

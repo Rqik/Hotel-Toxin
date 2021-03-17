@@ -1,7 +1,7 @@
 mixin pagination(prev,list, next , text)
     .pagination
         ul.pagination__items
-            if prev == true
+            if prev === true
                 li.pagination__prev
                     i.material-icons arrow_forward
             each key in list
@@ -9,7 +9,7 @@ mixin pagination(prev,list, next , text)
                     li.pagination__item.pagination__item_current=key.current
                 else
                     li.pagination__item=key
-            if next == true
+            if next === true
                 li.pagination__next
                     i.material-icons arrow_forward
         .pagination__text=text

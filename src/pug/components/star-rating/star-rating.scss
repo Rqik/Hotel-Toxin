@@ -1,8 +1,8 @@
-.rate {
+.star-rating {
   position: relative;
   display: flex;
 
-  &__star {
+  &__input {
     appearance: none;
     position: absolute;
     top: 0;
@@ -15,12 +15,21 @@
     cursor: pointer;
     -webkit-appearance: none;
     -moz-appearance: none;
-
   }
 
-  label {
+  &__radio {
     position: relative;
     overflow: hidden;
+
+    .material-icons {
+      display: block;
+      position: relative;
+      overflow: hidden;
+      background-image: $purple-gradient;
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
 
     .star {
       position: absolute;
@@ -29,20 +38,6 @@
       right: 0;
       bottom: 0;
       width: 40%;
-    }
-
-    .star_border {
-
-    }
-
-    i {
-      display: block;
-      position: relative;
-      overflow: hidden;
-      background-image: $purple-gradient;
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
     }
   }
 }

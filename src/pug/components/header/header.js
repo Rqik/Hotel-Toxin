@@ -1,4 +1,4 @@
-import '../input/input';
+import '../field/field';
 
 $(() => {
   $('.nav__menu_item-more').append(

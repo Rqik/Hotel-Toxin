@@ -1,0 +1,77 @@
+.input-radio {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+
+
+  &__items {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+  }
+
+  &__item {
+    margin-top: 8px;
+
+    &-label {
+      padding-left: 30px;
+      cursor: pointer;
+      font-family: Montserrat, sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      text-transform: none;
+      line-height: 24px;
+      color: $dark-3;
+      position: relative;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid $dark-4;
+        left: 0;
+        top: 0;
+        transition: border 0.3s ease-in-out;
+
+      }
+
+      &::after {
+        position: absolute;
+        content: '';
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        left: 4px;
+        top: 4px;
+        background: $purple-gradient;
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+
+      }
+    }
+
+    &-input {
+      position: absolute;
+      appearance: none;
+
+      &:checked ~ .radio__label::after {
+        opacity: 1;
+      }
+
+      &:checked ~ .radio__label::before {
+        border: 1px solid $purple;
+      }
+
+      &:checked ~ .radio__label {
+        color: $dark-2;
+      }
+    }
+
+  }
+}

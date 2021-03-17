@@ -1,5 +1,5 @@
 include ../button/button
-include ../input/input
+include ../field/field
 
 mixin header(logo, items)
     .header
@@ -23,9 +23,9 @@ mixin header(logo, items)
                         li.nav__menu_item.nav__menu_item-active
                             a(href='#') нет элементов
                     li.nav__menu_item
-                        +button(2 , 'войти')
+                        +button({ style:'outline', text:'войти'})
                     li.nav__menu_item
-                        +button(1 , 'зарегистрироваться')
+                        +button({text:'зарегистрироваться'})
                 .menu_burger
                     i.material-icons menu
 
@@ -57,73 +57,3 @@ mixin headerAuth(logo, items, name)
                     i.material-icons menu
                 .nav_auth
                     a(href=name.href ? name.href : '#')= name.text
-
-mixin footer
-    footer
-        .footer__container
-            .footer-top
-                .footer-top__info
-                    .footer-top__info_logo
-                        img(src="img/logo.png", alt="alt")
-                    .footer-top__info_text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-                .footer-top__nav
-                    .footer__nav
-                        .footer__nav-title Навигация
-                        ul.footer__nav-items
-                            li.footer__nav-item
-                                a(href='#') О нас
-                            li.footer__nav-item
-                                a(href='#') Новости
-                            li.footer__nav-item
-                                a(href='#') Служба поддержки
-                            li.footer__nav-item
-                                a(href='#') Услуги
-                    .footer__nav
-                        .footer__nav-title О нас
-                        ul.footer__nav-items
-                            li.footer__nav-item
-                                a(href='#') О сервисе
-                            li.footer__nav-item
-                                a(href='#') Наша команда
-                            li.footer__nav-item
-                                a(href='#') Вакансии
-                            li.footer__nav-item
-                                a(href='#') Инвесторы
-                    .footer__nav
-                        .footer__nav-title Служба поддержки
-                        ul.footer__nav-items
-                            li.footer__nav-item
-                                a(href='#') Соглашения
-                            li.footer__nav-item
-                                a(href='#') Сообщества
-                            li.footer__nav-item
-                                a(href='#') Связь с нами
-
-                .footer-top__subscribe
-                    .footer__subscribe-title Подписка
-                    .footer__subscribe-text Получайте специальные предложения и новости сервиса
-                    +inputSub('','email','', 'Email')
-
-            .footer-bot
-                .footer-copyright Copyright © 2018 Toxin отель. Все права зачищены.
-                .footer-social
-                    a(href="#")
-                        img(src="img/twitter.svg", alt="")
-                    a(href="#")
-                        img(src="img/facebook.svg", alt="")
-                    a(href="#")
-                        img(src="img/instagramm.svg", alt="")
-
-mixin footerMobile
-    footer.fm
-        .footer__mobile
-            .footer-top__info_logo
-                img(src="img/logo.png", alt="alt")
-            .footer-copyright Copyright © 2018 Toxin отель. Все права зачищены.
-            .footer-social
-                a(href="#")
-                    img(src="img/twitter.svg", alt="")
-                a(href="#")
-                    img(src="img/facebook.svg", alt="")
-                a(href="#")
-                    img(src="img/instagramm.svg", alt="")
