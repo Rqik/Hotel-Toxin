@@ -1,4 +1,4 @@
-.diagram_img {
+.diagram__img {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -119,7 +119,7 @@
   flex-direction: column;
   align-items: flex-start;
 
-  .diagram_title {
+  .diagram__title {
     margin-left: 15px;
     font-weight: bold;
     font-size: 19px;

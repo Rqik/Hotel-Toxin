@@ -1,4 +1,4 @@
-.check_box.checkbox__expan {
+.check-box.check-box_expanded {
   position: relative;
   width: 266px;
   cursor: pointer;
@@ -7,7 +7,6 @@
     transition: all .3s ease-in-out;
     padding: 0;
     margin: 0;
-
     top: -5px;
     right: 14px;
     width: 20px;
@@ -19,21 +18,19 @@
   }
 }
 
-.check_box.checkbox__expan.exp_active {
+.check-box.check-box_expanded.expanded_active {
   .material-icons {
-
     top: 0;
     right: 14px;
     transform: rotateX(180deg);
-
   }
 }
 
-.check_box.check_box_rich {
+.check-box.check-box_rich {
   width: 266px;
 }
 
-.check_box {
+.check-box {
   width: 222px;
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
@@ -46,7 +43,7 @@
   flex-direction: column;
   margin-bottom: 1rem;
 
-  .check_item {
+  &__element {
     &:nth-of-type(1) {
       margin-top: 17px;
     }
@@ -104,12 +101,12 @@
 
   }
 
-  input {
+  &__input {
     appearance: none;
     position: absolute;
 
     &:checked~label::before {
-      background: url('~@assets/img/check.png') no-repeat 4px 2px;
+      background: url('~@/pug/components/check-box-list/image/check.png') no-repeat 4px 2px;
       background-size: 10px 11px;
     }
 

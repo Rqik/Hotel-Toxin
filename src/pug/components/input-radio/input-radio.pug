@@ -1,0 +1,13 @@
+//- caption -- text description for inputRadio
+//- name -- input name
+//- labels --- Array<string>
+mixin inputRadio({caption, name, label}={})
+  .input-radio
+    .input-radio__caption= caption
+    .input-radio__items
+      each item , index in label
+        .input-radio__item
+          input.input-radio__item-input(id=name + '-' + index type="radio"
+            name=name)
+          label.input-radio__item-label(for=name + '-' + index
+            class='radio__label')= item

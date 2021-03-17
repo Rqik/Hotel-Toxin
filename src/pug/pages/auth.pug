@@ -1,5 +1,5 @@
 extends ../layouts/landing-page
-include ../components/input/input
+include ../components/field/field
 include ../components/button/button
 block variables
   - var title = 'Registration'
@@ -8,10 +8,10 @@ block content
   .register
     .card__block
       .card__title Войти
-      +input('email','', 'Email')
-      +input('name','', 'Пароль')
+      +field('email','', 'Email')
+      +field('name','', 'Пароль')
       .card__auth_in
-          +button(3,'войти')
+          +button({style:'long', text:'войти'})
           .card__bot
               .card__bot_text Нет аккаунта на Toxin
-              +button(2,'Создать')
+              +button({style:'outline', text:'Создать'})

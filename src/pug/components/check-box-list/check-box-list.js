@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  $('.checkbox__expan').each(eventClick);
+  $('.js-check-box_expanded').each(eventClick);
 
   function eventClick() {
     $(this).on('click', addClass);
@@ -7,8 +7,8 @@ $(document).ready(() => {
 
   function addClass(e) {
     if (e.target === e.currentTarget) {
-      $(this).toggleClass('exp_active');
-      $(this).children('.checkbox__items').slideToggle(300);
+      $(this).toggleClass('expanded_active');
+      $(this).children('.js-check-box__items').slideToggle(300);
     }
   }
 });

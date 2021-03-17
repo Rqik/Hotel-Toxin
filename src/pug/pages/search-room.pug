@@ -1,54 +1,72 @@
 extends ../layouts/landing-page
-include ../components/input/input
 include ../components/data-select/data-select
 include ../components/drop-down/drop-down
 include ../components/button/button
-include ../components/check-box/check-box
+include ../components/check-box-list/check-box-list
 include ../components/range-slider/range-slider
 include ../components/card-slider/card-slider
 include ../components/pagination/pagination
 
 block variables
-  - var title = 'Search'
+  - const title = 'Search'
 
 block content
   .search__block
     .search__panel
-      +filterDate('даты пребыания в отеле' )
+      +filterDate('даты пребывания в отеле' )
       +dropdownSelectModify(false,'гости','Сколько гостей', 'взрослые', 'дети', 'младенцы')
-      +rangeSlider('диапозон цены' , 'стоимость пребывания за сутки в номере')
-      +checkBox( 'Правила дома','le',
-          ['Можно курить' , 'Можно с питомцами ' ,
-          'Можно пригласить гостей (до 10 человек)'
-          ])
-      +richCheckBoxButtons( 'доступность','info',
-      [['Широкий коридор', 'Ширина коридоров в номере не менее 91 см.'] , ['Помощник для инвалидов' , 'На 1 этаже вас встретит специалист  и проводит до номера.']
-      ])
+      +rangeSlider('диапазон цены' , 'стоимость пребывания за сутки в номере')
+      +checkBoxList( {
+          caption: 'Правила дома', name: 'le', labels: ['Можно ' +
+          'курить', 'Можно с питомцами ',
+              'Можно пригласить гостей (до 10 человек)'
+          ]
+      })
+      +checkBoxList( {
+          style: 'rich',
+          caption: 'доступность',
+          name: 'info',
+          labels: [
+              {
+                  text: 'Широкий коридор',
+                  desc: 'Ширина коридоров в номере не менее 91 см.'
+              },
+              {
+                  text: 'Помощник для инвалидов',
+                  desc: 'На 1 этаже вас встретит специалист  и проводит до номера.'
+              }
+          ]
+      })
         +dropdownSelect( false,'удобства номера','2 спальни, 2 кровати', 'спальни', 'кровати', 'ванные комнаты')
-        +checkBoxExpandable( 'дополнительные удобства','exp', ['Завтрак' , 'Письменный стол' ,
-      'Стул для кормления',
-      'Кроватка', 'Телевизор' ,
-      'Шампунь','Телевизор' ,
-      'Шампунь'
-      ])
+        +checkBoxList( {
+            style: 'expanded',
+            caption: 'дополнительные удобства', name: 'exp',
+            labels: ['Завтрак',
+                'Письменный стол',
+                'Стул для кормления',
+                'Кроватка', 'Телевизор',
+                'Шампунь', 'Телевизор',
+                'Шампунь'
+            ]
+        })
       .btn_fixed
         i.material-icons expand_more
     .search__cards
       h2.search__cards-title Номера, которые мы для вас подобрали
       .search__cards_result
-        +cardSlide([{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'},{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'} ], '840', 'люкс', '9900', 65 , '3.4' )
-        +cardSlide([{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'},{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'} ], '840', '', '9900', 65 , '3.4' )
-        +cardSlide([{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'},{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'} ], '840', '', '9900', 65 , '3.4' )
-        +cardSlide([{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'},{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'} ], '840', 'стандарт', '9900', 65 , '3.4' )
-        +cardSlide([{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'},{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'} ], '840', '', '9900', 65 , '3.4' )
-        +cardSlide([{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'},{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'} ], '840', '', '9900', 65 , '3.4' )
-        +cardSlide([{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'},{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'} ], '840', '', '9900', 65 , '3.4' )
-        +cardSlide([{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'},{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'} ], '840', '', '9900', 65 , '3.4' )
-        +cardSlide([{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'},{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'} ], '840', '', '9900', 65 , '3.4' )
-        +cardSlide([{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'},{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'} ], '840', '', '9900', 65 , '3.4' )
-        +cardSlide([{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'},{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'} ], '840', '', '9900', 65 , '3.4' )
-        +cardSlide([{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'},{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'} ], '840', '', '9900', 65 , '3.4' )
-        +cardSlide([{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'},{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'} ], '840', '', '9900', 65 , '3.4' )
-        +cardSlide([{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'},{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'} ], '840', '', '9900', 65 , '3.4' )
-        +cardSlide([{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'},{ src : 'img/slider.png'} ,{ src : 'img/slider2.png'} ], '840', '', '9900', 65 , '3.4' )
-      +pagination(false,[{current: 1},2,3, '..' , 15], true , ' 1 – 12 из 100+ вариантов аренды')
+        +cardSlide([{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {src: 'img/slider.png'}, {src: 'img/slider2.png'}], '840', 'люкс', '9900', 65 , '3.4' )
+        +cardSlide([{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {src: 'img/slider.png'}, {src: 'img/slider2.png'}], '840', '', '9900', 65 , '3.4' )
+        +cardSlide([{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {src: 'img/slider.png'}, {src: 'img/slider2.png'}], '840', '', '9900', 65 , '3.4' )
+        +cardSlide([{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {src: 'img/slider.png'}, {src: 'img/slider2.png'}], '840', 'стандарт', '9900', 65 , '3.4' )
+        +cardSlide([{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {src: 'img/slider.png'}, {src: 'img/slider2.png'}], '840', '', '9900', 65 , '3.4' )
+        +cardSlide([{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {src: 'img/slider.png'}, {src: 'img/slider2.png'}], '840', '', '9900', 65 , '3.4' )
+        +cardSlide([{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {src: 'img/slider.png'}, {src: 'img/slider2.png'}], '840', '', '9900', 65 , '3.4' )
+        +cardSlide([{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {src: 'img/slider.png'}, {src: 'img/slider2.png'}], '840', '', '9900', 65 , '3.4' )
+        +cardSlide([{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {src: 'img/slider.png'}, {src: 'img/slider2.png'}], '840', '', '9900', 65 , '3.4' )
+        +cardSlide([{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {src: 'img/slider.png'}, {src: 'img/slider2.png'}], '840', '', '9900', 65 , '3.4' )
+        +cardSlide([{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {src: 'img/slider.png'}, {src: 'img/slider2.png'}], '840', '', '9900', 65 , '3.4' )
+        +cardSlide([{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {src: 'img/slider.png'}, {src: 'img/slider2.png'}], '840', '', '9900', 65 , '3.4' )
+        +cardSlide([{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {src: 'img/slider.png'}, {src: 'img/slider2.png'}], '840', '', '9900', 65 , '3.4' )
+        +cardSlide([{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {src: 'img/slider.png'}, {src: 'img/slider2.png'}], '840', '', '9900', 65 , '3.4' )
+        +cardSlide([{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {src: 'img/slider.png'}, {src: 'img/slider2.png'}], '840', '', '9900', 65 , '3.4' )
+      +pagination(false,[{current: 1}, 2, 3, '..', 15], true , ' 1 – 12 из 100+ вариантов аренды')

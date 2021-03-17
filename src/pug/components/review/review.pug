@@ -1,11 +1,11 @@
-include ../like-button/like-button
+include ../button-like/button-like
 
 
 mixin review( src , active ,  name , lastVisit , comment )
   .review
     .review__left
       img( class='review__avatar', src=src , alt="alt")
-      +likeButton(active, 12)
+      +likeButton({active:true, number:'12'})
     .review__right
       .review__name= name
       .review__last-visit= lastVisit

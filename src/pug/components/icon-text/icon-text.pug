@@ -1,7 +1,11 @@
-mixin iconText( label )
-    .icon__box
-        each item in label
-            .icon__box_item
-                i.material-icons= item[0]
-                .icon__box_text= item[1]
-                span= item [2]
+//- items -- Array<object>
+//- items.icon -- name material icons
+//- item.text -- head text for element
+//- item.desc -- text description
+mixin iconText({items}={})
+  .icon-box
+    each item in items
+      .icon-box__item
+        i.material-icons= item.icon
+        .icon-box__text= item.text
+          span.icon-box__description= item.desc

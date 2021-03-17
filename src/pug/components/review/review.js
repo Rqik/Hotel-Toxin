@@ -1,1 +1,1 @@
-import '../like-button/like-button';
+import '../button-like/button-like';

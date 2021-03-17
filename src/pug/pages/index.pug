@@ -1,71 +1,108 @@
 extends ../layouts/main
 
 block variables
-    - var title = 'Главная'
+  - var title = 'Главная'
 
 block content
-    include ../components/input/input
-    +input('email','text field', 'Email')
-    +inputSub('','email','text field', 'Email')
-    include ../components/select/select
-    +selectBlock('dropdown' , 'декабрь', 'ноябрь', 'декабрь', 'ноябрь')
-    include ../components/button/button
-    div.span_stong button
-        div
-            +button(1 , 'CLICK ME')
-            +button(2 , 'CLICK ME')
-            +button(3 , 'перейти к оплате')
-    include ../components/star-rate/star-rate
-    div.span_stong rate button
-        div
-            +rate('3.38')
-    include ../components/like-button/like-button
+  include ../components/field/field
+  +field({name:'email', title:'text field', placeholder:'Email'})
+  +field({name:'email', title:'text field', placeholder:'Email', form:true})
+  include ../components/select/select
+  +selectBlock('dropdown' , 'декабрь', 'ноябрь', 'декабрь', 'ноябрь')
+  include ../components/button/button
+  div.span_stong button
+    div
+      +button({style: 'small', text: 'CLICK ME'})
+      +button({style: 'outline', text: 'CLICK ME'})
+      +button({style: 'long', text: 'перейти к оплате'})
+  include ../components/star-rating/star-rating
+  div.span_stong rate button
+    div
+      +starRating({currentRating: '3.47'})
+  include ../components/button-like/button-like
 
-    div.span_stong like button
-        .span_stong_div
-            +likeButton( false , 2)
-            +likeButton( true , 12)
+  div.span_stong like button
+    .span_stong_div
+      +likeButton({active: false, number: '2'})
+      +likeButton({active: true, number: '12'})
 
-    include ../components/pagination/pagination
-    div.span_stong pagination
-        .span_stong_div
-            +pagination(false,[{current: 1},2,3, '..' , 15], true , ' 1 – 12 из 100+ вариантов аренды')
-    include ../components/review/review
-    +review('img/avatar.png' , true , 'Мурад Сарафанов', '5 дней назад'  , 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
+  include ../components/pagination/pagination
+  div.span_stong pagination
+    .span_stong_div
+      +pagination(false,[{current: 1}, 2, 3, '..', 15], true , ' 1 – 12 из 100+ вариантов аренды')
+  include ../components/review/review
+  +review('img/avatar.png' , true , 'Мурад Сарафанов', '5 дней назад'  , 'Великолепный матрас на кровати в основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.')
 
-    include ../components/range-slider/range-slider
-    +rangeSlider('range slider')
+  include ../components/range-slider/range-slider
+  +rangeSlider('range slider')
 
-    include ../components/toggle/toggle
-    +toogleBox('toogle', 'toogle','Получать спецпредложения', 'Получать спецпредложения' )
-    include ../components/radio-box/radio-box
-    +radioBox('Radio Buttons', 'gender','Мужчина', 'Женщина' )
-    include ../components/data-select/data-select
-    +datepicker('date dropdown' , 'date dropdown')
-    +filterDate('date dropdown' )
-    +filterDate('date dropdown' )
+  include ../components/switch-toggle/switch-toggle
+  +switchToggle({
+      caption: 'toogle', name: 'toogle', label: ['Получать спецпредложения',
+          'Получать спецпредложения']
+  })
+  include ../components/input-radio/input-radio
+  +inputRadio({
+      caption: 'Radio Buttons', name: 'gender', label: ['Мужчина',
+          'Женщина']
+  })
+  include ../components/data-select/data-select
+  +datepicker('date dropdown' , 'date dropdown')
+  +filterDate('date dropdown' )
+  +filterDate('date dropdown' )
 
-    include ../components/drop-down/drop-down
-    +dropdownSelect( true,'dropdown','2 спальни, 2 кровати', 'спальни', 'кровати', 'ванные комнаты')
-    +dropdownSelectModify(true,'dropdown','Сколько гостей', 'взрослые', 'дети', 'младенцы')
-    include ../components/check-box/check-box
-    +checkBox( 'checkbox buttons','le',
-    ['Можно курить' , 'Можно с питомцами ' ,
-    'Можно пригласить гостей (до 10 человек)',
-    'Можно пригласить гостей ', 'Можно пригласить гостей' ,
-    'Можно пригласить гостей'
-    ])
-    +checkBoxExpandable( 'expandable checkbox list','exp', ['Завтрак' , 'Письменный стол' ,
-    'Стул для кормления',
-    'Кроватка', 'Телевизор' ,
-    'Шампунь','Телевизор' ,
-    'Шампунь'
-    ])
-    +richCheckBoxButtons( 'rich checkbox buttons','info',
-    [['Широкий коридор', 'Ширина коридоров в номере не менее 91 см.'] , ['Помощник для инвалидов' , 'На 1 этаже вас встретит специалист  и проводит до номера.']
-    ])
-    include ../components/list/list
-    +bulletList('bullet list', ['Нельзя с питомцами' , "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"])
+  include ../components/drop-down/drop-down
+  +dropdownSelect( true,'dropdown','2 спальни, 2 кровати', 'спальни', 'кровати', 'ванные комнаты')
+  +dropdownSelectModify(true,'dropdown','Сколько гостей', 'взрослые', 'дети', 'младенцы')
+  include ../components/check-box-list/check-box-list
+  +checkBoxList( {
+      caption: 'checkbox buttons', name: 'le',
+      labels: ['Можно курить', 'Можно с питомцами ',
+          'Можно пригласить гостей (до 10 человек)',
+          'Можно пригласить гостей ', 'Можно пригласить гостей',
+          'Можно пригласить гостей'
+      ]
+  })
+  +checkBoxList( {
+      style: 'expanded', caption: 'expandable checkbox list', name: 'exp',
+      labels: ['Завтрак', 'Письменный стол',
+          'Стул для кормления',
+          'Кроватка', 'Телевизор',
+          'Шампунь', 'Телевизор',
+          'Шампунь'
+      ]
+  })
+  +checkBoxList( {
+      style: 'rich',
+      caption: 'rich checkbox buttons', name: 'info',
+      labels: [
+          {
+              text: 'Широкий коридор',
+              decr: 'Ширина коридоров в номере не менее 91 см.'
+          },
+          {
+              text: 'Помощник для инвалидов',
+              decr: 'На 1 этаже вас встретит специалист  и проводит до номера.'
+          }]
+  })
 
-    include ../components/icon-text/icon-text
-    +iconText([['insert_emoticon', 'Комфорт', 'Шумопоглощающие стены'], ['location_city', 'Удобство', 'Окно в каждой из спален'] ] )
+  include ../components/list/list
+  +bulletList({
+      title: 'bullet list', items: ['Нельзя с питомцами', "Без " +
+      "вечеринок и " +
+      "мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]
+  })
+
+  include ../components/icon-text/icon-text
+  +iconText({
+      items: [
+          {
+              icon: 'insert_emoticon', text: 'Комфорт',
+              desc: 'Шумопоглощающие стены'
+          },
+          {
+              icon: 'location_city',
+              text: 'Удобство',
+              desc: 'Окно в каждой из спален'
+          }]
+  })
