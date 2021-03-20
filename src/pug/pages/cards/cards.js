@@ -8,7 +8,7 @@ $(() => {
   $('.card__info_result_sum').text((i, el) => rep(el));
   $('.card__header .price span').text((i, el) => rep(el));
 
-  $('.datepicker--button-apply').each(buttonApply);
+  $('.date-picker--button-apply').each(buttonApply);
 
   function buttonApply(ind) {
     let date = 0;

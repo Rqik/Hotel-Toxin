@@ -10,15 +10,15 @@ mixin checkBoxList({style, caption, name, labels=[] }={})
     let tumbler = false;
     let jsToggle = '';
     switch (style) {
-        case 'expanded':
-          classList.push('check-box_expanded', 'js-check-box_expanded',
-                  'expanded_active')
-          tumbler = true
-          jsToggle = 'js-check-box__items'
-          break
-        case 'rich':
-          classList.push('check-box_rich')
-          break
+      case 'expanded':
+        classList.push('check-box_expanded', 'js-check-box_expanded',
+                'expanded_active')
+        tumbler = true
+        jsToggle = 'js-check-box__items'
+        break
+      case 'rich':
+        classList.push('check-box_rich')
+        break
     }
 
   div(class=classList)= caption

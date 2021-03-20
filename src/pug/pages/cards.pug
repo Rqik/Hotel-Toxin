@@ -1,5 +1,5 @@
 extends ../layouts/grey
-include ../components/data-select/data-select
+include ../components/date-picker/date-picker
 include ../components/drop-down/drop-down
 include ../components/button/button
 include ../components/field/field
@@ -13,8 +13,11 @@ block content
     .cards
         .card__block
             .card__title Найдём номера под ваши пожелания
-            +datepicker('прибытие' , 'выезд')
-            +dropdownSelectModify(false,'гости','Сколько гостей', 'взрослые', 'дети', 'младенцы')
+            +datepicker({title1:'прибытие', title2:'выезд'})
+            +dropdownSelect({extended: true, active: false, name:'гости',
+              current:'Сколько гостей', text:[
+                'взрослые',
+                'дети', 'младенцы']})
             +button(3,'подобрать номер')
 
         .card__block
@@ -56,7 +59,12 @@ block content
                     | в сутки
             .card__reg
                 +datepicker('прибытие' , 'выезд')
-                +dropdownSelectModify(false,'гости','Сколько гостей', 'взрослые', 'дети', 'младенцы')
+                +dropdownSelect({
+                  extended: true, active: false, name: 'гости',
+                  current: 'Сколько гостей', text: [
+                    'взрослые',
+                    'дети', 'младенцы']
+                })
             .card__info
                 .card__info_item
                     .card__info_name.card-pay1 9990₽

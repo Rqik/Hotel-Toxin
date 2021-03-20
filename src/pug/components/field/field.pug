@@ -8,13 +8,13 @@ mixin field({name, title , placeholder, form=false}={})
     form(class='field-form')&attributes(attributes)
       .field-form__title= title
       .field-form__input
-        input.input_sub.js-input-text( type="text",
+        input.input_sub.js-field_text( type="text",
           placeholder=placeholder, name=name)
         button.input_btn(type='submit' , name=name )
           i.material-icons arrow_forward
   else
     .field
       label.field__label= title
-        input.field__input.js-input-text( type="text",
+        input.field__input.js-field_text( type="text",
           placeholder=placeholder ,
           name=name)

@@ -1,37 +1,43 @@
-.dropdown{
-  h3 {
+.dropdown {
+  &__title {
+    font-family: 'Montserrat', sans-serif;
     margin: 5px 0;
     line-height: 14px;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $dark-1;
   }
 
-}
-
-.dropdown__select {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  margin-bottom: 1rem;
-  position: relative;
-  width: 266px;
-  background-color: white;
-  border-radius: 4px;
-  @include ss{
-    width: 100%;
-  }
-  .material-icons {
-    transition: transform .3s ease-in-out;}
-  &:hover,
-  &:focus {
-
-    .dropdown__select_current,
-    .dropdown__select_items {
-      border-color: $dark-3;
-      // border-top: none;
+  &__select {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-bottom: 1rem;
+    position: relative;
+    width: 266px;
+    background-color: white;
+    border-radius: 4px;
+    @include ss {
+      width: 100%;
     }
 
+    .material-icons {
+      transition: transform .3s ease-in-out;
+    }
+
+    &:hover,
+    &:focus {
+
+      .dropdown__select_current,
+      .dropdown__select_items {
+        border-color: $dark-3;
+        // border-top: none;
+      }
+    }
   }
 
-  &_current {
+  &__item_current {
     position: relative;
     display: block;
     width: 100%;
@@ -51,31 +57,24 @@
     white-space: nowrap;
     cursor: pointer;
     transition: border 0.3s ease-in-out;
-    span {
-      display: block;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      width: 260px;
-    }
-  }
 
-  &_items {
-    // padding: 10px 14px  0 14px;
-    //
-    border: 1px solid $dark-4;
-    border-top: none;
-    box-sizing: border-box;
-    border-radius: 0 0 4px 4px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
 
   }
 
-  &_item {
-    &:last-of-type {
-      margin-bottom: 5px;
-    }
+  &__text_current {
+    padding: 0;
+    margin: 0;
+    max-width: 100%;
+    height: 30px;
+    line-height: 26px;
+    text-align: start;
+    vertical-align: middle;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &__item {
 
     box-sizing: border-box;
     padding: 0 6px 0 14px;
@@ -89,10 +88,10 @@
     height: 30px;
     text-transform: uppercase;
 
-    span {
+    &_span {
       padding: 0;
       margin: 0;
-      width: 140px;
+      width: 80%;
       height: 30px;
       line-height: 26px;
       text-align: start;
@@ -102,46 +101,59 @@
       white-space: nowrap;
     }
 
-    .dropdown__control {
-      margin-bottom: 2px;
-      display: flex;
-      justify-content: flex-end;
+    &:last-of-type {
+      margin-bottom: 5px;
+    }
+  }
 
-      &_button {
-        height: 30px;
-        border: 1px solid $dark-3;
-        width: 30px;
-        border-radius: 50%;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 22px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        cursor: pointer;
-        user-select: none;
-        align-items: center;
-        text-align: center;
+  &__items {
+    border: 1px solid $dark-4;
+    border-top: none;
+    box-sizing: border-box;
+    border-radius: 0 0 4px 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
 
-      }
+  &__control-panel {
+    margin-bottom: 2px;
+    display: flex;
+    justify-content: flex-end;
 
-      .disable {
-        opacity: 0.5;
-      }
 
-      span {
-        width: 32px;
-        height: 30px;
-        line-height: 30px;
-        text-align: center;
-        vertical-align: middle;
-      }
+    .disable {
+      opacity: 0.5;
+    }
 
+    &_span {
+      width: 32px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      vertical-align: middle;
     }
 
   }
 
-  i {
+  &__button {
+    height: 30px;
+    border: 1px solid $dark-3;
+    width: 30px;
+    border-radius: 50%;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    align-items: center;
+    text-align: center;
+  }
+
+  .material-icons {
     width: 24px;
     height: 24px;
     font-size: 24px;
@@ -159,7 +171,8 @@
   }
 }
 
-.dropdown__select_modify {
+
+.dropdown__select_extended {
   width: 320px;
   display: flex;
   flex-direction: column;
@@ -168,18 +181,18 @@
   position: relative;
   background-color: white;
   border-radius: 4px;
-  @include sl{
+  @include sl {
     // width: 266px;
   }
-  @include ss{
+  @include ss {
     width: 100%;
   }
+
   h3 {
     margin: 5px 0;
     line-height: 14px;
   }
-  .material-icons {
-    transition: transform .3s ease-in-out;}
+
   &:hover,
   &:focus {
 
@@ -191,136 +204,58 @@
 
   }
 
-  &_items {
-    // padding: 10px 14px  0 14px;
-    //
-    border: 1px solid $dark-4;
-    border-top: none;
-    box-sizing: border-box;
-    border-radius: 0 0 4px 4px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-
-  }
-
-  &_item {
-    &:last-of-type {
-      margin-bottom: 5px;
-    }
-
-    box-sizing: border-box;
-    padding: 0 6px 0 14px;
-    margin-top: 7px;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 30px;
-    height: 30px;
-    text-transform: uppercase;
-
-    span {
-      padding: 0;
-      margin: 0;
-      width: 140px;
-      height: 30px;
-      line-height: 26px;
-      text-align: start;
-      vertical-align: middle;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    .dropdown__control {
-      margin-bottom: 2px;
-      display: flex;
-      justify-content: flex-end;
-
-      &_button {
-        height: 30px;
-        border: 1px solid $dark-3;
-        width: 30px;
-        border-radius: 50%;
-        font-weight: normal;
-        font-size: 18px;
-        line-height: 22px;
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-        cursor: pointer;
-        user-select: none;
-        align-items: center;
-        text-align: center;
-
-      }
-
-      .disable {
-        opacity: 0.5;
-      }
-
-      span {
-        width: 32px;
-        height: 30px;
-        line-height: 30px;
-        text-align: center;
-        vertical-align: middle;
-      }
-
-    }
-
-  }
-
-  i {
-    width: 24px;
-    height: 24px;
-    font-size: 24px;
-    line-height: 24px;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    color: $dark-3;
-    position: absolute;
-    top: 9px;
-    right: 9px;
-    cursor: pointer;
-    pointer-events: none;
-    z-index: 1;
-  }
-
-
-  .dropdown__select_button {
+  .dropdown__buttons {
 
     display: flex;
     justify-content: space-between;
     padding: 0 6px 0 14px;
 
-    button{
+    .dropdown__button-reset {
       background-color: transparent;
       color: $purple;
       width: auto;
       height: auto;
       margin: 18px 0 12px;
       padding: 0;
+      outline: none;
+      border: none;
+      font-family: Montserrat, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
     }
-    .dropdown__select_button-reset {}
 
-    .dropdown__select_button-submit {
+    .dropdown__button-submit {
+      background-color: transparent;
+      color: $purple;
+      width: auto;
+      height: auto;
+      margin: 18px 0 12px;
+      padding: 0;
+      outline: none;
+      border: none;
+      font-family: Montserrat, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
 
     }
   }
 
 }
 
-.drop_active{
-  box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+.dropdown_active {
+  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   transition: border .3s ease-in-out;
-  .dropdown__select_current{
 
+  .dropdown__item_current {
     border-radius: 4px 4px 0 0;
   }
+
   .material-icons {
     transition: all .3s ease-in-out;
     padding: 0;

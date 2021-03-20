@@ -1,5 +1,5 @@
 extends ../layouts/landing-page
-include ../components/data-select/data-select
+include ../components/date-picker/date-picker
 include ../components/drop-down/drop-down
 include ../components/icon-text/icon-text
 include ../components/review/review
@@ -51,8 +51,13 @@ block content
                     span 9900₽
                     | в сутки
             .card__reg
-                +datepicker('прибытие' , 'выезд')
-                +dropdownSelectModify(false,'гости','Сколько гостей', 'взрослые', 'дети', 'младенцы')
+                +datepicker({title1:'прибытие', title2:'выезд'})
+                +dropdownSelect({
+                    extended: true, active: false, name: 'гости',
+                    current: 'Сколько гостей', text: [
+                        'взрослые',
+                        'дети', 'младенцы']
+                })
             .card__info
                 .card__info_item
                     .card__info_name.card-pay1 9990₽

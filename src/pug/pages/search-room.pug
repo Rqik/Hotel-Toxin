@@ -1,5 +1,5 @@
 extends ../layouts/landing-page
-include ../components/data-select/data-select
+include ../components/date-picker/date-picker
 include ../components/drop-down/drop-down
 include ../components/button/button
 include ../components/check-box-list/check-box-list
@@ -13,8 +13,9 @@ block variables
 block content
   .search__block
     .search__panel
-      +filterDate('даты пребывания в отеле' )
-      +dropdownSelectModify(false,'гости','Сколько гостей', 'взрослые', 'дети', 'младенцы')
+      +datepicker({title1:'даты пребывания в отеле'})
+      +dropdownSelect({active: true, extended: true, name: 'dropdown',
+        current: 'Сколько гостей', text: ['взрослые', 'дети', 'младенцы']})
       +rangeSlider('диапазон цены' , 'стоимость пребывания за сутки в номере')
       +checkBoxList( {
           caption: 'Правила дома', name: 'le', labels: ['Можно ' +
@@ -37,7 +38,14 @@ block content
               }
           ]
       })
-        +dropdownSelect( false,'удобства номера','2 спальни, 2 кровати', 'спальни', 'кровати', 'ванные комнаты')
+        +dropdownSelect( {
+          active: true,
+          name: 'dropdown',
+          current: '2 спальни, 2 кровати',
+          text: ['спальни',
+            'кровати',
+            'ванные комнаты']
+        })
         +checkBoxList( {
             style: 'expanded',
             caption: 'дополнительные удобства', name: 'exp',
@@ -69,4 +77,4 @@ block content
         +cardSlide([{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {src: 'img/slider.png'}, {src: 'img/slider2.png'}], '840', '', '9900', 65 , '3.4' )
         +cardSlide([{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {src: 'img/slider.png'}, {src: 'img/slider2.png'}], '840', '', '9900', 65 , '3.4' )
         +cardSlide([{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {src: 'img/slider.png'}, {src: 'img/slider2.png'}], '840', '', '9900', 65 , '3.4' )
-      +pagination(false,[{current: 1}, 2, 3, '..', 15], true , ' 1 – 12 из 100+ вариантов аренды')
+      +pagination({prev:false, pagination:[{current: 1,},2,3,'..',15], next: true , text:' 1 – 12 из 100+ вариантов аренды'})

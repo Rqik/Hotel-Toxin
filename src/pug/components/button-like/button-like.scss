@@ -68,7 +68,7 @@
     &:hover {
       opacity: 1;
 
-      >.material-icons {
+      > .material-icons {
         opacity: .5;
       }
 
@@ -78,7 +78,7 @@
 
     }
 
-    >.material-icons {
+    > .material-icons {
       background-image: $purple-gradient;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;

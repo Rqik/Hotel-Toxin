@@ -1,62 +1,58 @@
 @import '@/libs/css/data-picker.scss';
 
-.data__select {
+.date-picker {
   display: flex;
   flex-direction: row;
   gap: 20px;
   position: relative;
 
-  .date_picker {
+  &__input_hide {
     position: absolute;
     width: 320px;
-    height: 0;
     height: 0;
     padding: 0;
     margin: 0;
     border: 0;
-    background-color: $dark-2;
     top: 55px;
     left: 0;
     right: 0;
     bottom: 0;
-    // transform: translate(50%, 50%);
-
-
-    z-index: 200;
   }
 
-  &_label,
-  &_label-s {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    font-family: Montserrat;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 12px;
-    line-height: 15px;
-    text-transform: uppercase;
-    color: $dark-1;
+  .data-select {
+    &__label,
+    &__label_s {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      font-family: Montserrat, sans-serif;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 12px;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: $dark-1;
 
-    @include ss {
-      width: 100%;
-    }
-
-    &:hover {
-
-      .data__select_input,
-      .date__range {
-        border: 1px solid $dark-3;
+      @include ss {
+        width: 100%;
       }
 
-      i.material-icons {
-        color: $dark-2;
+      &:hover ,&:focus{
+
+        .data-select__input,
+        .date-select__input_range {
+
+          border: 1px solid $dark-3;
+        }
+
+        i.material-icons {
+          color: $dark-2;
+        }
       }
     }
   }
 
-  &_input,
-  .date__range {
+  .date-select__input_range , .data-select__input{
     width: 150px;
     height: 44px;
     border: 1px solid $dark-4;
@@ -68,6 +64,7 @@
     margin-top: 5px;
     cursor: pointer;
     transition: border .3s ease-in-out;
+    outline: none;
 
     @include ss {
       width: 100%;
@@ -76,16 +73,15 @@
 
   }
 
-  .date__range {
-    width: 266px;
+  .date-select__input_range{
+    width: 320px;
     color: $dark-2;
-
     @include ss {
       width: 100%;
     }
   }
 
-  i.material-icons {
+  .material-icons {
     width: 24px;
     height: 24px;
     font-size: 24px;

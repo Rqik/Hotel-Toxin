@@ -1,34 +1,24 @@
-mixin dropdownSelect(active,  name,current , ...text )
-    .dropdown
-        h3=name
-        div( class= active ? 'dropdown__select drop_active' : 'dropdown__select')
-            .dropdown__select_current
-                i.material-icons expand_more
-                span= current
-            .dropdown__select_items
-                each item in text
-                    .dropdown__select_item
-                        span=  item
-                        .dropdown__control
-                            .dropdown__control_button.control_minus -
-                            span= 0
-                            .dropdown__control_button.control_plus +
-mixin dropdownSelectModify(active,name, current, ...text)
-    .dropdown
-        h3= name
-        div(class= active ? 'dropdown__select_modify drop_active' : 'dropdown__select_modify' , )
-            .dropdown__select_current
-                i.material-icons expand_more
-                span= current
-            .dropdown__select_items
-                each item in text
-                    .dropdown__select_item
-                        span=  item
-                        .dropdown__control
-                            .dropdown__control_button.control_minus -
-                            span= 0
-                            .dropdown__control_button.control_plus +
-                .dropdown__select_button
-                    button(type='reset').dropdown__select_button-reset очистить
-                    button(type='submit').dropdown__select_button-submit применить
-
+//- active -- maximize on rendering typeof Boolean
+//- extended -- extended version +2 button typeof Boolean
+//- current -- present value typeof String
+//- text -- row items name
+mixin dropdownSelect({extended=false ,active=false,  name,current , text }={})
+  .dropdown
+    .dropdown__title=name
+    .dropdown__select.js-dropdown__select( class= active ? 'dropdown_active': '',
+      class=extended ? '.js-dropdown__select_extended dropdown__select_extended': '')
+      .dropdown__item_current.js-dropdown__item_current
+        i.material-icons expand_more
+        span.dropdown__text_current.js-dropdown__text_current= current
+      .dropdown__items
+        each item in text
+          .dropdown__item
+            span.dropdown__item_span=  item
+            .dropdown__control-panel
+              .dropdown__button.control_minus -
+              span.dropdown__control-panel_span.js-dropdown__control-panel_span= 0
+              .dropdown__button.control_plus +
+        if extended
+          .dropdown__buttons
+            button(type='reset').dropdown__button-reset.js-dropdown__button-reset очистить
+            button(type='submit').dropdown__button-submit применить

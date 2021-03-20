@@ -1,17 +1,26 @@
-$(() => {
-  const $legendEl = $('.js-legend-el ');
-
-  $legendEl.each(diagramMove);
-
-  const unitsList = $('.js-unit');
-
-  function diagramMove(i) {
-    $(this).on('mouseover', () => {
-      unitsList[i].classList.add('hovered');
-    });
-
-    $(this).on('mouseout', () => {
-      unitsList[i].classList.remove('hovered');
-    });
+class Diagram {
+  constructor() {
+    this.$legendEl = $('.js-legend-el ');
+    this.$unitsList = $('.js-unit');
+    this.init();
   }
-});
+
+  init() {
+    this.$legendEl.each((i, el) => this.diagramMove(el, this.$unitsList[i]));
+  }
+
+  diagramMove(el, itm) {
+    $(el).on('mouseover', () => this.addHovered(itm));
+    $(el).on('mouseout', () => this.removeHovered(itm));
+  }
+
+  addHovered(el) {
+    el.classList.add('hovered');
+  }
+
+  removeHovered(el) {
+    el.classList.remove('hovered');
+  }
+}
+
+export { Diagram };

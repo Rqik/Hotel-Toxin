@@ -1,6 +1,6 @@
 extends ../layouts/landing-page
 include ../components/field/field
-include ../components/data-select/data-select
+include ../components/date-picker/date-picker
 include ../components/drop-down/drop-down
 include ../components/button/button
 block variables
@@ -11,6 +11,11 @@ block content
     .main__header_content
       .card__block
         .card__title Найдём номера под ваши пожелания
-        +datepicker('прибытие' , 'выезд')
-        +dropdownSelectModify(false,'гости','Сколько гостей', 'взрослые', 'дети', 'младенцы')
+        +datepicker({title1:'прибытие', title2:'выезд'})
+        +dropdownSelect({
+          extended: true, active: false, name: 'гости',
+          current: 'Сколько гостей', text: [
+            'взрослые',
+            'дети', 'младенцы']
+        })
         +button({style:'long', text:'подобрать номер'})

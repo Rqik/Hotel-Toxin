@@ -33,31 +33,47 @@
 
 
   &_outline {
+    position: relative;
+    border-radius: 16px;
+    background-clip: padding-box;
+    width: 90px;
     padding: 10px 17px;
     box-sizing: border-box;
-    background-color: #ffffff;
+    background: #ffffff none;
     color: $purple;
     border: 2px solid transparent;
     opacity: 1;
-    position: relative;
     vertical-align: middle;
-    background-clip: padding-box;
-    background-image: none;
-
+    z-index: 0;
+    content: "";
 
     &::before {
       content: '';
+      //  position: absolute;
+      //  top: 0;
+      //  bottom: 0;
+      //  left: 0;
+      //  right: 0;
+      //  border-radius: 22px;
+      //  background-image: $purple-gradient;
+      //  margin: -2px;
+      //  transition: opacity .3s ease-in-out;
+      //  z-index: -1;
       position: absolute;
+      z-index: -1;
       top: 0;
-      background-image: $purple-gradient;
       left: 0;
       right: 0;
       bottom: 0;
+      padding: 2px;
       border-radius: 22px;
-      margin: -2px;
-      z-index: -1;
-      transition: opacity .3s ease-in-out;
+      background: $purple-gradient;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
     }
+
 
     &:hover {
       &::before {
