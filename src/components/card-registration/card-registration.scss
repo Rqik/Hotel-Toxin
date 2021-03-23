@@ -1,4 +1,4 @@
-.card-registration{
+.card-registration {
   padding: 40px 30px 30px 30px;
   background-color: white;
   width: 380px;
@@ -14,9 +14,11 @@
     max-width: 355px;
     width: 100%;
   }
+
   .field {
     margin-bottom: 10px;
   }
+
   .input-radio__items {
     line-height: normal;
     padding: 0;
@@ -30,16 +32,19 @@
   .input-radio__label {
     margin-top: -2px;
   }
+
   &__title {
     font-size: 24px;
     line-height: 30px;
     font-weight: bold;
     margin-bottom: 22px;
   }
+
   &__submit {
     margin-top: 10px;
     margin-bottom: 5px;
   }
+
   &__bot {
     display: flex;
     align-items: center;

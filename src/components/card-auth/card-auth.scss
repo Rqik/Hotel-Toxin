@@ -15,15 +15,18 @@
     max-width: 355px;
     width: 100%;
   }
+
   .field {
     margin-bottom: 10px;
   }
+
   &__title {
     font-size: 24px;
     line-height: 30px;
     font-weight: bold;
     margin-bottom: 22px;
   }
+
   &__bot {
     display: flex;
     align-items: center;
@@ -35,6 +38,7 @@
       padding: 10px 23px;
     }
   }
+
   &__submit {
     margin-top: 10px;
     z-index: 20;

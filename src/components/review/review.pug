@@ -4,9 +4,11 @@ mixin review({ avatar , active=false ,  name , lastVisit , comment }={})
   .review
     .review__left
       img( class='review__avatar', src=avatar , alt="alt")
-      +likeButton({active:true, number:'12'})
+      +likeButton({
+        active: true,
+        number: '12'
+      })
     .review__right
       .review__name= name
       .review__last-visit= lastVisit
       .review__comment= comment
-

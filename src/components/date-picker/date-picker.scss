@@ -6,6 +6,7 @@
   gap: 20px;
   position: relative;
   height: 64px;
+
   &__input_hide {
     position: absolute;
     width: 320px;
@@ -37,7 +38,7 @@
         width: 100%;
       }
 
-      &:hover ,&:focus{
+      &:hover, &:focus {
 
         .data-select__input,
         .date-select__input_range {
@@ -52,7 +53,7 @@
     }
   }
 
-  .date-select__input_range , .data-select__input{
+  .date-select__input_range, .data-select__input {
     width: 150px;
     height: 44px;
     border: 1px solid $dark-4;
@@ -73,7 +74,7 @@
 
   }
 
-  .date-select__input_range{
+  .date-select__input_range {
     width: 320px;
     color: $dark-2;
     @include ss {

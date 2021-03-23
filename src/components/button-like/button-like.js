@@ -4,7 +4,7 @@ class ButtonLike {
   }
 
   init() {
-    this.buttonLike.forEach(this.eventHandler);
+    this.buttonLike.forEach(ButtonLike.eventHandler);
   }
 
   static eventHandler(el) {

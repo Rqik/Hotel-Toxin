@@ -5,12 +5,14 @@ class Diagram {
   }
 
   init() {
-    this.$legendEl.each((i, el) => this.diagramMove(el, this.$unitsList[i]));
+    this.$legendEl.each((i, el) => Diagram.diagramMove(el, this.$unitsList[i]));
   }
 
-  diagramMove(el, itm) {
-    $(el).on('mouseover', () => this.addHovered(itm));
-    $(el).on('mouseout', () => this.removeHovered(itm));
+  static diagramMove(el, itm) {
+    $(el)
+      .on('mouseover', () => Diagram.addHovered(itm));
+    $(el)
+      .on('mouseout', () => Diagram.removeHovered(itm));
   }
 
   static addHovered(el) {

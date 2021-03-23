@@ -51,15 +51,15 @@
     appearance: none;
     position: absolute;
 
-    &:checked+.switch-toggle__label::before {
+    &:checked + .switch-toggle__label::before {
       border: 1px solid $purple;
     }
 
-    &:checked+.switch-toggle__label {
+    &:checked + .switch-toggle__label {
       color: $dark-2;
     }
 
-    &:checked+.switch-toggle__label::after {
+    &:checked + .switch-toggle__label::after {
       background: $purple-gradient;
       left: 24px;
     }

@@ -9,14 +9,13 @@ mixin pagination({prev=false,pagination, next=false , text}={})
           i.material-icons arrow_forward
       each key in pagination
         -
-          let {current=false, number, link } = key
-
+          let { current = false, number, link } = key
         if current
           li.pagination__item.pagination__item_current
-            a.pagination__link(href=link?link:'#')= number
+            a.pagination__link(href=link ? link : '#')= number
         else
           li.pagination__item
-            a.pagination__link(href=link?link:'#')= number
+            a.pagination__link(href=link ? link : '#')= number
       if next === true
         li.pagination__next
           i.material-icons arrow_forward
