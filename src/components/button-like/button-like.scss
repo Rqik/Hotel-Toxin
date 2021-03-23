@@ -1,0 +1,90 @@
+.button-like {
+  outline: none;
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  line-height: 15px;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 0;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid $dark-4;
+  color: $dark-4;
+  background-color: #ffffff;
+  margin: 0;
+  font-size: 10px;
+  box-sizing: border-box;
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  transition: .3s ease-in-out;
+  transition-property: border, color;
+  background-clip: padding-box;
+
+  .material-icons {
+    font-family: Material Icons, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    margin-left: 4px;
+    line-height: 8px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    vertical-align: middle;
+    transition: opacity .3s ease-in-out;
+  }
+
+  &__text {
+    vertical-align: middle;
+    font-family: 'Montserrat', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 9px;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    min-width: 20px;
+    transition: opacity .3s ease-in-out;
+  }
+
+  &_active {
+    border: 1px solid transparent;
+    color: $purple;
+    position: relative;
+    background-clip: padding-box;
+
+    > .material-icons {
+      background-image: $purple-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .button-like__text {
+      background-image: $purple-gradient;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    &::before {
+      content: '';
+      border-radius: 15px;
+      background-image: $purple-gradient;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      right: 0;
+      left: 0;
+      margin: -1px;
+      z-index: -2;
+    }
+  }
+}
+
+
+

@@ -1,0 +1,92 @@
+.header {
+  width: 100%;
+  height: 70px;
+  padding: 15px 30px;
+  background-color: white;
+  box-shadow: 0 10px 20px $dark-5;
+  text-align: center;
+  vertical-align: middle;
+
+  &__nav-bar {
+    margin: 0 auto;
+    max-width: 1160px;
+    height: 100%;
+    // width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__menu {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    cursor: pointer;
+
+    .button {
+      padding: 0 20px;
+      height: 34px;
+    }
+
+    .button_outline {
+      height: 40px;
+    }
+
+
+    @include md {
+      .menu__burger {
+        display: flex;
+
+      }
+
+      flex-direction: row-reverse;
+
+      .menu__items {
+        position: fixed;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        display: none;
+        top: 0;
+        left: 0;
+        background-color: white;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        width: 50vw;
+        z-index: 1;
+      }
+
+      .menu__burger_active {
+        display: flex;
+        min-width: 230px;
+        border-right: 1px solid rgba(184, 184, 184, .2);
+      }
+
+      .menu__item {
+        align-self: center;
+        text-align: center;
+        position: relative;
+      }
+    }
+
+
+  }
+
+  &__logo {
+    margin-top: 9px;
+
+    .header__img {
+      width: 100%;
+      object-fit: contain;
+    }
+
+    @include sl {
+      width: 80px;
+    }
+  }
+
+}
+

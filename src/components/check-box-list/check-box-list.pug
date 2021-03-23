@@ -1,0 +1,38 @@
+//- caption -- text caption for checkBox
+//- name -- name for input
+//- style -- default | expanded | rich
+//- labels -- Array<string> or if style === rich Array<object>
+//-                            object = {text: 'example' ,decr:'example'}
+
+mixin checkBoxList({style, caption, name, labels=[] }={})
+  -
+    let classList = ['check-box'];
+    let tumbler = false;
+    let jsToggle = '';
+    switch (style) {
+      case 'expanded':
+        classList.push('check-box_expanded', 'js-check-box_expanded',
+                'expanded_active')
+        tumbler = true
+        jsToggle = 'js-check-box__items'
+        break
+      case 'rich':
+        classList.push('check-box_rich')
+        break
+    }
+
+  div(class=classList)= caption
+    if tumbler
+      i.material-icons expand_more
+    .check-box__items(class=jsToggle)
+      each item , indx in labels
+        .check-box__element
+          if style === 'rich'
+            input.check-box__input(id=name + '-' + indx name=name
+              type="checkbox" )
+            label.check-box__label.check-box__label_rich(for=name + '-' +
+            indx)= item.text
+              span.check-box__span= item.decr
+          else
+            input.check-box__input(id=name+'-'+indx type="checkbox" )
+            label.check-box__label(for=name+'-'+indx)= item

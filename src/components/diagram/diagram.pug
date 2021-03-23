@@ -1,0 +1,36 @@
+mixin diagram( first, seconde, third,  fourth, num)
+  .diagram
+    .diagram__title Впечатления от номера
+    .diagram__img
+      svg(width="160px" height="160px" viewBox="0 0 42 42" class="donut")
+        defs
+          linearGradient( id="lgrad" x1="50%" y1="100%" x2="50%" y2="0%" )
+            stop( offset="0%" style="stop-color:rgb(255,186,156);stop-opacity:1")
+            stop( offset="100%" style="stop-color:rgb(255,227,156); stop-opacity:1" )
+          linearGradient( id="lgrad2" x1="50%" y1="100%" x2="50%" y2="0%" )
+            stop( offset="0%" style="stop-color:rgb(111,207,151);stop-opacity:1")
+            stop( offset="100%" style="stop-color:rgb(102,210,234);stop-opacity:1" )
+          linearGradient( id="lgrad3" x1="50%" y1="100%" x2="50%" y2="0%" )
+            stop( offset="0%" style="stop-color:rgb(188,156,255);stop-opacity:1")
+            stop( offset="100%" style="stop-color:rgb(139,164,249);stop-opacity:1" )
+          linearGradient( id="lgrad4" x1="50%" y1="0%" x2="50%" y2="100%" )
+            stop( offset="0%" style="stop-color:rgb(144,144,144);stop-opacity:1")
+            stop( offset="100%" style="stop-color:rgb(61,73,117);stop-opacity:1" )
+
+        circle(class="unit js-unit" cx="21" cy="21" r="15.91549430918954" fill="#fff" stroke='url(#lgrad)'
+          stroke-dasharray=`${first} ${100 - first}` stroke-dashoffset='25')
+        circle(class="unit js-unit" cx="21" cy="21" r="15.91549430918954" fill='transparent' stroke='url(#lgrad2)'
+          stroke-dasharray=`${seconde} ${100 - seconde}` stroke-dashoffset=`${100 - first + 25}`)
+        circle(class="unit js-unit" cx="21" cy="21" r="15.91549430918954" fill='transparent' stroke='url(#lgrad3)'
+          stroke-dasharray=`${third} ${100 - third}` stroke-dashoffset=`${100 - seconde - first + 25}`)
+        circle(class="unit js-unit" cx="21" cy="21" r="15.91549430918954" fill='transparent' stroke='url(#lgrad4)'
+          stroke-dasharray=`${fourth} ${100 - fourth}` stroke-dashoffset=`${100 - third - seconde - first + 25}`)
+
+        g
+          text(x="50%" y="50%" class="chart-number")=num
+          text(x="50%" y="50%" class="chart-label") голосов
+      ul.legend.js-legend
+        li.legend-el.js-legend-el Великолепно
+        li.legend-el.js-legend-el Хорошо
+        li.legend-el.js-legend-el Удовлетворительно
+        li.legend-el.js-legend-el Разочарован

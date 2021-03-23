@@ -1,0 +1,30 @@
+include ../button/button
+
+mixin menu({items, auth}={})
+  .menu(class=attributes.class)
+    ul.menu__items.js-menu__items
+      if items
+        each item in items
+          li.menu__item(
+            class=item.active ? 'menu__item_active' : '' class=item.more
+            ? 'menu__item_more js-menu__item_more' : '')
+            a.menu__link(href=item.href ? item.href : '#')= item.text
+            if item.more
+              ul.menu__items_more
+                each elem in item.more
+                  li.menu__element_plus
+                    a.menu__element_link(href=elem.href ? elem.href : '#')
+                    = elem.text
+      else
+        li.menu__item.menu__item-active
+          a(href='#') нет элементов
+      if !auth
+        li.menu__item
+          +button({style: 'outline', text: 'войти',})
+        li.menu__item
+          +button({text: 'зарегистрироваться'})
+    .menu__burger.js-menu__burger
+      i.material-icons menu
+    if !!auth
+      .menu__auth
+        a(href=auth.href ? auth.href : '#')= auth.text

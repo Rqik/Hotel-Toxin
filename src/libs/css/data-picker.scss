@@ -40,7 +40,7 @@
       width: 114px;
       font-weight: bold;
       font-size: 19px;
-      line-height: 23, 16px;
+      line-height: 23px;
       text-align: center;
       letter-spacing: 0.5px;
       padding: 0;
@@ -95,11 +95,9 @@
     }
 
     &--day {
-
       display: flex;
       justify-content: center;
       align-items: center;
-
     }
 
     &--days-names {
@@ -111,10 +109,9 @@
     }
 
     &--day-name {
-
       width: 39.88px;
       height: 40px;
-      font-family: Montserrat;
+      font-family: Montserrat, sans-serif;
       font-style: normal;
       font-weight: bold;
       font-size: 12px;
@@ -142,17 +139,17 @@
       color: $dark-3;
 
       &-day {
-        +.-current- {
+        + .-current- {
           color: white;
           background: $Green-gradient;
         }
 
-        +.-selected- {
+        + .-selected- {
           color: #fff;
           background: $purple-gradient;
         }
 
-        +.-range-from- {
+        + .-range-from- {
           position: relative;
 
           &::after {
@@ -169,7 +166,7 @@
           }
         }
 
-        +.-range-to- {
+        + .-range-to- {
           position: relative;
 
           &::after {
@@ -186,7 +183,7 @@
           }
         }
 
-        +.-in-range- {
+        + .-in-range- {
           background: none;
 
           &::after {
