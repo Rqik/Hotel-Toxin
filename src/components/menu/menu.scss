@@ -7,6 +7,7 @@
     font-size: 14px;
     color: $dark-3;
   }
+
   &__items {
     padding: 0;
     display: flex;
@@ -26,14 +27,16 @@
     margin: 0;
     padding: 0;
   }
-  &__link{
-      color: inherit;
-      text-decoration: none;
 
-      &:hover {
-        text-decoration: underline;
-      }
+  &__link {
+    color: inherit;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
+
   &__item_active {
     font-weight: bold;
     color: $dark-2;

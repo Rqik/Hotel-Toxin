@@ -10,13 +10,19 @@ mixin cardRoom({room, price}={})
           span.card-room__detail-number_bold=room
         .card-room__detail-category люкс
       .card-room__price
-        span.card-room__price_bold.js-card-room__price_bold=price+'₽'
+        span.card-room__price_bold.js-card-room__price_bold=price + '₽'
         | в сутки
     .card-room__data
-      +datepicker({title1: 'прибытие', title2: 'выезд'})
+      +datepicker({
+        title1: 'прибытие',
+        title2: 'выезд'
+      })
       +dropdownSelect({
-        extended: true, active: false, name: 'гости',
-        current: 'Сколько гостей', text: [
+        extended: true,
+        active: false,
+        name: 'гости',
+        current: 'Сколько гостей',
+        text: [
           'взрослые',
           'дети', 'младенцы']
       })
@@ -33,4 +39,7 @@ mixin cardRoom({room, price}={})
       .card-room__info_result
         .card-room__info-name_result Итого
         .card-room__info-sum_result.js-card-room__info-sum_result 3890000₽
-    +button({style: 'long', text: 'забронировать'})
+    +button({
+      style: 'long',
+      text: 'забронировать'
+    })

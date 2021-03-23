@@ -1,4 +1,4 @@
-import {ButtonLike} from '@/components/button-like/button-like';
+import { ButtonLike } from '@/components/button-like/button-like';
 
 $(() => {
   const buttonLike = new ButtonLike();

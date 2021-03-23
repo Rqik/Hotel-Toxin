@@ -1,6 +1,5 @@
-import {Menu} from './menu';
+import { Menu } from './menu';
 
 $(() => {
-  const menu = new Menu();
-  menu.init();
+  Menu.init();
 });

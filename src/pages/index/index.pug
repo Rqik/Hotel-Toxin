@@ -21,9 +21,16 @@ block variables
 block content
   .wrapper-content
     .wrapper-content__block
-      +field({name: 'email', title: 'text field', placeholder: 'Email'})
       +field({
-        name: 'email', title: 'text field', placeholder: 'Email', form:
+        name: 'email',
+        title: 'text field',
+        placeholder: 'Email'
+      })
+      +field({
+        name: 'email',
+        title: 'text field',
+        placeholder: 'Email',
+        form:
           true
       })
       +select({
@@ -33,35 +40,61 @@ block content
 
     .wrapper-content__block
       +rangeSlider({
-        title: 'range slider', caption: 'стоимость пребывания за сутки ' +
+        title: 'range slider',
+        caption: 'стоимость пребывания за сутки ' +
           'в номере'
       })
       div.span_stong button
         div
-          +button({style: 'small', text: 'CLICK ME'})
-          +button({style: 'outline', text: 'CLICK ME'})
-          +button({style: 'long', text: 'перейти к оплате'})
-          +button({style: 'outline', text: 'CLICK ME', link:'#',border:false})
-          +button({style: 'outline', text: 'CLICK ME', link:'#',border:false})
+          +button({
+            style: 'small',
+            text: 'CLICK ME'
+          })
+          +button({
+            style: 'outline',
+            text: 'CLICK ME'
+          })
+          +button({
+            style: 'long',
+            text: 'перейти к оплате'
+          })
+          +button({
+            style: 'outline',
+            text: 'CLICK ME',
+            link: '#',
+            border: false
+          })
+          +button({
+            style: 'outline',
+            text: 'CLICK ME',
+            link: '#',
+            border: false
+          })
       div.span_stong pagination
         .span_stong_div
           +pagination({
             prev: false,
-            pagination: [{current: true, number: 1},
-              {number: 2}, {number: 3}, {number: '..'},
-              {number: 15}],
+            pagination: [{
+              current: true,
+              number: 1
+            },
+              { number: 2 }, { number: 3 }, { number: '..' },
+              { number: 15 }],
             next: true,
             text: ' 1 – 12 из 100+ вариантов аренды'
           })
     .wrapper-content__block
       +checkBoxList( {
-        caption: 'checkbox buttons', name: 'le',
+        caption: 'checkbox buttons',
+        name: 'le',
         labels: ['Можно курить', 'Можно с питомцами ',
           'Можно пригласить гостей (до 10 человек)'
         ]
       })
       +inputRadio({
-        caption: 'Radio Buttons', name: 'gender', label: ['Мужчина', 'Женщина']
+        caption: 'Radio Buttons',
+        name: 'gender',
+        label: ['Мужчина', 'Женщина']
       })
       +switchToggle({
         caption: 'toogle',
@@ -70,15 +103,24 @@ block content
       })
       div.span_stong like button
         .span_stong_div
-          +likeButton({active: false, number: '2'})
-          +likeButton({active: true, number: '12'})
+          +likeButton({
+            active: false,
+            number: '2'
+          })
+          +likeButton({
+            active: true,
+            number: '12'
+          })
       div.span_stong rate button
         div
-          +starRating({currentRating: '3.47'})
+          +starRating({ currentRating: '3.47' })
 
     .wrapper-content__block
-      +datepicker({title1: 'date dropdown', title2: 'date dropdown'})
-      +datepicker({title1: 'date dropdown'} )
+      +datepicker({
+        title1: 'date dropdown',
+        title2: 'date dropdown'
+      })
+      +datepicker({ title1: 'date dropdown' } )
       +dropdownSelect({
         active: true,
         name: 'dropdown',
@@ -98,7 +140,9 @@ block content
       })
     .wrapper-content__block
       +checkBoxList( {
-        style: 'expanded', caption: 'expandable checkbox list', name: 'exp',
+        style: 'expanded',
+        caption: 'expandable checkbox list',
+        name: 'exp',
         labels: ['Завтрак', 'Письменный стол',
           'Стул для кормления',
           'Кроватка', 'Телевизор',
@@ -106,25 +150,28 @@ block content
           'Шампунь'
         ]
       })
-      +checkBoxList( {
-      style: 'rich',
-      caption: 'rich checkbox buttons', name: 'info',
-      labels: [
+      +checkBoxList(
         {
-          text: 'Широкий коридор',
-          decr: 'Ширина коридоров в номере не менее 91 см.'
-        },
-        {
-          text: 'Помощник для инвалидов',
-          decr: 'На 1 этаже вас встретит специалист  и проводит до номера.'
-        }]
-    })
+          style: 'rich',
+          caption: 'rich checkbox buttons',
+          name: 'info',
+          labels: [
+            {
+              text: 'Широкий коридор',
+              decr: 'Ширина коридоров в номере не менее 91 см.'
+            },
+            {
+              text: 'Помощник для инвалидов',
+              decr: 'На 1 этаже вас встретит специалист  и проводит до номера.'
+            }]
+        })
 
       +bulletList({
-      title: 'bullet list', items: ['Нельзя с питомцами', "Без " +
-      "вечеринок и " +
-      "мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]
-    })
+        title: 'bullet list',
+        items: ['Нельзя с питомцами', "Без " +
+        "вечеринок и " +
+        "мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]
+      })
     .wrapper-content__block
       +review({
         avatar: 'img/avatar.png',
@@ -137,7 +184,8 @@ block content
       +iconText({
         items: [
           {
-            icon: 'insert_emoticon', text: 'Комфорт',
+            icon: 'insert_emoticon',
+            text: 'Комфорт',
             desc: 'Шумопоглощающие стены'
           },
           {

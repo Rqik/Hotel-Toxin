@@ -5,4 +5,4 @@ mixin header({logo, items, auth}={})
     .header__nav-bar
       .header__logo
         img.header__img(src=logo.src, alt=logo.alt ? logo.alt : 'logo')
-      +menu({items, auth})(class='header__menu')
+      +menu({items,auth})(class='header__menu')
