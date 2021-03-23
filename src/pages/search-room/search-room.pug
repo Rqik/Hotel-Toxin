@@ -1,0 +1,124 @@
+extends ../../layouts/landing-page
+include ../../components/date-picker/date-picker
+include ../../components/drop-down/drop-down
+include ../../components/button/button
+include ../../components/check-box-list/check-box-list
+include ../../components/range-slider/range-slider
+include ../../components/card-slider/card-slider
+include ../../components/pagination/pagination
+
+block variables
+  - const title = 'Search'
+
+block content
+  .search__block
+    .search__panel
+      +datepicker({title1: 'даты пребывания в отеле'})
+      +dropdownSelect({
+        active: true, extended: true, name: 'dropdown',
+        current: 'Сколько гостей', text: ['взрослые', 'дети', 'младенцы']
+      })
+      +rangeSlider({
+        title: 'диапазон цены', caption: 'стоимость пребывания за сутки ' +
+          'в номере', min: 0, max: 15000
+      })
+      +checkBoxList( {
+        caption: 'Правила дома', name: 'le', labels: ['Можно ' +
+        'курить', 'Можно с питомцами ',
+          'Можно пригласить гостей (до 10 человек)'
+        ]
+      })
+      +checkBoxList( {
+        style: 'rich',
+        caption: 'доступность',
+        name: 'info',
+        labels: [
+          {
+            text: 'Широкий коридор',
+            desc: 'Ширина коридоров в номере не менее 91 см.'
+          },
+          {
+            text: 'Помощник для инвалидов',
+            desc: 'На 1 этаже вас встретит специалист  и проводит до номера.'
+          }
+        ]
+      })
+        +dropdownSelect( {
+          active: true,
+          name: 'dropdown',
+          current: '2 спальни, 2 кровати',
+          text: ['спальни',
+            'кровати',
+            'ванные комнаты']
+        })
+        +checkBoxList( {
+          style: 'expanded',
+          caption: 'дополнительные удобства', name: 'exp',
+          labels: ['Завтрак',
+            'Письменный стол',
+            'Стул для кормления',
+            'Кроватка', 'Телевизор',
+            'Шампунь', 'Телевизор',
+            'Шампунь'
+          ]
+        })
+      .btn_fixed
+        i.material-icons expand_more
+    .search__cards
+      h2.search__cards-title Номера, которые мы для вас подобрали
+      .search__cards_result
+        +cardSlide({
+          url: [{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {
+            src: 'img/slider.png'
+          }, {src: 'img/slider2.png'}],
+          roomNumber: '840',
+          category: 'люкс',
+          price: '9900',
+          review: 65,
+          rating: '3.4'
+        })
+        +cardSlide({
+          url: [{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {
+            src: 'img/slider.png'
+          }, {src: 'img/slider2.png'}],
+          roomNumber: '840',
+          category: 'люкс',
+          price: '9900',
+          review: 65,
+          rating: '3.4'
+        })
+        +cardSlide({
+          url: [{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {
+            src: 'img/slider.png'
+          }, {src: 'img/slider2.png'}],
+          roomNumber: '840',
+          category: 'люкс',
+          price: '9900',
+          review: 65,
+          rating: '3.4'
+        })
+        +cardSlide({
+          url: [{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {
+            src: 'img/slider.png'
+          }, {src: 'img/slider2.png'}],
+          roomNumber: '840',
+          category: 'люкс',
+          price: '9900',
+          review: 65,
+          rating: '3.4'
+        })
+        +cardSlide({
+          url: [{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {
+            src: 'img/slider.png'
+          }, {src: 'img/slider2.png'}],
+          roomNumber: '840',
+          category: 'люкс',
+          price: '9900',
+          review: 65,
+          rating: '3.4'
+        })
+      +pagination({
+        prev: false, pagination: [{current: true, number: 1},
+          {number: 2}, {number: 3}, {number: '..'},
+          {number: 15}], next: true, text: ' 1 – 12 из 100+ вариантов аренды'
+      })

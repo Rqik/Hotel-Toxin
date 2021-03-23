@@ -1,0 +1,118 @@
+.check-box.check-box_expanded {
+  position: relative;
+  width: 266px;
+  cursor: pointer;
+
+  .material-icons {
+    transition: all .3s ease-in-out;
+    padding: 0;
+    margin: 0;
+    top: -5px;
+    right: 14px;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transform: rotateX(0deg);
+    cursor: pointer;
+    z-index: -1;
+  }
+}
+
+.check-box.check-box_expanded.expanded_active {
+  .material-icons {
+    top: 0;
+    right: 14px;
+    transform: rotateX(180deg);
+  }
+}
+
+.check-box.check-box_rich {
+  width: 266px;
+}
+
+.check-box {
+  width: 222px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: $dark-1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+
+  &__element {
+    &:nth-of-type(1) {
+      margin-top: 17px;
+    }
+
+    min-height: 20px;
+    vertical-align: middle;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  &__label {
+    position: relative;
+    padding-left: 30px;
+    color: $dark-3;
+    text-transform: none;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 20px;
+    margin: 0;
+    transition: color 0.3s ease-in-out;
+
+    cursor: pointer;
+
+    &::before {
+      content: '';
+      position: absolute;
+      border: 1px solid $purple;
+      border-radius: 4px;
+      width: 20px;
+      height: 20px;
+      top: 0;
+      left: 0;
+
+    }
+
+    &_rich {
+      color: $dark-2;
+      font-weight: bold;
+      font-size: 14px;
+      line-height: 20px;
+      display: flex;
+      flex-direction: column;
+
+      .check-box__span {
+        font-weight: normal;
+        font-size: 12px;
+        line-height: 14px;
+        color: $dark-3;
+        margin-top: 5px;
+      }
+    }
+
+  }
+
+  &__input {
+    appearance: none;
+    position: absolute;
+
+    &:checked~.check-box__label::before {
+      background: url('~@/components/check-box-list/image/check.png') no-repeat 4px 2px;
+      background-size: 10px 11px;
+    }
+
+
+    &:checked~.check-box__label {
+      color: $dark-2;
+    }
+  }
+}

@@ -5,27 +5,33 @@
 @import "~@assets/css/stylesheet.scss";
 @import '~@/libs/css/jquery-ui.structure.min.css';
 @import '~air-datepicker/dist/css/datepicker.min.css';
-@import "~@/pug/pages/cards/cards.scss";
+@import "~@/pages/cards/cards.scss";
+@import "~@/pages/index/index.scss";
 
-@import '~@/pug/components/date-picker/date-picker.scss';
-@import "~@/pug/components/button/button.scss";
-@import "~@/pug/components/button-like/button-like.scss";
-@import "~@/pug/components/field/field.scss";
-@import "~@/pug/components/select/select.scss";
-@import "~@/pug/components/list/list.scss";
-@import "~@/pug/components/range-slider/range-slider.scss";
-@import "~@/pug/components/input-radio/input-radio.scss";
-@import "~@/pug/components/drop-down/drop-down.scss";
-@import "~@/pug/components/icon-text/icon-text.scss";
-@import "~@/pug/components/check-box-list/check-box-list.scss";
-@import "~@/pug/components/review/review.scss";
-@import "~@/pug/components/pagination/pagination.scss";
-@import "~@/pug/components/switch-toggle/switch-toggle.scss";
-@import "~@/pug/components/card-slider/card-slider.scss";
-@import "~@/pug/components/star-rating/star-rating.scss";
-@import "~@/pug/components/diagram/diagram.scss";
-@import "~@/pug/components/header/header.scss";
-@import "~@/pug/components/footer/footer.scss";
+@import '~@/components/date-picker/date-picker.scss';
+@import "~@/components/button/button.scss";
+@import "~@/components/button-like/button-like.scss";
+@import "~@/components/field/field.scss";
+@import "~@/components/select/select.scss";
+@import "~@/components/list/list.scss";
+@import "~@/components/range-slider/range-slider.scss";
+@import "~@/components/input-radio/input-radio.scss";
+@import "~@/components/drop-down/drop-down.scss";
+@import "~@/components/icon-text/icon-text.scss";
+@import "~@/components/check-box-list/check-box-list.scss";
+@import "~@/components/review/review.scss";
+@import "~@/components/pagination/pagination.scss";
+@import "~@/components/switch-toggle/switch-toggle.scss";
+@import "~@/components/card-slider/card-slider.scss";
+@import "~@/components/card-auth/card-auth.scss";
+@import "~@/components/card-registration/card-registration.scss";
+@import "~@/components/card-room/card-room.scss";
+@import "~@/components/card-find/card-find.scss";
+@import "~@/components/star-rating/star-rating.scss";
+@import "~@/components/diagram/diagram.scss";
+@import "~@/components/header/header.scss";
+@import "~@/components/menu/menu.scss";
+@import "~@/components/footer/footer.scss";
 
 *,
 ::after,
@@ -41,32 +47,6 @@ body {
   line-height: 24px;
   color: $dark-2;
 }
-//h1 {
-//  font-family: 'Montserrat', sans-serif;
-//  font-style: normal;
-//  font-weight: bold;
-//  font-size: 24px;
-//  line-height: 29px;
-//  color: $dark-1;
-//}
-//
-//h2 {
-//  font-family: 'Montserrat', sans-serif;
-//  font-style: normal;
-//  font-weight: bold;
-//  font-size: 19px;
-//  line-height: 23px;
-//}
-
-//h3 {
-//  font-family: 'Montserrat', sans-serif;
-//  font-style: normal;
-//  font-weight: bold;
-//  font-size: 12px;
-//  line-height: 15px;
-//  color: $dark-1;
-//  text-transform: uppercase;
-//}
 
 .span_stong {
   font-family: 'Montserrat', sans-serif;
@@ -95,8 +75,7 @@ body {
 }
 
 .wrapper {
-  padding: 100px;
-
+  padding: 30px;
   @include md {
     padding: 30px 15px;
   }

@@ -1,0 +1,34 @@
+extends ../../layouts/grey
+include ../../components/card-slider/card-slider
+include ../../components/card-auth/card-auth
+include ../../components/card-registration/card-registration
+include ../../components/card-room/card-room
+include ../../components/card-find/card-find
+block variables
+  - var title = 'Cards'
+
+block content
+  .cards
+    +cardFind
+    +cardRegistration
+    +cardAuth
+    +cardRoom({room:'888', price:'9990'})
+    +cardSlide({
+      url: [{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {
+        src: 'img/slider.png'
+      }, {src: 'img/slider2.png'}],
+      roomNumber: '840',
+      category: 'люкс',
+      price: '9900',
+      review: 65,
+      rating: '3.4'
+    })
+    +cardSlide({
+      url: [{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {
+        src: 'img/slider.png'
+      }, {src: 'img/slider2.png'}],
+      roomNumber: '840',
+      price: '9900',
+      review: 65,
+      rating: '3.4'
+    })

@@ -1,9 +1,0 @@
-import '@/assets/css/main.scss';
-import '@/libs/js/jquery-ui.min';
-import '@/pug/components/star-rating/star-rating';
-import '@/pug/components/field/field';
-import '@/pug/components/button-like/button-like';
-import '@/pug/components/range-slider/range-slider';
-import '@/pug/components/date-picker/date-picker';
-import '@/pug/components/drop-down';
-import '@/pug/components/check-box-list/check-box-list';
