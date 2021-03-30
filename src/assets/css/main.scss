@@ -45,7 +45,7 @@ body {
   font-weight: normal;
   font-size: 14px;
   line-height: 24px;
-  color: $dark-2;
+  color: $text-color-secondary;
 }
 
 .span_stong {
@@ -55,7 +55,7 @@ body {
   font-weight: 700;
   line-height: 15px;
   text-transform: uppercase;
-  color: $dark-1;
+  color: $text-color-main;
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
@@ -76,6 +76,7 @@ body {
 
 .wrapper {
   padding: 30px;
+
   @include md {
     padding: 30px 15px;
   }
@@ -110,5 +111,5 @@ body {
   line-height: 15px;
   margin-bottom: 5px;
   text-transform: uppercase;
-  color: $dark-1;
+  color: $text-color-main;
 }

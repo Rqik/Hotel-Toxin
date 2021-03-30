@@ -13,6 +13,7 @@
 
   .btn_fixed {
     display: none;
+
     @include md {
       display: block;
       position: absolute;
@@ -22,7 +23,7 @@
       width: 20px;
       border-radius: 0 20px 20px 0;
       color: white;
-      background-image: $Green-gradient;
+      background-image: $green-gradient;
       text-align: center;
       z-index: 20;
       // display: flex;
@@ -53,6 +54,7 @@
     flex-wrap: wrap;
     gap: 20px 12px;
     margin-bottom: 40px;
+
     @include md {
       flex-direction: column;
       align-items: center;
@@ -69,9 +71,11 @@
     flex-direction: column;
     position: relative;
     transition: transform .3s ease-in-out;
+
     @include lg {
       margin-left: 15px;
     }
+
     @include md {
       position: fixed;
       left: 0;
@@ -116,7 +120,7 @@
     font-weight: bold;
     font-size: 24px;
     line-height: 29px;
-    color: $dark-1;
+    color: $text-color-main;
     margin-top: 0;
     margin-bottom: 23px;
   }

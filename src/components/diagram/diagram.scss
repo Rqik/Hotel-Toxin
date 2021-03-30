@@ -3,6 +3,7 @@
   flex-direction: row;
   align-items: center;
   height: 170px;
+
   @include ss {
     flex-direction: column;
     height: 280px;
@@ -33,7 +34,7 @@
     list-style: none;
     font-size: 14px;
     line-height: 24px;
-    color: $dark-2;
+    color: $text-color-secondary;
     align-self: center;
     margin-left: 25px;
 
@@ -124,7 +125,8 @@
     font-weight: bold;
     font-size: 19px;
     line-height: 23px;
-    color: $dark-1;
+    color: $text-color-main;
+
     @include sl {
       margin: 0;
     }

@@ -9,13 +9,13 @@ block variables
   - var title = 'Landing'
 
 block content
-  .gallery__detail
-    .gallery_item-1
-      img(src="img/slider4.png", alt="alt")
+  .gallery
+    .gallery__item-1
+      img.gallery__item-img(src="img/slider4.png", alt="alt")
     .gallery_item-2
-      img(src="img/slider5.png", alt="alt")
+      img.gallery__item-img(src="img/slider5.png", alt="alt")
     .gallery_item-3
-      img(src="img/slider3.png", alt="alt")
+      img.gallery__item-img(src="img/slider3.png", alt="alt")
   .detail__block
     .detail__info
       .detail__view
@@ -62,5 +62,4 @@ block content
         .block
           .block-title Отмена
           .block-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-
     +cardRoom({room:'888', price:'9990'})

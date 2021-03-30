@@ -27,4 +27,4 @@ mixin menu({items, auth}={})
       i.material-icons menu
     if !!auth
       .menu__auth
-        a(href=auth.href ? auth.href : '#')= auth.text
+        a.menu__auth_link(href=auth.href ? auth.href : '#')= auth.text

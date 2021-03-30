@@ -21,6 +21,7 @@
   }
 
   .data-select {
+
     &__label,
     &__label_s {
       position: relative;
@@ -32,31 +33,33 @@
       font-size: 12px;
       line-height: 15px;
       text-transform: uppercase;
-      color: $dark-1;
+      color: $text-color-main;
 
       @include ss {
         width: 100%;
       }
 
-      &:hover, &:focus {
+      &:hover,
+      &:focus {
 
         .data-select__input,
         .date-select__input_range {
 
-          border: 1px solid $dark-3;
+          border: 1px solid $text-colot-translucent;
         }
 
         i.material-icons {
-          color: $dark-2;
+          color: $text-color-secondary;
         }
       }
     }
   }
 
-  .date-select__input_range, .data-select__input {
+  .date-select__input_range,
+  .data-select__input {
     width: 150px;
     height: 44px;
-    border: 1px solid $dark-4;
+    border: 1px solid $border-color;
     border-radius: 4px;
     padding-left: 15px;
     font-size: 14px;
@@ -76,7 +79,8 @@
 
   .date-select__input_range {
     width: 320px;
-    color: $dark-2;
+    color: $text-color-secondary;
+
     @include ss {
       width: 100%;
     }
@@ -90,7 +94,7 @@
     display: flex;
     align-items: center;
     text-align: center;
-    color: $dark-3;
+    color: $text-colot-translucent;
     position: absolute;
     bottom: 9px;
     right: 9px;
