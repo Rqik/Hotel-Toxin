@@ -62,6 +62,3 @@ https://rqik.github.io/FSD/dist/landing.html </br>
 https://rqik.github.io/FSD/dist/auth.html </br>
 https://rqik.github.io/FSD/dist/registration.html </br>
 https://rqik.github.io/FSD/dist/room-details.html </br>
-
-~~Fix - для добавления новой страницы нужно создать pug js и внести изменения в webpack~~
-Исправлено теперь pug js должны иметь одинаковые названия для сборки

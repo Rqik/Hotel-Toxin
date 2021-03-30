@@ -1,4 +1,8 @@
 class DropDown {
+  constructor() {
+    this.children = {};
+  }
+
   init() {
     $('.js-dropdown__select')
       .each((i, el) => {
@@ -7,8 +11,9 @@ class DropDown {
         el.classList.add(name);
         DropDown.active(className);
         DropDown.slideDrop(className);
+        this.childrenCurrentVal(className);
 
-        DropDown.actionDropDown(`${className} .dropdown__control-panel`, className);
+        this.actionDropDown(`${className} .dropdown__control-panel`, className);
         $(`${className} .dropdown__item_current`)
           .click(() => {
             $(className)
@@ -23,7 +28,8 @@ class DropDown {
         el.classList.add(name);
         DropDown.active(className);
         DropDown.slideDrop(className);
-        DropDown.actionDropDownModify(
+        this.childrenCurrentVal(className);
+        this.actionDropDownExtended(
           `${className} .dropdown__control-panel`,
           className,
         );
@@ -40,10 +46,10 @@ class DropDown {
   buttonAction(selector) {
     $(selector)
       .find('.js-dropdown__button-reset')
-      .on('click', () => this.eventMain(selector));
+      .on('click', () => this.eventReset(selector));
   }
 
-  eventMain(selector) {
+  eventReset(selector) {
     $(selector)
       .find('.js-dropdown__text_current')
       .text('Сколько гостей');
@@ -53,17 +59,18 @@ class DropDown {
     $(selector)
       .find('.js-control_minus')
       .addClass('disable');
+    this.children[selector].fill(0);
     $(this)
       .css('opacity', 0);
   }
 
-  static count(el) {
+  static dropItem(el) {
     return {
       count: $(el)
         .find('.js-dropdown__control-panel_span')
         .text(),
       name: $(el)
-        .children('.dropdown__item_span')
+        .children('.js-dropdown__item_span')
         .text(),
     };
   }
@@ -91,7 +98,7 @@ class DropDown {
     let countElem = 0;
     $(`${selector} .dropdown__item `)
       .each((i, el) => {
-        const { count, name: nameElem } = DropDown.count(el);
+        const { count, name: nameElem } = DropDown.dropItem(el);
         if (count > 0) {
           countElem += 1;
           textCurrent = `${DropDown.getText(
@@ -115,7 +122,7 @@ class DropDown {
 
     $(`${selector} .dropdown__item`)
       .each((i, el) => {
-        const { count, name } = DropDown.count(el);
+        const { count, name } = DropDown.dropItem(el);
         if (name === 'младенцы') {
           child = count;
         } else {
@@ -123,9 +130,8 @@ class DropDown {
         }
         textCurrent = DropDown.countAdult(adults, child) + DropDown.countChild(child);
       });
-    $(`${selector} .dropdown__item_current span`)
+    $(`${selector} .dropdown__item_current .js-dropdown__text_current`)
       .text(textCurrent);
-
     DropDown.btnHide(selector, adults, child);
   }
 
@@ -178,58 +184,59 @@ class DropDown {
     }
   }
 
-  static actionDropDown(selector, current) {
+  childrenCurrentVal(className) {
+    this.children[className] = [];
+    $(`${className} .js-dropdown__control-panel_span`)
+      .each((i, el) => {
+        this.children[className][i] = +el.textContent;
+      });
+  }
+
+  actionDropDown(selector, current) {
+    const that = this;
     $(selector)
       .each(function (i, el) {
         DropDown.disableButton(el);
-
         $(this)
-          .children('.dropdown__button')
+          .children('.js-dropdown__button')
           .on('click', (e) => {
-            let text = +$(this)
-              .children('span')
-              .text();
             const sum = e.currentTarget.textContent;
-            text += Number(`${sum}1`);
-            if (text <= 0) {
-              text = 0;
+            that.children[current][i] += Number(`${sum}1`);
+            if (that.children[current][i] <= 0) {
+              that.children[current][i] = 0;
             }
             $(this)
-              .children('span')
-              .text(text);
+              .children('.js-dropdown__control-panel_span')
+              .text(that.children[current][i]);
             DropDown.textCurrentNew(current);
             DropDown.disableButton(el);
           });
       });
   }
 
-  static actionDropDownModify(selector, current) {
+  actionDropDownExtended(selector, current) {
+    const that = this;
+
     $(selector)
       .each(function (i, el) {
         DropDown.disableButton(el);
 
-        $(el)
-          .children('span')
-          .text();
-        let text = +$(this)
-          .children('span')
-          .text();
         $(this)
-          .children('.dropdown__button')
+          .children('.js-dropdown__button')
           .on('click', (e) => {
             const sum = e.currentTarget.textContent;
-            text += Number(`${sum}1`);
-            if (text <= 0) {
-              text = 0;
+            that.children[current][i] += Number(`${sum}1`);
+            if (that.children[current][i] <= 0) {
+              that.children[current][i] = 0;
             }
             $(this)
-              .children('span')
-              .text(text);
+              .children('.js-dropdown__control-panel_span')
+              .text(that.children[current][i]);
             DropDown.textModify(current);
             DropDown.disableButton(el);
           });
 
-        DropDown.btnHide(current, text);
+        DropDown.btnHide(current, that.children[current][i]);
       });
   }
 }
