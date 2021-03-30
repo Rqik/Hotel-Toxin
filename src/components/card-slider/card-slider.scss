@@ -17,8 +17,9 @@
 
     .swiper-slide__img {
       border: 4px;
-      width: 100%;
-      object-fit: contain;
+      max-width: 110%;
+      max-height: 110%;
+      object-fit: cover;
     }
 
     .swiper-pagination-img {

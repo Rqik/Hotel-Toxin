@@ -2,7 +2,7 @@
 //- name -- name for input
 //- style -- default | expanded | rich
 //- labels -- Array<string> or if style === rich Array<object>
-//-                            object = {text: 'example' ,decr:'example'}
+//-                            object = {text: 'example' ,desc:'example'}
 
 mixin checkBoxList({style, caption, name, labels=[] }={})
   -
@@ -32,7 +32,7 @@ mixin checkBoxList({style, caption, name, labels=[] }={})
               type="checkbox" )
             label.check-box__label.check-box__label_rich(for=name + '-' +
             indx)= item.text
-              span.check-box__span= item.decr
+              span.check-box__span= item.desc
           else
             input.check-box__input(id=name + '-' + indx type="checkbox" )
             label.check-box__label(for=name + '-' + indx)= item

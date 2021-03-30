@@ -15,7 +15,7 @@ block content
     .search__panel
       +datepicker({title1: 'даты пребывания в отеле'})
       +dropdownSelect({
-        active: true, extended: true, name: 'dropdown',
+        active: false, extended: true, name: 'гости',
         current: 'Сколько гостей', text: ['взрослые', 'дети', 'младенцы']
       })
       +rangeSlider({
@@ -43,76 +43,125 @@ block content
           }
         ]
       })
-        +dropdownSelect( {
-          active: true,
-          name: 'dropdown',
-          current: '2 спальни, 2 кровати',
-          text: ['спальни',
-            'кровати',
-            'ванные комнаты']
-        })
-        +checkBoxList( {
-          style: 'expanded',
-          caption: 'дополнительные удобства', name: 'exp',
-          labels: ['Завтрак',
-            'Письменный стол',
-            'Стул для кормления',
-            'Кроватка', 'Телевизор',
-            'Шампунь', 'Телевизор',
-            'Шампунь'
-          ]
-        })
+      +dropdownSelect( {
+        active: false,
+        name: 'дополнительные удобства',
+        current: '2 спальни, 2 кровати',
+        text: ['спальни',
+          'кровати',
+          'ванные комнаты']
+      })
+      +checkBoxList( {
+        style: 'expanded',
+        caption: 'дополнительные удобства', name: 'exp',
+        labels: ['Завтрак',
+          'Письменный стол',
+          'Стул для кормления',
+          'Кроватка', 'Телевизор',
+          'Шампунь', 'Телевизор',
+          'Шампунь'
+        ]
+      })
       .btn_fixed
         i.material-icons expand_more
     .search__cards
       h2.search__cards-title Номера, которые мы для вас подобрали
       .search__cards_result
         +cardSlide({
-          url: [{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {
-            src: 'img/slider.png'
-          }, {src: 'img/slider2.png'}],
+          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
+            src: 'img/slider3.jpg'
+          }, {src: 'img/slider5.jpg'}],
           roomNumber: '840',
-          category: 'люкс',
           price: '9900',
           review: 65,
           rating: '3.4'
         })
         +cardSlide({
-          url: [{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {
-            src: 'img/slider.png'
-          }, {src: 'img/slider2.png'}],
+          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
+            src: 'img/slider3.jpg'
+          }, {src: 'img/slider5.jpg'}],
           roomNumber: '840',
-          category: 'люкс',
           price: '9900',
           review: 65,
           rating: '3.4'
         })
         +cardSlide({
-          url: [{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {
-            src: 'img/slider.png'
-          }, {src: 'img/slider2.png'}],
+          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
+            src: 'img/slider3.jpg'
+          }, {src: 'img/slider5.jpg'}],
           roomNumber: '840',
-          category: 'люкс',
           price: '9900',
           review: 65,
           rating: '3.4'
         })
         +cardSlide({
-          url: [{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {
-            src: 'img/slider.png'
-          }, {src: 'img/slider2.png'}],
+          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
+            src: 'img/slider3.jpg'
+          }, {src: 'img/slider5.jpg'}],
           roomNumber: '840',
-          category: 'люкс',
           price: '9900',
           review: 65,
           rating: '3.4'
         })
         +cardSlide({
-          url: [{src: 'img/slider.png'}, {src: 'img/slider2.png'}, {
-            src: 'img/slider.png'
-          }, {src: 'img/slider2.png'}],
+          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
+            src: 'img/slider3.jpg'
+          }, {src: 'img/slider5.jpg'}],
           roomNumber: '840',
-          category: 'люкс',
+          price: '9900',
+          review: 65,
+          rating: '3.4'
+        })
+        +cardSlide({
+          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
+            src: 'img/slider3.jpg'
+          }, {src: 'img/slider5.jpg'}],
+          roomNumber: '840',
+          price: '9900',
+          review: 65,
+          rating: '3.4'
+        })
+        +cardSlide({
+          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
+            src: 'img/slider3.jpg'
+          }, {src: 'img/slider5.jpg'}],
+          roomNumber: '840',
+          price: '9900',
+          review: 65,
+          rating: '3.4'
+        })
+        +cardSlide({
+          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
+            src: 'img/slider3.jpg'
+          }, {src: 'img/slider5.jpg'}],
+          roomNumber: '840',
+          price: '9900',
+          review: 65,
+          rating: '3.4'
+        })
+        +cardSlide({
+          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
+            src: 'img/slider3.jpg'
+          }, {src: 'img/slider5.jpg'}],
+          roomNumber: '840',
+          price: '9900',
+          review: 65,
+          rating: '3.4'
+        })
+        +cardSlide({
+          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
+            src: 'img/slider3.jpg'
+          }, {src: 'img/slider5.jpg'}],
+          roomNumber: '840',
+          price: '9900',
+          review: 65,
+          rating: '3.4'
+        })
+        +cardSlide({
+          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
+            src: 'img/slider3.jpg'
+          }, {src: 'img/slider5.jpg'}],
+          roomNumber: '840',
           price: '9900',
           review: 65,
           rating: '3.4'

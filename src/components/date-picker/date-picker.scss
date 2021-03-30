@@ -44,7 +44,6 @@
 
         .data-select__input,
         .date-select__input_range {
-
           border: 1px solid $text-colot-translucent;
         }
 
@@ -78,7 +77,7 @@
   }
 
   .date-select__input_range {
-    width: 320px;
+    width: 266px;
     color: $text-color-secondary;
 
     @include ss {

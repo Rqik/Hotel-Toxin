@@ -27,16 +27,58 @@ block content
         placeholder: 'Email'
       })
       +field({
+        name: 'date',
+        title: 'masked text field',
+        placeholder: 'ДД.ММ.ГГГГ'
+      })
+      +select({
+        name: 'dropdown',
+        list: ['декабрь', 'ноябрь', 'декабрь', 'ноябрь']
+      })
+      +datepicker({
+        title1: 'date dropdown',
+        title2: 'date dropdown'
+      })
+      +datepicker({ title1: 'filter date dropdown' } )
+      
+      +field({
         name: 'email',
         title: 'text field',
         placeholder: 'Email',
         form:
           true
       })
-      +select({
-        name: 'dropdown',
-        list: ['декабрь', 'ноябрь', 'декабрь', 'ноябрь']
+    .wrapper-content__block
+      +checkBoxList( {
+        caption: 'checkbox buttons',
+        name: 'le',
+        labels: ['Можно курить', 'Можно с питомцами ',
+          'Можно пригласить гостей (до 10 человек)'
+        ]
       })
+      +inputRadio({
+        caption: 'Radio Buttons',
+        name: 'gender',
+        label: ['Мужчина', 'Женщина']
+      })
+      +switchToggle({
+        caption: 'toogle',
+        name: 'toogle',
+        label: ['Получать спецпредложения', 'Получать спецпредложения']
+      })
+      div.span_stong like button
+        .span_stong_div
+          +likeButton({
+            active: false,
+            number: '2'
+          })
+          +likeButton({
+            active: true,
+            number: '12'
+          })
+      div.span_stong rate button
+        div
+          +starRating({ currentRating: '3.47' })
 
     .wrapper-content__block
       +rangeSlider({
@@ -83,44 +125,9 @@ block content
             next: true,
             text: ' 1 – 12 из 100+ вариантов аренды'
           })
+    
     .wrapper-content__block
-      +checkBoxList( {
-        caption: 'checkbox buttons',
-        name: 'le',
-        labels: ['Можно курить', 'Можно с питомцами ',
-          'Можно пригласить гостей (до 10 человек)'
-        ]
-      })
-      +inputRadio({
-        caption: 'Radio Buttons',
-        name: 'gender',
-        label: ['Мужчина', 'Женщина']
-      })
-      +switchToggle({
-        caption: 'toogle',
-        name: 'toogle',
-        label: ['Получать спецпредложения', 'Получать спецпредложения']
-      })
-      div.span_stong like button
-        .span_stong_div
-          +likeButton({
-            active: false,
-            number: '2'
-          })
-          +likeButton({
-            active: true,
-            number: '12'
-          })
-      div.span_stong rate button
-        div
-          +starRating({ currentRating: '3.47' })
-
-    .wrapper-content__block
-      +datepicker({
-        title1: 'date dropdown',
-        title2: 'date dropdown'
-      })
-      +datepicker({ title1: 'date dropdown' } )
+      
       +dropdownSelect({
         active: true,
         name: 'dropdown',
@@ -158,11 +165,11 @@ block content
           labels: [
             {
               text: 'Широкий коридор',
-              decr: 'Ширина коридоров в номере не менее 91 см.'
+              desc: 'Ширина коридоров в номере не менее 91 см.'
             },
             {
               text: 'Помощник для инвалидов',
-              decr: 'На 1 этаже вас встретит специалист  и проводит до номера.'
+              desc: 'На 1 этаже вас встретит специалист  и проводит до номера.'
             }]
         })
 

@@ -1,17 +1,10 @@
 extends ../../layouts/landing-page
 include ../../components/field/field
 include ../../components/button/button
+include ../../components/card-auth/card-auth
 block variables
   - var title = 'Registration'
 
 block content
   .register
-    .card__block
-      .card__title Войти
-      +field('email','', 'Email')
-      +field('name','', 'Пароль')
-      .card__auth_in
-          +button({style:'long', text:'войти'})
-          .card__bot
-              .card__bot_text Нет аккаунта на Toxin
-              +button({style:'outline', text:'Создать'})
+    +cardAuth
