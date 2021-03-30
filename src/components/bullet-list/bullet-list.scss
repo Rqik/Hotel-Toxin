@@ -17,7 +17,7 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 24px;
-    color: $dark-2;
+    color: $text-color-secondary;
     list-style: none;
     text-transform: none;
     padding: 0;
@@ -36,7 +36,7 @@
       border-radius: 50%;
       left: 0;
       top: 5px;
-      background-color: $dark-4;
+      background-color: $border-color;
     }
 
   }

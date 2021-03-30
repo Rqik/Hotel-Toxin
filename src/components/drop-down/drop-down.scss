@@ -6,7 +6,7 @@
     font-size: 12px;
     font-weight: bold;
     text-transform: uppercase;
-    color: $dark-1;
+    color: $text-color-main;
   }
 
   &__select {
@@ -18,6 +18,7 @@
     width: 266px;
     background-color: white;
     border-radius: 4px;
+
     @include ss {
       width: 100%;
     }
@@ -31,7 +32,7 @@
 
       .dropdown__select_current,
       .dropdown__select_items {
-        border-color: $dark-3;
+        border-color: $text-colot-translucent;
         // border-top: none;
       }
     }
@@ -43,7 +44,7 @@
     width: 100%;
     height: 44px;
     background-color: transparent;
-    border: 1px solid $dark-4;
+    border: 1px solid $border-color;
     box-sizing: border-box;
     border-radius: 4px;
     padding: 0 14px;
@@ -107,7 +108,7 @@
   }
 
   &__items {
-    border: 1px solid $dark-4;
+    border: 1px solid $border-color;
     border-top: none;
     box-sizing: border-box;
     border-radius: 0 0 4px 4px;
@@ -138,7 +139,7 @@
 
   &__button {
     height: 30px;
-    border: 1px solid $dark-3;
+    border: 1px solid $text-colot-translucent;
     width: 30px;
     border-radius: 50%;
     font-weight: normal;
@@ -161,7 +162,7 @@
     display: flex;
     align-items: center;
     text-align: center;
-    color: $dark-3;
+    color: $text-colot-translucent;
     position: absolute;
     top: 9px;
     right: 9px;
@@ -181,9 +182,11 @@
   position: relative;
   background-color: white;
   border-radius: 4px;
+
   @include sl {
     // width: 266px;
   }
+
   @include ss {
     width: 100%;
   }
@@ -193,7 +196,7 @@
 
     .dropdown__select_current,
     .dropdown__select_items {
-      border-color: $dark-3;
+      border-color: $text-colot-translucent;
     }
 
   }

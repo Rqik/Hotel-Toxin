@@ -11,7 +11,7 @@
     font-weight: bold;
     font-size: 12px;
     line-height: 15px;
-    color: $dark-1;
+    color: $text-color-main;
     text-transform: uppercase;
 
     &-title {
@@ -26,7 +26,7 @@
       padding: 0;
       text-align: right;
       text-transform: uppercase;
-      color: $dark-3;
+      color: $text-colot-translucent;
       border: none;
       box-sizing: border-box;
     }
@@ -40,7 +40,7 @@
   }
 
   .ui-slider {
-    border: 1px solid $dark-4;
+    border: 1px solid $border-color;
     height: 6px;
     border-radius: 3px;
     margin-top: 23px;
@@ -49,8 +49,8 @@
 
   .ui-slider-handle {
     box-sizing: border-box;
-    background-color: $Green;
-    background-image: $Green-gradient;
+    background-color: $green;
+    background-image: $green-gradient;
     border: 2px solid white;
     width: 16px;
     height: 16px;
@@ -59,8 +59,8 @@
   }
 
   .ui-slider-range {
-    background-color: $Green;
-    background-image: $Green-gradient;
+    background-color: $green;
+    background-image: $green-gradient;
     height: 6px;
     top: -1px;
 

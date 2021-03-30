@@ -2,7 +2,7 @@
   background-color: white;
   width: 100%;
   padding: 100px 30px 0 30px;
-  box-shadow: 0 1px 0 $dark-6;
+  box-shadow: 0 1px 0 $shadow-color;
 
   @include sm {
     box-shadow: none;
@@ -25,6 +25,7 @@
     @include sm {
       margin-bottom: 0;
       align-items: center;
+
       .footer_right__subscribe {
         display: none;
       }
@@ -59,7 +60,7 @@
         font-weight: normal;
         font-size: 14px;
         line-height: 24px;
-        color: $dark-2;
+        color: $text-color-secondary;
       }
     }
 
@@ -92,7 +93,7 @@
           font-size: 12px;
           line-height: 15px;
           text-transform: uppercase;
-          color: $dark-1;
+          color: $text-color-main;
         }
 
         &__items {
@@ -101,7 +102,7 @@
           list-style: none;
           font-size: 14px;
           line-height: 19px;
-          color: $dark-3;
+          color: $text-colot-translucent;
         }
 
         &__item {
@@ -123,7 +124,7 @@
           font-size: 12px;
           line-height: 15px;
           text-transform: uppercase;
-          color: $dark-1;
+          color: $text-color-main;
         }
 
         &-text {
@@ -131,7 +132,7 @@
           font-weight: normal;
           font-size: 14px;
           line-height: 24px;
-          color: $dark-2;
+          color: $text-color-secondary;
           margin-bottom: 23px;
         }
 
@@ -142,8 +143,7 @@
         .form_input {
           width: 260px;
 
-          .input_sub {
-          }
+          .input_sub {}
         }
       }
     }
@@ -152,7 +152,7 @@
 
   .footer_bot {
     position: relative;
-    border-top: 1px solid $dark-6;
+    border-top: 1px solid $shadow-color;
 
     display: flex;
     flex-direction: row;
@@ -160,7 +160,7 @@
     align-items: center;
     padding: 24px 0;
     font-size: 14px;
-    color: $dark-2;
+    color: $text-color-secondary;
 
     .footer__social {
       display: flex;

@@ -1,23 +1,25 @@
 @import "~@assets/css/mixin.scss";
 
-.gallery__detail {
+.gallery {
   display: grid;
-  grid-template: 'gItem1 gItem1 gItem2' max(243px) 'gItem1 gItem1 gItem3' max(243px);
+  grid-template: 'gItem1 gItem1 gItem2'max(243px) 'gItem1 gItem1 gItem3'max(243px);
   gap: 0;
+
   @include sm {
-    grid-template: 'gItem1  gItem2' max(143px) 'gItem1  gItem3' max(143px);
-  }
-  @include ss {
-    grid-template: 'gItem1' max(143px) 'gItem2' max(143px) 'gItem3' max(143px);
+    grid-template: 'gItem1  gItem2'max(143px) 'gItem1  gItem3'max(143px);
   }
 
-  img {
+  @include ss {
+    grid-template: 'gItem1'max(143px) 'gItem2'max(143px) 'gItem3'max(143px);
+  }
+
+  .gallery__item-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
   }
 
-  .gallery_item {
+  .gallery__item {
     &-1 {
       grid-area: gItem1;
 
@@ -65,10 +67,12 @@
       margin: 0;
     }
   }
+
   @include sl {
     padding: 30px 15px;
     max-width: 320px;
   }
+
   @include ss {
     padding-left: 0;
     padding-right: 0;
@@ -87,6 +91,7 @@
       flex-direction: column;
       align-items: center;
     }
+
     @include sl {
       align-items: flex-start;
 
@@ -99,6 +104,7 @@
   display: flex;
   flex-direction: column;
   width: 340px;
+
   @include ss {
     width: 100%;
   }
@@ -128,10 +134,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  gap: 70px;
+
   @include md {
     // margin-left: 40px ;
     margin-bottom: 30px;
   }
+
   @include sm {
     flex-direction: column;
 
@@ -143,6 +152,7 @@
     font-size: 19px;
     line-height: 23px;
     text-transform: none;
+
     @include sm {
       padding: 0;
     }

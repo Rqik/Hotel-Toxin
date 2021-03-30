@@ -8,25 +8,26 @@
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
-    color: $dark-1;
+    color: $text-color-main;
   }
 
   &__input {
     width: 320px;
     height: 44px;
     background: #FFFFFF;
-    border: 1px solid $dark-4;
+    border: 1px solid $border-color;
     box-sizing: border-box;
     border-radius: 4px;
     padding-left: 14px;
     font-size: 14px;
-    color: $dark-2;
+    color: $text-color-secondary;
+
     @include ss {
       width: 100%;
     }
 
     &::placeholder {
-      color: $dark-4;
+      color: $border-color;
       font-family: 'Montserrat', sans-serif;
       font-style: normal;
       font-weight: normal;
@@ -36,7 +37,7 @@
 
     &:hover,
     &:focus {
-      border: 1px solid $dark-3;
+      border: 1px solid $text-colot-translucent;
       font-style: normal;
       font-weight: normal;
       line-height: 24px;
@@ -51,7 +52,7 @@
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
-    color: $dark-1;
+    color: $text-color-main;
   }
 
   &__input {
@@ -59,18 +60,19 @@
     flex-direction: row;
     margin: 5px 0 0;
     align-items: flex-start;
-    border: 1px solid $dark-4;
+    border: 1px solid $border-color;
     border-radius: 4px;
     width: 267px;
     height: 44px;
     box-sizing: border-box;
+
     @include ss {
       width: 100%;
     }
 
     &:hover,
     &:focus {
-      border: 1px solid $dark-3;
+      border: 1px solid $text-colot-translucent;
       font-style: normal;
       font-weight: normal;
       line-height: 18px;
@@ -85,7 +87,7 @@
       cursor: pointer;
       white-space: nowrap;
       background-color: white;
-      color: $dark-1;
+      color: $text-color-main;
       background-image: $purple-gradient;
       background-clip: text;
       -webkit-background-clip: text;
@@ -106,15 +108,16 @@
       border-radius: 4px;
       padding-left: 15px;
       font-size: 14px;
-      color: $dark-2;
+      color: $text-color-secondary;
       border-right: 0;
       outline: none;
+
       @include ss {
         width: 100%;
       }
 
       &::placeholder {
-        color: $dark-4;
+        color: $border-color;
         font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: normal;
