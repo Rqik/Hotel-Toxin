@@ -1,0 +1,14 @@
+extends ../../layouts/grey
+include ../../components/button/button
+block variables
+  - var title = 'Demo | Pages'
+
+block content
+  .pages 
+    +button({href:'./index.html' ,style :'outline'  , text:'Компоненты' ,border: false})
+    +button({href:'./header-footer.html' ,style :'outline'  , text:'Header Footer' ,border: false})
+    +button({href:'./landing.html' ,style :'outline'  , text:'Landing' ,border: false})
+    +button({href:'./auth.html' ,style :'outline'  , text:'Auth' ,border: false})
+    +button({href:'./registration.html' ,style :'outline'  , text:'Registration' ,border: false})
+    +button({href:'./cards.html' ,style :'outline'  , text:'Cards' ,border: false})
+    +button({href:'./room-details.html' ,style :'outline'  , text:'Room Details' ,border: false})
