@@ -7,6 +7,7 @@
 ## GitHub Pages
 
 [**index.html**](https://rqik.github.io/FSD/dist/) </br>
+[**color-fonts**](https://rqik.github.io/FSD/dist/color-fonts.html) </br>
 [**cards**](https://rqik.github.io/FSD/dist/cards.html) </br>
 [**header-footer**](https://rqik.github.io/FSD/dist/header-footer.html) </br>
 [**landing**](https://rqik.github.io/FSD/dist/landing.html) </br>
