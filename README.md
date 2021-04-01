@@ -2,6 +2,8 @@
 
 ---
 
+# [**Демо**](https://rqik.github.io/FSD/dist/demo-pages.html)
+
 ## GitHub Pages
 
 [**index.html**](https://rqik.github.io/FSD/dist/) </br>

@@ -8,30 +8,31 @@
 @import "~@/pages/cards/cards.scss";
 @import "~@/pages/index/index.scss";
 
-@import '~@/components/date-picker/date-picker.scss';
+@import "~@/components/bullet-list/bullet-list.scss";
 @import "~@/components/button/button.scss";
 @import "~@/components/button-like/button-like.scss";
-@import "~@/components/field/field.scss";
-@import "~@/components/select/select.scss";
-@import "~@/components/bullet-list/bullet-list.scss";
-@import "~@/components/range-slider/range-slider.scss";
-@import "~@/components/input-radio/input-radio.scss";
-@import "~@/components/drop-down/drop-down.scss";
-@import "~@/components/icon-text/icon-text.scss";
-@import "~@/components/check-box-list/check-box-list.scss";
-@import "~@/components/review/review.scss";
-@import "~@/components/pagination/pagination.scss";
-@import "~@/components/switch-toggle/switch-toggle.scss";
-@import "~@/components/card-slider/card-slider.scss";
 @import "~@/components/card-auth/card-auth.scss";
+@import "~@/components/card-find/card-find.scss";
 @import "~@/components/card-registration/card-registration.scss";
 @import "~@/components/card-room/card-room.scss";
-@import "~@/components/card-find/card-find.scss";
-@import "~@/components/star-rating/star-rating.scss";
+@import "~@/components/card-slider/card-slider.scss";
+@import "~@/components/check-box-list/check-box-list.scss";
+@import "~@/components/color-pick/color-pick.scss";
+@import '~@/components/date-picker/date-picker.scss';
 @import "~@/components/diagram/diagram.scss";
-@import "~@/components/header/header.scss";
-@import "~@/components/menu/menu.scss";
+@import "~@/components/drop-down/drop-down.scss";
+@import "~@/components/field/field.scss";
 @import "~@/components/footer/footer.scss";
+@import "~@/components/header/header.scss";
+@import "~@/components/icon-text/icon-text.scss";
+@import "~@/components/input-radio/input-radio.scss";
+@import "~@/components/menu/menu.scss";
+@import "~@/components/pagination/pagination.scss";
+@import "~@/components/range-slider/range-slider.scss";
+@import "~@/components/review/review.scss";
+@import "~@/components/select/select.scss";
+@import "~@/components/star-rating/star-rating.scss";
+@import "~@/components/switch-toggle/switch-toggle.scss";
 
 *,
 ::after,

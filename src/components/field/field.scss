@@ -15,7 +15,7 @@
     width: 320px;
     height: 44px;
     background: #FFFFFF;
-    border: 1px solid $border-color;
+    border: 1px solid $color-transparent;
     box-sizing: border-box;
     border-radius: 4px;
     padding-left: 14px;
@@ -27,7 +27,7 @@
     }
 
     &::placeholder {
-      color: $border-color;
+      color: $color-transparent;
       font-family: 'Montserrat', sans-serif;
       font-style: normal;
       font-weight: normal;
@@ -60,7 +60,7 @@
     flex-direction: row;
     margin: 5px 0 0;
     align-items: flex-start;
-    border: 1px solid $border-color;
+    border: 1px solid $color-transparent;
     border-radius: 4px;
     width: 267px;
     height: 44px;
@@ -117,7 +117,7 @@
       }
 
       &::placeholder {
-        color: $border-color;
+        color: $color-transparent;
         font-family: 'Montserrat', sans-serif;
         font-style: normal;
         font-weight: normal;

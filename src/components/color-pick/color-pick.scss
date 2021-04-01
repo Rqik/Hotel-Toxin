@@ -1,0 +1,35 @@
+.color-pick {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+
+  &__rectangel {
+    width: 70px;
+    height: 70px;
+    border-radius: 6px;
+  }
+
+  &__name {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: $text-color-main;
+  }
+
+  &__code {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    color: $text-color-main;
+  }
+}

@@ -28,7 +28,7 @@
       width: 40px;
       height: 20px;
       border-radius: 10px;
-      border: 1px solid $border-color;
+      border: 1px solid $color-transparent;
       left: 0;
       top: 2px;
       transition: border 0.3s ease-in-out;
@@ -42,7 +42,7 @@
       border-radius: 50%;
       left: 4px;
       top: 6px;
-      background: $border-color;
+      background: $color-transparent;
       transition: all 0.3s ease-in-out;
     }
   }
