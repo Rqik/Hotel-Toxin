@@ -26,19 +26,22 @@ mixin cardRoom({room, price}={})
           'взрослые',
           'дети', 'младенцы']
       })
-    .card-room__info
+    .card-room__info.js-card-room__info
       .card-room__info-item
-        .card-room__info-name.js-card-room__info-name.js-card-room__pay1 9990₽
-        .card-room__info-sum.js-card-room__info-sum.js-card-room__pay2 39000₽
+        .card-room__info-name.js-card-room__info-name.js-card-room__pay1=price
+          | ₽
+        .card-room__info-sum.js-card-room__info-sum.js-card-room__pay2=price
+          | ₽
       .card-room__info-item
-        .card-room__info-name.js-card-room__info-name.js-card-room__sale1 Сбор за услуги: скидка 2 179₽
+        .card-room__info-name.card-room__icon.js-card-room__info-name.js-card-room__sale1 Сбор за услуги: скидка 2 179₽
         .card-room__info-sum.js-card-room__info-sum.js-card-room__sale2 0₽
       .card-room__info-item
-        .card-room__info-name.js-card-room__info-name.js-card-room__dop1 Сбор за дополнительные услуги
+        .card-room__info-name.card-room__icon.js-card-room__info-name.js-card-room__dop1 Сбор за дополнительные услуги
         .card-room__info-sum.js-card-room__info-sum.js-card-room__dop2 3000₽
       .card-room__info_result
         .card-room__info-name_result Итого
-        .card-room__info-sum_result.js-card-room__info-sum_result 3890000₽
+        .card-room__info-sum_result.js-card-room__info-sum_result=price
+          | ₽
     +button({
       style: 'long',
       text: 'забронировать'

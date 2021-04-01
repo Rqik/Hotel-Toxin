@@ -5,11 +5,11 @@
     padding-left: 19px;
     border-left: 1px solid $shadow-color;
     font-size: 14px;
-    color: $text-colot-translucent;
+    color: $text-color-translucent;
 
 
     &_link {
-      color: $text-colot-translucent;
+      color: $text-color-translucent;
       text-decoration: none;
 
       &:hover {
@@ -28,7 +28,7 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
-    color: $text-colot-translucent;
+    color: $text-color-translucent;
     gap: 20px;
   }
 
@@ -77,7 +77,7 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 17px;
-    color: $text-colot-translucent;
+    color: $text-color-translucent;
     gap: 2px;
     top: 30px;
     background-color: white;

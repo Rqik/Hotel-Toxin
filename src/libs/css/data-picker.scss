@@ -7,9 +7,8 @@
     border: 1px solid $color-transparent;
     display: flex;
     flex-direction: column;
-    box-shadow: 0px 10px 20px rgba(31, 32, 65, 0.05);
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
 
-    // justify-content: space-between ;
     .datepicker--pointer {
       display: none;
     }
@@ -136,20 +135,24 @@
       border-radius: 50%;
       width: 39.88px;
       height: 40px;
-      color: $text-colot-translucent;
+      color: $text-color-translucent;
 
       &-day {
-        +.-current- {
+        + .-current- {
           color: white;
           background: $green-gradient;
         }
 
-        +.-selected- {
+        &.-disabled-, &.-other-month- {
+          color: $color-transparent;
+        }
+
+        + .-selected- {
           color: #fff;
           background: $purple-gradient;
         }
 
-        +.-range-from- {
+        + .-range-from- {
           position: relative;
 
           &::after {
@@ -166,7 +169,7 @@
           }
         }
 
-        +.-range-to- {
+        + .-range-to- {
           position: relative;
 
           &::after {
@@ -183,7 +186,7 @@
           }
         }
 
-        +.-in-range- {
+        + .-in-range- {
           background: none;
 
           &::after {

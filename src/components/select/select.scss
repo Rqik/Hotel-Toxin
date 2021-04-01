@@ -32,7 +32,7 @@
 
     &:hover,
     &:focus {
-      border: 1px solid $text-colot-translucent;
+      border: 1px solid $text-color-translucent;
       cursor: pointer;
       font-style: normal;
       font-weight: normal;
@@ -61,7 +61,7 @@
     display: flex;
     align-items: center;
     text-align: center;
-    color: $text-colot-translucent;
+    color: $text-color-translucent;
     position: absolute;
     right: 10px;
     bottom: 10px;
