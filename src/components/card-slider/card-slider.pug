@@ -10,6 +10,10 @@ mixin cardSlide({url, roomNumber , category='', price='0', review='0',rating='0'
           .swiper-slide
             img.swiper-slide__img(src=key.src, alt=key.alt)
       .swiper-pagination-img
+      .swiper-button-prev
+        i.material-icons expand_more
+      .swiper-button-next
+        i.material-icons expand_more
     .card-slider_bot
       .card-slider__header
         .card-slider__room
@@ -21,7 +25,7 @@ mixin cardSlide({url, roomNumber , category='', price='0', review='0',rating='0'
             =category
         .card-slider__price
           span.card-slider__span=price
-          | ₽
+            | ₽
           | в сутки
       .card-slider__rate
         +starRating( { currentRating: rating } )

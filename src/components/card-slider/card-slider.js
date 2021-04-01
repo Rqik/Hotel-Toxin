@@ -1,8 +1,8 @@
 /* eslint-disable no-new */
-import Swiper, { EffectFade, Pagination } from 'swiper';
+import Swiper, { EffectFade, Navigation, Pagination } from 'swiper';
 import '../star-rating';
 
-Swiper.use([Pagination, EffectFade]);
+Swiper.use([Pagination, EffectFade, Navigation]);
 
 class CardSlider {
   constructor(selector) {
@@ -15,6 +15,10 @@ class CardSlider {
       pagination: {
         el: '.swiper-pagination-img',
         clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
     };
   }

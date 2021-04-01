@@ -42,6 +42,62 @@
         background-color: white;
       }
     }
+
+    .swiper-button {
+      &-prev, &-next {
+        width: 42px;
+        height: 100%;
+        margin: 0;
+        align-items: center;
+        transform: translate(0, -50%);
+        color: white;
+        opacity: 0;
+        transition: opacity .3s ease-in-out;
+        .material-icons {
+          transition: opacity .3s ease-in-out;
+          opacity: 0;
+        }
+
+        &::after {
+          display: none;
+          content: '';
+        }
+
+        &:hover {
+          opacity: 1;
+          .material-icons {
+           opacity: 1;
+          }
+        }
+      }
+
+      &-prev {
+        left: 0;
+
+        .material-icons {
+          transform: rotate(90deg);
+        }
+
+        &:hover {
+          background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%,
+                  rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);;
+        }
+      }
+
+      &-next {
+        right: 0;
+        .material-icons {
+          transform: rotate(-90deg);
+        }
+
+        &:hover {
+          background: linear-gradient(-90deg, rgba(0, 0, 0, 0.5) 0%,
+                  rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+        }
+      }
+
+
+    }
   }
 
   &__header {
@@ -72,7 +128,7 @@
 
     &-category {
       color: $purple;
-      line-height: 24px;
+      line-height: 1.46;
     }
 
 
@@ -86,11 +142,11 @@
     line-height: 23px;
     font-size: 12px;
     font-weight: normal;
-    color: $text-colot-translucent;
+    color: $text-color-translucent;
 
     .card-slider__span {
-      font-size: 12px;
-      line-height: 15px;
+      font-size: 14px;
+      line-height: 18px;
       font-weight: bold;
       margin-right: 3px;
     }
@@ -100,7 +156,7 @@
     font-weight: normal;
     font-size: 14px;
     line-height: 18px;
-    color: $text-colot-translucent;
+    color: $text-color-translucent;
 
     .card-slider__span {
       font-weight: bold;

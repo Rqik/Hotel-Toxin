@@ -32,7 +32,7 @@
 
       .dropdown__select_current,
       .dropdown__select_items {
-        border-color: $text-colot-translucent;
+        border-color: $text-color-translucent;
         // border-top: none;
       }
     }
@@ -139,7 +139,7 @@
 
   &__button {
     height: 30px;
-    border: 1px solid $text-colot-translucent;
+    border: 1px solid $text-color-translucent;
     width: 30px;
     border-radius: 50%;
     font-weight: normal;
@@ -162,7 +162,7 @@
     display: flex;
     align-items: center;
     text-align: center;
-    color: $text-colot-translucent;
+    color: $text-color-translucent;
     position: absolute;
     top: 9px;
     right: 9px;
@@ -196,7 +196,7 @@
 
     .dropdown__select_current,
     .dropdown__select_items {
-      border-color: $text-colot-translucent;
+      border-color: $text-color-translucent;
     }
 
   }

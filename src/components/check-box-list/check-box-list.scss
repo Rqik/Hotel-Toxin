@@ -59,7 +59,7 @@
   &__label {
     position: relative;
     padding-left: 30px;
-    color: $text-colot-translucent;
+    color: $text-color-translucent;
     text-transform: none;
     font-style: normal;
     font-weight: normal;
@@ -94,7 +94,7 @@
         font-weight: normal;
         font-size: 12px;
         line-height: 14px;
-        color: $text-colot-translucent;
+        color: $text-color-translucent;
         margin-top: 5px;
       }
     }
@@ -105,13 +105,12 @@
     appearance: none;
     position: absolute;
 
-    &:checked~.check-box__label::before {
+    &:checked ~ .check-box__label::before {
       background: url('~@/components/check-box-list/image/check.png') no-repeat 4px 2px;
       background-size: 10px 11px;
     }
 
-
-    &:checked~.check-box__label {
+    &:checked ~ .check-box__label {
       color: $text-color-secondary;
     }
   }
