@@ -12,12 +12,12 @@ block variables
 
 block content
   -
-    const {dropdown,rangeSlider, cardSlider , cardSlider2, checkBox , pagination}  = require("./serach-room.json")
-    const {checkBoxList , checkBoxHome , checkBoxRich}  = checkBox
-    const {dropdownSelect , dropdownSelectExt}  = dropdown
+    const { dropdown, rangeSlider, cardSlider, cardSlider2, checkBox, pagination } = require("./serach-room.json")
+    const { checkBoxList, checkBoxHome, checkBoxRich } = checkBox
+    const { dropdownSelect, dropdownSelectExt } = dropdown
   .search-page
     .search-page__panel.js-search-page__panel
-      +datepicker({title1: 'даты пребывания в отеле'})
+      +datepicker({ title1: 'даты пребывания в отеле' })
       +dropdownSelect(dropdownSelectExt)
       +rangeSlider(rangeSlider)
       +checkBoxList(checkBoxHome)
@@ -30,6 +30,6 @@ block content
       h2.search-page__cards-title Номера, которые мы для вас подобрали
       .search-page__cards_result
         - for (let i = 1 ; i <= 6 ; i+=1)
-          +cardSlide(cardSlider)
-          +cardSlide(cardSlider2)
+        +cardSlide(cardSlider)
+        +cardSlide(cardSlider2)
       +pagination(pagination)

@@ -34,13 +34,10 @@
       height: 40px;
     }
 
-
     @include md {
       .menu__burger {
         display: flex;
-
       }
-
       flex-direction: row-reverse;
 
       .menu__items {
@@ -71,8 +68,6 @@
         position: relative;
       }
     }
-
-
   }
 
   &__logo {
@@ -87,5 +82,4 @@
       width: 80px;
     }
   }
-
 }

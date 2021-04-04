@@ -9,9 +9,9 @@ block variables
   - const title = 'Landing'
 
 block content
-  - 
-    const {iconText , diagram , review , bulletList, cardRoom} = require('./room-detail.json'); 
-    const {client_1 , client_2} = review
+  -
+    const { iconText, diagram, review, bulletList, cardRoom } = require('./room-detail.json');
+    const { client_1, client_2 } = review
   .gallery
     .gallery__item-1
       img.gallery__item-img(src="img/slider4.jpg", alt="alt")
@@ -19,23 +19,23 @@ block content
       img.gallery__item-img(src="img/slider5.jpg", alt="alt")
     .gallery_item-3
       img.gallery__item-img(src="img/slider3.jpg", alt="alt")
-  .detail__block
+  .detail
     .detail__info
       .detail__view
-        .block
-          h3.block-title Cведения о номере
+        .detail__block
+          h3.detail__block-title Cведения о номере
           +iconText(iconText)
         +diagram(diagram)
-      .block
-        h3.block-title Отзывы посетителей номера
+      .detail__block
+        h3.detail__block-title Отзывы посетителей номера
       +review(client_1)
       +review(client_2)
-      .detail_bottom
-        .block
-          .block-title Правила
-          .block-text
+      .detail__subordinate
+        .detail__block
+          .detail__block-title Правила
+          .detail__block-text
             +bulletList(bulletList)
-        .block
-          .block-title Отмена
-          .block-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+        .detail__block
+          .detail__block-title Отмена
+          .detail__block-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
     +cardRoom(cardRoom)

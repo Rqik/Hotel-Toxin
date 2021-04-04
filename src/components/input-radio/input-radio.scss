@@ -6,7 +6,6 @@
   margin-bottom: 1rem;
   text-transform: uppercase;
 
-
   &__items {
     display: flex;
     flex-direction: row;
@@ -38,7 +37,6 @@
         left: 0;
         top: 0;
         transition: border 0.3s ease-in-out;
-
       }
 
       &::after {
@@ -52,7 +50,6 @@
         background: $purple-gradient;
         opacity: 0;
         transition: all 0.3s ease-in-out;
-
       }
     }
 
@@ -60,18 +57,17 @@
       position: absolute;
       appearance: none;
 
-      &:checked~.radio__label::after {
+      &:checked ~ .radio__label::after {
         opacity: 1;
       }
 
-      &:checked~.radio__label::before {
+      &:checked ~ .radio__label::before {
         border: 1px solid $purple;
       }
 
-      &:checked~.radio__label {
+      &:checked ~ .radio__label {
         color: $text-color-secondary;
       }
     }
-
   }
 }

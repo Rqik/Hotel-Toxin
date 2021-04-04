@@ -6,6 +6,7 @@
   gap: 20px;
   position: relative;
   height: 64px;
+
   &__label {
     position: relative;
     display: flex;
@@ -16,7 +17,6 @@
     font-size: 12px;
     line-height: 15px;
     text-transform: uppercase;
-    //word-wrap: break-word;
     color: $text-color-main;
     max-width: 150px;
 
@@ -101,5 +101,4 @@
     z-index: 1;
     transition: color .3s ease-in-out;
   }
-
 }

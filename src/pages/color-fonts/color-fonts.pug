@@ -5,11 +5,11 @@ block variables
   - const title = 'Color Fonts'
 
 block content
-  - const {colors} = require('./color-fonts.json')
+  - const { colors } = require('./color-fonts.json')
   .df
     .color-palette
       each item in colors
-       +colorPick(item)
+        +colorPick(item)
     .fonts
       .fonts__block.fonts__block_fs24
         .fonts__tag h1

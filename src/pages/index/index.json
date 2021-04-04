@@ -22,11 +22,18 @@
       "title1": "date dropdown",
       "title2": "date dropdown"
     },
-    { "title1": "filter date dropdown" }
+    {
+      "title1": "filter date dropdown"
+    }
   ],
   "select": {
     "name": "dropdown",
-    "list": ["декабрь", "ноябрь", "декабрь", "ноябрь"]
+    "list": [
+      "декабрь",
+      "ноябрь",
+      "декабрь",
+      "ноябрь"
+    ]
   },
   "likeButton": [
     {
@@ -71,10 +78,18 @@
         "current": true,
         "number": 1
       },
-      { "number": 2 },
-      { "number": 3 },
-      { "number": ".." },
-      { "number": 15 }
+      {
+        "number": 2
+      },
+      {
+        "number": 3
+      },
+      {
+        "number": ".."
+      },
+      {
+        "number": 15
+      }
     ],
     "next": true,
     "text": " 1 – 12 из 100+ вариантов аренды"
@@ -84,14 +99,22 @@
       "active": true,
       "name": "dropdown",
       "current": "2 спальни, 2 кровати",
-      "text": ["спальни", "кровати", "ванные комнаты"]
+      "text": [
+        "спальни",
+        "кровати",
+        "ванные комнаты"
+      ]
     },
     {
       "active": true,
       "extended": true,
       "name": "dropdown",
       "current": "Сколько гостей",
-      "text": ["взрослые", "дети", "младенцы"]
+      "text": [
+        "взрослые",
+        "дети",
+        "младенцы"
+      ]
     }
   ],
   "checkBoxList": [
@@ -159,14 +182,22 @@
   "inputRadio": {
     "caption": "Radio Buttons",
     "name": "gender",
-    "label": ["Мужчина", "Женщина"]
+    "label": [
+      "Мужчина",
+      "Женщина"
+    ]
   },
   "switchToggle": {
     "caption": "toogle",
     "name": "toogle",
-    "label": ["Получать спецпредложения", "Получать спецпредложения"]
+    "label": [
+      "Получать спецпредложения",
+      "Получать спецпредложения"
+    ]
   },
-  "starRating": { "currentRating": "3.47" },
+  "starRating": {
+    "currentRating": "3.47"
+  },
   "rangeSlider": {
     "title": "range slider",
     "caption": "стоимость пребывания за сутки в номере"

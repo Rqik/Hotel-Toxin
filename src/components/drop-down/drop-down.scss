@@ -44,11 +44,9 @@
         .dropdown__select_items {
           border-color: $text-color-translucent;
         }
-
       }
 
       .dropdown__buttons {
-
         display: flex;
         justify-content: space-between;
         padding: 0 6px 0 14px;
@@ -111,6 +109,7 @@
 
 
   }
+
   &__span {
     width: 32px;
     height: 30px;
@@ -133,7 +132,6 @@
   }
 
   &__item {
-
     box-sizing: border-box;
     padding: 0 6px 0 14px;
     margin-top: 7px;
@@ -158,6 +156,7 @@
       text-overflow: ellipsis;
       white-space: nowrap;
     }
+
     &-current {
       position: relative;
       display: block;
@@ -178,9 +177,8 @@
       white-space: nowrap;
       cursor: pointer;
       transition: border 0.3s ease-in-out;
-
-
     }
+
     &:last-of-type {
       margin-bottom: 5px;
     }
@@ -201,13 +199,9 @@
     display: flex;
     justify-content: flex-end;
 
-
     .disable {
       opacity: 0.5;
     }
-
-
-
   }
 
   &__button {

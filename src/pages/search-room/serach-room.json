@@ -4,14 +4,22 @@
       "active": false,
       "name": "дополнительные удобства",
       "current": "2 спальни, 2 кровати",
-      "text": ["спальни", "кровати", "ванные комнаты"]
+      "text": [
+        "спальни",
+        "кровати",
+        "ванные комнаты"
+      ]
     },
     "dropdownSelectExt": {
       "active": false,
       "extended": true,
       "name": "гости",
       "current": "Сколько гостей",
-      "text": ["взрослые", "дети", "младенцы"]
+      "text": [
+        "взрослые",
+        "дети",
+        "младенцы"
+      ]
     }
   },
   "rangeSlider": {
@@ -104,11 +112,22 @@
   "pagination": {
     "prev": false,
     "pagination": [
-      { "current": true, "number": 1 },
-      { "number": 2 },
-      { "number": 3 },
-      { "number": ".." },
-      { "number": 15 }
+      {
+        "current": true,
+        "number": 1
+      },
+      {
+        "number": 2
+      },
+      {
+        "number": 3
+      },
+      {
+        "number": ".."
+      },
+      {
+        "number": 15
+      }
     ],
     "next": true,
     "text": " 1 – 12 из 100+ вариантов аренды"
