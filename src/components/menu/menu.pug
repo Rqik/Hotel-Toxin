@@ -16,7 +16,7 @@ mixin menu({items, auth}={})
                     a.menu__element_link(href=elem.href ? elem.href : '#')
                     = elem.text
       else
-        li.menu__item.menu__item-active
+        li.menu__item.menu__item_active
           a(href='#') нет элементов
       if !auth
         li.menu__item
