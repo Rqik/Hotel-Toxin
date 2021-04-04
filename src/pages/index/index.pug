@@ -45,8 +45,7 @@ block content
         name: 'email',
         title: 'text field',
         placeholder: 'Email',
-        form:
-          true
+        form: true
       })
     .wrapper-content__block
       +checkBoxList( {
@@ -66,8 +65,9 @@ block content
         name: 'toogle',
         label: ['Получать спецпредложения', 'Получать спецпредложения']
       })
-      div.span_stong like button
-        .span_stong_div
+      .wrapper-content__element
+        .wrapper-content__caption like button
+        .wrapper-content__items
           +likeButton({
             active: false,
             number: '2'
@@ -76,7 +76,8 @@ block content
             active: true,
             number: '12'
           })
-      div.span_stong rate button
+      .wrapper-content__element
+        .wrapper-content__caption rate button
         div
           +starRating({ currentRating: '3.47' })
 
@@ -86,7 +87,8 @@ block content
         caption: 'стоимость пребывания за сутки ' +
           'в номере'
       })
-      div.span_stong button
+      .wrapper-content__element
+        .wrapper-content__caption button
         div
           +button({
             style: 'small',
@@ -112,8 +114,9 @@ block content
             href: '#',
             border: false
           })
-      div.span_stong pagination
-        .span_stong_div
+      .wrapper-content__element
+        .wrapper-content__caption pagination
+        .wrapper-content__items
           +pagination({
             prev: false,
             pagination: [{

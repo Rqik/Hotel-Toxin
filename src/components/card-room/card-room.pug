@@ -3,7 +3,7 @@ include ../../components/drop-down/drop-down
 include ../../components/button/button
 
 mixin cardRoom({room, price}={})
-  .card-room
+  .card-room.js-card-room
     .card-room__header
       .card-room__detail
         .card-room__detail-number №
@@ -33,10 +33,14 @@ mixin cardRoom({room, price}={})
         .card-room__info-sum.js-card-room__info-sum.js-card-room__pay2=price
           | ₽
       .card-room__info-item
-        .card-room__info-name.card-room__icon.js-card-room__info-name.js-card-room__sale1 Сбор за услуги: скидка 2 179₽
+        div
+          .card-room__info-namejs-card-room__info-name.js-card-room__sale1 Сбор за услуги: скидка 2 179₽
+          .card-room__icon(data-text='Информация про сбор за услуги')
         .card-room__info-sum.js-card-room__info-sum.js-card-room__sale2 0₽
-      .card-room__info-item
-        .card-room__info-name.card-room__icon.js-card-room__info-name.js-card-room__dop1 Сбор за дополнительные услуги
+      .card-room__info-item 
+        div
+          .card-room__info-name.js-card-room__info-name.js-card-room__dop1 Сбор за дополнительные услуги
+          .card-room__icon(data-text='В расчет входят стоимость за доп комплекты белья')
         .card-room__info-sum.js-card-room__info-sum.js-card-room__dop2 3000₽
       .card-room__info_result
         .card-room__info-name_result Итого

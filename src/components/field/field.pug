@@ -7,10 +7,10 @@ mixin field({name, title , placeholder, form=false}={})
   if form
     form(class='field-form')&attributes(attributes)
       .field-form__title= title
-      .field-form__input
-        input.input_sub.js-field_text( type="text",
+      .field-form__block
+        input.field-form__input.js-field_text( type="text",
           placeholder=placeholder, name=name)
-        button.input_btn(type='submit' , name=name )
+        button.field-form__btn(type='submit' , name=name )
           i.material-icons arrow_forward
   else
     .field

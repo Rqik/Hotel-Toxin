@@ -14,7 +14,7 @@ class DropDown {
         this.childrenCurrentVal(className);
 
         this.actionDropDown(`${className} .dropdown__control-panel`, className);
-        $(`${className} .dropdown__item_current`)
+        $(`${className} .dropdown__item-current`)
           .click(() => {
             $(className)
               .toggleClass('dropdown_active');
@@ -35,7 +35,7 @@ class DropDown {
         );
         this.buttonAction(className);
 
-        $(`${className} .dropdown__item_current`)
+        $(`${className} .dropdown__item-current`)
           .click(() => {
             $(className)
               .toggleClass('dropdown_active');
@@ -51,10 +51,10 @@ class DropDown {
 
   eventReset(selector) {
     $(selector)
-      .find('.js-dropdown__text_current')
+      .find('.js-dropdown__text-current')
       .text('Сколько гостей');
     $(selector)
-      .find('.js-dropdown__control-panel_span')
+      .find('.js-dropdown__span')
       .text(0);
     $(selector)
       .find('.js-control_minus')
@@ -67,10 +67,10 @@ class DropDown {
   static dropItem(el) {
     return {
       count: $(el)
-        .find('.js-dropdown__control-panel_span')
+        .find('.js-dropdown__span')
         .text(),
       name: $(el)
-        .children('.js-dropdown__item_span')
+        .children('.js-dropdown__item-span')
         .text(),
     };
   }
@@ -84,10 +84,10 @@ class DropDown {
   }
 
   static slideDrop(selector) {
-    $(`${selector} .js-dropdown__item_current`)
+    $(`${selector} .js-dropdown__item-current`)
       .on('click', () => {
         $(
-          ` ${selector} .js-dropdown__item_current ~ .dropdown__items`,
+          ` ${selector} .js-dropdown__item-current ~ .dropdown__items`,
         )
           .slideToggle(300);
       });
@@ -107,7 +107,7 @@ class DropDown {
           )} ${count} ${nameElem}`;
         }
       });
-    $(`${selector} .dropdown__item_current span`)
+    $(`${selector} .dropdown__item-current .js-dropdown__text-current`)
       .text(textCurrent);
   }
 
@@ -130,7 +130,7 @@ class DropDown {
         }
         textCurrent = DropDown.countAdult(adults, child) + DropDown.countChild(child);
       });
-    $(`${selector} .dropdown__item_current .js-dropdown__text_current`)
+    $(`${selector} .dropdown__item-current .js-dropdown__text-current`)
       .text(textCurrent);
     DropDown.btnHide(selector, adults, child);
   }
@@ -186,7 +186,7 @@ class DropDown {
 
   childrenCurrentVal(className) {
     this.children[className] = [];
-    $(`${className} .js-dropdown__control-panel_span`)
+    $(`${className} .js-dropdown__span`)
       .each((i, el) => {
         this.children[className][i] = +el.textContent;
       });
@@ -206,7 +206,7 @@ class DropDown {
               that.children[current][i] = 0;
             }
             $(this)
-              .children('.js-dropdown__control-panel_span')
+              .children('.js-dropdown__span')
               .text(that.children[current][i]);
             DropDown.textCurrentNew(current);
             DropDown.disableButton(el);
@@ -230,7 +230,7 @@ class DropDown {
               that.children[current][i] = 0;
             }
             $(this)
-              .children('.js-dropdown__control-panel_span')
+              .children('.js-dropdown__span')
               .text(that.children[current][i]);
             DropDown.textModify(current);
             DropDown.disableButton(el);

@@ -21,7 +21,8 @@ mixin checkBoxList({style, caption, name, labels=[] }={})
         break
     }
 
-  div(class=classList)= caption
+  div(class=classList)
+    .check-box__caption.js-check-box__caption= caption
     if tumbler
       i.material-icons expand_more
     .check-box__items(class=jsToggle)
