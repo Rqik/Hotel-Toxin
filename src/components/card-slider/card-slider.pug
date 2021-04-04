@@ -4,7 +4,7 @@ include ../star-rating/star-rating
 
 mixin cardSlide({url, roomNumber , category='', price='0', review='0',rating='0'}={})
   .card-slider
-    .card-slider_top.js-card-slider_top
+    .card-slider__top.js-card-slider__top
       .swiper-wrapper
         each key in url
           .swiper-slide
@@ -14,7 +14,7 @@ mixin cardSlide({url, roomNumber , category='', price='0', review='0',rating='0'
         i.material-icons expand_more
       .swiper-button-next
         i.material-icons expand_more
-    .card-slider_bot
+    .card-slider__bot
       .card-slider__header
         .card-slider__room
           .card-slider__room-number

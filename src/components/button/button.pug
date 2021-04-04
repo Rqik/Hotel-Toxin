@@ -17,6 +17,6 @@ mixin button({style = 'small' , text , href , border = true}={})
         i.material-icons arrow_forward
   else
     button.button(class=classList)&attributes(attributes)
-      span.link__text= text
+      span.button__text= text
       if style === 'long'
         i.material-icons arrow_forward
