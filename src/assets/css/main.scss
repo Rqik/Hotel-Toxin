@@ -23,6 +23,7 @@
 @import "~@/components/drop-down/drop-down.scss";
 @import "~@/components/field/field.scss";
 @import "~@/components/footer/footer.scss";
+@import "~@/components/footer-mobile/footer-mobile.scss";
 @import "~@/components/header/header.scss";
 @import "~@/components/icon-text/icon-text.scss";
 @import "~@/components/input-radio/input-radio.scss";
@@ -49,25 +50,6 @@ body {
   color: $text-color-secondary;
 }
 
-.span_stong {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 15px;
-  text-transform: uppercase;
-  color: $text-color-main;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1rem;
-
-  .span_stong_div {
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: row;
-    gap: 6px;
-  }
-}
 
 .df {
   display: flex;

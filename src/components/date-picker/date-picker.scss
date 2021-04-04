@@ -1,4 +1,4 @@
-@import '@/libs/css/data-picker.scss';
+@import '@/libs/css/airdatapicker.scss';
 
 .date-picker {
   display: flex;
@@ -6,56 +6,43 @@
   gap: 20px;
   position: relative;
   height: 64px;
+  &__label {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 12px;
+    line-height: 15px;
+    text-transform: uppercase;
+    //word-wrap: break-word;
+    color: $text-color-main;
+    max-width: 150px;
 
-  &__input_hide {
-    position: absolute;
-    width: 320px;
-    height: 0;
-    padding: 0;
-    margin: 0;
-    border: 0;
-    top: 55px;
-    left: 0;
-    right: 0;
-    bottom: 0;
-  }
+    @include ss {
+      width: 100%;
+    }
 
-  .data-select {
+    &_range {
+      max-width: 266px;
+    }
 
-    &__label,
-    &__label_s {
-      position: relative;
-      display: flex;
-      flex-direction: column;
-      font-family: Montserrat, sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: 12px;
-      line-height: 15px;
-      text-transform: uppercase;
-      color: $text-color-main;
+    &:hover,
+    &:focus {
 
-      @include ss {
-        width: 100%;
+      .date-picker,
+      .date-picker_range {
+        border: 1px solid $text-color-translucent;
       }
 
-      &:hover,
-      &:focus {
-
-        .data-select__input,
-        .date-select__input_range {
-          border: 1px solid $text-color-translucent;
-        }
-
-        i.material-icons {
-          color: $text-color-secondary;
-        }
+      i.material-icons {
+        color: $text-color-secondary;
       }
     }
   }
 
-  .date-select__input_range,
-  .data-select__input {
+  &__input {
     width: 150px;
     height: 44px;
     border: 1px solid $color-transparent;
@@ -74,14 +61,26 @@
       font-size: 12px;
     }
 
-  }
+    &_range {
+      width: 266px;
+      color: $text-color-secondary;
 
-  .date-select__input_range {
-    width: 266px;
-    color: $text-color-secondary;
+      @include ss {
+        width: 100%;
+      }
+    }
 
-    @include ss {
-      width: 100%;
+    &_hide {
+      position: absolute;
+      width: 320px;
+      height: 0;
+      padding: 0;
+      margin: 0;
+      border: 0;
+      top: 55px;
+      left: 0;
+      right: 0;
+      bottom: 0;
     }
   }
 

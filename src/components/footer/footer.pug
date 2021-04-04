@@ -1,69 +1,35 @@
-mixin footer
+//- social  ==  Array<object>
+//- social  ==  href -  https://www.google.com/
+//- social  ==  src -  image url
+//- social  ==  alt -  image alt
+//- menu == Array<object>
+//- menu == title - caption menu block
+//- menu == items Array<object>  {text , href}
+//- logo == src logo img
+//- {social:[{href='#', src, alt='social link'}] , menu:[{title ,items:[{text,href="#"}]}]}
+mixin footer({ social , menu , logo = 'img/logo.png'}={})
   footer.footer
     .footer__container
-      .footer_top
-        .footer_top__info
-          .footer_top__logo
-            img.footer__logo-img(src="img/logo.png", alt="alt")
-          .footer_top__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
-        .footer_top__nav
-          .footer-nav
-            .footer-nav__title Навигация
-            ul.footer-nav__items
-              li.footer-nav__item
-                a.footer-nav__item-link(href='#') О нас
-              li.footer-nav__item
-                a.footer-nav__item-link(href='#') Новости
-              li.footer-nav__item
-                a.footer-nav__item-link(href='#') Служба поддержки
-              li.footer-nav__item
-                a.footer-nav__item-link(href='#') Услуги
-          .footer-nav
-            .footer-nav__title О нас
-            ul.footer-nav__items
-              li.footer-nav__item
-                a.footer-nav__item-link(href='#') О сервисе
-              li.footer-nav__item
-                a.footer-nav__item-link(href='#') Наша команда
-              li.footer-nav__item
-                a.footer-nav__item-link(href='#') Вакансии
-              li.footer-nav__item
-                a.footer-nav__item-link(href='#') Инвесторы
-          .footer-nav
-            .footer-nav__title Служба поддержки
-            ul.footer-nav__items
-              li.footer-nav__item
-                a.footer-nav__item-link(href='#') Соглашения
-              li.footer-nav__item
-                a.footer-nav__item-link(href='#') Сообщества
-              li.footer-nav__item
-                a.footer-nav__item-link(href='#') Связь с нами
-
-        .footer_right__subscribe
-          .footer__subscribe-title Подписка
-          .footer__subscribe-text Получайте специальные предложения и новости сервиса
+      .footer-head
+        .footer-head__info
+          .footer-head__logo
+            img.footer-head__logo-img(src=logo, alt="logo")
+          .footer-head__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+        .footer-head__nav
+          each nav in menu
+            .footer-nav
+              .footer-nav__title=nav.title
+              ul.footer-nav__items
+                each item in nav.items
+                  li.footer-nav__item
+                    a.footer-nav__item-link(href=item.href?item.href:'#')=item.text
+        .footer-head__subscribe
+          .footer-head__subscribe-title Подписка
+          .footer-head__subscribe-text Получайте специальные предложения и новости сервиса
           +field({ name: 'email',placeholder :'Email', form:true})
-
-      .footer_bot
-        .footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
-        .footer__social
-          a.footer__link(href="#")
-            img.footer__img(src="img/social/twitter.svg", alt="")
-          a.footer__link(href="#")
-            img.footer__img(src="img/social/facebook.svg", alt="")
-          a.footer__link(href="#")
-            img.footer__img(src="img/social/instagramm.svg", alt="")
-
-mixin footerMobile
-  footer.fm.footer
-    .footer__mobile
-      .footer_top__info_logo
-        img(src="img/logo.png", alt="alt")
-      .footer__copyright Copyright © 2018 Toxin отель. Все права зачищены.
-      .footer__social
-        a.footer__link(href="#")
-          img(src="img/social/twitter.svg", alt="")
-        a.footer__link(href="#")
-          img(src="img/social/facebook.svg", alt="")
-        a.footer__link(href="#")
-          img(src="img/social/instagramm.svg", alt="")
+      .footer-subordinate
+        .footer-subordinate__copyright Copyright © 2018 Toxin отель. Все права зачищены.
+        .footer-subordinate__social
+          each element in social
+            a.footer-subordinate__link(href=element.href? element.href: '#')
+              img.footer-subordinate__img(src=element.src, alt=element.alt?element.alt:'social link')

@@ -55,7 +55,7 @@
     color: $text-color-main;
   }
 
-  &__input {
+  &__block {
     display: flex;
     flex-direction: row;
     margin: 5px 0 0;
@@ -78,52 +78,52 @@
       line-height: 18px;
       outline: none;
     }
+  }
 
-    .input_btn {
-      display: inline-block;
-      width: 44px;
-      height: 44px;
-      outline: none;
-      cursor: pointer;
-      white-space: nowrap;
-      background-color: white;
-      color: $text-color-main;
-      background-image: $purple-gradient;
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      text-align: center;
-      vertical-align: middle;
-      padding: 0;
-      border: none;
+  &__input {
+    width: 223px;
+    height: 100%;
+    vertical-align: middle;
+    background: #FFFFFF;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding-left: 15px;
+    font-size: 14px;
+    color: $text-color-secondary;
+    border-right: 0;
+    outline: none;
+
+    @include ss {
+      width: 100%;
     }
 
-    .input_sub {
-      width: 223px;
-      height: 100%;
-      vertical-align: middle;
-      background: #FFFFFF;
-      border: none;
-      box-sizing: border-box;
-      border-radius: 4px;
-      padding-left: 15px;
+    &::placeholder {
+      color: $color-transparent;
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: normal;
       font-size: 14px;
-      color: $text-color-secondary;
-      border-right: 0;
-      outline: none;
-
-      @include ss {
-        width: 100%;
-      }
-
-      &::placeholder {
-        color: $color-transparent;
-        font-family: 'Montserrat', sans-serif;
-        font-style: normal;
-        font-weight: normal;
-        font-size: 14px;
-        height: 18px;
-      }
+      height: 18px;
     }
+  }
+
+  &__btn {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    outline: none;
+    cursor: pointer;
+    white-space: nowrap;
+    background-color: white;
+    color: $text-color-main;
+    background-image: $purple-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0;
+    border: none;
   }
 }

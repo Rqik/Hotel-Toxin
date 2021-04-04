@@ -1,6 +1,6 @@
 import { CardRoom } from '@/components/card-room/card-room';
 
 $(() => {
-  CardRoom
-    .init();
+  const cardRoom = new CardRoom();
+  cardRoom.init();
 });
