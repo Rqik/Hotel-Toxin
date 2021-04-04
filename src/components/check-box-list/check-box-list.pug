@@ -27,13 +27,14 @@ mixin checkBoxList({style, caption, name, labels=[] }={})
       i.material-icons expand_more
     .check-box__items(class=jsToggle)
       each item , indx in labels
+        - const {text , desc} = item
         .check-box__element
           if style === 'rich'
             input.check-box__input(id=name + '-' + indx name=name
               type="checkbox" )
             label.check-box__label.check-box__label_rich(for=name + '-' +
-            indx)= item.text
-              span.check-box__span= item.desc
+            indx)= text
+              span.check-box__span= desc
           else
             input.check-box__input(id=name + '-' + indx type="checkbox" )
             label.check-box__label(for=name + '-' + indx)= item

@@ -5,16 +5,18 @@ mixin menu({items, auth}={})
     ul.menu__items.js-menu__items
       if items
         each item in items
+          - const {more , text , href , active} = item
           li.menu__item(
-            class=item.active ? 'menu__item_active' : '' class=item.more
+            class=active ? 'menu__item_active' : '' class=more
             ? 'menu__item_more js-menu__item_more' : '')
-            a.menu__link(href=item.href ? item.href : '#')= item.text
-            if item.more
+            a.menu__link(href=href ? href : '#')=text
+            if more
               ul.menu__items_more
-                each elem in item.more
+                each elem in more
+                  - const {href, text} = elem
                   li.menu__element_plus
-                    a.menu__element_link(href=elem.href ? elem.href : '#')
-                    = elem.text
+                    a.menu__element_link(href=href ? href : '#')
+                    = text
       else
         li.menu__item.menu__item_active
           a(href='#') нет элементов
@@ -26,5 +28,6 @@ mixin menu({items, auth}={})
     .menu__burger.js-menu__burger
       i.material-icons menu
     if !!auth
+      - const {href, text} = auth
       .menu__auth
-        a.menu__auth_link(href=auth.href ? auth.href : '#')= auth.text
+        a.menu__auth_link(href=href ? href : '#')=text

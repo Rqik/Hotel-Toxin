@@ -7,8 +7,9 @@ mixin cardSlide({url, roomNumber , category='', price='0', review='0',rating='0'
     .card-slider__top.js-card-slider__top
       .swiper-wrapper
         each key in url
+          - const {src , alt} = key
           .swiper-slide
-            img.swiper-slide__img(src=key.src, alt=key.alt)
+            img.swiper-slide__img(src=src, alt=alt)
       .swiper-pagination-img
       .swiper-button-prev
         i.material-icons expand_more
