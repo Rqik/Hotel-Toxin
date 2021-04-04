@@ -2,18 +2,14 @@ extends ../../layouts/main
 include ../../components/color-pick/color-pick
 
 block variables
-  - var title = 'Color Fonts'
+  - const title = 'Color Fonts'
 
 block content
+  - const {colors} = require('./color-fonts.json')
   .df
     .color-palette
-      +colorPick({color: '#1F2041' , name:'Dark Shade 100%' })
-      +colorPick({color: '#1F2041' , name:'Dark Shade 75%' , opacity:.75})
-      +colorPick({color: '#1F2041' , name:'Dark Shade 50%', opacity:.50})
-      +colorPick({color: '#1F2041' , name:'Dark Shade 25%', opacity:.25})
-      +colorPick({color: '#1F2041' , name:'Dark Shade 5%', opacity:.05})
-      +colorPick({color: '#BC9CFF' , name:'Purple'})
-      +colorPick({color: '#6FCF97' , name:'Green'})
+      each item in colors
+       +colorPick(item)
     .fonts
       .fonts__block.fonts__block_fs24
         .fonts__tag h1

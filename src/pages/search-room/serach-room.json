@@ -1,0 +1,116 @@
+{
+  "dropdown": {
+    "dropdownSelect": {
+      "active": false,
+      "name": "дополнительные удобства",
+      "current": "2 спальни, 2 кровати",
+      "text": ["спальни", "кровати", "ванные комнаты"]
+    },
+    "dropdownSelectExt": {
+      "active": false,
+      "extended": true,
+      "name": "гости",
+      "current": "Сколько гостей",
+      "text": ["взрослые", "дети", "младенцы"]
+    }
+  },
+  "rangeSlider": {
+    "title": "диапазон цены",
+    "caption": "стоимость пребывания за сутки в номере",
+    "min": 0,
+    "max": 15000
+  },
+  "checkBox": {
+    "checkBoxList": {
+      "style": "expanded",
+      "caption": "дополнительные удобства",
+      "name": "exp",
+      "labels": [
+        "Завтрак",
+        "Письменный стол",
+        "Стул для кормления",
+        "Кроватка",
+        "Телевизор",
+        "Шампунь",
+        "Телевизор",
+        "Шампунь"
+      ]
+    },
+    "checkBoxRich": {
+      "style": "rich",
+      "caption": "доступность",
+      "name": "info",
+      "labels": [
+        {
+          "text": "Широкий коридор",
+          "desc": "Ширина коридоров в номере не менее 91 см."
+        },
+        {
+          "text": "Помощник для инвалидов",
+          "desc": "На 1 этаже вас встретит специалист  и проводит до номера."
+        }
+      ]
+    },
+    "checkBoxHome": {
+      "caption": "Правила дома",
+      "name": "le",
+      "labels": [
+        "Можно курить",
+        "Можно с питомцами",
+        "Можно пригласить гостей (до 10 человек)"
+      ]
+    }
+  },
+  "cardSlider": {
+    "url": [
+      {
+        "src": "img/slider.jpg"
+      },
+      {
+        "src": "img/slider2.jpg"
+      },
+      {
+        "src": "img/slider3.jpg"
+      },
+      {
+        "src": "img/slider5.jpg"
+      }
+    ],
+    "roomNumber": "840",
+    "price": "9900",
+    "review": 65,
+    "rating": "3.4"
+  },
+  "cardSlider2": {
+    "url": [
+      {
+        "src": "img/slider2.jpg"
+      },
+      {
+        "src": "img/slider.jpg"
+      },
+      {
+        "src": "img/slider3.jpg"
+      },
+      {
+        "src": "img/slider5.jpg"
+      }
+    ],
+    "roomNumber": "820",
+    "price": "29900",
+    "review": 784,
+    "rating": "4.4"
+  },
+  "pagination": {
+    "prev": false,
+    "pagination": [
+      { "current": true, "number": 1 },
+      { "number": 2 },
+      { "number": 3 },
+      { "number": ".." },
+      { "number": 15 }
+    ],
+    "next": true,
+    "text": " 1 – 12 из 100+ вариантов аренды"
+  }
+}

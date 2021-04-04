@@ -11,163 +11,25 @@ block variables
   - const title = 'Search'
 
 block content
-  .search__block
-    .search__panel
+  -
+    const {dropdown,rangeSlider, cardSlider , cardSlider2, checkBox , pagination}  = require("./serach-room.json")
+    const {checkBoxList , checkBoxHome , checkBoxRich}  = checkBox
+    const {dropdownSelect , dropdownSelectExt}  = dropdown
+  .search-page
+    .search-page__panel.js-search-page__panel
       +datepicker({title1: 'даты пребывания в отеле'})
-      +dropdownSelect({
-        active: false, extended: true, name: 'гости',
-        current: 'Сколько гостей', text: ['взрослые', 'дети', 'младенцы']
-      })
-      +rangeSlider({
-        title: 'диапазон цены', caption: 'стоимость пребывания за сутки ' +
-          'в номере', min: 0, max: 15000
-      })
-      +checkBoxList( {
-        caption: 'Правила дома', name: 'le', labels: ['Можно ' +
-        'курить', 'Можно с питомцами ',
-          'Можно пригласить гостей (до 10 человек)'
-        ]
-      })
-      +checkBoxList( {
-        style: 'rich',
-        caption: 'доступность',
-        name: 'info',
-        labels: [
-          {
-            text: 'Широкий коридор',
-            desc: 'Ширина коридоров в номере не менее 91 см.'
-          },
-          {
-            text: 'Помощник для инвалидов',
-            desc: 'На 1 этаже вас встретит специалист  и проводит до номера.'
-          }
-        ]
-      })
-      +dropdownSelect( {
-        active: false,
-        name: 'дополнительные удобства',
-        current: '2 спальни, 2 кровати',
-        text: ['спальни',
-          'кровати',
-          'ванные комнаты']
-      })
-      +checkBoxList( {
-        style: 'expanded',
-        caption: 'дополнительные удобства', name: 'exp',
-        labels: ['Завтрак',
-          'Письменный стол',
-          'Стул для кормления',
-          'Кроватка', 'Телевизор',
-          'Шампунь', 'Телевизор',
-          'Шампунь'
-        ]
-      })
-      .btn_fixed
+      +dropdownSelect(dropdownSelectExt)
+      +rangeSlider(rangeSlider)
+      +checkBoxList(checkBoxHome)
+      +checkBoxList(checkBoxRich)
+      +dropdownSelect(dropdownSelect)
+      +checkBoxList(checkBoxList)
+      .search-page__panel-btn.js-search-page__panel-btn
         i.material-icons expand_more
-    .search__cards
-      h2.search__cards-title Номера, которые мы для вас подобрали
-      .search__cards_result
-        +cardSlide({
-          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
-            src: 'img/slider3.jpg'
-          }, {src: 'img/slider5.jpg'}],
-          roomNumber: '840',
-          price: '9900',
-          review: 65,
-          rating: '3.4'
-        })
-        +cardSlide({
-          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
-            src: 'img/slider3.jpg'
-          }, {src: 'img/slider5.jpg'}],
-          roomNumber: '840',
-          price: '9900',
-          review: 65,
-          rating: '3.4'
-        })
-        +cardSlide({
-          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
-            src: 'img/slider3.jpg'
-          }, {src: 'img/slider5.jpg'}],
-          roomNumber: '840',
-          price: '9900',
-          review: 65,
-          rating: '3.4'
-        })
-        +cardSlide({
-          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
-            src: 'img/slider3.jpg'
-          }, {src: 'img/slider5.jpg'}],
-          roomNumber: '840',
-          price: '9900',
-          review: 65,
-          rating: '3.4'
-        })
-        +cardSlide({
-          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
-            src: 'img/slider3.jpg'
-          }, {src: 'img/slider5.jpg'}],
-          roomNumber: '840',
-          price: '9900',
-          review: 65,
-          rating: '3.4'
-        })
-        +cardSlide({
-          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
-            src: 'img/slider3.jpg'
-          }, {src: 'img/slider5.jpg'}],
-          roomNumber: '840',
-          price: '9900',
-          review: 65,
-          rating: '3.4'
-        })
-        +cardSlide({
-          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
-            src: 'img/slider3.jpg'
-          }, {src: 'img/slider5.jpg'}],
-          roomNumber: '840',
-          price: '9900',
-          review: 65,
-          rating: '3.4'
-        })
-        +cardSlide({
-          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
-            src: 'img/slider3.jpg'
-          }, {src: 'img/slider5.jpg'}],
-          roomNumber: '840',
-          price: '9900',
-          review: 65,
-          rating: '3.4'
-        })
-        +cardSlide({
-          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
-            src: 'img/slider3.jpg'
-          }, {src: 'img/slider5.jpg'}],
-          roomNumber: '840',
-          price: '9900',
-          review: 65,
-          rating: '3.4'
-        })
-        +cardSlide({
-          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
-            src: 'img/slider3.jpg'
-          }, {src: 'img/slider5.jpg'}],
-          roomNumber: '840',
-          price: '9900',
-          review: 65,
-          rating: '3.4'
-        })
-        +cardSlide({
-          url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
-            src: 'img/slider3.jpg'
-          }, {src: 'img/slider5.jpg'}],
-          roomNumber: '840',
-          price: '9900',
-          review: 65,
-          rating: '3.4'
-        })
-      +pagination({
-        prev: false, pagination: [{current: true, number: 1},
-          {number: 2}, {number: 3}, {number: '..'},
-          {number: 15}], next: true, text: ' 1 – 12 из 100+ вариантов аренды'
-      })
+    .search-page__cards
+      h2.search-page__cards-title Номера, которые мы для вас подобрали
+      .search-page__cards_result
+        - for (let i = 1 ; i <= 6 ; i+=1)
+          +cardSlide(cardSlider)
+          +cardSlide(cardSlider2)
+      +pagination(pagination)
