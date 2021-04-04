@@ -5,7 +5,8 @@
 mixin iconText({items}={})
   .icon-box
     each item in items
+      - const {icon , text , desc} = item
       .icon-box__item
-        i.material-icons= item.icon
-        .icon-box__text= item.text
-          span.icon-box__description= item.desc
+        i.material-icons= icon
+        .icon-box__text= text
+          span.icon-box__description= desc
