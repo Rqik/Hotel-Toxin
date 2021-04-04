@@ -5,34 +5,18 @@ include ../../components/card-registration/card-registration
 include ../../components/card-room/card-room
 include ../../components/card-find/card-find
 block variables
-  - var title = 'Cards'
+  - const title = 'Cards'
 
 block content
+  - const {cardSlider , cardSlider2 , cardRoom} = require('./card.json')
   .cards
     .cards__el
       +cardFind
       +cardRegistration
     .cards__el
-      +cardRoom({room:'888', price:'9990'})
+      +cardRoom(cardRoom)
       +cardAuth
     .cards__el
       .calendar
-      +cardSlide({
-        url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
-          src: 'img/slider5.jpg'
-        }, {src: 'img/slider3.jpg'}],
-        roomNumber: '840',
-        category: 'люкс',
-        price: '9900',
-        review: 65,
-        rating: '3.4'
-      })
-      +cardSlide({
-        url: [{src: 'img/slider.jpg'}, {src: 'img/slider2.jpg'}, {
-          src: 'img/slider3.jpg'
-        }, {src: 'img/slider5.jpg'}],
-        roomNumber: '840',
-        price: '9900',
-        review: 65,
-        rating: '3.4'
-      })
+      +cardSlide(cardSlider)
+      +cardSlide(cardSlider2)

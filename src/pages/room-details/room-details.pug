@@ -6,9 +6,12 @@ include ../../components/diagram/diagram
 include ../../components/card-room/card-room
 
 block variables
-  - var title = 'Landing'
+  - const title = 'Landing'
 
 block content
+  - 
+    const {iconText , diagram , review , bulletList, cardRoom} = require('./room-detail.json'); 
+    const {client_1 , client_2} = review
   .gallery
     .gallery__item-1
       img.gallery__item-img(src="img/slider4.jpg", alt="alt")
@@ -21,47 +24,18 @@ block content
       .detail__view
         .block
           h3.block-title Cведения о номере
-          +iconText({
-            items: [{
-              icon: 'insert_emoticon', text: 'Комфорт',
-              desc: 'Шумопоглощающие стены'
-            }, {
-              icon: 'location_city',
-              text: 'Удобство', desc: 'Окно в каждой из спален'
-            },
-              {
-                icon: 'whatshot', text: 'Уют', desc: 'Номер оснащён ' +
-                  'камином'
-              }]
-          })
-        +diagram({great:50,good:  25,
-          satisfactorily: 25,bad:0, votes: 260
-        })
+          +iconText(iconText)
+        +diagram(diagram)
       .block
         h3.block-title Отзывы посетителей номера
-      +review({
-        avatar: 'img/avatar.jpg',
-        active: true,
-        name: 'Мурад Сарафанов',
-        lastVisit: '5 дней назад',
-        comment: 'Великолепный матрас на кровати в ' +
-          'основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
-      })
-      +review({avatar:'img/avatar2.jpg' , active: false,name:'Патрисия ' +
-          'Стёклышкова',
-       lastVisit: 'Неделю назад'  , comment: 'Обслуживание на высоте! Всё ' +
-          'аккуратно, чисто. Завтраки в номер советую заказать, каждый день ' +
-          'новое блюдо и десерт как комплимент'})
-
+      +review(client_1)
+      +review(client_2)
       .detail_bottom
         .block
           .block-title Правила
           .block-text
-            +bulletList({
-               items: ['Нельзя с питомцами',
-                "Без вечеринок и мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]
-            })
+            +bulletList(bulletList)
         .block
           .block-title Отмена
           .block-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
-    +cardRoom({room:'888', price:'9990'})
+    +cardRoom(cardRoom)

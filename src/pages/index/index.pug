@@ -16,188 +16,54 @@ include ../../components/bullet-list/bullet-list
 include ../../components/icon-text/icon-text
 
 block variables
-  - var title = 'Главная'
+  - const title = 'Главная'
 
 block content
+  - 
+    const {
+            field, datepicker , select , likeButton , button,
+            pagination , dropdownSelect , checkBoxList, review, iconText,
+            checkBoxDefault , inputRadio, switchToggle,starRating,
+            rangeSlider, bulletList} = require('./index.json')
+    
   .wrapper-content
     .wrapper-content__block
-      +field({
-        name: 'email',
-        title: 'text field',
-        placeholder: 'Email'
-      })
-      +field({
-        name: 'date',
-        title: 'masked text field',
-        placeholder: 'ДД.ММ.ГГГГ'
-      })
-      +select({
-        name: 'dropdown',
-        list: ['декабрь', 'ноябрь', 'декабрь', 'ноябрь']
-      })
-      +datepicker({
-        title1: 'date dropdown',
-        title2: 'date dropdown'
-      })
-      +datepicker({ title1: 'filter date dropdown' } )
-
-      +field({
-        name: 'email',
-        title: 'text field',
-        placeholder: 'Email',
-        form: true
-      })
+      each elem in field 
+        +field(elem)
+      +select(select)
+      each elem in datepicker 
+        +datepicker(elem)
     .wrapper-content__block
-      +checkBoxList( {
-        caption: 'checkbox buttons',
-        name: 'le',
-        labels: ['Можно курить', 'Можно с питомцами ',
-          'Можно пригласить гостей (до 10 человек)'
-        ]
-      })
-      +inputRadio({
-        caption: 'Radio Buttons',
-        name: 'gender',
-        label: ['Мужчина', 'Женщина']
-      })
-      +switchToggle({
-        caption: 'toogle',
-        name: 'toogle',
-        label: ['Получать спецпредложения', 'Получать спецпредложения']
-      })
+      +checkBoxList(checkBoxDefault)
+      +inputRadio(inputRadio)
+      +switchToggle(switchToggle)
       .wrapper-content__element
         .wrapper-content__caption like button
         .wrapper-content__items
-          +likeButton({
-            active: false,
-            number: '2'
-          })
-          +likeButton({
-            active: true,
-            number: '12'
-          })
+          each like in likeButton
+            +likeButton(like)
       .wrapper-content__element
         .wrapper-content__caption rate button
         div
-          +starRating({ currentRating: '3.47' })
-
+          +starRating(starRating)
     .wrapper-content__block
-      +rangeSlider({
-        title: 'range slider',
-        caption: 'стоимость пребывания за сутки ' +
-          'в номере'
-      })
+      +rangeSlider(rangeSlider)
       .wrapper-content__element
         .wrapper-content__caption button
         div
-          +button({
-            style: 'small',
-            text: 'CLICK ME'
-          })
-          +button({
-            style: 'outline',
-            text: 'CLICK ME'
-          })
-          +button({
-            style: 'long',
-            text: 'перейти к оплате'
-          })
-          +button({
-            style: 'outline',
-            text: 'CLICK ME',
-            href: '#',
-            border: false
-          })
-          +button({
-            style: 'outline',
-            text: 'CLICK ME',
-            href: '#',
-            border: false
-          })
+          each elem in button 
+            +button(elem)
       .wrapper-content__element
         .wrapper-content__caption pagination
         .wrapper-content__items
-          +pagination({
-            prev: false,
-            pagination: [{
-              current: true,
-              number: 1
-            },
-              { number: 2 }, { number: 3 }, { number: '..' },
-              { number: 15 }],
-            next: true,
-            text: ' 1 – 12 из 100+ вариантов аренды'
-          })
+          +pagination(pagination)
     .wrapper-content__block
-      +dropdownSelect({
-        active: true,
-        name: 'dropdown',
-        current: '2 спальни, 2 кровати',
-        text: ['спальни',
-          'кровати',
-          'ванные комнаты']
-      })
-      +dropdownSelect({
-        active: true,
-        extended: true,
-        name: 'dropdown',
-        current: 'Сколько гостей',
-        text: ['взрослые',
-          'дети',
-          'младенцы']
-      })
+      each dropConfig in dropdownSelect
+        +dropdownSelect(dropConfig)
     .wrapper-content__block
-      +checkBoxList( {
-        style: 'expanded',
-        caption: 'expandable checkbox list',
-        name: 'exp',
-        labels: ['Завтрак', 'Письменный стол',
-          'Стул для кормления',
-          'Кроватка', 'Телевизор',
-          'Шампунь', 'Телевизор',
-          'Шампунь'
-        ]
-      })
-      +checkBoxList(
-        {
-          style: 'rich',
-          caption: 'rich checkbox buttons',
-          name: 'info',
-          labels: [
-            {
-              text: 'Широкий коридор',
-              desc: 'Ширина коридоров в номере не менее 91 см.'
-            },
-            {
-              text: 'Помощник для инвалидов',
-              desc: 'На 1 этаже вас встретит специалист  и проводит до номера.'
-            }]
-        })
-      +bulletList({
-        title: 'bullet list',
-        items: ['Нельзя с питомцами', "Без " +
-        "вечеринок и " +
-        "мероприятий", "Время прибытия — после 13:00, а выезд до 12:00"]
-      })
+      each ceckConfig in checkBoxList
+        +checkBoxList(ceckConfig)
+      +bulletList(bulletList)
     .wrapper-content__block
-      +review({
-        avatar: 'img/avatar.jpg',
-        active: true,
-        name: 'Мурад Сарафанов',
-        lastVisit: '5 дней назад',
-        comment: 'Великолепный матрас на кровати в ' +
-          'основной спальне! А пуфик вообще потрясающий. И стены, действительно, шумоподавляющие. Выкрикивал комплименты повару — никто не жаловался из соседей.'
-      })
-      +iconText({
-        items: [
-          {
-            icon: 'insert_emoticon',
-            text: 'Комфорт',
-            desc: 'Шумопоглощающие стены'
-          },
-          {
-            icon: 'location_city',
-            text: 'Удобство',
-            desc: 'Окно в каждой из спален'
-          }]
-      })
+      +review(review)
+      +iconText(iconText)

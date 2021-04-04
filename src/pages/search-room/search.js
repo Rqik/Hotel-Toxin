@@ -1,5 +1,5 @@
 $(() => {
-  $('.btn_fixed').on('click', () => {
-    $('.search__panel').toggleClass('search__panel_fixed');
+  $('.js-search-page__panel-btn').on('click', () => {
+    $('.js-search-page__panel').toggleClass('search-page__panel_fixed');
   });
 });

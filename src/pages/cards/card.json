@@ -1,0 +1,43 @@
+{
+  "cardSlider": {
+    "url": [
+      {
+        "src": "img/slider.jpg"
+      },
+      {
+        "src": "img/slider2.jpg"
+      },
+      {
+        "src": "img/slider3.jpg"
+      },
+      {
+        "src": "img/slider5.jpg"
+      }
+    ],
+    "roomNumber": "840",
+    "price": "9900",
+    "review": 65,
+    "rating": "3.4"
+  },
+  "cardSlider2": {
+    "url": [
+      {
+        "src": "img/slider2.jpg"
+      },
+      {
+        "src": "img/slider.jpg"
+      },
+      {
+        "src": "img/slider3.jpg"
+      },
+      {
+        "src": "img/slider5.jpg"
+      }
+    ],
+    "roomNumber": "820",
+    "price": "29900",
+    "review": 784,
+    "rating": "4.4"
+  },
+  "cardRoom": { "room": "888", "price": "9990" }
+}
