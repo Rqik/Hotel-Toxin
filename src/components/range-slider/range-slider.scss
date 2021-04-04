@@ -1,7 +1,6 @@
 .range-slider {
   display: block;
   width: 266px;
-  // height: 100px;
   margin-bottom: 20px;
 
   &__value {
@@ -63,6 +62,5 @@
     background-image: $green-gradient;
     height: 6px;
     top: -1px;
-
   }
 }

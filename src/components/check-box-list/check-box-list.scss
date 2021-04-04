@@ -56,8 +56,6 @@
     margin-top: 10px;
   }
 
-
-
   &__label {
     position: relative;
     padding-left: 30px;
@@ -69,7 +67,6 @@
     line-height: 20px;
     margin: 0;
     transition: color 0.3s ease-in-out;
-
     cursor: pointer;
 
     &::before {
@@ -81,7 +78,6 @@
       height: 20px;
       top: 0;
       left: 0;
-
     }
 
     &_rich {
@@ -91,10 +87,7 @@
       line-height: 20px;
       display: flex;
       flex-direction: column;
-
-
     }
-
   }
 
   &__input {

@@ -46,10 +46,7 @@
           }
         }
       }
-
-
     }
-
   }
 
   &-head {
@@ -74,12 +71,6 @@
     }
 
     &__nav {
-
-      @include lg {
-        display: none;
-      }
-
-
       margin-left: 40px;
       margin-top: 4px;
       display: flex;
@@ -87,8 +78,9 @@
       align-items: flex-start;
       justify-content: space-between;
       width: 549px;
-
-
+      @include lg {
+        display: none;
+      }
     }
 
     &__subscribe {
@@ -97,7 +89,6 @@
 
       &-title {
         margin-top: 4px;
-
         font-weight: bold;
         font-size: 12px;
         line-height: 15px;
@@ -115,11 +106,9 @@
       }
 
       .field-form__block {
-          max-width: 260px;
+        max-width: 260px;
       }
-
     }
-
   }
 
   &-subordinate {

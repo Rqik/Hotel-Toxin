@@ -19,19 +19,19 @@ block variables
   - const title = 'Главная'
 
 block content
-  - 
+  -
     const {
-            field, datepicker , select , likeButton , button,
-            pagination , dropdownSelect , checkBoxList, review, iconText,
-            checkBoxDefault , inputRadio, switchToggle,starRating,
-            rangeSlider, bulletList} = require('./index.json')
-    
+      field, datepicker, select, likeButton, button, pagination,
+      dropdownSelect, checkBoxList, review, iconText, checkBoxDefault,
+      inputRadio, switchToggle, starRating, rangeSlider, bulletList
+    } = require('./index.json')
+
   .wrapper-content
     .wrapper-content__block
-      each elem in field 
+      each elem in field
         +field(elem)
       +select(select)
-      each elem in datepicker 
+      each elem in datepicker
         +datepicker(elem)
     .wrapper-content__block
       +checkBoxList(checkBoxDefault)
@@ -51,7 +51,7 @@ block content
       .wrapper-content__element
         .wrapper-content__caption button
         div
-          each elem in button 
+          each elem in button
             +button(elem)
       .wrapper-content__element
         .wrapper-content__caption pagination
@@ -61,8 +61,8 @@ block content
       each dropConfig in dropdownSelect
         +dropdownSelect(dropConfig)
     .wrapper-content__block
-      each ceckConfig in checkBoxList
-        +checkBoxList(ceckConfig)
+      each checkConfig in checkBoxList
+        +checkBoxList(checkConfig)
       +bulletList(bulletList)
     .wrapper-content__block
       +review(review)

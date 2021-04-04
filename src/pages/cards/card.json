@@ -39,5 +39,8 @@
     "review": 784,
     "rating": "4.4"
   },
-  "cardRoom": { "room": "888", "price": "9990" }
+  "cardRoom": {
+    "room": "888",
+    "price": "9990"
+  }
 }

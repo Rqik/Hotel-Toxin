@@ -17,12 +17,11 @@
     stroke-width: 2;
     cursor: pointer;
     transition: all .3s ease-in-out;
+    z-index: 20;
 
     &:hover {
       stroke-width: 4;
     }
-
-    z-index: 20;
   }
 
   .hovered {
@@ -46,7 +45,6 @@
         content: '';
         top: 7px;
         left: -15px;
-        // right: 10px;
         position: absolute;
         width: 10px;
         height: 10px;
@@ -91,7 +89,6 @@
     font-size: 6px;
     line-height: 29px;
     font-weight: bold;
-
     fill: #BC9CFF;
     -moz-transform: translateY(-0.25em);
     -ms-transform: translateY(-0.25em);
