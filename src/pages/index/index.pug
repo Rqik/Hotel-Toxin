@@ -1,69 +1,11 @@
-extends ../../layouts/main
-include ../../components/field/field
+extends ../../layouts/grey
 include ../../components/button/button
-include ../../components/select/select
-include ../../components/star-rating/star-rating
-include ../../components/button-like/button-like
-include ../../components/pagination/pagination
-include ../../components/review/review
-include ../../components/range-slider/range-slider
-include ../../components/switch-toggle/switch-toggle
-include ../../components/input-radio/input-radio
-include ../../components/date-picker/date-picker
-include ../../components/drop-down/drop-down
-include ../../components/check-box-list/check-box-list
-include ../../components/bullet-list/bullet-list
-include ../../components/icon-text/icon-text
 
 block variables
-  - const title = 'Главная'
+  - const title = 'Demo | Pages'
 
 block content
-  -
-    const {
-      field, datepicker, select, likeButton, button, pagination,
-      dropdownSelect, checkBoxList, review, iconText, checkBoxDefault,
-      inputRadio, switchToggle, starRating, rangeSlider, bulletList
-    } = require('./index.json')
-
-  .wrapper-content
-    .wrapper-content__block
-      each elem in field
-        +field(elem)
-      +select(select)
-      each elem in datepicker
-        +datepicker(elem)
-    .wrapper-content__block
-      +checkBoxList(checkBoxDefault)
-      +inputRadio(inputRadio)
-      +switchToggle(switchToggle)
-      .wrapper-content__element
-        .wrapper-content__caption like button
-        .wrapper-content__items
-          each like in likeButton
-            +likeButton(like)
-      .wrapper-content__element
-        .wrapper-content__caption rate button
-        div
-          +starRating(starRating)
-    .wrapper-content__block
-      +rangeSlider(rangeSlider)
-      .wrapper-content__element
-        .wrapper-content__caption button
-        div
-          each elem in button
-            +button(elem)
-      .wrapper-content__element
-        .wrapper-content__caption pagination
-        .wrapper-content__items
-          +pagination(pagination)
-    .wrapper-content__block
-      each dropConfig in dropdownSelect
-        +dropdownSelect(dropConfig)
-    .wrapper-content__block
-      each checkConfig in checkBoxList
-        +checkBoxList(checkConfig)
-      +bulletList(bulletList)
-    .wrapper-content__block
-      +review(review)
-      +iconText(iconText)
+  - const { buttons } = require('./index.json')
+  .pages
+    each button in buttons
+      +button(button)

@@ -3,6 +3,7 @@
 
 .search-page {
   max-width: 1160px;
+  width: 100%;
   margin: 0 auto;
   padding: 30px 0;
   height: 100%;
@@ -10,10 +11,11 @@
   flex-direction: row;
   justify-content: center;
   position: relative;
-
+  z-index: 2;
 
   .dropdown__select_extended {
-    width: 266px;
+    max-width: 266px;
+    width: 100%;
   }
 
   &__cards_result {
@@ -24,8 +26,8 @@
     margin-bottom: 40px;
 
     @include md {
-      flex-direction: column;
-      align-items: center;
+      justify-content: center;
+      align-items: flex-start;
     }
   }
 
@@ -39,26 +41,43 @@
     flex-direction: column;
     position: relative;
     transition: transform .3s ease-in-out;
+    z-index: 22;
+
+    @include lg {
+      margin-left: 15px;
+    }
+
+    @include md {
+      position: absolute;
+      left: 0;
+      top: 100px;
+      background-color: white;
+      z-index: 300;
+      padding: 50px 60px 50px 30px;
+      margin: 0;
+      transform: translateX(-100%);
+    }
+
+    @include sl {
+      padding: 30px 10px;
+    }
 
     &-btn {
       display: none;
 
       @include md {
         display: block;
-        position: fixed;
-        top: 50%;
-        right: 0;
+        position: absolute;
+        top: 0;
+        right: -20px;
         bottom: 0;
         width: 20px;
-        //height: 100%;
+        height: 100%;
         border-radius: 0 20px 20px 0;
         color: white;
         background-image: $green-gradient;
         text-align: center;
         z-index: 220;
-        // display: flex;
-        // align-items: center;
-        // justify-content: center;
 
         .material-icons {
           position: absolute;
@@ -68,28 +87,11 @@
           right: 0;
           text-align: center;
           line-height: 40px;
-          transform: rotateZ(-90deg);
+          transition: transform 0.3s ease-in-out;
+          transform: rotate(-90deg);
           z-index: 2;
         }
       }
-    }
-
-    @include lg {
-      margin-left: 15px;
-    }
-
-    @include md {
-      position: fixed;
-      left: 0;
-      top: 0;
-      background-color: white;
-      z-index: 300;
-      padding: 50px 60px 50px 30px;
-      margin: 0;
-      overflow-y: scroll;
-      overflow-x: hidden;
-      height: 100%;
-      transform: translateX(-90%);
     }
 
     .data__select {
@@ -111,12 +113,17 @@
         margin-bottom: 27px;
       }
     }
-
   }
 
   &__panel_fixed {
     transform: translateX(0%);
     max-width: 80vw;
+
+    .search-page__panel-btn {
+      .material-icons {
+        transform: rotate(90deg);
+      }
+    }
   }
 
   &__cards-title {
@@ -127,12 +134,15 @@
     margin-top: 0;
     margin-bottom: 23px;
   }
-
 }
-
 
 @include md {
   .search-page__cards {
-    padding-left: 30px;
+    padding-left: 40px;
+  }
+  @include ss{
+    .search-page__cards {
+      padding-left: 25px;
+    }
   }
 }

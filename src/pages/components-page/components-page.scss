@@ -1,0 +1,43 @@
+.wrapper-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 100px 120px;
+  padding: 60px 140px;
+  @include md{
+    padding: 60px 30px;
+  }
+  @include sm{
+    gap: 60px;
+  }
+  @include ss{
+    padding: 30px 10px;
+  }
+  &__block {
+    gap: 20px;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__element {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $text-color-main;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+  }
+
+  &__items {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    gap: 6px;
+  }
+}

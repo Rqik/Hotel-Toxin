@@ -19,14 +19,17 @@
     text-transform: uppercase;
     color: $text-color-main;
     max-width: 150px;
-
     @include ss {
       width: 100%;
     }
-
     &_range {
       max-width: 266px;
+      @include ss {
+        max-width: 320px;
+      }
     }
+
+
 
     &:hover,
     &:focus {
@@ -66,6 +69,7 @@
       color: $text-color-secondary;
 
       @include ss {
+        max-width: 320px;
         width: 100%;
       }
     }
@@ -81,6 +85,9 @@
       left: 0;
       right: 0;
       bottom: 0;
+      @include ss {
+        width: 100%;
+      }
     }
   }
 
