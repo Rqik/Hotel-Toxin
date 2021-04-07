@@ -7,27 +7,27 @@ mixin menu({items, auth}={})
         each item in items
           - const {more , text , href , active} = item
           li.menu__item(
-            class=active ? 'menu__item_active' : '' class=more
-            ? 'menu__item_more js-menu__item_more' : '')
-            a.menu__link(href=href ? href : '#')=text
+            class=active ? "menu__item_active" : "" class=more
+            ? "menu__item_more js-menu__item_more" : "")
+            a.menu__link(href=href ? href : "./index.html")=text
             if more
               ul.menu__items_more
                 each elem in more
                   - const {href, text} = elem
                   li.menu__element_plus
-                    a.menu__element_link(href=href ? href : '#')
+                    a.menu__element_link(href=href ? href : "./index.html")
                     = text
       else
         li.menu__item.menu__item_active
-          a(href='#') нет элементов
+          a(href="./index.html") нет элементов
       if !auth
         li.menu__item
-          +button({style: 'outline', text: 'войти',})
+          +button({style: "outline", text: "войти",})
         li.menu__item
-          +button({text: 'зарегистрироваться'})
+          +button({text: "зарегистрироваться"})
     .menu__burger.js-menu__burger
       i.material-icons menu
     if !!auth
       - const {href, text} = auth
       .menu__auth
-        a.menu__auth_link(href=href ? href : '#')=text
+        a.menu__auth_link(href=href ? href : "./index.html")=text

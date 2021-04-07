@@ -5,21 +5,21 @@ mixin cardAuth
   .card-auth
     .card-auth__title Войти
     +field({
-      name: 'email',
-      placeholder: 'Email'
+      name: "email",
+      placeholder: "Email"
     })
     +field({
-      name: 'name',
-      placeholder: 'Пароль'
+      name: "name",
+      placeholder: "Пароль"
     })
     .card-auth__submit
       +button({
-        style: 'long',
-        text: 'войти'
+        style: "long",
+        text: "войти"
       })
       .card-auth__bot
         .card-auth__bot_text Нет аккаунта на Toxin
         +button({
-          style: 'outline',
-          text: 'Создать'
+          style: "outline",
+          text: "Создать"
         })

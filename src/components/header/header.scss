@@ -34,7 +34,7 @@
       height: 40px;
     }
 
-    @include md {
+    @include media-md {
       .menu__burger {
         display: flex;
       }
@@ -78,7 +78,7 @@
       object-fit: contain;
     }
 
-    @include sl {
+    @include media-xs {
       width: 80px;
     }
   }

@@ -16,7 +16,7 @@
     float: left;
     display: flex;
 
-    @include sm {
+    @include media-sm {
       margin-right: auto;
       margin-left: auto;
       margin-bottom: 0px;

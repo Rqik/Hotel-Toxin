@@ -1,23 +1,23 @@
-mixin starRating({currentRating='0'}={})
+mixin starRating({currentRating="0"}={})
   form.star-rating.js-star-rating(data-rate=currentRating)
     label.star-rating__radio.js-star-rating__radio
       input.star-rating__input.js-star-rating__input(type="radio"  checked
-      name='rate' value=1  aria-label='Ужасно')
+      name="rate" value=1  aria-label="Ужасно")
       i.material-icons star_border
       span= letr
     label.star-rating__radio.js-star-rating__radio
-      input.star-rating__input.js-star-rating__input(type="radio"  name='rate'
-        value=2 aria-label='Сносно')
+      input.star-rating__input.js-star-rating__input(type="radio"  name="rate"
+        value=2 aria-label="Сносно")
       i.material-icons star_border
     label.star-rating__radio.js-star-rating__radio
-      input.star-rating__input.js-star-rating__input(type="radio"  name='rate'
-        value=3 aria-label='Нормально')
+      input.star-rating__input.js-star-rating__input(type="radio"  name="rate"
+        value=3 aria-label="Нормально")
       i.material-icons star_border
     label.star-rating__radio.js-star-rating__radio
-      input.star-rating__input.js-star-rating__input(type="radio"  name='rate'
-        value=4 aria-label='Хорошо')
+      input.star-rating__input.js-star-rating__input(type="radio"  name="rate"
+        value=4 aria-label="Хорошо")
       i.material-icons star_border
     label.star-rating__radio.js-star-rating__radio
-      input.star-rating__input.js-star-rating__input(type="radio"  name='rate'
-        value=5 aria-label='Отлично')
+      input.star-rating__input.js-star-rating__input(type="radio"  name="rate"
+        value=5 aria-label="Отлично")
       i.material-icons star_border

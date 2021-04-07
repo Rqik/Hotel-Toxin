@@ -12,7 +12,7 @@
   overflow: hidden;
   margin: 0 auto;
 
-  @include sm {
+  @include media-sm {
     box-shadow: none;
   }
 

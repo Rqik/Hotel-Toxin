@@ -22,7 +22,7 @@
     font-size: 14px;
     color: $text-color-secondary;
 
-    @include ss {
+    @include media-xxs {
       width: 100%;
     }
 
@@ -66,7 +66,7 @@
     height: 44px;
     box-sizing: border-box;
 
-    @include ss {
+    @include media-xxs {
       width: 100%;
     }
 
@@ -94,7 +94,7 @@
     border-right: 0;
     outline: none;
 
-    @include ss {
+    @include media-xxs {
       width: 100%;
     }
 

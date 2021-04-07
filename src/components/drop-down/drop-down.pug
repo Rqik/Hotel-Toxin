@@ -5,9 +5,9 @@
 mixin dropdownSelect({extended=false ,active=false,  name,current , text }={})
   .dropdown
     .dropdown__title=name
-    div( class= active ? 'dropdown_active' : '',
-      class=extended ? 'js-dropdown__select_extended dropdown__select ' +
-        'dropdown__select_extended' : 'dropdown__select js-dropdown__select')
+    div( class= active ? "dropdown_active" : "",
+      class=extended ? "js-dropdown__select_extended dropdown__select " +
+        "dropdown__select_extended" : "dropdown__select js-dropdown__select")
       .dropdown__item-current.js-dropdown__item-current
         i.material-icons expand_more
         span.dropdown__text-current.js-dropdown__text-current= current
@@ -21,5 +21,5 @@ mixin dropdownSelect({extended=false ,active=false,  name,current , text }={})
               .dropdown__button.js-dropdown__button.js-control_plus +
         if extended
           .dropdown__buttons
-            button(type='reset').dropdown__button-reset.js-dropdown__button-reset очистить
-            button(type='submit').dropdown__button-submit применить
+            button(type="reset").dropdown__button-reset.js-dropdown__button-reset очистить
+            button(type="submit").dropdown__button-submit применить

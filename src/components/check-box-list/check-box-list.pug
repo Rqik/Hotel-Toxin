@@ -2,22 +2,22 @@
 //- name -- name for input
 //- style -- default | expanded | rich
 //- labels -- Array<string> or if style === rich Array<object>
-//-                            object = {text: 'example' ,desc:'example'}
+//-                            object = {text: "example" ,desc:"example"}
 
 mixin checkBoxList({style, caption, name, labels=[] }={})
   -
-    let classList = ['check-box'];
+    let classList = ["check-box"];
     let tumbler = false;
-    let jsToggle = '';
+    let jsToggle = "";
     switch (style) {
-      case 'expanded':
-        classList.push('check-box_expanded', 'js-check-box_expanded',
-                'expanded_active')
+      case "expanded":
+        classList.push("check-box_expanded", "js-check-box_expanded",
+                "expanded_active")
         tumbler = true
-        jsToggle = 'js-check-box__items'
+        jsToggle = "js-check-box__items"
         break
-      case 'rich':
-        classList.push('check-box_rich')
+      case "rich":
+        classList.push("check-box_rich")
         break
     }
 
@@ -29,12 +29,12 @@ mixin checkBoxList({style, caption, name, labels=[] }={})
       each item , indx in labels
         - const {text , desc} = item
         .check-box__element
-          if style === 'rich'
-            input.check-box__input(id=name + '-' + indx name=name
+          if style === "rich"
+            input.check-box__input(id=name + "-" + indx name=name
               type="checkbox" )
-            label.check-box__label.check-box__label_rich(for=name + '-' +
+            label.check-box__label.check-box__label_rich(for=name + "-" +
             indx)= text
               span.check-box__span= desc
           else
-            input.check-box__input(id=name + '-' + indx type="checkbox" )
-            label.check-box__label(for=name + '-' + indx)= item
+            input.check-box__input(id=name + "-" + indx type="checkbox" )
+            label.check-box__label(for=name + "-" + indx)= item

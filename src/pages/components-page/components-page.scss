@@ -5,13 +5,13 @@
   flex-wrap: wrap;
   gap: 100px 120px;
   padding: 60px 140px;
-  @include md{
+  @include media-md {
     padding: 60px 30px;
   }
-  @include sm{
+  @include media-sm {
     gap: 60px;
   }
-  @include ss{
+  @include media-xxs {
     padding: 30px 10px;
   }
   &__block {
@@ -19,6 +19,9 @@
     max-width: 320px;
     display: flex;
     flex-direction: column;
+    &_big{
+      max-width: 100%;
+    }
   }
 
   &__element {

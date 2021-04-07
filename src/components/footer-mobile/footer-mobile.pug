@@ -4,7 +4,7 @@
 //- social  ==  alt -  image alt
 //- logo == src logo img
 
-mixin footerMobile({social , logo = 'img/logo.png'}={})
+mixin footerMobile({social , logo = "img/logo.png"}={})
   footer.footer-mobile
     .footer-mobile__info_logo
       img(src=logo, alt="logo")
@@ -12,5 +12,5 @@ mixin footerMobile({social , logo = 'img/logo.png'}={})
     .footer-mobile__social
       each element in social
         - const {href, alt , src} = element
-        a.footer-mobile__link(href=href ? href : '#')
-          img.footer-mobile__img(src=src, alt=alt ? alt : 'social link')
+        a.footer-mobile__link(href=href ? href : "./index.html")
+          img.footer-mobile__img(src=src, alt=alt ? alt : "social link")

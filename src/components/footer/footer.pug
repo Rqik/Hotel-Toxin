@@ -6,8 +6,8 @@
 //- menu == title - caption menu block
 //- menu == items Array<object>  {text , href}
 //- logo == src logo img
-//- {social:[{href='#', src, alt='social link'}] , menu:[{title ,items:[{text,href="#"}]}]}
-mixin footer({ social , menu , logo = 'img/logo.png'}={})
+//- {social:[{href="./index.html", src, alt="social link"}] , menu:[{title ,items:[{text,href="#"}]}]}
+mixin footer({ social , menu , logo = "img/logo.png"}={})
   footer.footer
     .footer__container
       .footer-head
@@ -24,13 +24,13 @@ mixin footer({ social , menu , logo = 'img/logo.png'}={})
                 each item in items
                   - const {href , text} = item
                   li.footer-nav__item
-                    a.footer-nav__item-link(href=href ? href : '#')=text
+                    a.footer-nav__item-link(href=href ? href : "./index.html")=text
         .footer-head__subscribe
           .footer-head__subscribe-title Подписка
           .footer-head__subscribe-text Получайте специальные предложения и новости сервиса
           +field({
-            name: 'email',
-            placeholder: 'Email',
+            name: "email",
+            placeholder: "Email",
             form: true
           })
       .footer-subordinate
@@ -38,5 +38,5 @@ mixin footer({ social , menu , logo = 'img/logo.png'}={})
         .footer-subordinate__social
           each element in social
             - const {href , src , alt} = element
-            a.footer-subordinate__link(href=href ? href : '#')
-              img.footer-subordinate__img(src=src, alt=alt ? alt : 'social link')
+            a.footer-subordinate__link(href=href ? href : "./index.html")
+              img.footer-subordinate__img(src=src, alt=alt ? alt : "social link")

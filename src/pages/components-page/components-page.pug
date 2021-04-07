@@ -16,7 +16,7 @@ include ../../components/bullet-list/bullet-list
 include ../../components/icon-text/icon-text
 
 block variables
-  - const title = 'Главная'
+  - const title = "Главная"
 
 block content
   -
@@ -24,7 +24,7 @@ block content
       field, datepicker, select, likeButton, button, pagination,
       dropdownSelect, checkBoxList, review, iconText, checkBoxDefault,
       inputRadio, switchToggle, starRating, rangeSlider, bulletList
-    } = require('./components-page.json')
+    } = require("./components-page.json")
 
   .wrapper-content
     .wrapper-content__block
@@ -64,6 +64,6 @@ block content
       each checkConfig in checkBoxList
         +checkBoxList(checkConfig)
       +bulletList(bulletList)
-    .wrapper-content__block
+    .wrapper-content__block.wrapper-content__block_big
       +review(review)
       +iconText(iconText)
