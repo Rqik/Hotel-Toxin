@@ -18,6 +18,10 @@
     width: 100%;
   }
 
+  .pagination {
+    align-items: center;
+  }
+
   &__cards_result {
     display: flex;
     flex-direction: row;
@@ -25,14 +29,10 @@
     gap: 20px 12px;
     margin-bottom: 40px;
 
-    @include md {
+    @include media-md {
       justify-content: center;
       align-items: flex-start;
     }
-  }
-
-  .pagination {
-    align-items: center;
   }
 
   &__panel {
@@ -43,11 +43,11 @@
     transition: transform .3s ease-in-out;
     z-index: 22;
 
-    @include lg {
+    @include media-lg {
       margin-left: 15px;
     }
 
-    @include md {
+    @include media-md {
       position: absolute;
       left: 0;
       top: 100px;
@@ -58,14 +58,14 @@
       transform: translateX(-100%);
     }
 
-    @include sl {
+    @include media-xs {
       padding: 30px 10px;
     }
 
     &-btn {
       display: none;
 
-      @include md {
+      @include media-md {
         display: block;
         position: absolute;
         top: 0;
@@ -117,7 +117,7 @@
 
   &__panel_fixed {
     transform: translateX(0%);
-    max-width: 80vw;
+    max-width: calc(100% - 30px);
 
     .search-page__panel-btn {
       .material-icons {
@@ -136,11 +136,11 @@
   }
 }
 
-@include md {
+@include media-md {
   .search-page__cards {
     padding-left: 40px;
   }
-  @include ss{
+  @include media-xxs {
     .search-page__cards {
       padding-left: 25px;
     }

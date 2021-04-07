@@ -76,7 +76,7 @@
     background: $purple-gradient;
     position: relative;
 
-    @include ss {
+    @include media-xxs {
       width: 100%;
     }
 

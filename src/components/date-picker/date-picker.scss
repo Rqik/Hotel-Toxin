@@ -19,17 +19,18 @@
     text-transform: uppercase;
     color: $text-color-main;
     max-width: 150px;
-    @include ss {
+
+    @include media-xxs {
       width: 100%;
+      white-space: nowrap;
     }
+
     &_range {
       max-width: 266px;
-      @include ss {
+      @include media-xxs {
         max-width: 320px;
       }
     }
-
-
 
     &:hover,
     &:focus {
@@ -59,7 +60,7 @@
     transition: border .3s ease-in-out;
     outline: none;
 
-    @include ss {
+    @include media-xxs {
       width: 100%;
       font-size: 12px;
     }
@@ -68,7 +69,7 @@
       width: 266px;
       color: $text-color-secondary;
 
-      @include ss {
+      @include media-xxs {
         max-width: 320px;
         width: 100%;
       }
@@ -85,7 +86,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      @include ss {
+      @include media-xxs {
         width: 100%;
       }
     }

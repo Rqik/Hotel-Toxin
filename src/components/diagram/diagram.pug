@@ -17,13 +17,13 @@ mixin diagram( {great, good, satisfactorily,  bad, votes}={})
             stop( offset="0%" style="stop-color:rgb(144,144,144);stop-opacity:1")
             stop( offset="100%" style="stop-color:rgb(61,73,117);stop-opacity:1" )
 
-        circle(class="unit js-unit" cx="21" cy="21" r="15.91549430918954" fill="#fff" stroke='url(#lgrad)'
-          stroke-dasharray=`${great} ${100 - great}` stroke-dashoffset='25')
-        circle(class="unit js-unit" cx="21" cy="21" r="15.91549430918954" fill='transparent' stroke='url(#lgrad2)'
+        circle(class="unit js-unit" cx="21" cy="21" r="15.91549430918954" fill="#fff" stroke="url(#lgrad)"
+          stroke-dasharray=`${great} ${100 - great}` stroke-dashoffset="25")
+        circle(class="unit js-unit" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#lgrad2)"
           stroke-dasharray=`${good} ${100 - good}` stroke-dashoffset=`${100 - great + 25}`)
-        circle(class="unit js-unit" cx="21" cy="21" r="15.91549430918954" fill='transparent' stroke='url(#lgrad3)'
+        circle(class="unit js-unit" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#lgrad3)"
           stroke-dasharray=`${satisfactorily} ${100 - satisfactorily}` stroke-dashoffset=`${100 - good - great + 25}`)
-        circle(class="unit js-unit" cx="21" cy="21" r="15.91549430918954" fill='transparent' stroke='url(#lgrad4)'
+        circle(class="unit js-unit" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="url(#lgrad4)"
           stroke-dasharray=`${bad} ${100 - bad}` stroke-dashoffset=`${100 - satisfactorily - good - great + 25}`)
 
         g

@@ -8,7 +8,7 @@ include ../../components/card-slider/card-slider
 include ../../components/pagination/pagination
 
 block variables
-  - const title = 'Search'
+  - const title = "Search"
 
 block content
   -
@@ -18,7 +18,7 @@ block content
   .search-page
     .search-page__panel.js-search-page__panel
       .search-page__components
-      +datepicker({ title1: 'даты пребывания в отеле' })
+      +datepicker({ title1: "даты пребывания в отеле" })
       +dropdownSelect(dropdownSelectExt)
       +rangeSlider(rangeSlider)
       +checkBoxList(checkBoxHome)

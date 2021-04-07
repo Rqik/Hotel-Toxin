@@ -5,11 +5,11 @@
   grid-template: 'gItem1 gItem1 gItem2' max(243px) 'gItem1 gItem1 gItem3' max(243px);
   gap: 0;
 
-  @include sm {
+  @include media-sm {
     grid-template: 'gItem1  gItem2' max(143px) 'gItem1  gItem3' max(143px);
   }
 
-  @include ss {
+  @include media-xxs {
     grid-template: 'gItem1' max(143px) 'gItem2' max(143px) 'gItem3' max(143px);
   }
 
@@ -46,32 +46,32 @@
   padding-bottom: 70px;
 
   &__info {
-    @include ss {
+    @include media-xxs {
       padding-left: 15px;
       padding-right: 15px;
       width: 100%;
     }
   }
 
-  @include lg {
+  @include media-lg {
     padding-left: 30px;
     padding-right: 30px;
     flex-direction: column;
     align-items: center;
   }
 
-  @include sm {
+  @include media-sm {
     .card-block {
       margin: 0;
     }
   }
 
-  @include sl {
+  @include media-xs {
     padding: 30px 15px;
     max-width: 320px;
   }
 
-  @include ss {
+  @include media-xxs {
     padding-left: 0;
     padding-right: 0;
   }
@@ -81,12 +81,12 @@
     flex-direction: row;
     margin-bottom: 13px;
 
-    @include sm {
+    @include media-sm {
       flex-direction: column;
       align-items: center;
     }
 
-    @include sl {
+    @include media-xs {
       align-items: flex-start;
     }
   }
@@ -96,7 +96,7 @@
     flex-direction: column;
     width: 340px;
 
-    @include ss {
+    @include media-xxs {
       width: 100%;
     }
 
@@ -131,11 +131,11 @@
   justify-content: space-between;
   gap: 70px;
 
-  @include md {
+  @include media-md {
     margin-bottom: 30px;
   }
 
-  @include sm {
+  @include media-sm {
     flex-direction: column;
   }
 
@@ -146,7 +146,7 @@
     line-height: 23px;
     text-transform: none;
 
-    @include sm {
+    @include media-sm {
       padding: 0;
     }
 

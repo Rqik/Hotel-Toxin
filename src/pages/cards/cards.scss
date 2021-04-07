@@ -15,7 +15,7 @@
     flex-direction: column;
     justify-content: center;
     gap: 30px;
-    @include ss{
+    @include media-xxs {
       align-items: center;
     }
   }
@@ -24,7 +24,7 @@
     @include datepicker
   }
 
-  @include sl {
+  @include media-xs {
     width: 100%;
     align-items: center;
     justify-content: center;

@@ -4,7 +4,7 @@
   align-items: center;
   height: 170px;
 
-  @include ss {
+  @include media-xxs {
     flex-direction: column;
     height: 280px;
     width: 100%;
@@ -124,7 +124,7 @@
     line-height: 23px;
     color: $text-color-main;
 
-    @include sl {
+    @include media-xs {
       margin: 0;
     }
   }

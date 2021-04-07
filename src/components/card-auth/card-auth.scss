@@ -10,7 +10,7 @@
   flex-direction: column;
   justify-content: space-between;
 
-  @include ss {
+  @include media-xxs {
     max-width: 355px;
     width: 100%;
   }

@@ -10,21 +10,21 @@ mixin cardRoom({room, price}={})
           span.card-room__detail-number_bold=room
         .card-room__detail-category люкс
       .card-room__price
-        span.card-room__price_bold.js-card-room__price_bold=price + '₽'
+        span.card-room__price_bold.js-card-room__price_bold=price + "₽"
         | в сутки
     .card-room__data
       +datepicker({
-        title1: 'прибытие',
-        title2: 'выезд'
+        title1: "прибытие",
+        title2: "выезд"
       })
       +dropdownSelect({
         extended: true,
         active: false,
-        name: 'гости',
-        current: 'Сколько гостей',
+        name: "гости",
+        current: "Сколько гостей",
         text: [
-          'взрослые',
-          'дети', 'младенцы']
+          "взрослые",
+          "дети", "младенцы"]
       })
     .card-room__info.js-card-room__info
       .card-room__info-item
@@ -35,18 +35,18 @@ mixin cardRoom({room, price}={})
       .card-room__info-item
         div
           .card-room__info-namejs-card-room__info-name.js-card-room__sale1 Сбор за услуги: скидка 2 179₽
-          .card-room__icon(data-text='Информация про сбор за услуги')
+          .card-room__icon(data-text="Информация про сбор за услуги")
         .card-room__info-sum.js-card-room__info-sum.js-card-room__sale2 0₽
-      .card-room__info-item 
+      .card-room__info-item
         div
           .card-room__info-name.js-card-room__info-name.js-card-room__dop1 Сбор за дополнительные услуги
-          .card-room__icon(data-text='В расчет входят стоимость за доп комплекты белья')
+          .card-room__icon(data-text="В расчет входят стоимость за доп комплекты белья")
         .card-room__info-sum.js-card-room__info-sum.js-card-room__dop2 3000₽
       .card-room__info_result
         .card-room__info-name_result Итого
         .card-room__info-sum_result.js-card-room__info-sum_result=price
           | ₽
     +button({
-      style: 'long',
-      text: 'забронировать'
+      style: "long",
+      text: "забронировать"
     })

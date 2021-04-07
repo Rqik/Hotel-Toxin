@@ -15,14 +15,15 @@
     justify-content: flex-start;
     margin-bottom: 1rem;
     position: relative;
-    max-width: 266px;
-    width: 100%;
+    width: 266px;
     background-color: white;
     border-radius: 4px;
+    @include media-xxs {
+      width: 100%;
+    }
 
     &_extended {
-      max-width: 320px;
-      width: 100%;
+      width: 320px;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -30,6 +31,10 @@
       position: relative;
       background-color: white;
       border-radius: 4px;
+
+      @include media-xxs {
+        width: 266px;
+      }
 
       &:hover,
       &:focus {
@@ -83,9 +88,6 @@
       }
     }
 
-    @include ss {
-      width: 100%;
-    }
 
     .material-icons {
       transition: transform .3s ease-in-out;
