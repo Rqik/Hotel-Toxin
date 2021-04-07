@@ -1,5 +1,6 @@
 .check-box {
-  width: 222px;
+  max-width: 222px;
+  width: 100%;
   font-family: 'Montserrat', sans-serif;
   font-size: 12px;
   font-style: normal;
@@ -13,7 +14,8 @@
 
   &_expanded {
     position: relative;
-    width: 266px;
+    max-width: 266px;
+    width: 100%;
     cursor: pointer;
 
     .material-icons {
@@ -40,7 +42,8 @@
   }
 
   &_rich {
-    width: 266px;
+    max-width: 266px;
+    width: 100%;
   }
 
   &__element {
@@ -54,6 +57,11 @@
     display: flex;
     align-items: center;
     margin-top: 10px;
+  }
+
+  &__caption{
+    padding-right: 20px;
+    width: 100%;
   }
 
   &__label {
@@ -94,15 +102,16 @@
     appearance: none;
     position: absolute;
 
-    &:checked~.check-box__label::before {
+    &:checked ~ .check-box__label::before {
       background: url('~@/components/check-box-list/image/check.png') no-repeat 4px 2px;
       background-size: 10px 11px;
     }
 
-    &:checked~.check-box__label {
+    &:checked ~ .check-box__label {
       color: $text-color-secondary;
     }
   }
+
   &__span {
     font-weight: normal;
     font-size: 12px;

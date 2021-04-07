@@ -1,6 +1,7 @@
 .range-slider {
   display: block;
-  width: 266px;
+  max-width: 266px;
+  width: 100%;
   margin-bottom: 20px;
 
   &__value {
@@ -18,6 +19,7 @@
     }
 
     &-input {
+      width: 100%;
       font-style: normal;
       font-weight: normal;
       font-size: 12px;

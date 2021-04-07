@@ -15,12 +15,14 @@
     justify-content: flex-start;
     margin-bottom: 1rem;
     position: relative;
-    width: 266px;
+    max-width: 266px;
+    width: 100%;
     background-color: white;
     border-radius: 4px;
 
     &_extended {
-      width: 320px;
+      max-width: 320px;
+      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -28,14 +30,6 @@
       position: relative;
       background-color: white;
       border-radius: 4px;
-
-      @include sl {
-        // width: 266px;
-      }
-
-      @include ss {
-        width: 100%;
-      }
 
       &:hover,
       &:focus {

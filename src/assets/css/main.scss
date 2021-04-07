@@ -6,7 +6,7 @@
 @import '~@/libs/css/jquery-ui.structure.min.css';
 @import '~air-datepicker/dist/css/datepicker.min.css';
 @import "~@/pages/cards/cards.scss";
-@import "~@/pages/index/index.scss";
+@import "~@/pages/components-page/components-page.scss";
 
 @import "~@/components/bullet-list/bullet-list.scss";
 @import "~@/components/button/button.scss";
@@ -57,9 +57,23 @@ body {
   gap: 60px;
 }
 
+.container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  &__content {
+    flex: 1 0 auto;
+  }
+
+  .footer {
+    flex: 0 0 auto;
+  }
+}
+
 .wrapper {
   padding: 30px;
-
   @include md {
     padding: 30px 15px;
   }

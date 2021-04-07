@@ -2,15 +2,15 @@
 
 ---
 
-# [**Демо**](https://rqik.github.io/FSD/dist/demo-pages.html)
+# [**Демо**](https://rqik.github.io/FSD/dist/index.html)
 
 ## GitHub Pages
 
-[**index.html**](https://rqik.github.io/FSD/dist/) </br>
+[**components.html**](https://rqik.github.io/FSD/dist/components-page.html) </br>
 [**color-fonts**](https://rqik.github.io/FSD/dist/color-fonts.html) </br>
 [**cards**](https://rqik.github.io/FSD/dist/cards.html) </br>
 [**header-footer**](https://rqik.github.io/FSD/dist/header-footer.html) </br>
-[**landing**](https://rqik.github.io/FSD/dist/landing.html) </br>
+[**pick-room**](https://rqik.github.io/FSD/dist/pick-room.html) </br>
 [**auth**](https://rqik.github.io/FSD/dist/auth.html) </br>
 [**registration**](https://rqik.github.io/FSD/dist/registration.html) </br>
 [**search-room**](https://rqik.github.io/FSD/dist/search-room.html) </br>
