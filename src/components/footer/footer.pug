@@ -14,7 +14,9 @@ mixin footer({ social , menu , logo = "img/logo.png"})
         .footer-head__info
           .footer-head__logo
             img.footer-head__logo-img(src=logo, alt="logo")
-          .footer-head__text Бронирование номеров в лучшем отеле 2019 года по версии ассоциации «Отельные взгляды»
+          .footer-head__text
+            | Бронирование номеров в лучшем отеле 2019 года по версии ассоциации
+            | «Отельные взгляды»
         .footer-head__nav
           each nav in menu
             - const {title , items} =nav
@@ -27,14 +29,16 @@ mixin footer({ social , menu , logo = "img/logo.png"})
                     a.footer-nav__item-link(href=href ? href : "./index.html")=text
         .footer-head__subscribe
           .footer-head__subscribe-title Подписка
-          .footer-head__subscribe-text Получайте специальные предложения и новости сервиса
+          .footer-head__subscribe-text
+            | Получайте специальные предложения и новости сервиса
           +field({
             name: "email",
             placeholder: "Email",
             form: true
           })
       .footer-subordinate
-        .footer-subordinate__copyright Copyright © 2018 Toxin отель. Все права зачищены.
+        .footer-subordinate__copyright
+          | Copyright © 2018 Toxin отель. Все права защищены.
         .footer-subordinate__social
           each element in social
             - const {href , src , alt} = element

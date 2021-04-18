@@ -19,11 +19,11 @@
   ],
   "datepicker": [
     {
-      "title1": "date dropdown",
-      "title2": "date dropdown"
+      "firstTitle": "date dropdown",
+      "secondTitle": "date dropdown"
     },
     {
-      "title1": "filter date dropdown"
+      "firstTitle": "filter date dropdown"
     }
   ],
   "select": {

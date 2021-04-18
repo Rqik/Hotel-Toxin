@@ -10,7 +10,8 @@ block variables
 
 block content
   -
-    const { iconText, diagram, review, bulletList, cardRoom } = require("./room-detail.json");
+    const { iconText, diagram, review,
+            bulletList, cardRoom } = require("./room-detail.json");
     const { client_1, client_2 } = review
   .gallery
     .gallery__item-1
@@ -23,7 +24,7 @@ block content
     .detail__info
       .detail__view
         .detail__block
-          h3.detail__block-title Cведения о номере
+          h3.detail__block-title Сведения о номере
           +iconText(iconText)
         +diagram(diagram)
       .detail__block
@@ -37,5 +38,8 @@ block content
             +bulletList(bulletList)
         .detail__block
           .detail__block-title Отмена
-          .detail__block-text Бесплатная отмена в течение 48 ч. После этого при отмене не позднее чем за 5 дн. до прибытия вы получите полный возврат за вычетом сбора за услуги.
+          .detail__block-text
+            | Бесплатная отмена в течение 48 ч. После этого при отмене не
+            | позднее чем за 5 дн. до прибытия вы получите полный возврат за
+            | вычетом сбора за услуги.
     +cardRoom(cardRoom)
