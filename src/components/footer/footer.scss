@@ -67,7 +67,7 @@
     &__text {
       margin-top: 17px;
       font-weight: normal;
-      font-size: 14px;
+      font-size: $font-size-normal;
       line-height: 24px;
       color: $text-color-secondary;
     }
@@ -92,7 +92,7 @@
       &-title {
         margin-top: 4px;
         font-weight: bold;
-        font-size: 12px;
+        font-size: $font-size-small;
         line-height: 15px;
         text-transform: uppercase;
         color: $text-color-main;
@@ -101,7 +101,7 @@
       &-text {
         margin-top: 18px;
         font-weight: normal;
-        font-size: 14px;
+        font-size: $font-size-normal;
         line-height: 24px;
         color: $text-color-secondary;
         margin-bottom: 23px;
@@ -120,7 +120,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 26px 0 25px 0;
-    font-size: 14px;
+    font-size: $font-size-normal;
     color: $text-color-secondary;
 
     &::before {
@@ -183,7 +183,7 @@
   &-nav {
     &__title {
       font-weight: bold;
-      font-size: 12px;
+      font-size: $font-size-small;
       line-height: 15px;
       text-transform: uppercase;
       color: $text-color-main;
@@ -193,7 +193,7 @@
       margin-top: 20px;
       padding: 0;
       list-style: none;
-      font-size: 14px;
+      font-size: $font-size-normal;
       line-height: 19px;
       color: $text-color-translucent;
     }

@@ -3,7 +3,7 @@
     font-family: 'Montserrat', sans-serif;
     margin: 5px 0;
     line-height: 14px;
-    font-size: 12px;
+    font-size: $font-size-small;
     font-weight: bold;
     text-transform: uppercase;
     color: $text-color-main;
@@ -62,7 +62,7 @@
           font-family: Montserrat, sans-serif;
           font-style: normal;
           font-weight: bold;
-          font-size: 12px;
+          font-size: $font-size-small;
           line-height: 15px;
           text-transform: uppercase;
           cursor: pointer;
@@ -80,7 +80,7 @@
           font-family: Montserrat, sans-serif;
           font-style: normal;
           font-weight: bold;
-          font-size: 12px;
+          font-size: $font-size-small;
           line-height: 15px;
           text-transform: uppercase;
           cursor: pointer;
@@ -89,7 +89,7 @@
     }
 
 
-    .material-icons {
+    .icon {
       transition: transform .3s ease-in-out;
     }
 
@@ -99,7 +99,6 @@
       .dropdown__select_current,
       .dropdown__select_items {
         border-color: $text-color-translucent;
-        // border-top: none;
       }
     }
 
@@ -135,7 +134,7 @@
     display: flex;
     align-items: center;
     font-weight: bold;
-    font-size: 12px;
+    font-size: $font-size-small;
     line-height: 30px;
     height: 30px;
     text-transform: uppercase;
@@ -166,7 +165,7 @@
       font-family: Montserrat, sans-serif;
       font-style: normal;
       font-weight: normal;
-      font-size: 14px;
+      font-size: $font-size-normal;
       line-height: 40px;
       overflow: hidden;
       text-overflow: ellipsis;
@@ -217,10 +216,10 @@
     text-align: center;
   }
 
-  .material-icons {
+  .icon {
     width: 24px;
     height: 24px;
-    font-size: 24px;
+    font-size: $font-size-big;
     line-height: 24px;
     display: flex;
     align-items: center;
@@ -236,7 +235,7 @@
 }
 
 
-.material-icons {
+.icon {
   transition: transform .3s ease-in-out;
 }
 
@@ -248,7 +247,7 @@
     border-radius: 4px 4px 0 0;
   }
 
-  .material-icons {
+  .icon {
     padding: 0;
     margin: 0;
     transform: rotateX(180deg);

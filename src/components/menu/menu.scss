@@ -4,7 +4,7 @@
   &__auth {
     padding-left: 19px;
     border-left: 1px solid $shadow-color;
-    font-size: 14px;
+    font-size: $font-size-normal;
     color: $text-color-translucent;
 
     &_link {
@@ -25,7 +25,7 @@
     list-style: none;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    font-size: $font-size-normal;
     line-height: 17px;
     color: $text-color-translucent;
     gap: 20px;
@@ -74,7 +74,7 @@
     list-style: none;
     font-style: normal;
     font-weight: normal;
-    font-size: 14px;
+    font-size: $font-size-normal;
     line-height: 17px;
     color: $text-color-translucent;
     gap: 2px;

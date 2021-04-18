@@ -15,7 +15,7 @@
     flex-direction: row;
     list-style: none;
     color: $text-color-translucent;
-    font-size: 12px;
+    font-size: $font-size-small;
     line-height: 40px;
     padding: 0;
     margin: 0;
@@ -40,7 +40,7 @@
       width: 40px;
       height: 40px;
       font-weight: bold;
-      font-size: 12px;
+      font-size: $font-size-small;
       color: white;
       border-radius: 50%;
       align-self: center;
@@ -58,11 +58,11 @@
     border-radius: 50%;
     cursor: pointer;
 
-    .material-icons {
+    .icon {
       text-align: center;
       vertical-align: middle;
       color: white;
-      font-size: 24px;
+      font-size: $font-size-big;
     }
   }
 
@@ -76,11 +76,11 @@
     border-radius: 50%;
     cursor: pointer;
 
-    .material-icons {
+    .icon {
       text-align: center;
       vertical-align: middle;
       color: white;
-      font-size: 24px;
+      font-size: $font-size-big;
       transform: rotateZ(180deg);
     }
   }
@@ -89,7 +89,7 @@
     margin-top: 10px;
     margin-left: 5px;
     text-transform: none;
-    font-size: 14px;
+    font-size: $font-size-normal;
     line-height: normal;
     color: $text-color-secondary;
   }

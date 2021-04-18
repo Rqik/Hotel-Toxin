@@ -2,8 +2,8 @@
 //- title -- text description
 //- placeholder
 //- form -- field form  boolean
-
-mixin field({name, title , placeholder, form=false}={})
+include ../icon/icon
+mixin field({name, title , placeholder, form=false})
   if form
     form(class="field-form")&attributes(attributes)
       .field-form__title= title
@@ -11,7 +11,7 @@ mixin field({name, title , placeholder, form=false}={})
         input.field-form__input.js-field_text( type="text",
           placeholder=placeholder, name=name)
         button.field-form__btn(type="submit" , name=name )
-          i.material-icons arrow_forward
+          +icon({text:"arrow_forward"})
   else
     .field
       label.field__label= title

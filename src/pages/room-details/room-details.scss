@@ -1,4 +1,5 @@
-@import "~@assets/css/mixin.scss";
+@import "~@/styles/mixin.scss";
+@import '~@/styles/variables.scss';
 
 .gallery {
   display: grid;
@@ -104,7 +105,7 @@
       font-family: Montserrat, sans-serif;
       font-style: normal;
       font-weight: bold;
-      font-size: 19px;
+      font-size: $font-size-medium;
       line-height: 23px;
       margin: 0;
       text-transform: none;
@@ -112,7 +113,7 @@
     }
 
     &-text {
-      font-size: 14px;
+      font-size: $font-size-normal;
       line-height: 24px;
       color: rgba(31, 32, 65, 0.75);
     }
@@ -142,7 +143,7 @@
   .bullet_list-title {
     margin: 0;
     padding-left: 20px;
-    font-size: 19px;
+    font-size: $font-size-medium;
     line-height: 23px;
     text-transform: none;
 

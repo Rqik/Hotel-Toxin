@@ -1,4 +1,4 @@
-extends ../../layouts/landing-page
+extends ../../layouts/landing-page/landing-page
 include ../../components/date-picker/date-picker
 include ../../components/drop-down/drop-down
 include ../../components/button/button
@@ -26,7 +26,7 @@ block content
       +dropdownSelect(dropdownSelect)
       +checkBoxList(checkBoxList)
       .search-page__panel-btn.js-search-page__panel-btn
-        i.material-icons expand_more
+        +icon({text:"expand_more"})
     .search-page__cards
       h2.search-page__cards-title Номера, которые мы для вас подобрали
       .search-page__cards_result

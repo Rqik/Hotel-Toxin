@@ -1,22 +1,22 @@
 //- title - text above the label one or two
 
-mixin datepicker({title1, title2 }={})
+mixin datepicker({title1, title2 })
   if title2
     div.date-picker
       input.date-picker__input.date-picker__input_hide.js-date-picker
       label(class="date-picker__label js-date-picker__label")= title1
         input(type="data" class="date-picker__input js-date-picker__input " +
         "js-date-picker__input_left" placeholder="ДД.ММ.ГГГГ")
-        i.material-icons expand_more
+        +icon({text:"expand_more"})
       label(class="date-picker__label js-date-picker__label")= title2
         input(type="data" class="date-picker__input js-date-picker__input " +
         "js-date-picker__input_right"
           placeholder="ДД.ММ.ГГГГ")
-        i.material-icons expand_more
+        +icon({text:"expand_more"})
   else
     div.date-picker
       label( class="date-picker__label date-picker__label_range")= title1
         input.date-picker__input.date-picker__input_range.js-date-picker_range(
           type="data" ,
           placeholder="ДД ММ - ДД ММ")
-        i.material-icons expand_more
+        +icon({text:"expand_more"})

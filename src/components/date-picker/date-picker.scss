@@ -14,7 +14,7 @@
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 12px;
+    font-size: $font-size-small;
     line-height: 15px;
     text-transform: uppercase;
     color: $text-color-main;
@@ -40,7 +40,7 @@
         border: 1px solid $text-color-translucent;
       }
 
-      i.material-icons {
+      .icon {
         color: $text-color-secondary;
       }
     }
@@ -52,7 +52,7 @@
     border: 1px solid $color-transparent;
     border-radius: 4px;
     padding-left: 15px;
-    font-size: 14px;
+    font-size: $font-size-normal;
     line-height: 18px;
     text-transform: uppercase;
     margin-top: 5px;
@@ -62,7 +62,7 @@
 
     @include media-xxs {
       width: 100%;
-      font-size: 12px;
+      font-size: $font-size-small;
     }
 
     &_range {
@@ -92,10 +92,10 @@
     }
   }
 
-  .material-icons {
+  .icon {
     width: 24px;
     height: 24px;
-    font-size: 24px;
+    font-size: $font-size-big;
     line-height: 24px;
     display: flex;
     align-items: center;

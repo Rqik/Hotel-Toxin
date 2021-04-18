@@ -53,7 +53,7 @@
         color: white;
         opacity: 0;
         transition: opacity .3s ease-in-out;
-        .material-icons {
+        .icon {
           transition: opacity .3s ease-in-out;
           opacity: 0;
         }
@@ -65,7 +65,7 @@
 
         &:hover {
           opacity: 1;
-          .material-icons {
+          .icon {
            opacity: 1;
           }
         }
@@ -74,7 +74,7 @@
       &-prev {
         left: 0;
 
-        .material-icons {
+        .icon {
           transform: rotate(90deg);
         }
 
@@ -86,7 +86,7 @@
 
       &-next {
         right: 0;
-        .material-icons {
+        .icon {
           transform: rotate(-90deg);
         }
 
@@ -111,15 +111,15 @@
     display: inline-flex;
     align-items: flex-end;
     font-weight: bold;
-    font-size: 14px;
+    font-size: $font-size-normal;
     line-height: 29px;
 
     &-number {
-      font-size: 19px;
+      font-size: $font-size-medium;
       line-height: normal;
 
       .card-slider__span {
-        font-size: 14px;
+        font-size: $font-size-normal;
         margin-right: 1px;
       }
     }
@@ -136,12 +136,12 @@
     align-items: center;
     text-align: right;
     line-height: 23px;
-    font-size: 12px;
+    font-size: $font-size-small;
     font-weight: normal;
     color: $text-color-translucent;
 
     .card-slider__span {
-      font-size: 14px;
+      font-size: $font-size-normal;
       line-height: 18px;
       font-weight: bold;
       margin-right: 3px;
@@ -150,7 +150,7 @@
 
   &__review {
     font-weight: normal;
-    font-size: 14px;
+    font-size: $font-size-normal;
     line-height: 18px;
     color: $text-color-translucent;
 

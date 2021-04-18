@@ -5,5 +5,4 @@ $(() => {
         .toggleClass('search-page__panel_fixed');
       // $('.search-page__components').slideToggle(200)
     });
-
 });
