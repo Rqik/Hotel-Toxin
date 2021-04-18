@@ -12,13 +12,14 @@ block variables
 
 block content
   -
-    const { dropdown, rangeSlider, cardSlider, cardSlider2, checkBox, pagination } = require("./serach-room.json")
+    const { dropdown, rangeSlider, cardSlider, cardSlider2, checkBox,
+      pagination } = require("./serach-room.json")
     const { checkBoxList, checkBoxHome, checkBoxRich } = checkBox
     const { dropdownSelect, dropdownSelectExt } = dropdown
   .search-page
     .search-page__panel.js-search-page__panel
       .search-page__components
-      +datepicker({ title1: "даты пребывания в отеле" })
+      +datepicker({ firstTitle: "даты пребывания в отеле" })
       +dropdownSelect(dropdownSelectExt)
       +rangeSlider(rangeSlider)
       +checkBoxList(checkBoxHome)

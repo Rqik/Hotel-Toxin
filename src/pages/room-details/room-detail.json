@@ -49,7 +49,7 @@
     ]
   },
   "cardRoom": {
-    "room": "888",
+    "roomNumber": "888",
     "price": "9990"
   }
 }
