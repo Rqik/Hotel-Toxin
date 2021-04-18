@@ -6,7 +6,7 @@ class Menu {
         Menu.toggleMenuBurger(this);
       });
 
-    $menuItem.append('<i class="material-icons"> expand_more'
+    $menuItem.append('<i class="icon"> expand_more'
       + ' </i>');
 
     $(document)

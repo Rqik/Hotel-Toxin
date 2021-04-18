@@ -1,0 +1,53 @@
+block variables
+include ../../components/header/header
+include ../../components/footer/footer
+include ../../components/favicon/favicon
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    +favicon
+    title= title
+  body.container
+    .container__content
+      +header(
+        {
+          logo: { src: "img/logo.png" },
+          items: [{
+            text: "О нас",
+            active:
+              true
+          },
+            {
+              text: "Услуги",
+              more: [{ text: "Дополнительные пункты" }, { text: "Дополнительные пункты большие" }, { text: "Дополнительные пункты" }]
+            }
+            , { text: "Вакансии" }, { text: "Новости" },
+            {
+              text: "Соглашения",
+              more: [{ text: "Дополнительные пункты" }, { text: "Дополнительные пункты большие" }, { text: "Дополнительные пункты" }]
+            }]
+        }
+      )
+      block content
+    +footer({
+      social: [{ src: "img/social/twitter.svg" },
+        { src: "img/social/facebook.svg" }, {
+          src: "img/social/instagram.svg"
+        }],
+      menu: [{
+        title: "Навигация",
+        items: [{ text: "О нас" }, { text: "Новости" },
+          { text: "Служба поддержки" }, { text: "Услуги" }]
+      }, {
+        title: "О нас",
+        items: [{ text: "О сервисе" }, { text: "Наша команда" },
+          { text: "Вакансии" }, { text: "Инвесторы" }]
+      }, {
+        title: "Служба поддержки",
+        items: [{ text: "Соглашения" }, { text: "Сообщества" },
+          { text: "Связь с нами" }]
+      },]
+    })

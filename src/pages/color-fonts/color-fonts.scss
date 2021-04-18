@@ -1,5 +1,6 @@
-@import '@/assets/css/variables.scss';
-@import '@/assets/css/mixin.scss';
+@import '~@/styles/variables.scss';
+@import '~@/styles/mixin.scss';
+
 
 .color-palette {
   display: flex;
@@ -7,14 +8,18 @@
   gap: 20px;
 }
 
-.df {
+
+
+.color-fonts {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   flex-wrap: wrap;
+  gap: 60px;
+
   @include media-lg {
     flex-direction: column;
-  justify-content: center;
+    justify-content: center;
     align-items: center;
   }
 }
@@ -37,24 +42,21 @@
     width: 436px;
 
     &_fs24 {
-      font-size: 24px;
+      font-size: $font-size-big;
       line-height: 29px;
-
     }
 
     &_fs19 {
-      font-size: 19px;
+      font-size: $font-size-medium;
       line-height: 23px;
     }
 
     &_fs14 {
       font-weight: bold;
-      font-size: 12px;
+      font-size: $font-size-small;
       line-height: 15px;
     }
   }
-
-
 
 
   &__tag {

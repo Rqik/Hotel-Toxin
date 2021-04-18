@@ -17,7 +17,7 @@
       border: none;
     }
 
-    .material-icons {
+    .icon {
       font-size: 48px;
       background-image: $purple-gradient;
       -webkit-background-clip: text;
@@ -29,7 +29,7 @@
     font-family: Montserrat, sans-serif;
     font-style: normal;
     font-weight: bold;
-    font-size: 14px;
+    font-size: $font-size-normal;
     line-height: 24px;
     color: $text-color-secondary;
     display: flex;
@@ -38,7 +38,7 @@
 
   &__description {
     font-weight: normal;
-    font-size: 14px;
+    font-size: $font-size-normal;
     line-height: 24px;
   }
 }

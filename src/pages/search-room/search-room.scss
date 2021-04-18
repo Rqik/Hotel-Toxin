@@ -1,5 +1,5 @@
-@import "~@assets/css/variables.scss";
-@import "~@assets/css/mixin.scss";
+@import "~@/styles/variables.scss";
+@import "~@/styles/mixin.scss";
 
 .search-page {
   max-width: 1160px;
@@ -79,7 +79,7 @@
         text-align: center;
         z-index: 220;
 
-        .material-icons {
+        .icon {
           position: absolute;
           margin: auto;
           top: 50%;
@@ -120,7 +120,7 @@
     max-width: calc(100% - 30px);
 
     .search-page__panel-btn {
-      .material-icons {
+      .icon {
         transform: rotate(90deg);
       }
     }
@@ -128,7 +128,7 @@
 
   &__cards-title {
     font-weight: bold;
-    font-size: 24px;
+    font-size: $font-size-big;
     line-height: 29px;
     color: $text-color-main;
     margin-top: 0;

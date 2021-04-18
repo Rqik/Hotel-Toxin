@@ -1,4 +1,4 @@
-extends ../../layouts/main
+extends ../../layouts/main/main
 include ../../components/color-pick/color-pick
 
 block variables
@@ -6,7 +6,7 @@ block variables
 
 block content
   - const { colors } = require("./color-fonts.json")
-  .df
+  .color-fonts
     .color-palette
       each item in colors
         +colorPick(item)

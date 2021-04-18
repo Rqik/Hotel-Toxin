@@ -4,7 +4,7 @@
 //- labels -- Array<string> or if style === rich Array<object>
 //-                            object = {text: "example" ,desc:"example"}
 
-mixin checkBoxList({style, caption, name, labels=[] }={})
+mixin checkBoxList({style, caption, name, labels=[] })
   -
     let classList = ["check-box"];
     let tumbler = false;
@@ -24,7 +24,7 @@ mixin checkBoxList({style, caption, name, labels=[] }={})
   div(class=classList)
     .check-box__caption.js-check-box__caption= caption
     if tumbler
-      i.material-icons expand_more
+      +icon({text:"expand_more"})
     .check-box__items(class=jsToggle)
       each item , indx in labels
         - const {text , desc} = item

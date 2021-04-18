@@ -39,7 +39,7 @@
     &--nav-title {
       width: 114px;
       font-weight: bold;
-      font-size: 19px;
+      font-size: $font-size-medium;
       line-height: 23px;
       text-align: center;
       letter-spacing: 0.5px;
@@ -64,7 +64,7 @@
         display: block;
         font-style: normal;
         font-weight: bold;
-        font-size: 12px;
+        font-size: $font-size-small;
         line-height: 15px;
         text-transform: uppercase;
         color: $purple;
@@ -98,7 +98,7 @@
       font-family: Montserrat, sans-serif;
       font-style: normal;
       font-weight: bold;
-      font-size: 12px;
+      font-size: $font-size-small;
       line-height: 15px;
       display: flex;
       align-items: center;

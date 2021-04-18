@@ -1,4 +1,4 @@
-import '@assets/css/main.scss';
+import '@/styles/main.scss';
 import '@/libs/js/jquery-ui.min';
 import '@/components/card-slider';
 import '@/components/card-room';
@@ -14,8 +14,8 @@ const myDatepicker = $('.calendar')
       days: 'MM <br>yyyy',
     },
     clearButton: true,
-    prevHtml: '<i class="material-icons">arrow_back</i>',
-    nextHtml: '<i class="material-icons">arrow_forward</i>',
+    prevHtml: '<i class="icon">arrow_back</i>',
+    nextHtml: '<i class="icon">arrow_forward</i>',
     minDate: new Date(),
     keyboardNav: false,
     multipleDates: 2,

@@ -16,7 +16,7 @@
   font-family: Montserrat, sans-serif;
   font-style: normal;
   font-weight: bold;
-  font-size: 12px;
+  font-size: $font-size-small;
   text-transform: uppercase;
   text-decoration: none;
   color: #ffffff;
@@ -86,12 +86,12 @@
     }
 
     &:hover {
-      .material-icons {
+      .icon {
         right: 16px;
       }
     }
 
-    .material-icons {
+    .icon {
       position: absolute;
       right: 10px;
       top: 50%;

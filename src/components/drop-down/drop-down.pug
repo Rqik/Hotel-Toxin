@@ -2,14 +2,14 @@
 //- extended -- extended version +2 button typeof Boolean
 //- current -- present value typeof String
 //- text -- row items name
-mixin dropdownSelect({extended=false ,active=false,  name,current , text }={})
+mixin dropdownSelect({extended=false ,active=false,  name,current , text })
   .dropdown
     .dropdown__title=name
     div( class= active ? "dropdown_active" : "",
       class=extended ? "js-dropdown__select_extended dropdown__select " +
         "dropdown__select_extended" : "dropdown__select js-dropdown__select")
       .dropdown__item-current.js-dropdown__item-current
-        i.material-icons expand_more
+        +icon({text:"expand_more"})
         span.dropdown__text-current.js-dropdown__text-current= current
       .dropdown__items.js-dropdown__items
         each item in text

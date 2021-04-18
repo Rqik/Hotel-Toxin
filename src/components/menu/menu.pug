@@ -1,6 +1,6 @@
 include ../button/button
-
-mixin menu({items, auth}={})
+include ../icon/icon
+mixin menu({items, auth})
   .menu(class=attributes.class)
     ul.menu__items.js-menu__items
       if items
@@ -26,7 +26,7 @@ mixin menu({items, auth}={})
         li.menu__item
           +button({text: "зарегистрироваться"})
     .menu__burger.js-menu__burger
-      i.material-icons menu
+      +icon({text:"menu"})
     if !!auth
       - const {href, text} = auth
       .menu__auth

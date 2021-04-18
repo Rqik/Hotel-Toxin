@@ -1,0 +1,65 @@
+@import "~normalize.css";
+@import '~air-datepicker/dist/css/datepicker.min.css';
+@import "~swiper/swiper-bundle.min.css";
+@import "~@/styles/variables.scss";
+@import "~@/styles/mixin.scss";
+@import "~@/styles/fonts.scss";
+
+@import '~@/libs/css/jquery-ui.structure.min.css';
+@import "~@/pages/cards/cards.scss";
+@import "~@/pages/components-page/components-page.scss";
+@import "~@/pages/color-fonts/color-fonts.scss";
+@import "~@/pages/header-footer/header-footer.scss";
+
+@import "~@/layouts/landing-page/landing-page.scss";
+@import "~@/layouts/main/main.scss";
+@import "~@/layouts/grey/grey.scss";
+@import "~@/components/bullet-list/bullet-list.scss";
+@import "~@/components/button/button.scss";
+@import "~@/components/button-like/button-like.scss";
+@import "~@/components/card-auth/card-auth.scss";
+@import "~@/components/card-find/card-find.scss";
+@import "~@/components/card-registration/card-registration.scss";
+@import "~@/components/card-room/card-room.scss";
+@import "~@/components/card-slider/card-slider.scss";
+@import "~@/components/check-box-list/check-box-list.scss";
+@import "~@/components/color-pick/color-pick.scss";
+@import '~@/components/date-picker/date-picker.scss';
+@import "~@/components/diagram/diagram.scss";
+@import "~@/components/drop-down/drop-down.scss";
+@import "~@/components/field/field.scss";
+@import "~@/components/footer/footer.scss";
+@import "~@/components/footer-mobile/footer-mobile.scss";
+@import "~@/components/header/header.scss";
+@import "~@/components/icon/icon.scss";
+@import "~@/components/icon-text/icon-text.scss";
+@import "~@/components/input-radio/input-radio.scss";
+@import "~@/components/menu/menu.scss";
+@import "~@/components/pagination/pagination.scss";
+@import "~@/components/range-slider/range-slider.scss";
+@import "~@/components/review/review.scss";
+@import "~@/components/select/select.scss";
+@import "~@/components/star-rating/star-rating.scss";
+@import "~@/components/switch-toggle/switch-toggle.scss";
+
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Montserrat', Arial, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: $font-size-normal;
+  line-height: 24px;
+  color: $text-color-secondary;
+  background-color: white;
+}
+
+
+
+
+
+

@@ -31,7 +31,7 @@
   .legend {
     padding: 0;
     list-style: none;
-    font-size: 14px;
+    font-size: $font-size-normal;
     line-height: 24px;
     color: $text-color-secondary;
     align-self: center;
@@ -120,7 +120,7 @@
   .diagram__title {
     margin-left: 15px;
     font-weight: bold;
-    font-size: 19px;
+    font-size: $font-size-medium;
     line-height: 23px;
     color: $text-color-main;
 
