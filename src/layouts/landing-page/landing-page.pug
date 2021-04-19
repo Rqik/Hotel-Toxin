@@ -2,14 +2,17 @@ block variables
 include ../../components/header/header
 include ../../components/footer/footer
 include ../../components/favicon/favicon
-
 doctype html
 html(lang="en")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    +favicon
-    title= title
+    block favicon
+      +favicon
+    if title
+      title= title
+    else
+      title= 'TOXIN'
   body.container
     .container__content
       +header(
