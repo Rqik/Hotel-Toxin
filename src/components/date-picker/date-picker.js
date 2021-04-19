@@ -7,7 +7,7 @@ class DatePicker {
       position: 'bottom center',
       range: true,
       navTitles: {
-        days: 'MM <br>yyyy',
+        days: 'MM yyyy',
       },
       clearButton: true,
       prevHtml: '<i class="icon">arrow_back</i>',
@@ -25,7 +25,7 @@ class DatePicker {
       position: 'bottom center',
       range: true,
       navTitles: {
-        days: 'MM <br>yyyy',
+        days: 'MM yyyy',
       },
       dateFormat: 'd M',
       clearButton: true,

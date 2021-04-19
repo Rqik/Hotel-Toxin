@@ -114,11 +114,12 @@
   }
 
   &__text-current {
+    display: inline-block;
     padding: 0;
     margin: 0;
-    max-width: 100%;
+    max-width: 95%;
     height: 30px;
-    line-height: 26px;
+    line-height: 30px;
     text-align: start;
     vertical-align: middle;
     overflow: hidden;

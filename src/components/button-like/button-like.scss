@@ -24,7 +24,6 @@
   transition: .3s ease-in-out;
   transition-property: border, color;
   background-clip: padding-box;
-
   .icon {
     font-family: 'Material Icons';
     font-style: normal;
@@ -81,7 +80,13 @@
       bottom: -1px;
       right: -1px;
       left: -1px;
-      z-index: -2;
+      z-index: 1;
+      padding: 1px;
+      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+       linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
+      mask-composite: exclude;
+      transition: opacity .3s ease-in-out;
     }
   }
 }

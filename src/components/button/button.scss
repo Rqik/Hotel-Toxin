@@ -22,7 +22,7 @@
   color: #ffffff;
   cursor: pointer;
   white-space: nowrap;
-
+  line-height:1rem;
   &_small {
 
     &:hover,
@@ -31,11 +31,12 @@
     }
   }
 
+
   &_outline {
     position: relative;
     border-radius: 24px;
     background-clip: padding-box;
-    height: 50px;
+    height: 48px;
     padding: 10px 17px;
     box-sizing: border-box;
     background: #ffffff none;
@@ -102,7 +103,6 @@
 
   &_border-none {
     border: none;
-
     &::before {
       content: none;
     }

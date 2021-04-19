@@ -21,5 +21,7 @@ mixin dropdownSelect({extended=false ,active=false,  name,current , text })
               .dropdown__button.js-dropdown__button.js-control_plus +
         if extended
           .dropdown__buttons
-            button(type="reset").dropdown__button-reset.js-dropdown__button-reset очистить
-            button(type="submit").dropdown__button-submit применить
+            button(type="reset" class="dropdown__button-reset " +
+            "js-dropdown__button-reset") очистить
+            button(type="submit" class="dropdown__button-submit " +
+            "js-dropdown__button-submit") применить
