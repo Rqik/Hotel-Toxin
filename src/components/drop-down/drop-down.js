@@ -12,13 +12,7 @@ class DropDown {
         DropDown.active(className);
         DropDown.slideDrop(className);
         this.childrenCurrentVal(className);
-
         this.actionDropDown(`${className} .dropdown__control-panel`, className);
-        $(`${className} .dropdown__item-current`)
-          .click(() => {
-            $(className)
-              .toggleClass('dropdown_active');
-          });
       });
 
     $('.js-dropdown__select_extended')
@@ -34,12 +28,6 @@ class DropDown {
           className,
         );
         this.buttonAction(className);
-
-        $(`${className} .dropdown__item-current`)
-          .click(() => {
-            $(className)
-              .toggleClass('dropdown_active');
-          });
       });
   }
 
@@ -76,8 +64,7 @@ class DropDown {
   }
 
   static active(selector) {
-    if (!$(selector)
-      .hasClass('dropdown_active')) {
+    if (!$(selector).hasClass('dropdown_active')) {
       $(`${selector} .dropdown__items`)
         .slideToggle(0);
     }
@@ -86,11 +73,19 @@ class DropDown {
   static slideDrop(selector) {
     $(`${selector} .js-dropdown__item-current`)
       .on('click', () => {
-        $(
-          ` ${selector} .js-dropdown__item-current ~ .dropdown__items`,
-        )
-          .slideToggle(300);
+        DropDown.toggleDropDown(selector);
       });
+    $(`${selector} .js-dropdown__button-submit`)
+      .on('click', () => {
+        DropDown.toggleDropDown(selector);
+      });
+  }
+
+  static toggleDropDown(selector) {
+    $(` ${selector} .dropdown__items`)
+      .slideToggle(300);
+    $(selector)
+      .toggleClass('dropdown_active');
   }
 
   static textCurrentNew(selector) {

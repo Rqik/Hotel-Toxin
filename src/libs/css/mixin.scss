@@ -18,15 +18,17 @@
       padding: 0;
       border: none;
       align-items: flex-start;
+      .datepicker--nav-title{
+        width: 180px;
+      }
+      &-action {
+        color: $purple;
+        width: auto;
+        border-radius: 50%;
+        transition: transform 0.3s ease-in-out;
+      }
     }
 
-    &--nav-action {
-      color: $purple;
-      width: auto;
-      border-radius: 50%;
-      transition: transform 0.3s ease-in-out;
-
-    }
 
     &--nav-action[data-action='prev']:hover {
       transform: translateX(5px);
@@ -189,6 +191,38 @@
           }
         }
       }
+    }
+  }
+}
+
+@mixin ionRangeSlider{
+  .irs{
+    &--round{
+      height: 30px;
+    }
+    &-line{
+      border: 1px solid $color-transparent;
+      height: 6px;
+      border-radius: 3px;
+      top: 23px;
+      background-color: white;
+    }
+    &-bar{
+      background-color: $green;
+      background-image: $green-gradient;
+      height: 6px;
+      top: 23px;
+    }
+    &-handle{
+      box-sizing: border-box;
+      background-color: $green;
+      background-image: $green-gradient;
+      border: 2px solid white;
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      top: 17px;
+      box-shadow: none;
     }
   }
 }

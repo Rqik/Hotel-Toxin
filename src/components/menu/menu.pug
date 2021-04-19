@@ -22,9 +22,9 @@ mixin menu({items, auth})
           a(href="./index.html") нет элементов
       if !auth
         li.menu__item
-          +button({style: "outline", text: "войти",})
+          +button({style: "outline", text: "войти", href:'./auth.html'})
         li.menu__item
-          +button({text: "зарегистрироваться"})
+          +button({text: "зарегистрироваться", href:'./registration.html'})
     .menu__burger.js-menu__burger
       +icon({text:"menu"})
     if !!auth

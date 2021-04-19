@@ -1,25 +1,32 @@
+import '../../libs/js/ion.rangeSlider.min';
+
 class RangeSlider {
   constructor() {
     this.$slider = $('.js-range-slider__app');
   }
 
   init() {
-    this.$slider.slider({
-      range: true,
+    this.$slider.ionRangeSlider({
+      type: 'double',
+      skin: 'round',
       min: 0,
       max: 15000,
-      values: [5000, 10000],
-      slide(event, ui) {
-        const value = $(this)
-          .siblings('.range-slider__value');
+      from: 5000,
+      to: 10000,
+      grid_margin: false,
+      hide_min_max: true,
+      hide_from_to: true,
+      onChange: (data) => {
+        const value = this.$slider.siblings('.range-slider__value');
         value.find('input')
-          .val(`${ui.values[0]}₽ - ${ui.values[1]}₽`);
+          .val(`${data.from_pretty}₽ - ${data.to_pretty}₽`);
+      },
+      onStart: (data) => {
+        const value = this.$slider.siblings('.range-slider__value');
+        value.find('input')
+          .val(`${data.from_pretty}₽ - ${data.to_pretty}₽`);
       },
     });
-
-    $('.range-slider__value')
-      .find('input')
-      .val(`${this.$slider.slider('values', 0)}₽ - ${this.$slider.slider('values', 1)}₽`);
   }
 }
 

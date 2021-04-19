@@ -14,12 +14,14 @@ block content
             bulletList, cardRoom } = require("./room-detail.json");
     const { client_1, client_2 } = review
   .gallery
-    .gallery__item-1
-      img.gallery__item-img(src="img/slider4.jpg", alt="alt")
-    .gallery_item-2
-      img.gallery__item-img(src="img/slider5.jpg", alt="alt")
-    .gallery_item-3
-      img.gallery__item-img(src="img/slider3.jpg", alt="alt")
+    .gallery__left
+      .gallery__item-1
+        img.gallery__item-img(src="img/slider4.jpg", alt="alt")
+    .gallery__rigth
+      .gallery__item-2
+        img.gallery__item-img(src="img/slider2.jpg", alt="alt")
+      .gallery__item-3
+        img.gallery__item-img(src="img/slider3.jpg", alt="alt")
   .detail
     .detail__info
       .detail__view
