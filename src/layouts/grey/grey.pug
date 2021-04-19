@@ -7,7 +7,11 @@ html(lang="en")
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
     +favicon
-    title= title
+    block favicon
+    if title
+      title= title
+    else
+      title= 'TOXIN'
   body.wrapper.wrapper_grey
     img(src="img/logopage.png", alt="")
     block content
