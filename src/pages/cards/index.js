@@ -19,12 +19,12 @@ const myDatepicker = $('.calendar')
     minDate: new Date(),
     keyboardNav: false,
     multipleDates: 2,
-    onSelect(fd, date, picker) {
+    onSelect(formattedDate, date, picker) {
       const el = picker.$el.siblings('.js-date-picker__label');
       el.children('.js-date-picker__input_left')
-        .val(fd.split(',')[0]);
+        .val(formattedDate.split(',')[0]);
       el.children('.js-date-picker__input_right')
-        .val(fd.split(',')[1]);
+        .val(formattedDate.split(',')[1]);
     },
   })
   .data('datepicker');

@@ -1,10 +1,9 @@
-import '@/styles/main.scss';
-import '@/libs/js/jquery-ui.min';
-import '@/pages/search-room/search-room.scss';
-import '@/pages/search-room/search';
-import '@/components/date-picker';
-import '@/components/drop-down';
-import '@/components/header';
-import '@/components/check-box-list';
-import '@/components/range-slider';
-import '@/components/card-slider';
+$(() => {
+  $('.js-search-page__panel-btn')
+    .on('click', disableSearchPanel);
+
+  function disableSearchPanel() {
+    $('.js-search-page__panel')
+      .toggleClass('search-page__panel_fixed');
+  }
+});

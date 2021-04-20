@@ -23,10 +23,7 @@ class DropDown {
         DropDown.active(className);
         DropDown.slideDrop(className);
         this.childrenCurrentVal(className);
-        this.actionDropDownExtended(
-          `${className} .dropdown__control-panel`,
-          className,
-        );
+        this.actionDropDownExtended(`${className} .dropdown__control-panel`, className);
         this.buttonAction(className);
       });
   }
@@ -34,22 +31,25 @@ class DropDown {
   buttonAction(selector) {
     $(selector)
       .find('.js-dropdown__button-reset')
-      .on('click', () => this.eventReset(selector));
+      .on('click', this.eventReset(selector));
   }
 
   eventReset(selector) {
-    $(selector)
-      .find('.js-dropdown__text-current')
-      .text('Сколько гостей');
-    $(selector)
-      .find('.js-dropdown__span')
-      .text(0);
-    $(selector)
-      .find('.js-control_minus')
-      .addClass('disable');
-    this.children[selector].fill(0);
-    $(this)
-      .css('opacity', 0);
+    return (e) => {
+      const el = e.currentTarget.closest('.js-dropdown__select_extended');
+      $(el)
+        .find('.js-dropdown__text-current')
+        .text('Сколько гостей');
+      $(el)
+        .find('.js-dropdown__span')
+        .text(0);
+      $(el)
+        .find('.js-control_minus')
+        .addClass('disable');
+      this.children[selector].fill(0);
+      $(this)
+        .css('opacity', 0);
+    };
   }
 
   static dropItem(el) {
@@ -64,7 +64,8 @@ class DropDown {
   }
 
   static active(selector) {
-    if (!$(selector).hasClass('dropdown_active')) {
+    if (!$(selector)
+      .hasClass('dropdown_active')) {
       $(`${selector} .dropdown__items`)
         .slideToggle(0);
     }
@@ -72,20 +73,18 @@ class DropDown {
 
   static slideDrop(selector) {
     $(`${selector} .js-dropdown__item-current`)
-      .on('click', () => {
-        DropDown.toggleDropDown(selector);
-      });
+      .on('click', DropDown.toggleDropDown(selector));
     $(`${selector} .js-dropdown__button-submit`)
-      .on('click', () => {
-        DropDown.toggleDropDown(selector);
-      });
+      .on('click', DropDown.toggleDropDown(selector));
   }
 
   static toggleDropDown(selector) {
-    $(` ${selector} .dropdown__items`)
-      .slideToggle(300);
-    $(selector)
-      .toggleClass('dropdown_active');
+    return () => {
+      $(`${selector} .dropdown__items`)
+        .slideToggle(300);
+      $(selector)
+        .toggleClass('dropdown_active');
+    };
   }
 
   static textCurrentNew(selector) {
@@ -188,51 +187,39 @@ class DropDown {
   }
 
   actionDropDown(selector, current) {
-    const that = this;
     $(selector)
-      .each(function (i, el) {
+      .each((i, el) => {
         DropDown.disableButton(el);
-        $(this)
+        $(el)
           .children('.js-dropdown__button')
-          .on('click', (e) => {
-            const sum = e.currentTarget.textContent;
-            that.children[current][i] += Number(`${sum}1`);
-            if (that.children[current][i] <= 0) {
-              that.children[current][i] = 0;
-            }
-            $(this)
-              .children('.js-dropdown__span')
-              .text(that.children[current][i]);
-            DropDown.textCurrentNew(current);
-            DropDown.disableButton(el);
-          });
+          .on('click', this.eventOperationSum(current, i, el, DropDown.textCurrentNew));
       });
   }
 
   actionDropDownExtended(selector, current) {
-    const that = this;
-
     $(selector)
-      .each(function (i, el) {
+      .each((i, el) => {
         DropDown.disableButton(el);
-
-        $(this)
+        $(el)
           .children('.js-dropdown__button')
-          .on('click', (e) => {
-            const sum = e.currentTarget.textContent;
-            that.children[current][i] += Number(`${sum}1`);
-            if (that.children[current][i] <= 0) {
-              that.children[current][i] = 0;
-            }
-            $(this)
-              .children('.js-dropdown__span')
-              .text(that.children[current][i]);
-            DropDown.textModify(current);
-            DropDown.disableButton(el);
-          });
-
-        DropDown.btnHide(current, that.children[current][i]);
+          .on('click', this.eventOperationSum(current, i, el, DropDown.textModify));
+        DropDown.btnHide(current, this.children[current][i]);
       });
+  }
+
+  eventOperationSum(current, i, el, callBack) {
+    return (e) => {
+      const sum = e.currentTarget.textContent;
+      this.children[current][i] += Number(`${sum}1`);
+      if (this.children[current][i] <= 0) {
+        this.children[current][i] = 0;
+      }
+      $(e.currentTarget)
+        .siblings('.js-dropdown__span')
+        .text(this.children[current][i]);
+      callBack(current);
+      DropDown.disableButton(el);
+    };
   }
 }
 

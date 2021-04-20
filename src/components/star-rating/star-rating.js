@@ -48,16 +48,19 @@ class StarRating {
   static rateInput(selector) {
     const $input = $(selector)
       .find('.js-star-rating__input');
-
     $input.each((i, el) => {
-      el.addEventListener('click', () => {
-        $(selector)
-          .attr('data-rate', el.value);
-        $(selector)
-          .data().rate = el.value;
-        StarRating.starRateLaunch(selector);
-      });
+      el.addEventListener('click', StarRating.starRateEvent(selector));
     });
+  }
+
+  static starRateEvent(selector) {
+    return (event) => {
+      $(selector)
+        .attr('data-rate', event.currentTarget.value);
+      $(selector)
+        .data().rate = event.currentTarget.value;
+      StarRating.starRateLaunch(selector);
+    };
   }
 }
 
