@@ -10,17 +10,21 @@ class Diagram {
 
   static diagramMove(el, itm) {
     $(el)
-      .on('mouseover', () => Diagram.addHovered(itm));
+      .on('mouseover', Diagram.addHovered(itm));
     $(el)
-      .on('mouseout', () => Diagram.removeHovered(itm));
+      .on('mouseout', Diagram.removeHovered(itm));
   }
 
   static addHovered(el) {
-    el.classList.add('hovered');
+    return () => {
+      el.classList.add('hovered');
+    };
   }
 
   static removeHovered(el) {
-    el.classList.remove('hovered');
+    return () => {
+      el.classList.remove('hovered');
+    };
   }
 }
 

@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const isDev = process.env.NODE_ENV === 'development';
@@ -16,16 +16,14 @@ const PATHS = {
 };
 const PAGES_DIR = `${PATHS.src}/pages/.`;
 
-
 const PAGES = fs
-  .readdirSync(PAGES_DIR)
+  .readdirSync(PAGES_DIR);
 let pageName = '';
 
 let entryName = {};
 
-
 function entryPoints(page) {
-  entryName[page] = `./pages/${page}/${page}.js`;
+  entryName[page] = `./pages/${page}`;
 }
 
 const plugins = () => {
@@ -68,10 +66,9 @@ const plugins = () => {
 };
 
 module.exports = {
-  // target: "web",
+  target: "web",
   context: PATHS.src,
   mode: 'development',
-
   entry: entryName,
   output: {
     filename: 'js/[name:7]-[contenthash:5]-bundle.js',
@@ -93,7 +90,7 @@ module.exports = {
   },
   devServer: {
     contentBase: PATHS.dist,
-    // compress: true,
+    compress: true,
     port: 8008,
     hot: true,
   },
@@ -111,7 +108,7 @@ module.exports = {
         test: /\.(s[ca]ss|css)$/,
         use: [
           isDev
-            ?  'style-loader'
+            ? 'style-loader'
             : {
               loader: MiniCssExtractPlugin.loader,
               options: {
