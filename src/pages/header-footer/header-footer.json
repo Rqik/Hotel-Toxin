@@ -1,7 +1,7 @@
 {
   "headerReg": {
     "logo": {
-      "src": "img/logo.png"
+      "src": "img/logo-toxin.svg"
     },
     "items": [
       {
@@ -46,7 +46,7 @@
   },
   "headerAuth": {
     "logo": {
-      "src": "img/logo.png"
+      "src": "img/logo-toxin.svg"
     },
     "items": [
       {
