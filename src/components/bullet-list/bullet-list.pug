@@ -2,7 +2,8 @@
 //- items -- Array<string> text item
 mixin bulletList({title , items})
   .bullet-list
-    .bullet-list__title=title
+    if title
+      .bullet-list__title=title
     ul.bullet-list__items
       each item in items
         li.bullet-list__item=item
