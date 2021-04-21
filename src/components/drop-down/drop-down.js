@@ -31,10 +31,10 @@ class DropDown {
   buttonAction(selector) {
     $(selector)
       .find('.js-dropdown__button-reset')
-      .on('click', this.eventReset(selector));
+      .on('click', this.makeEventReset(selector));
   }
 
-  eventReset(selector) {
+  makeEventReset(selector) {
     return (e) => {
       const el = e.currentTarget.closest('.js-dropdown__select_extended');
       $(el)
@@ -73,12 +73,12 @@ class DropDown {
 
   static slideDrop(selector) {
     $(`${selector} .js-dropdown__item-current`)
-      .on('click', DropDown.toggleDropDown(selector));
+      .on('click', DropDown.makeToggleDropDown(selector));
     $(`${selector} .js-dropdown__button-submit`)
-      .on('click', DropDown.toggleDropDown(selector));
+      .on('click', DropDown.makeToggleDropDown(selector));
   }
 
-  static toggleDropDown(selector) {
+  static makeToggleDropDown(selector) {
     return () => {
       $(`${selector} .dropdown__items`)
         .slideToggle(300);
@@ -192,7 +192,7 @@ class DropDown {
         DropDown.disableButton(el);
         $(el)
           .children('.js-dropdown__button')
-          .on('click', this.eventOperationSum(current, i, el, DropDown.textCurrentNew));
+          .on('click', this.makeEventOperationSum(current, i, el, DropDown.textCurrentNew));
       });
   }
 
@@ -202,12 +202,12 @@ class DropDown {
         DropDown.disableButton(el);
         $(el)
           .children('.js-dropdown__button')
-          .on('click', this.eventOperationSum(current, i, el, DropDown.textModify));
+          .on('click', this.makeEventOperationSum(current, i, el, DropDown.textModify));
         DropDown.btnHide(current, this.children[current][i]);
       });
   }
 
-  eventOperationSum(current, i, el, callBack) {
+  makeEventOperationSum(current, i, el, callBack) {
     return (e) => {
       const sum = e.currentTarget.textContent;
       this.children[current][i] += Number(`${sum}1`);

@@ -32,10 +32,10 @@ class CardRoom {
   buttonApply(el, ind) {
     const $currentDP = $(this.$input[ind]);
     $(el)
-      .on('click', CardRoom.hocEventHandler($currentDP));
+      .on('click', CardRoom.makeEventHandler($currentDP));
   }
 
-  static hocEventHandler($currentDP) {
+  static makeEventHandler($currentDP) {
     return () => {
       const [to, from] = $currentDP.data('datepicker').selectedDates;
       let date = Math.ceil((from - to) / 1000 / 60 / 60 / 24);
