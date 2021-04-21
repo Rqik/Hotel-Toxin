@@ -80,7 +80,7 @@ class DatePicker {
         .data('datepicker')
         .$datepicker
         .find('.js-datepicker--button-apply')
-        .on('click', this.hideDatePicker(ind));
+        .on('click', this.makeHideDatePicker(ind));
     });
   }
 
@@ -102,7 +102,7 @@ class DatePicker {
     el.selectDate([this.prevDay, this.nextDay]);
   }
 
-  hideDatePicker(ind) {
+  makeHideDatePicker(ind) {
     return () => {
       $(this.$datepicker[ind])
         .data('datepicker')

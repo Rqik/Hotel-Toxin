@@ -49,11 +49,11 @@ class StarRating {
     const $input = $(selector)
       .find('.js-star-rating__input');
     $input.each((i, el) => {
-      el.addEventListener('click', StarRating.starRateEvent(selector));
+      el.addEventListener('click', StarRating.makeStarRateEvent(selector));
     });
   }
 
-  static starRateEvent(selector) {
+  static makeStarRateEvent(selector) {
     return (event) => {
       $(selector)
         .attr('data-rate', event.currentTarget.value);
