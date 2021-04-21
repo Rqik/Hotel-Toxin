@@ -34,7 +34,7 @@
 
   }
 
-  &__rigth {
+  &__right {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -157,6 +157,9 @@
       margin: 0;
       text-transform: none;
       color: rgba(31, 32, 65, 1);
+      &_ul{
+          margin-left: 20px;
+      }
     }
 
     &-text {
@@ -177,7 +180,6 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  gap: 70px;
 
   @include media-md {
     margin-bottom: 30px;
@@ -185,19 +187,7 @@
 
   @include media-sm {
     flex-direction: column;
-  }
-
-  .bullet_list-title {
-    margin: 0;
-    padding-left: 20px;
-    font-size: $font-size-medium;
-    line-height: 23px;
-    text-transform: none;
-
-    @include media-sm {
-      padding: 0;
-    }
-
+    gap: 35px;
   }
 
   .detail__block {

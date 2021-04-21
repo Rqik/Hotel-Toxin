@@ -13,15 +13,18 @@ block content
     const { iconText, diagram, review,
             bulletList, cardRoom } = require("./room-detail.json");
     const { client_1, client_2 } = review
+    const roomPhoto1 = require("./img/gallery-left.jpg").default
+    const roomPhoto2 = require("./img/gallery-right-1.jpg").default
+    const roomPhoto3 = require("./img/gallery-right-2.jpg").default
   .gallery
     .gallery__left
       .gallery__item-1
-        img.gallery__item-img(src="img/slider4.jpg", alt="alt")
-    .gallery__rigth
+        img.gallery__item-img(src=roomPhoto1, alt="room-photo-1")
+    .gallery__right
       .gallery__item-2
-        img.gallery__item-img(src="img/slider5.jpg", alt="alt")
+        img.gallery__item-img(src=roomPhoto2, alt="room-photo-2")
       .gallery__item-3
-        img.gallery__item-img(src="img/slider3.jpg", alt="alt")
+        img.gallery__item-img(src=roomPhoto3, alt="room-photo-3")
   .detail
     .detail__info
       .detail__view
@@ -35,7 +38,7 @@ block content
       +review(client_2)
       .detail__subordinate
         .detail__block
-          .detail__block-title Правила
+          .detail__block-title.detail__block-title_ul Правила
           .detail__block-text
             +bulletList(bulletList)
         .detail__block

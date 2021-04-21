@@ -11,6 +11,7 @@
     font-size: $font-size-small;
     font-style: normal;
     font-weight: 700;
+    margin-bottom: 10px;
   }
 
   &__items {
@@ -21,13 +22,16 @@
     list-style: none;
     text-transform: none;
     padding: 0;
+    margin: 0;
   }
 
   &__item {
     position: relative;
     padding-left: 21px;
     margin-top: 10px;
-
+    &:first-child{
+      margin-top: 0;
+    }
     &::before {
       content: '';
       position: absolute;
