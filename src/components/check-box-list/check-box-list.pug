@@ -6,18 +6,18 @@
 
 mixin checkBoxList({style, caption, name, labels=[] })
   -
-    let classList = ["check-box"];
+    let classList = ['check-box'];
     let tumbler = false;
-    let jsToggle = "";
+    let jsToggle = '';
     switch (style) {
-      case "expanded":
-        classList.push("check-box_expanded", "js-check-box_expanded",
-                "expanded_active")
+      case 'expanded':
+        classList.push('check-box_expanded', 'js-check-box_expanded',
+                'expanded_active')
         tumbler = true
-        jsToggle = "js-check-box__items"
+        jsToggle = 'js-check-box__items'
         break
-      case "rich":
-        classList.push("check-box_rich")
+      case 'rich':
+        classList.push('check-box_rich')
         break
     }
 

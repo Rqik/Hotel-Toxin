@@ -2,7 +2,7 @@
 
 mixin datepicker({firstTitle, secondTitle })
   if secondTitle
-    div.date-picker
+    .date-picker
       input.date-picker__input.date-picker__input_hide.js-date-picker
       label(class="date-picker__label js-date-picker__label")= firstTitle
         input(type="data" class="date-picker__input js-date-picker__input " +
@@ -14,7 +14,7 @@ mixin datepicker({firstTitle, secondTitle })
           placeholder="ДД.ММ.ГГГГ")
         +icon({text:"expand_more"})
   else
-    div.date-picker
+    .date-picker
       label( class="date-picker__label date-picker__label_range")= firstTitle
         input.date-picker__input.date-picker__input_range.js-date-picker_range(
           type="data" ,

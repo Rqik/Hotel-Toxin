@@ -24,7 +24,7 @@ block content
       field, datepicker, select, likeButton, button, pagination,
       dropdownSelect, checkBoxList, review, iconText, checkBoxDefault,
       inputRadio, switchToggle, starRating, rangeSlider, bulletList
-    } = require("./components-page.json")
+    } = require('./components-page.json')
 
   .wrapper-content
     .wrapper-content__block
@@ -44,13 +44,12 @@ block content
             +likeButton(like)
       .wrapper-content__element
         .wrapper-content__caption rate button
-        div
           +starRating(starRating)
     .wrapper-content__block
       +rangeSlider(rangeSlider)
       .wrapper-content__element
         .wrapper-content__caption button
-        div
+        .wrapper-content__items
           each elem in button
             +button(elem)
       .wrapper-content__element
