@@ -2,10 +2,10 @@ extends ../../layouts/main/main
 include ../../components/color-pick/color-pick
 
 block variables
-  - const title = "Color Fonts"
+  - const title = 'Color Fonts'
 
 block content
-  - const { colors } = require("./color-fonts.json")
+  - const { colors } = require('./color-fonts.json')
   .color-fonts
     .color-palette
       each item in colors

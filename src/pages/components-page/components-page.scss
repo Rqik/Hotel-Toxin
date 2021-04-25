@@ -34,6 +34,7 @@
     color: $text-color-main;
     display: flex;
     flex-direction: column;
+    align-content: flex-start;
     margin-bottom: 1rem;
   }
 
@@ -41,6 +42,7 @@
     margin-top: 1rem;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     gap: 6px;
   }
 }

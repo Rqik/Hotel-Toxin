@@ -2,10 +2,10 @@ extends ../../layouts/grey/grey
 include ../../components/button/button
 
 block variables
-  - const title = "Demo | Pages"
+  - const title = 'Demo | Pages'
 
 block content
-  - const { buttons } = require("./index.json")
+  - const { buttons } = require('./index.json')
   .pages
     each button in buttons
       +button(button)
