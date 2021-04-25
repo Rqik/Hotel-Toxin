@@ -6,8 +6,8 @@
 
 mixin footerMobile({social , logo = "img/logo-toxin.svg"})
   footer.footer-mobile
-    .footer-mobile__info_logo
-      img(src=logo, alt="logo")
+    .footer-mobile__logo
+      img(src=logo, alt="logo").footer-mobile__img
     .footer-mobile__copyright Copyright © 2018 Toxin отель. Все права защищены.
     .footer-mobile__social
       each element in social
