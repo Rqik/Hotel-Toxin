@@ -4,4 +4,5 @@ mixin rangeSlider({title , caption })
       label.range-slider__value-title( for=title)=title
       input.range-slider__value-input(type="text" id=title readonly)
     input.js-range-slider__app
-    .range-slider__caption=caption
+    if caption
+      .range-slider__caption=caption
