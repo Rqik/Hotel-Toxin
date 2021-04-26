@@ -5,28 +5,28 @@
   border-radius: 4px;
   border: 1px solid rgba(0, 0, 0, 0.12);
   box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-  color: $text-color-main;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @include font-normal($color: $text-color-main);
 
   @include media-xxs {
     max-width: 355px;
     width: 100%;
   }
 
-  .date-picker {
+  &__date-picker {
     margin-bottom: 17px;
   }
 
-  .dropdown__select_extended {
-    margin-bottom: 30px;
+  &__dropdown {
+    margin-bottom: 17px;
   }
 
   &__title {
-    font-size: $font-size-big;
-    line-height: 30px;
-    font-weight: bold;
     margin-bottom: 22px;
+
+    @include font-bold($font-size-big ,$text-color-main, 30px);
   }
 }

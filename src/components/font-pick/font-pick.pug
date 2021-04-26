@@ -1,0 +1,24 @@
+mixin fontPick({tag , text})
+	-
+		let fontClass = 'font-pick';
+		let textClass = '';
+		switch(tag){
+			case 'h1':
+				fontClass+='_fs24';
+				textClass+='font-pick__text_bold'
+				break;
+			case 'h2':
+				fontClass+='_fs19';
+				textClass+='font-pick__text_bold';
+				break;
+			case 'h3':
+				fontClass+='_fs12';
+				textClass+='font-pick__text_bold font-pick__text_uppercase'
+				break;
+			default:
+				fontClass+='_fs14'
+				break;
+		}
+	.font-pick(class=fontClass)
+		.font-pick__tag= tag
+		.font-pick__text(class=textClass)= text

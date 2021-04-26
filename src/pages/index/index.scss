@@ -7,13 +7,12 @@
   justify-content: center;
   max-width: 380px;
   background-color: white;
-  border-radius: 16px;
-  border: 1px solid $color-transparent;
+  border: 1px solid $transparent_black;
 
-  .link {
+  &__btn {
     &:hover {
       cursor: pointer;
-      border: 1px solid $color-transparent;
+      border: 2px solid $transparent_black;
     }
   }
 }

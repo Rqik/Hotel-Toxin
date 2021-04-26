@@ -1,23 +1,22 @@
-include ../icon/icon
 mixin starRating({currentRating="0"})
   form.star-rating.js-star-rating(data-rate=currentRating)
     label.star-rating__radio.js-star-rating__radio
       input.star-rating__input.js-star-rating__input(type="radio"  checked
       name="rate" value=1  aria-label="Ужасно")
-      +icon({text:"star_border"})
+      .star-rating__icon star_border
     label.star-rating__radio.js-star-rating__radio
       input.star-rating__input.js-star-rating__input(type="radio"  name="rate"
         value=2 aria-label="Сносно")
-      +icon({text:"star_border"})
+      .star-rating__icon star_border
     label.star-rating__radio.js-star-rating__radio
       input.star-rating__input.js-star-rating__input(type="radio"  name="rate"
         value=3 aria-label="Нормально")
-      +icon({text:"star_border"})
+      .star-rating__icon star_border
     label.star-rating__radio.js-star-rating__radio
       input.star-rating__input.js-star-rating__input(type="radio"  name="rate"
         value=4 aria-label="Хорошо")
-      +icon({text:"star_border"})
+      .star-rating__icon star_border
     label.star-rating__radio.js-star-rating__radio
       input.star-rating__input.js-star-rating__input(type="radio"  name="rate"
         value=5 aria-label="Отлично")
-      +icon({text:"star_border"})
+      .star-rating__icon star_border

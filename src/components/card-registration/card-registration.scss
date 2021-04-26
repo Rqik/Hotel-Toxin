@@ -15,47 +15,30 @@
     width: 100%;
   }
 
-  .field {
-    margin-bottom: 10px;
+  &__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 21px;
+  }
+  &__input-radio{
   }
 
-  .input-radio__items {
-    line-height: normal;
-    padding: 0;
-    margin-bottom: 7px;
+  &__toggle{
+    margin-top: 9px;
   }
-
-  .input-radio__items .input-radio__item {
-    margin-top: -3px;
-  }
-
-  .input-radio__label {
-    margin-top: -2px;
-  }
-
   &__title {
     font-size: $font-size-big;
     line-height: 30px;
     font-weight: bold;
-    margin-bottom: 22px;
   }
 
-  &__submit {
-    margin-top: 10px;
-    margin-bottom: 5px;
-  }
 
   &__bot {
     display: flex;
     align-items: center;
     justify-content: space-between;
     z-index: 220;
-    margin-top: 26px;
-
-    .button_outline {
-      padding: 10px 23px;
-    }
+    margin-top: 28px;
   }
-
-
 }

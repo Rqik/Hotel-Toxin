@@ -16,7 +16,7 @@ class CheckBoxList {
   addClass(e) {
     if (e.target === e.currentTarget) {
       this.$checkBox
-        .toggleClass('expanded_active');
+        .toggleClass('check-box_expanded_active');
       this.$checkBox
         .children('.js-check-box__items')
         .slideToggle(300);

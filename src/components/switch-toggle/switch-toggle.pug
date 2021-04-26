@@ -2,7 +2,10 @@
 //- name - name for input
 //- label - array text element
 mixin switchToggle({caption= "", name="toggle" , label} = {})
-  .switch-toggle= caption
-    each item , indx in label
-      input.switch-toggle__input(id=name + "-" + indx type="checkbox" name=name)
-      label.switch-toggle__label(for=name + "-" + indx class="radio__label")=item
+  .switch-toggle
+    if (caption)
+      .switch-toggle__caption= caption
+    .switch-toggle__items
+      each item , indx in label
+        input.switch-toggle__input(id=name + "-" + indx type="checkbox" name=name)
+        label.switch-toggle__label(for=name + "-" + indx class="radio__label")=item

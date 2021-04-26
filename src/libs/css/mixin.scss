@@ -5,7 +5,7 @@
     width: 320px;
     box-sizing: border-box;
     border-radius: 4px;
-    border: 1px solid $color-transparent;
+    border: 1px solid $transparent_black;
     display: flex;
     flex-direction: column;
     box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
@@ -18,9 +18,11 @@
       padding: 0;
       border: none;
       align-items: flex-start;
-      .datepicker--nav-title{
+
+      .datepicker--nav-title {
         width: 180px;
       }
+
       &-action {
         color: $purple;
         width: auto;
@@ -95,18 +97,14 @@
     }
 
     &--day-name {
+      display: flex;
       width: 39.88px;
       height: 40px;
-      font-family: Montserrat, sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: $font-size-small;
-      line-height: 15px;
-      display: flex;
       align-items: center;
       text-align: center;
-      color: $purple;
-      text-transform: capitalize
+      text-transform: capitalize;
+
+      @include font-bold($font-size-small, $purple, 15px);
     }
 
     &--cells {
@@ -125,22 +123,24 @@
       color: $text-color-translucent;
 
       &-day {
-        +.-current- {
+        + .-current- {
           color: white;
           background: $green-gradient;
+
+          @include font-bold($font-size-small , white)
         }
 
         &.-disabled-,
         &.-other-month- {
-          color: $color-transparent;
+          color: $transparent_black;
         }
 
-        +.-selected- {
-          color: #fff;
+        + .-selected- {
           background: $purple-gradient;
+          @include font-bold($font-size-small , white)
         }
 
-        +.-range-from- {
+        + .-range-from- {
           position: relative;
 
           &::after {
@@ -157,7 +157,7 @@
           }
         }
 
-        +.-range-to- {
+        + .-range-to- {
           position: relative;
 
           &::after {
@@ -174,7 +174,7 @@
           }
         }
 
-        +.-in-range- {
+        + .-in-range- {
           background: none;
 
           &::after {
@@ -195,25 +195,28 @@
   }
 }
 
-@mixin ionRangeSlider{
-  .irs{
-    &--round{
+@mixin ionRangeSlider {
+  .irs {
+    &--round {
       height: 30px;
     }
-    &-line{
-      border: 1px solid $color-transparent;
+
+    &-line {
+      border: 1px solid $transparent_black;
       height: 6px;
       border-radius: 3px;
       top: 23px;
       background-color: white;
     }
-    &-bar{
+
+    &-bar {
       background-color: $green;
       background-image: $green-gradient;
       height: 6px;
       top: 23px;
     }
-    &-handle{
+
+    &-handle {
       box-sizing: border-box;
       background-color: $green;
       background-image: $green-gradient;

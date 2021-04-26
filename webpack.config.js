@@ -131,15 +131,8 @@ module.exports = {
         },
       },
       {
-        test: /\.svg$/,
-        loader: 'svg-inline-loader',
-        options: {
-          name: '[name][contenthash].[ext]',
-          outputPath: 'img/',
-        },
-      },
-      {
         test: /\.(ttf|woff|woff2|eot|svg)$/,
+        exclude: [/image/],
         use: {
           loader: 'file-loader',
           options: {
@@ -148,6 +141,15 @@ module.exports = {
           },
         },
       },
+      {
+        test: /\.svg$/,
+        loader: 'svg-url-loader',
+        options: {
+          name: '[name][contenthash:5].[ext]',
+          outputPath: 'img/',
+        },
+      },
+
       {
         test: /\.js$/,
         exclude: /node_modules/,

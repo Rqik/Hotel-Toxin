@@ -7,16 +7,16 @@ mixin datepicker({firstTitle, secondTitle })
       label(class="date-picker__label js-date-picker__label")= firstTitle
         input(type="data" class="date-picker__input js-date-picker__input " +
         "js-date-picker__input_left" placeholder="ДД.ММ.ГГГГ")
-        +icon({text:"expand_more"})
+        .date-picker__expand-more expand_more
       label(class="date-picker__label js-date-picker__label")= secondTitle
         input(type="data" class="date-picker__input js-date-picker__input " +
         "js-date-picker__input_right"
           placeholder="ДД.ММ.ГГГГ")
-        +icon({text:"expand_more"})
+        .date-picker__expand-more expand_more
   else
     .date-picker
       label( class="date-picker__label date-picker__label_range")= firstTitle
         input.date-picker__input.date-picker__input_range.js-date-picker_range(
           type="data" ,
           placeholder="ДД ММ - ДД ММ")
-        +icon({text:"expand_more"})
+        .date-picker__expand-more expand_more

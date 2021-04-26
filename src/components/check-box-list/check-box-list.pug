@@ -24,7 +24,7 @@ mixin checkBoxList({style, caption, name, labels=[] })
   div(class=classList)
     .check-box__caption.js-check-box__caption= caption
     if tumbler
-      +icon({text:"expand_more"})
+      .check-box__icon expand_more
     .check-box__items(class=jsToggle)
       each item , indx in labels
         - const {text , desc} = item

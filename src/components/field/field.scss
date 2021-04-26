@@ -15,7 +15,7 @@
     width: 320px;
     height: 44px;
     background: #FFFFFF;
-    border: 1px solid $color-transparent;
+    border: 1px solid $transparent_black;
     box-sizing: border-box;
     border-radius: 4px;
     padding-left: 14px;
@@ -27,12 +27,9 @@
     }
 
     &::placeholder {
-      color: $color-transparent;
-      font-family: 'Montserrat', sans-serif;
-      font-style: normal;
-      font-weight: normal;
-      font-size: $font-size-normal;
       height: 18px;
+
+      @include font-normal($font-size-normal , $transparent_black);
     }
 
     &:hover,
@@ -60,7 +57,7 @@
     flex-direction: row;
     margin: 5px 0 0;
     align-items: flex-start;
-    border: 1px solid $color-transparent;
+    border: 1px solid $transparent_black;
     border-radius: 4px;
     width: 267px;
     height: 44px;
@@ -79,7 +76,9 @@
       outline: none;
     }
   }
-
+  &__icon{
+    @include font-icon($font-size-big , $purple, $lh:24px)
+  }
   &__input {
     width: 223px;
     height: 100%;
@@ -99,7 +98,7 @@
     }
 
     &::placeholder {
-      color: $color-transparent;
+      color: $transparent_black;
       font-family: 'Montserrat', sans-serif;
       font-style: normal;
       font-weight: normal;

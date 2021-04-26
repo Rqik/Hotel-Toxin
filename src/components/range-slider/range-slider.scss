@@ -10,12 +10,9 @@
   &__value {
     display: flex;
     justify-content: space-between;
-    font-style: normal;
-    font-weight: bold;
-    font-size: $font-size-small;
-    line-height: 15px;
-    color: $text-color-main;
     text-transform: uppercase;
+
+    @include font-bold($font-size-small, $lh: 15px);
 
     &-title {
       white-space: nowrap;
@@ -23,24 +20,21 @@
 
     &-input {
       width: 100%;
-      font-style: normal;
-      font-weight: normal;
-      font-size: $font-size-small;
       margin: 0;
       padding: 0;
       text-align: right;
       text-transform: uppercase;
-      color: $text-color-translucent;
       border: none;
       box-sizing: border-box;
+
+      @include font-normal($font-size-small, $text-color-translucent);
     }
   }
 
   &__caption {
     margin-top: 15px;
-    font-weight: normal;
-    font-size: $font-size-small;
-    line-height: 14px;
+
+    @include font-normal($font-size-small, $lh: 14px);
   }
 
   @include ionRangeSlider

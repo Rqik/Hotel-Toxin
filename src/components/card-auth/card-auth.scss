@@ -15,15 +15,13 @@
     width: 100%;
   }
 
-  .field {
+  &__field {
     margin-bottom: 10px;
   }
 
   &__title {
-    font-size: $font-size-big;
-    line-height: 30px;
-    font-weight: bold;
     margin-bottom: 22px;
+    @include font-bold($lh:30px);
   }
 
   &__bot {
@@ -32,10 +30,6 @@
     justify-content: space-between;
     z-index: 220;
     margin-top: 26px;
-
-    .button_outline {
-      padding: 10px 23px;
-    }
   }
 
   &__submit {
@@ -44,10 +38,6 @@
 
     .card-auth__bot {
       z-index: 20;
-
-      .button_outline {
-        padding: 10px 17px;
-      }
     }
   }
 }

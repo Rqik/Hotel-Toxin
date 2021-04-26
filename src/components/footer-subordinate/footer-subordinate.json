@@ -1,0 +1,19 @@
+{
+  "social": [
+    {
+      "src": "image/twitter.svg",
+      "alt": "twitter_logo",
+      "href": "https://www.twitter.com/"
+    },
+    {
+      "src": "image/facebook.svg",
+      "alt": "facebook_logo",
+      "href": "https://www.facebook.com/"
+    },
+    {
+      "src": "image/instagram.svg",
+      "alt": "instagram_logo",
+      "href": "https://www.instagram.com/"
+    }
+  ]
+}

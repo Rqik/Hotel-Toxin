@@ -1,3 +1,5 @@
+@import "variables";
+
 @mixin media-lg {
   @media (max-width: 1170px) {
     @content;
@@ -26,4 +28,57 @@
   @media (max-width: 362px) {
     @content;
   }
+}
+
+
+@mixin font-normal(
+  $fs: $font-size-normal ,
+  $color:$text-color-main ,
+  $lh: normal ,
+  $fw: normal) {
+
+  font-family: "Montserrat", Arial, sans-serif;
+  font-style: normal;
+  font-weight: $fw;
+  font-size: $fs;
+  color: $color;
+  line-height: $lh;
+}
+
+@mixin font-bold(
+  $fs: $font-size-big ,
+  $color:$text-color-main ,
+  $lh: normal ,
+  $fw: bold) {
+
+  font-family: "Montserrat", Arial, sans-serif;
+  font-style: normal;
+  font-weight: $fw;
+  font-size: $fs;
+  color: $color;
+  line-height: $lh;
+}
+
+@mixin font-icon(
+  $fs: inherit ,
+  $color:inherit ,
+  $lh: normal ,
+  $fw: normal) {
+
+  font-family: "Material Icons";
+  font-style: normal;
+  font-weight: $fw;
+  font-size: $fs;
+  color: $color;
+  line-height: $lh;
+  display: inline-block;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga';
 }

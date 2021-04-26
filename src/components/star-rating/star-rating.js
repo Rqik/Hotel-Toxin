@@ -20,25 +20,25 @@ class StarRating {
       .children('.js-star-rating__radio');
 
     for (let i = 0; i < $child.length; i += 1) {
-      $child[i].querySelector('.icon').textContent = 'star_border';
+      $child[i].querySelector('.star-rating__icon').textContent = 'star_border';
     }
 
     for (let i = 0; i < florRating; i += 1) {
-      $child[i].querySelector('.icon').textContent = 'star';
-      $child[i].querySelector('.icon').style.width = '100%';
+      $child[i].querySelector('.star-rating__icon').textContent = 'star';
+      $child[i].querySelector('.star-rating__icon').style.width = '100%';
     }
 
     if (num) {
       const $starLastActive = $child[florRating].querySelector(
-        '.icon',
+        '.star-rating__icon',
       );
       $starLastActive.textContent = 'star';
       $starLastActive.style.width = `${num}%`;
-      $starLastActive.classList.add('star');
+      $starLastActive.classList.add('star-rating__icon_active');
 
-      if (!$child[florRating].querySelector('.star_border')) {
+      if (!$child[florRating].querySelector('.star-rating__icon_disable')) {
         const el = document.createElement('i');
-        el.classList = 'icon star_border';
+        el.classList = 'star-rating__icon star-rating__icon_disable';
         el.textContent = 'star_border';
         $starLastActive.after(el);
       }

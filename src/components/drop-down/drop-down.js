@@ -45,7 +45,7 @@ class DropDown {
         .text(0);
       $(el)
         .find('.js-control_minus')
-        .addClass('disable');
+        .addClass('dropdown__button_disable');
       this.children[selector].fill(0);
       $(this)
         .css('opacity', 0);
@@ -172,9 +172,9 @@ class DropDown {
     if ($(el)
       .children('span')
       .text() <= 0) {
-      $minus.addClass('disable');
+      $minus.addClass('dropdown__button_disable');
     } else {
-      $minus.removeClass('disable');
+      $minus.removeClass('dropdown__button_disable');
     }
   }
 

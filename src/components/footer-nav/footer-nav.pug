@@ -1,0 +1,8 @@
+mixin footerNav({title , items})
+  .footer-nav
+    .footer-nav__title=title
+    ul.footer-nav__items
+      each item in items
+        - const {href , text} = item
+        li.footer-nav__item
+          a.footer-nav__item-link(href=href ? href : "./index.html")=text

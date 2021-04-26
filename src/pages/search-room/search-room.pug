@@ -20,18 +20,25 @@ block content
     .search-page__panel.js-search-page__panel
       .search-page__components
       +datepicker({ firstTitle: "даты пребывания в отеле" })
-      +dropdownSelect(dropdownSelectExt)
-      +rangeSlider(rangeSlider)
-      +checkBoxList(checkBoxHome)
-      +checkBoxList(checkBoxRich)
-      +dropdownSelect(dropdownSelect)
-      +checkBoxList(checkBoxList)
+      .search-page__dropdown-ext
+        +dropdownSelect(dropdownSelectExt)
+      .search-page__slider
+        +rangeSlider(rangeSlider)
+      .search-page__check-box
+        +checkBoxList(checkBoxHome)
+      .search-page__check-box-rich
+        +checkBoxList(checkBoxRich)
+      .search-page__dropdown
+       +dropdownSelect(dropdownSelect)
+      .search-page__check-box-list
+        +checkBoxList(checkBoxList)
       .search-page__panel-btn.js-search-page__panel-btn
-        +icon({text:"expand_more"})
+        .search-page__icon  expand_more
     .search-page__cards
       h2.search-page__cards-title Номера, которые мы для вас подобрали
       .search-page__cards_result
         - for (let i = 1 ; i <= 6 ; i+=1)
           +cardSlide(cardSlider)
           +cardSlide(cardSlider2)
-      +pagination(pagination)
+      .search-page__pagination
+        +pagination(pagination)

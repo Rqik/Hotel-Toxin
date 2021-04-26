@@ -1,10 +1,10 @@
 class Menu {
   static init() {
-    const $menuItem = $('.js-menu__item_more');
+    const $menuItem = $('.js-menu__item_with-list');
     $('.js-menu__burger')
       .on('click', Menu.toggleMenuBurger);
 
-    $menuItem.append('<i class="icon"> expand_more </i>');
+    $menuItem.append('<i class="menu__icon"> expand_more </i>');
 
     $(document).click(Menu.documentEvent);
 

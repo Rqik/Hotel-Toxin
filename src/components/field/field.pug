@@ -2,7 +2,6 @@
 //- title -- text description
 //- placeholder
 //- form -- field form  boolean
-include ../icon/icon
 mixin field({name, title , placeholder, form=false})
   if form
     form(class="field-form")&attributes(attributes)
@@ -11,7 +10,7 @@ mixin field({name, title , placeholder, form=false})
         input.field-form__input.js-field_text( type="text",
           placeholder=placeholder, name=name)
         button.field-form__btn(type="submit" , name=name )
-          +icon({text:"arrow_forward"})
+          .field-form__icon arrow_forward
   else
     .field
       label.field__label= title

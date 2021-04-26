@@ -13,10 +13,7 @@ mixin cardRoom({roomNumber, price})
         span.card-room__price_bold.js-card-room__price_bold=price + "₽"
         | в сутки
     .card-room__data
-      +datepicker({
-        firstTitle: "прибытие",
-        secondTitle: "выезд"
-      })
+      +datepicker({firstTitle: "прибытие",secondTitle: "выезд" })
       +dropdownSelect({
         extended: true,
         active: false,
@@ -49,4 +46,4 @@ mixin cardRoom({roomNumber, price})
     +button({
       style: "long",
       text: "забронировать"
-    })
+    })&attributes({style:{"margin-top":"20px"}})

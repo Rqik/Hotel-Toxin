@@ -1,7 +1,7 @@
 @import '~@/libs/css/mixin.scss';
 
 .cards {
-  margin: 72px 110px;
+  margin: 72px 0 0 110px;
   box-sizing: border-box;
   display: flex;
   align-items: flex-start;
@@ -10,18 +10,15 @@
   gap: 30px;
   min-width: 0;
 
-  .cards__el {
+  &__el {
     display: flex;
     flex-direction: column;
     justify-content: center;
     gap: 30px;
+
     @include media-xxs {
       align-items: center;
     }
-  }
-
-  .calendar {
-    @include datepicker
   }
 
   @include media-xs {
@@ -31,5 +28,4 @@
     margin: 0 auto;
     flex-direction: column;
   }
-
 }

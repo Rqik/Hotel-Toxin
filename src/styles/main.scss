@@ -17,6 +17,7 @@
 @import "~@/components/bullet-list/bullet-list.scss";
 @import "~@/components/button/button.scss";
 @import "~@/components/button-like/button-like.scss";
+@import "~@/components/calendar/calendar.scss";
 @import "~@/components/card-auth/card-auth.scss";
 @import "~@/components/card-find/card-find.scss";
 @import "~@/components/card-registration/card-registration.scss";
@@ -28,10 +29,13 @@
 @import "~@/components/diagram/diagram.scss";
 @import "~@/components/drop-down/drop-down.scss";
 @import "~@/components/field/field.scss";
+@import "~@/components/font-pick/font-pick.scss";
 @import "~@/components/footer/footer.scss";
 @import "~@/components/footer-mobile/footer-mobile.scss";
+@import "~@/components/footer-head/footer-head.scss";
+@import "~@/components/footer-nav/footer-nav.scss";
+@import "~@/components/footer-subordinate/footer-subordinate.scss";
 @import "~@/components/header/header.scss";
-@import "~@/components/icon/icon.scss";
 @import "~@/components/icon-text/icon-text.scss";
 @import "~@/components/input-radio/input-radio.scss";
 @import "~@/components/menu/menu.scss";
@@ -41,6 +45,7 @@
 @import "~@/components/select/select.scss";
 @import "~@/components/star-rating/star-rating.scss";
 @import "~@/components/switch-toggle/switch-toggle.scss";
+@import "~@/components/swiper-slider/swiper-slider.scss";
 
 *,
 ::after,

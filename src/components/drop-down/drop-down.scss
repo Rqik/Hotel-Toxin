@@ -1,12 +1,27 @@
 .dropdown {
+
+  &_active {
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
+    transition: border .3s ease-in-out;
+
+    .dropdown__item-current {
+      border-radius: 4px 4px 0 0;
+    }
+
+    .dropdown__icon {
+      padding: 0;
+      margin: 0;
+      transform: rotateX(180deg);
+    }
+  }
+  &_extended{
+    width: 100%;
+  }
   &__title {
-    font-family: 'Montserrat', sans-serif;
     margin: 5px 0;
-    line-height: 14px;
-    font-size: $font-size-small;
-    font-weight: bold;
     text-transform: uppercase;
-    color: $text-color-main;
+
+    @include font-bold($font-size-small, $lh: 14px);
   }
 
   &__select {
@@ -18,12 +33,14 @@
     width: 266px;
     background-color: white;
     border-radius: 4px;
+
     @include media-xxs {
       width: 100%;
     }
 
     &_extended {
-      width: 320px;
+      max-width: 320px;
+      width: 100%;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
@@ -52,46 +69,34 @@
 
         .dropdown__button-reset {
           background-color: transparent;
-          color: $purple;
           width: auto;
           height: auto;
           margin: 18px 0 12px;
           padding: 0;
           outline: none;
           border: none;
-          font-family: Montserrat, sans-serif;
-          font-style: normal;
-          font-weight: bold;
-          font-size: $font-size-small;
-          line-height: 15px;
           text-transform: uppercase;
           cursor: pointer;
+
+          @include font-bold($font-size-small, $purple, 15px);
         }
 
         .dropdown__button-submit {
           background-color: transparent;
-          color: $purple;
           width: auto;
           height: auto;
           margin: 18px 0 12px;
           padding: 0;
           outline: none;
           border: none;
-          font-family: Montserrat, sans-serif;
-          font-style: normal;
-          font-weight: bold;
-          font-size: $font-size-small;
-          line-height: 15px;
           text-transform: uppercase;
           cursor: pointer;
+
+          @include font-bold($font-size-small, $purple, 15px);
         }
       }
     }
 
-
-    .icon {
-      transition: transform .3s ease-in-out;
-    }
 
     &:hover,
     &:focus {
@@ -134,11 +139,10 @@
     justify-content: space-between;
     display: flex;
     align-items: center;
-    font-weight: bold;
-    font-size: $font-size-small;
-    line-height: 30px;
     height: 30px;
     text-transform: uppercase;
+
+    @include font-bold($font-size-small, $lh: 30px);
 
     &-span {
       padding: 0;
@@ -159,20 +163,17 @@
       width: 100%;
       height: 44px;
       background-color: transparent;
-      border: 1px solid $color-transparent;
+      border: 1px solid $transparent_black;
       box-sizing: border-box;
       border-radius: 4px;
       padding: 0 14px;
-      font-family: Montserrat, sans-serif;
-      font-style: normal;
-      font-weight: normal;
-      font-size: $font-size-normal;
-      line-height: 40px;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
       cursor: pointer;
       transition: border 0.3s ease-in-out;
+
+      @include font-normal($lh: 40px);
     }
 
     &:last-of-type {
@@ -181,7 +182,7 @@
   }
 
   &__items {
-    border: 1px solid $color-transparent;
+    border: 1px solid $transparent_black;
     border-top: none;
     box-sizing: border-box;
     border-radius: 0 0 4px 4px;
@@ -194,63 +195,43 @@
     margin-bottom: 2px;
     display: flex;
     justify-content: flex-end;
-
-    .disable {
-      opacity: 0.5;
-    }
   }
 
   &__button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
     height: 30px;
     border: 1px solid $text-color-translucent;
     width: 30px;
     border-radius: 50%;
-    font-weight: normal;
-    font-size: 18px;
-    line-height: 22px;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
     cursor: pointer;
     user-select: none;
     align-items: center;
     text-align: center;
+
+    @include font-normal(18px, $lh: 22px);
+
+    &_disable {
+      opacity: 0.38;
+    }
   }
 
-  .icon {
+  &__icon {
     width: 24px;
     height: 24px;
-    font-size: $font-size-big;
-    line-height: 24px;
     display: flex;
     align-items: center;
     text-align: center;
-    color: $text-color-translucent;
     position: absolute;
     top: 9px;
     right: 9px;
     cursor: pointer;
     pointer-events: none;
     z-index: 1;
+    transition: transform .3s ease-in-out;
+
+    @include font-icon($font-size-big, $text-color-translucent, 24px);
   }
 }
 
-
-.icon {
-  transition: transform .3s ease-in-out;
-}
-
-.dropdown_active {
-  box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-  transition: border .3s ease-in-out;
-
-  .dropdown__item-current {
-    border-radius: 4px 4px 0 0;
-  }
-
-  .icon {
-    padding: 0;
-    margin: 0;
-    transform: rotateX(180deg);
-  }
-}

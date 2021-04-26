@@ -54,7 +54,7 @@
         "active": true
       },
       {
-        "text": "Доп пункт",
+        "text": "Услуги",
         "more": [
           {
             "text": "Дополнительные пункты"
@@ -95,17 +95,17 @@
   "footer": {
     "social": [
       {
-        "src": "img/social/twitter.svg",
+        "name": "twitter",
         "alt": "twitter_logo",
         "href": "https://www.twitter.com/"
       },
       {
-        "src": "img/social/facebook.svg",
+        "name": "facebook",
         "alt": "facebook_logo",
         "href": "https://www.facebook.com/"
       },
       {
-        "src": "img/social/instagram.svg",
+        "name": "instagram",
         "alt": "instagram_logo",
         "href": "https://www.instagram.com/"
       }
@@ -164,17 +164,17 @@
   "footerMobile": {
     "social": [
       {
-        "src": "img/social/twitter.svg",
+        "name": "twitter",
         "alt": "twitter_logo",
         "href": "https://www.twitter.com/"
       },
       {
-        "src": "img/social/facebook.svg",
+        "name": "facebook",
         "alt": "facebook_logo",
         "href": "https://www.facebook.com/"
       },
       {
-        "src": "img/social/instagram.svg",
+        "name": "instagram",
         "alt": "instagram_logo",
         "href": "https://www.instagram.com/"
       }

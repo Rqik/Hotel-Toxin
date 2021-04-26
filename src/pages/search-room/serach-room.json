@@ -2,7 +2,7 @@
   "dropdown": {
     "dropdownSelect": {
       "active": false,
-      "name": "дополнительные удобства",
+      "name": "Удобства номера",
       "current": "2 спальни, 2 кровати",
       "text": [
         "спальни",

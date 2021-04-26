@@ -1,11 +1,54 @@
 {
   "colors": [
-    { "color": "#1F2041", "name": "Dark Shade 100%" },
-    { "color": "#1F2041", "name": "Dark Shade 75%", "opacity": 0.75 },
-    { "color": "#1F2041", "name": "Dark Shade 50%", "opacity": 0.5 },
-    { "color": "#1F2041", "name": "Dark Shade 25%", "opacity": 0.25 },
-    { "color": "#1F2041", "name": "Dark Shade 5%", "opacity": 0.05 },
-    { "color": "#BC9CFF", "name": "Purple" },
-    { "color": "#6FCF97", "name": "Green" }
+    {
+      "color": "#1F2041",
+      "name": "Dark Shade 100%"
+    },
+    {
+      "color": "#1F2041",
+      "name": "Dark Shade 75%",
+      "opacity": 0.75
+    },
+    {
+      "color": "#1F2041",
+      "name": "Dark Shade 50%",
+      "opacity": 0.5
+    },
+    {
+      "color": "#1F2041",
+      "name": "Dark Shade 25%",
+      "opacity": 0.25
+    },
+    {
+      "color": "#1F2041",
+      "name": "Dark Shade 5%",
+      "opacity": 0.05
+    },
+    {
+      "color": "#BC9CFF",
+      "name": "Purple"
+    },
+    {
+      "color": "#6FCF97",
+      "name": "Green"
+    }
+  ],
+  "fonts": [
+    {
+      "tag": "h1",
+      "text": "This one is the sub-section or widget title"
+    },
+    {
+      "tag": "h2",
+      "text": "Next one is the item title inside\nwidgets"
+    },
+    {
+      "tag": "h3",
+      "text": "This is a label or CTA text"
+    },
+    {
+      "tag": "body",
+      "text": "This is the body text which is used for most\nof the design, like paragraphs, lists, etc."
+    }
   ]
 }

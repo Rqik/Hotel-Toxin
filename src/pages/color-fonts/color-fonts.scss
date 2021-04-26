@@ -1,15 +1,6 @@
 @import '~@/styles/variables.scss';
 @import '~@/styles/mixin.scss';
 
-
-.color-palette {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-
-
-
 .color-fonts {
   display: flex;
   flex-direction: row;
@@ -22,62 +13,19 @@
     justify-content: center;
     align-items: center;
   }
-}
 
-.fonts {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  gap: 50px;
-
-  &__block {
+  &__palette {
     display: flex;
-    flex-direction: row;
-    font-family: Montserrat, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    gap: 30px;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__fonts {
+    display: flex;
+    flex-direction: column;
     justify-content: flex-start;
-    align-items: flex-start;
-    width: 436px;
-
-    &_fs24 {
-      font-size: $font-size-big;
-      line-height: 29px;
-    }
-
-    &_fs19 {
-      font-size: $font-size-medium;
-      line-height: 23px;
-    }
-
-    &_fs14 {
-      font-weight: bold;
-      font-size: $font-size-small;
-      line-height: 15px;
-    }
+    gap: 50px;
   }
 
-
-  &__tag {
-    text-transform: capitalize;
-    color: $color-transparent;
-    justify-self: flex-start;
-    text-align: right;
-    min-width: 37px;
-  }
-
-  &__text {
-    color: $text-color-secondary;
-    text-align: left;
-
-    &_bold {
-      color: $text-color-main;
-      font-weight: bold;
-    }
-
-    &_uppercase {
-      text-transform: uppercase;
-    }
-  }
 }
+
