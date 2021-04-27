@@ -49,9 +49,7 @@
       background-color: white;
       border-radius: 4px;
 
-      @include media-xxs {
-        width: 266px;
-      }
+
 
       &:hover,
       &:focus {

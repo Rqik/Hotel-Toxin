@@ -1,27 +1,33 @@
 class ButtonLike {
   constructor() {
     this.buttonLike = document.querySelectorAll('.js-button-like');
+    this.textSelector = '.js-button-like__text';
+    this.toggleSelector = 'button-like_active';
   }
 
   init() {
-    this.buttonLike.forEach(ButtonLike.eventHandler);
+    this.buttonLike.forEach(this.eventHandler.bind(this));
   }
 
-  static eventHandler(el) {
-    el.addEventListener('click', ButtonLike.toggleClass);
+  eventHandler(el) {
+    const text = el.querySelector(this.textSelector).textContent;
+    el.addEventListener('click', this.makeToggleClass(text)
+      .bind(this));
   }
 
-  static toggleClass(e) {
-    const span = e.currentTarget.querySelector('.js-button-like__text');
-    const active = e.currentTarget.classList.toggle('button-like_active');
-    if (active) {
-      e.currentTarget.firstElementChild.textContent = 'favorite';
-      span.textContent = +span.textContent + 1;
-      return;
-    }
-    e.currentTarget.classList.remove('button-like_active');
-    e.currentTarget.firstElementChild.textContent = 'favorite_border';
-    span.textContent = +span.textContent - 1;
+  makeToggleClass(text) {
+    let span = text;
+    return (e) => {
+      const active = e.currentTarget.classList.toggle(this.toggleSelector);
+      if (active) {
+        e.currentTarget.firstElementChild.textContent = 'favorite';
+        span = +span + 1;
+        return;
+      }
+      e.currentTarget.classList.remove(this.toggleSelector);
+      e.currentTarget.firstElementChild.textContent = 'favorite_border';
+      span = +span - 1;
+    };
   }
 }
 

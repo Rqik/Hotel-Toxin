@@ -4,7 +4,8 @@
   gap: 30px;
   justify-content: flex-start;
   align-items: flex-start;
-  width: 436px;
+  max-width: 436px;
+  width: 100%;
   @include font-normal();
 
   &_fs24 {

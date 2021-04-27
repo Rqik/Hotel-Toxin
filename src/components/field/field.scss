@@ -29,7 +29,7 @@
     &::placeholder {
       height: 18px;
 
-      @include font-normal($font-size-normal , $transparent_black);
+      @include font-normal($font-size-normal, $transparent_black);
     }
 
     &:hover,
@@ -41,9 +41,35 @@
       outline: none;
     }
   }
-}
 
-.field-form {
+  &__input-form {
+    width: 223px;
+    height: 100%;
+    vertical-align: middle;
+    background: #FFFFFF;
+    border: none;
+    box-sizing: border-box;
+    border-radius: 4px;
+    padding-left: 15px;
+    font-size: $font-size-normal;
+    color: $text-color-secondary;
+    border-right: 0;
+    outline: none;
+
+    @include media-xxs {
+      width: 100%;
+    }
+
+    &::placeholder {
+      color: $transparent_black;
+      font-family: 'Montserrat', sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: $font-size-normal;
+      height: 18px;
+    }
+  }
+
   &__title {
     font-weight: bold;
     font-size: $font-size-small;
@@ -76,35 +102,9 @@
       outline: none;
     }
   }
-  &__icon{
-    @include font-icon($font-size-big , $purple, $lh:24px)
-  }
-  &__input {
-    width: 223px;
-    height: 100%;
-    vertical-align: middle;
-    background: #FFFFFF;
-    border: none;
-    box-sizing: border-box;
-    border-radius: 4px;
-    padding-left: 15px;
-    font-size: $font-size-normal;
-    color: $text-color-secondary;
-    border-right: 0;
-    outline: none;
 
-    @include media-xxs {
-      width: 100%;
-    }
-
-    &::placeholder {
-      color: $transparent_black;
-      font-family: 'Montserrat', sans-serif;
-      font-style: normal;
-      font-weight: normal;
-      font-size: $font-size-normal;
-      height: 18px;
-    }
+  &__icon {
+    @include font-icon($font-size-big, $purple, $lh: 24px)
   }
 
   &__btn {
@@ -126,3 +126,4 @@
     border: none;
   }
 }
+

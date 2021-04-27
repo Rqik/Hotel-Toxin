@@ -9,7 +9,10 @@
     display: flex;
     flex-direction: column;
     box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-
+    @include media-xxs{
+      padding: 15px 10px;
+      width: 300px;
+    }
     .datepicker--pointer {
       display: none;
     }
@@ -123,21 +126,19 @@
       color: $text-color-translucent;
 
       &-day {
-        + .-current- {
-          color: white;
-          background: $green-gradient;
-
-          @include font-bold($font-size-small , white)
-        }
-
         &.-disabled-,
         &.-other-month- {
           color: $transparent_black;
         }
 
+        + .-current- {
+          background: $green-gradient;
+          @include font-bold($font-size-small, white)
+        }
+
         + .-selected- {
           background: $purple-gradient;
-          @include font-bold($font-size-small , white)
+          @include font-bold($font-size-small, white)
         }
 
         + .-range-from- {
@@ -197,8 +198,8 @@
 
 @mixin ionRangeSlider {
   .irs {
-
     max-width: 266px;
+
     &--round {
       height: 30px;
     }
@@ -209,7 +210,6 @@
       border-radius: 3px;
       top: 23px;
       background-color: white;
-      //width: 256px;
     }
 
     &-bar {
@@ -223,15 +223,15 @@
       box-sizing: border-box;
       background-color: $green;
       background-image: $green-gradient;
-      border: 0px solid white;
-      width: 0px;
-      height: 0px;
+      border: 0 solid white;
+      width: 0;
+      height: 0;
       border-radius: 50%;
       top: 17px;
       box-shadow: none;
       cursor: pointer;
 
-      &:before{
+      &:before {
         content: '';
         position: absolute;
         box-sizing: border-box;
@@ -246,8 +246,9 @@
         cursor: pointer;
         right: 0;
       }
-      &.from{
-        &:before{
+
+      &.from {
+        &:before {
           right: -8px;
         }
       }

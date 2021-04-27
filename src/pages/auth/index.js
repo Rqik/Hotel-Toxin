@@ -1,5 +1,5 @@
+import 'jquery-ui';
 import '@/styles/main.scss';
-import '@/libs/js/jquery-ui.min';
 import '@/components/field';
 import '@/components/header';
 import '@/components/card-auth';

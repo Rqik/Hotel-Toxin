@@ -1,5 +1,6 @@
 import { Menu } from './menu';
 
 $(() => {
-  Menu.init();
+  const menu = new Menu();
+  menu.init();
 });

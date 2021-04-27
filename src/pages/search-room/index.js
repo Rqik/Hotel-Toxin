@@ -1,5 +1,5 @@
+import 'jquery-ui';
 import '@/styles/main.scss';
-import '@/libs/js/jquery-ui.min';
 import '@/pages/search-room/search-room.scss';
 import '@/pages/search-room/search-room';
 import '@/components/date-picker';

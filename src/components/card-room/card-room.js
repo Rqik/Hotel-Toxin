@@ -3,8 +3,16 @@ import '@/components/drop-down';
 
 class CardRoom {
   constructor() {
-    this.card = $('.js-card-room');
-    this.$input = this.card.find('.js-date-picker');
+    this.$card = $('.js-card-room');
+    this.$input = this.$card.find('.js-date-picker');
+    this.buttonApplyClass = '.js-datepicker--button-apply';
+    this.roomInfoClass = '.js-card-room__info';
+    this.roomDataClass = '.js-card-room__data';
+    this.totalAmountClass = '.js-card-room__t-amount';
+    this.saleClass = '.js-card-room__sale';
+    this.priceDayClass = '.js-card-room__price-day';
+    this.totalPriceClass = '.js-card-room__total-price';
+    this.additionalClass = '.js-card-room__additional';
   }
 
   init() {
@@ -14,7 +22,7 @@ class CardRoom {
         $(el)
           .data('datepicker')
           .$datepicker
-          .find('.js-datepicker--button-apply'),
+          .find(this.buttonApplyClass),
       );
     });
     button.forEach(this.buttonApply.bind(this));
@@ -31,47 +39,55 @@ class CardRoom {
 
   buttonApply(el, ind) {
     const $currentDP = $(this.$input[ind]);
+    const $block = $currentDP
+      .closest(this.roomDataClass)
+      .siblings(this.roomInfoClass);
+    const $pay = $block.find(this.totalAmountClass);
+    const $dop = $block.find(this.additionalClass);
+    const $sale = $block.find(this.saleClass);
+    const $price = $block.find(this.priceDayClass);
+    const $resultSum = $block.find(this.totalPriceClass);
+
     $(el)
-      .on('click', CardRoom.makeEventHandler($currentDP));
+      .on('click',
+        this.makeEventHandler({
+          $currentDP,
+          $pay,
+          $dop,
+          $sale,
+          $price,
+          $resultSum,
+        })
+          .bind(this));
   }
 
-  static makeEventHandler($currentDP) {
+  makeEventHandler(options) {
+    const { $currentDP, $pay, $dop, $sale, $price, $resultSum } = options;
     return () => {
       const [to, from] = $currentDP.data('datepicker').selectedDates;
       let date = Math.ceil((from - to) / 1000 / 60 / 60 / 24);
       if (!date) {
         date = 1;
       }
-      const $block = $currentDP
-        .closest('.card-room__data')
-        .siblings('.js-card-room__info');
-      let pay = $block
-        .find('.js-card-room__pay1')
-        .text()
-        .match(/[\d+\s?]+(?=₽)/m);
-      let dop = $block
-        .find('.js-card-room__dop2')
-        .text()
-        .match(/[\d+\s?]+(?=₽)/m);
-      let sale = $block
-        .find('.js-card-room__sale1')
-        .text()
-        .match(/[\d+\s?]+(?=₽)/m);
 
-      $block.find('.js-card-room__pay1')
-        .text(`${pay} ₽  * ${date} суток`);
+      let pay = CardRoom.priceReg($pay);
+      let dop = CardRoom.priceReg($dop);
+      let sale = CardRoom.priceReg($sale);
+
+      $pay.text(`${pay} ₽  * ${date} суток`);
 
       pay = parseInt(pay[0].replace(/\s+/g, ''), 10) * date;
       dop = parseInt(dop[0].replace(/\s+/g, ''), 10);
       sale = parseInt(sale[0].replace(/\s+/g, ''), 10);
 
-      $block.find('.js-card-room__pay2')
-        .text(`${CardRoom.replace(pay)} ₽`);
-
-      $block
-        .find('.js-card-room__info-sum_result')
-        .text(`${CardRoom.replace(+pay + dop - sale)}₽`);
+      $price.text(`${CardRoom.replace(pay)} ₽`);
+      $resultSum.text(`${CardRoom.replace(+pay + dop - sale)}₽`);
     };
+  }
+
+  static priceReg($jq) {
+    return $jq.text()
+      .match(/[\d+\s?]+(?=₽)/m);
   }
 
   static replace(el) {

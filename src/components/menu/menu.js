@@ -1,40 +1,59 @@
 class Menu {
-  static init() {
-    const $menuItem = $('.js-menu__item_with-list');
-    $('.js-menu__burger')
-      .on('click', Menu.toggleMenuBurger);
-
-    $menuItem.append('<i class="menu__icon"> expand_more </i>');
-
-    $(document).click(Menu.documentEvent);
-
-    $menuItem.hover(Menu.handlerIn, Menu.handlerOut);
+  constructor() {
+    this.toggleClass = 'menu__burger_active';
+    this.menuItemListClass = '.js-menu__item_with-list';
+    this.itemsClass = '.js-menu__items';
+    this.burgerClass = '.js-menu__burger';
+    this.burger = $(this.burgerClass);
+    this.dropListClass = '.js-menu__drop-list';
+    this.icon = '<i class="menu__icon"> expand_more </i>';
+    this.eventDoc = this.documentEvent.bind(this);
+    this.eventMenu = this.toggleMenuBurger.bind(this);
   }
 
-  static documentEvent(e) {
-    if ($(e.target).closest('.js-menu__items').length
-      || $(e.target).closest('.js-menu__burger').length
-    ) { return; }
-    $('.js-menu__items')
-      .removeClass('menu__burger_active');
+  init() {
+    const $menuItem = $(this.menuItemListClass);
+
+    this.burger.each((_, el) => {
+      $(el)
+        .click(this.eventMenu);
+    });
+
+    $(document)
+      .click(this.eventDoc);
+
+    $menuItem.append(this.icon);
+    $menuItem.hover(this.handlerIn.bind(this), this.handlerOut.bind(this));
   }
 
-  static handlerIn(event) {
-    $('ul', event.currentTarget)
+  documentEvent(e) {
+    if ($(e.target)
+      .closest(this.itemsClass).length
+      || $(e.target)
+        .closest(this.burgerClass).length
+    ) {
+      return;
+    }
+    $(this.itemsClass)
+      .removeClass(this.toggleClass);
+  }
+
+  handlerIn(event) {
+    $(this.dropListClass, event.currentTarget)
       .stop()
       .slideDown(200);
   }
 
-  static handlerOut(event) {
-    $('ul', event.currentTarget)
+  handlerOut(event) {
+    $(this.dropListClass, event.currentTarget)
       .stop()
       .slideUp(200);
   }
 
-  static toggleMenuBurger(event) {
+  toggleMenuBurger(event) {
     $(event.currentTarget)
-      .siblings('.js-menu__items')
-      .toggleClass('menu__burger_active');
+      .siblings(this.itemsClass)
+      .toggleClass(this.toggleClass);
   }
 }
 

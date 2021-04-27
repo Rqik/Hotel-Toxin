@@ -1,12 +1,13 @@
 .menu {
-  z-index: 9000;
 
   &__auth {
     padding-left: 19px;
     border-left: 1px solid $shadow-color;
     font-size: $font-size-normal;
     color: $text-color-translucent;
-
+    @include media-xxs{
+      padding-left: 5px;
+    }
     &-link {
       color: $text-color-translucent;
       text-decoration: none;
@@ -28,8 +29,22 @@
     align-items: center;
     list-style: none;
     gap: 20px;
-
+    z-index: 2222;
     @include font-normal($font-size-normal, $text-color-translucent, 17px);
+    @include media-md{
+      position: fixed;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      display: none;
+      top: 0;
+      left: 0;
+      background-color: white;
+      height: 100vh;
+      margin: 0;
+      padding: 0;
+      width: 50vw;
+    }
   }
 
   &__item {
@@ -37,6 +52,11 @@
     margin: 0;
     padding: 0;
 
+    @include media-md{
+      align-self: center;
+      text-align: center;
+      position: relative;
+    }
     &_with-list {
       display: flex;
       align-items: center;
@@ -60,7 +80,18 @@
 
   &__burger {
     display: none;
+    @include media-md{
+      display: flex;
+    }
+    &_active {
+      @include media-md{
+        display: flex;
+        min-width: 230px;
+        border-right: 1px solid rgba(184, 184, 184, .2);
+      }
+    }
   }
+
 
   &__drop {
     &-list {

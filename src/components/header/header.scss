@@ -7,6 +7,9 @@
   text-align: center;
   vertical-align: middle;
 
+  @include media-md {
+    flex-direction: row-reverse;
+  }
   &__nav-bar {
     margin: 0 auto;
     max-width: 1160px;
@@ -23,49 +26,8 @@
     align-items: center;
     gap: 20px;
     cursor: pointer;
-
-    .button {
-      padding: 0 20px;
-      height: 34px;
-    }
-
-    .button_outline {
-      height: 40px;
-    }
-
-    @include media-md {
-      .menu__burger {
-        display: flex;
-      }
+    @include media-md{
       flex-direction: row-reverse;
-
-      .menu__items {
-        position: fixed;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        display: none;
-        top: 0;
-        left: 0;
-        background-color: white;
-        height: 100vh;
-        margin: 0;
-        padding: 0;
-        width: 50vw;
-        z-index: 1;
-      }
-
-      .menu__burger_active {
-        display: flex;
-        min-width: 230px;
-        border-right: 1px solid rgba(184, 184, 184, .2);
-      }
-
-      .menu__item {
-        align-self: center;
-        text-align: center;
-        position: relative;
-      }
     }
   }
 

@@ -1,4 +1,4 @@
-import '../../libs/js/ion.rangeSlider.min';
+import 'ion-rangeslider';
 
 class RangeSlider {
   constructor() {

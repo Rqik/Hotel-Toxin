@@ -2,28 +2,31 @@ class Diagram {
   constructor() {
     this.$legendEl = $('.js-legend-el ');
     this.$unitsList = $('.js-unit');
+    this.hoverClass = 'diagram__hovered';
   }
 
   init() {
-    this.$legendEl.each((i, el) => Diagram.diagramMove(el, this.$unitsList[i]));
+    this.$legendEl.each((i, el) => {
+      this.diagramMove(el, this.$unitsList[i]);
+    });
   }
 
-  static diagramMove(el, itm) {
+  diagramMove(el, itm) {
     $(el)
-      .on('mouseover', Diagram.makeAddHovered(itm));
+      .on('mouseover', this.makeAddHovered(itm));
     $(el)
-      .on('mouseout', Diagram.makeRemoveHovered(itm));
+      .on('mouseout', this.makeRemoveHovered(itm));
   }
 
-  static makeAddHovered(el) {
+  makeAddHovered(el) {
     return () => {
-      el.classList.add('hovered');
+      el.classList.add(this.hoverClass);
     };
   }
 
-  static makeRemoveHovered(el) {
+  makeRemoveHovered(el) {
     return () => {
-      el.classList.remove('hovered');
+      el.classList.remove(this.hoverClass);
     };
   }
 }
