@@ -44,6 +44,7 @@ block content
             +likeButton(like)
       .wrapper-content__element
         .wrapper-content__caption rate button
+        .wrapper-content__items
           +starRating(starRating)
     .wrapper-content__block
       +rangeSlider(rangeSlider)
@@ -59,8 +60,10 @@ block content
     .wrapper-content__block
       each dropConfig in dropdownSelect
         +dropdownSelect(dropConfig)
+        +dropdownSelect(dropConfig)
     .wrapper-content__block
       each checkConfig in checkBoxList
+        +checkBoxList(checkConfig)
         +checkBoxList(checkConfig)
       +bulletList(bulletList)
     .wrapper-content__block.wrapper-content__block_big

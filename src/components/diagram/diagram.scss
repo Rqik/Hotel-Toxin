@@ -1,17 +1,33 @@
-.diagram__img {
+.diagram {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  height: 170px;
+  flex-direction: column;
+  align-items: flex-start;
 
-  @include media-xxs {
-    flex-direction: column;
-    height: 280px;
-    width: 100%;
-    justify-content: center;
+  &__img {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 170px;
+
+    @include media-xxs {
+      flex-direction: column;
+      height: 280px;
+      width: 100%;
+      justify-content: center;
+    }
   }
 
-  .unit {
+  &__title {
+    margin-left: 15px;
+
+    @include font-bold($font-size-medium, $text-color-main, 23px);
+
+    @include media-xs {
+      margin: 0;
+    }
+  }
+
+  &__unit {
     animation-name: render;
     animation-duration: 1.5s;
     stroke-width: 2;
@@ -24,18 +40,17 @@
     }
   }
 
-  .hovered {
+  &__hovered {
     stroke-width: 4;
   }
 
-  .legend {
+  &__legend {
     padding: 0;
     list-style: none;
-    font-size: $font-size-normal;
-    line-height: 24px;
-    color: $text-color-secondary;
     align-self: center;
     margin-left: 25px;
+
+    @include font-normal($color: $text-color-secondary, $lh: 24px);
 
     &-el {
       position: relative;
@@ -84,24 +99,18 @@
   }
 
 
-  .chart-number {
-    font-family: "Montserrat", Arial, sans-serif;
-    font-size: 6px;
-    line-height: 29px;
-    font-weight: bold;
+  &__chart-number {
     fill: #BC9CFF;
     -moz-transform: translateY(-0.25em);
     -ms-transform: translateY(-0.25em);
     -webkit-transform: translateY(-0.25em);
     transform: translateY(-0.25em);
     text-anchor: middle;
+
+    @include font-bold(6px, $lh: 29px);
   }
 
-  .chart-label {
-    font-family: "Montserrat", Arial, sans-serif;
-    font-weight: bold;
-    font-size: 3px;
-    line-height: 19px;
+  &__chart-label {
     text-anchor: middle;
     text-transform: uppercase;
     -moz-transform: translateY(1em);
@@ -109,24 +118,8 @@
     -webkit-transform: translateY(1em);
     transform: translateY(1.2em);
     fill: $purple;
-  }
-}
 
-.diagram {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  .diagram__title {
-    margin-left: 15px;
-    font-weight: bold;
-    font-size: $font-size-medium;
-    line-height: 23px;
-    color: $text-color-main;
-
-    @include media-xs {
-      margin: 0;
-    }
+    @include font-bold(3px, $lh: 19px);
   }
 }
 

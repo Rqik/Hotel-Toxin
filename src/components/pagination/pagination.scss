@@ -3,22 +3,16 @@
   flex-direction: column;
   justify-content: flex-start;
   margin: 0;
-  font-family: Montserrat, sans-serif;
-  font-style: normal;
-  font-weight: normal;
+
+  @include font-normal();
 
   &__items {
-    font-family: Montserrat, sans-serif;
-    font-style: normal;
-    font-weight: normal;
     display: flex;
     flex-direction: row;
     list-style: none;
-    color: $text-color-translucent;
-    font-size: $font-size-small;
-    line-height: 40px;
     padding: 0;
     margin: 0;
+    @include font-normal($font-size-small , $text-color-translucent  , 40px);
   }
 
   &__link {
@@ -39,11 +33,10 @@
       background-image: $purple-gradient;
       width: 40px;
       height: 40px;
-      font-weight: bold;
-      font-size: $font-size-small;
-      color: white;
       border-radius: 50%;
       align-self: center;
+
+      @include font-bold($font-size-small , white , 40px);
     }
 
   }
@@ -53,32 +46,28 @@
     width: 40px;
     height: 40px;
     text-align: center;
-    vertical-align: middle;
     background-image: $green-gradient;
     border-radius: 50%;
     cursor: pointer;
-
-    .icon {
-      text-align: center;
-      vertical-align: middle;
-      color: white;
-      font-size: $font-size-big;
-    }
   }
 
+  &__icon{
+    text-align: center;
+    vertical-align: middle;
+
+    @include font-icon($font-size-big, white);
+  }
   &__prev {
     line-height: 40px;
     width: 40px;
     height: 40px;
     text-align: center;
-    vertical-align: middle;
     background-image: $green-gradient;
     border-radius: 50%;
     cursor: pointer;
 
-    .icon {
+    .pagination__icon {
       text-align: center;
-      vertical-align: middle;
       color: white;
       font-size: $font-size-big;
       transform: rotateZ(180deg);
@@ -89,8 +78,7 @@
     margin-top: 10px;
     margin-left: 5px;
     text-transform: none;
-    font-size: $font-size-normal;
-    line-height: normal;
-    color: $text-color-secondary;
+
+    @include font-normal($font-size-normal , $text-color-secondary )
   }
 }

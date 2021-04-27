@@ -1,30 +1,15 @@
 extends ../../layouts/main/main
 include ../../components/color-pick/color-pick
-
+include ../../components/font-pick/font-pick
 block variables
   - const title = 'Color Fonts'
 
 block content
-  - const { colors } = require('./color-fonts.json')
+  - const { colors , fonts } = require('./color-fonts.json')
   .color-fonts
-    .color-palette
+    .color-fonts__palette
       each item in colors
         +colorPick(item)
-    .fonts
-      .fonts__block.fonts__block_fs24
-        .fonts__tag h1
-        .fonts__text.fonts__text_bold
-          | This one is the sub-section or widget title
-      .fonts__block.fonts__block_fs19
-        .fonts__tag h2
-        .fonts__text.fonts__text_bold
-          | Next one is the item title inside widgets
-      .fonts__block.fonts__block_fs14
-        .fonts__tag h3
-        .fonts__text.fonts__text_bold.fonts__text_uppercase
-          | This is a label or CTA text
-      .fonts__block.fonts__block_fs12
-        .fonts__tag body
-        .fonts__text
-          | This is the body text which is used for most of the design, like
-          | paragraphs, lists, etc.
+    .color-fonts__fonts
+      each item in fonts
+        +fontPick(item)

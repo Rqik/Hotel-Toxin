@@ -4,19 +4,21 @@ include ../../components/drop-down/drop-down
 mixin cardFind
   .card-find
     .card-find__title Найдём номера под ваши пожелания
-    +datepicker({
-      firstTitle: "прибытие",
-      secondTitle: "выезд"
-    })
-    +dropdownSelect({
-      extended: true,
-      active: false,
-      name: "гости",
-      current: "Сколько гостей",
-      text: [
-        "взрослые",
-        "дети", "младенцы"]
-    })
+    .card-find__date-picker
+      +datepicker({
+        firstTitle: "прибытие",
+        secondTitle: "выезд"
+      })
+    .card-find__dropdown
+      +dropdownSelect({
+        extended: true,
+        active: false,
+        name: "гости",
+        current: "Сколько гостей",
+        text: [
+          "взрослые",
+          "дети", "младенцы"]
+      })
     +button({
       style: "long",
       text: "подобрать номер"

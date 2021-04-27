@@ -1,26 +1,34 @@
 class CheckBoxList {
   constructor() {
-    this.$checkBox = $('.js-check-box_expanded');
+    this.checkBoxClass = '.js-check-box_expanded';
+    this.captionClass = '.js-check-box__caption';
+    this.itemsClass = '.js-check-box__items';
+    this.toggleClass = 'check-box_expanded_active';
+    this.$checkBox = $(this.checkBoxClass);
   }
 
   init() {
-    this.$checkBox.find('.js-check-box__caption')
+    this.$checkBox.find(this.captionClass)
       .each(this.eventClick.bind(this));
   }
 
   eventClick(_, el) {
+    const $checkBox = $(el)
+      .closest(this.checkBoxClass);
+    const $child = $(el)
+      .siblings(this.itemsClass);
     $(el)
-      .on('click', this.addClass.bind(this));
+      .on('click', this.makeToggleClass($checkBox, $child)
+        .bind(this));
   }
 
-  addClass(e) {
-    if (e.target === e.currentTarget) {
-      this.$checkBox
-        .toggleClass('expanded_active');
-      this.$checkBox
-        .children('.js-check-box__items')
-        .slideToggle(300);
-    }
+  makeToggleClass($node, $items) {
+    return (e) => {
+      if (e.target === e.currentTarget) {
+        $node.toggleClass(this.toggleClass);
+        $items.slideToggle(300);
+      }
+    };
   }
 }
 

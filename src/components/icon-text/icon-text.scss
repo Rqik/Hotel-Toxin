@@ -1,5 +1,6 @@
 .icon-box {
   width: 291px;
+
   @include media-xxs {
     width: 100%;
   }
@@ -16,24 +17,20 @@
     &:last-child {
       border: none;
     }
+  }
 
-    .icon {
-      font-size: 48px;
-      background-image: $purple-gradient;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+  &__icon {
+    background-image: $purple-gradient;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    @include font-icon(48px);
   }
 
   &__text {
-    font-family: Montserrat, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: $font-size-normal;
-    line-height: 24px;
-    color: $text-color-secondary;
     display: flex;
     flex-direction: column;
+
+    @include font-bold($font-size-normal, $text-color-secondary, 24px);
   }
 
   &__description {

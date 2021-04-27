@@ -13,25 +13,68 @@
   position: relative;
   z-index: 2;
 
-  .dropdown__select_extended {
+  &__dropdown-ext {
     max-width: 266px;
     width: 100%;
+    margin-top: 17px;
   }
 
-  .pagination {
-    align-items: center;
+  &__dropdown {
+    max-width: 266px;
+    width: 100%;
+    margin-top: 10px;
   }
 
-  &__cards_result {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 20px 12px;
-    margin-bottom: 40px;
+  &__slider {
+    margin-top: 17px;
+  }
 
+  &__check-box {
+    margin-top: 8px;
+
+    &-rich {
+      margin-top: 15px;
+    }
+
+    &-list {
+      margin-top: 17px;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    margin: auto;
+    top: 50%;
+    left: 0;
+    right: 0;
+    text-align: center;
+    line-height: 40px;
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(-90deg);
+    z-index: 2;
+
+    @include font-icon($font-size-big)
+  }
+
+  &__cards {
     @include media-md {
-      justify-content: center;
-      align-items: flex-start;
+      padding-left: 40px;
+    }
+    @include media-xxs {
+      padding-left: 25px;
+    }
+
+    &_result {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px 12px;
+      margin-bottom: 40px;
+
+      @include media-md {
+        justify-content: center;
+        align-items: flex-start;
+      }
     }
   }
 
@@ -64,6 +107,7 @@
 
     &-btn {
       display: none;
+      cursor: pointer;
 
       @include media-md {
         display: block;
@@ -78,39 +122,6 @@
         background-image: $green-gradient;
         text-align: center;
         z-index: 220;
-
-        .icon {
-          position: absolute;
-          margin: auto;
-          top: 50%;
-          left: 0;
-          right: 0;
-          text-align: center;
-          line-height: 40px;
-          transition: transform 0.3s ease-in-out;
-          transform: rotate(-90deg);
-          z-index: 2;
-        }
-      }
-    }
-
-    .data__select {
-      margin-bottom: 20px;
-    }
-
-    .dropdown {
-      margin-bottom: 15px;
-    }
-
-    .range__slider {
-      margin-bottom: 58px;
-    }
-
-    .check_box {
-      margin-bottom: 30px;
-
-      &_rich {
-        margin-bottom: 27px;
       }
     }
   }
@@ -119,10 +130,8 @@
     transform: translateX(0%);
     max-width: calc(100% - 30px);
 
-    .search-page__panel-btn {
-      .icon {
-        transform: rotate(90deg);
-      }
+    .search-page__icon {
+      transform: rotate(90deg);
     }
   }
 
@@ -134,15 +143,11 @@
     margin-top: 0;
     margin-bottom: 23px;
   }
-}
 
-@include media-md {
-  .search-page__cards {
-    padding-left: 40px;
-  }
-  @include media-xxs {
-    .search-page__cards {
-      padding-left: 25px;
-    }
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    padding-top: 5px;
+    padding-right: 10px;
   }
 }

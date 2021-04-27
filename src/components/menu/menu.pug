@@ -1,5 +1,4 @@
 include ../button/button
-include ../icon/icon
 mixin menu({items, auth})
   .menu(class=attributes.class)
     ul.menu__items.js-menu__items
@@ -7,27 +6,35 @@ mixin menu({items, auth})
         each item in items
           - const {more , text , href , active} = item
           li.menu__item(
-            class=active ? "menu__item_active" : "" class=more
-            ? "menu__item_more js-menu__item_more" : "")
+            class=active ? "menu__item_active" : ""
+            class=more ? "menu__item_with-list js-menu__item_with-list" : "")
             a.menu__link(href=href ? href : "./index.html")=text
             if more
-              ul.menu__items_more
+              ul.menu__drop-list.js-menu__drop-list
                 each elem in more
                   - const {href, text} = elem
-                  li.menu__element_plus
-                    a.menu__element_link(href=href ? href : "./index.html")
+                  li.menu__drop-item
+                    a.menu__drop-link(href=href ? href : "" +
+                      "./index.html")
                     = text
       else
         li.menu__item.menu__item_active
           a(href="./index.html") нет элементов
       if !auth
         li.menu__item
-          +button({style: "outline", text: "войти", href:'./auth.html'})
+          +button({
+            style: "outline",
+            text: "войти",
+            href:'./auth.html'
+          })&attributes({style:{height:"38px"}})
         li.menu__item
-          +button({text: "зарегистрироваться", href:'./registration.html'})
+          +button({
+            text: "зарегистрироваться",
+            href:'./registration.html'
+          })&attributes({style:{height:"34px"}})
     .menu__burger.js-menu__burger
-      +icon({text:"menu"})
+      .menu__icon menu
     if !!auth
       - const {href, text} = auth
       .menu__auth
-        a.menu__auth_link(href=href ? href : "./index.html")=text
+        a.menu__auth-link(href=href ? href : "./index.html")=text

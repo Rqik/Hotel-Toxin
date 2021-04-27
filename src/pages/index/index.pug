@@ -8,4 +8,5 @@ block content
   - const { buttons } = require('./index.json')
   .pages
     each button in buttons
-      +button(button)
+      .pages__btn
+        +button(button)&attributes({style:{width:"100%"}})

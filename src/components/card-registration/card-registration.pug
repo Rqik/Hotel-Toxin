@@ -6,46 +6,50 @@ include ../../components/button/button
 mixin cardRegistration
   .card-registration
     .card-registration__title Регистрация аккаунта
-    +field({
-      name: "name",
-      placeholder: "Имя"
-    })
-    +field({
-      name: "name",
-      placeholder: "Фамилия"
-    })
-    +inputRadio({
-      name: "gender",
-      label: ["Мужчина", "Женщина"]
-    })
-    +field({
-      name: "date",
-      title: "Дата рождения",
-      placeholder: "ДД.ММ" +
-        ".ГГГГ"
-    })
-    .card-registration__submit
+    .card-registration__fields
       +field({
-        name: "email",
-        title: "Данный для входа в сервис",
-        placeholder: "Email"
+        name: "name",
+        placeholder: "Имя"
       })
       +field({
         name: "name",
-        placeholder: "Пароль"
+        placeholder: "Фамилия"
       })
-      +switchToggle({
-        caption: "",
-        name: "toogle",
-        label: ["Получать спецпредложения"]
+    +inputRadio({
+      name: "gender",
+      label: ["Мужчина", "Женщина"]
+     })
+    .card-registration__fields
+      +field({
+        name: "date",
+        title: "Дата рождения",
+        placeholder: "ДД.ММ" +
+          ".ГГГГ"
       })
+    .card-registration__submit
+      .card-registration__fields
+        +field({
+          name: "email",
+          title: "Данный для входа в сервис",
+          placeholder: "Email"
+        })
+        +field({
+          name: "name",
+          placeholder: "Пароль"
+        })
+      .card-registration__toggle
+        +switchToggle({
+          caption: "",
+          name: "toogle",
+          label: ["Получать спецпредложения"]
+        })
     +button({
       style: "long",
       text: "перейти к оплате"
-    })
+    })&attributes({style:{"margin-top": "21px"}})
     .card-registration__bot
       .card-registration__span Уже есть аккаунт на Toxin
       +button({
         style: "outline",
         text: "Войти"
-      })
+      })&attributes({ style: { padding: "10px 23px" } })

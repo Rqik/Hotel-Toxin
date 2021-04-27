@@ -1,22 +1,4 @@
 .button-like {
-  outline: none;
-  font-family: Montserrat, sans-serif;
-  font-style: normal;
-  font-weight: bold;
-  line-height: 15px;
-  text-transform: uppercase;
-  cursor: pointer;
-  white-space: nowrap;
-  padding: 0;
-  width: 40px;
-  height: 20px;
-  border-radius: 10px;
-  border: 1px solid $color-transparent;
-  color: $color-transparent;
-  background-color: #ffffff;
-  margin: 0;
-  font-size: $font-size-little;
-  box-sizing: border-box;
   display: inline-flex;
   flex-direction: row;
   justify-content: flex-start;
@@ -24,32 +6,39 @@
   transition: .3s ease-in-out;
   transition-property: border, color;
   background-clip: padding-box;
-  .icon {
-    font-family: 'Material Icons';
-    font-style: normal;
-    font-weight: normal;
-    font-size: $font-size-little;
+  outline: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  padding: 0;
+  margin: 0;
+  width: 40px;
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid $transparent_black;
+  background-color: #ffffff;
+
+  @include font-bold($font-size-little, $transparent_black, 15px);
+
+  &__icon {
     margin-left: 4px;
-    line-height: 8px;
     display: flex;
     align-items: center;
     text-align: center;
     vertical-align: middle;
     transition: opacity .3s ease-in-out;
+    @include font-icon($font-size-little, $lh: 8px);
   }
 
   &__text {
     vertical-align: middle;
-    font-family: 'Montserrat', sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: $font-size-little;
-    line-height: 9px;
     text-align: center;
     margin: 0;
     padding: 0;
     min-width: 20px;
     transition: opacity .3s ease-in-out;
+
+    @include font-normal($font-size-little, $transparent_black, 9px);
   }
 
   &_active {
@@ -58,7 +47,7 @@
     position: relative;
     background-clip: padding-box;
 
-    >.icon {
+    > .button-like__icon  {
       background-image: $purple-gradient;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -83,7 +72,7 @@
       z-index: 1;
       padding: 1px;
       -webkit-mask: linear-gradient(#fff 0 0) content-box,
-       linear-gradient(#fff 0 0);
+      linear-gradient(#fff 0 0);
       -webkit-mask-composite: destination-out;
       mask-composite: exclude;
       transition: opacity .3s ease-in-out;

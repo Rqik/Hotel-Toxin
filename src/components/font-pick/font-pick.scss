@@ -1,0 +1,50 @@
+.font-pick {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 436px;
+  width: 100%;
+  @include font-normal();
+
+  &_fs24 {
+    @include font-bold($font-size-big, $lh: 29px)
+  }
+
+  &_fs19 {
+    @include font-bold($font-size-medium, $lh: 23px)
+  }
+
+  &_fs14 {
+    @include font-normal($font-size-normal, $lh: 15px);
+  }
+
+  &_fs12 {
+    @include font-bold($font-size-small, $lh: 15px);
+    .font-pick__tag{
+      font-weight: bold;
+    }
+  }
+  &__tag {
+    text-transform: capitalize;
+    color: $transparent_black;
+    justify-self: flex-start;
+    text-align: right;
+    min-width: 37px;
+    font-weight: normal;
+  }
+
+  &__text {
+    text-align: left;
+    color: $text-color-secondary;
+    &_bold {
+      color: $text-color-main;
+      font-weight: bold;
+    }
+
+    &_uppercase {
+      text-transform: uppercase;
+    }
+  }
+}

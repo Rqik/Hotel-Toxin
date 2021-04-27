@@ -7,40 +7,10 @@
 //- menu == items Array<object>  {text , href}
 //- logo == src logo img
 //- {social:[{href="./index.html", src, alt="social link"}] , menu:[{title ,items:[{text,href="#"}]}]}
+include ../footer-subordinate/footer-subordinate
+include ../footer-head/footer-head
 mixin footer({ social , menu , logo = "img/logo-toxin.svg"})
   footer.footer
     .footer__container
-      .footer-head
-        .footer-head__info
-          .footer-head__logo
-            img.footer-head__logo-img(src=logo, alt="logo")
-          .footer-head__text
-            | Бронирование номеров в лучшем отеле 2019 года по версии ассоциации
-            | «Отельные взгляды»
-        .footer-head__nav
-          each nav in menu
-            - const {title , items} =nav
-            .footer-nav
-              .footer-nav__title=title
-              ul.footer-nav__items
-                each item in items
-                  - const {href , text} = item
-                  li.footer-nav__item
-                    a.footer-nav__item-link(href=href ? href : "./index.html")=text
-        .footer-head__subscribe
-          .footer-head__subscribe-title Подписка
-          .footer-head__subscribe-text
-            | Получайте специальные предложения и новости сервиса
-          +field({
-            name: "email",
-            placeholder: "Email",
-            form: true
-          })
-      .footer-subordinate
-        .footer-subordinate__copyright
-          | Copyright © 2018 Toxin отель. Все права защищены.
-        .footer-subordinate__social
-          each element in social
-            - const {href , src , alt} = element
-            a.footer-subordinate__link(href=href ? href : "./index.html")
-              img.footer-subordinate__img(src=src, alt=alt ? alt : "social link")
+      +footerHead({ menu, logo })
+      +footerSubordinate({ social })

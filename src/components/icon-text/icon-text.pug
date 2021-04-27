@@ -2,12 +2,11 @@
 //- items.icon -- name material icons
 //- item.text -- head text for element
 //- item.desc -- text description
-include  ../icon/icon
 mixin iconText({items})
   .icon-box
     each item in items
       - const {icon , text , desc} = item
       .icon-box__item
-        +icon({text:icon})
+        .icon-box__icon= icon
         .icon-box__text= text
           span.icon-box__description= desc

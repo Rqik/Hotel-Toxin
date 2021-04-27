@@ -12,11 +12,8 @@ mixin cardRoom({roomNumber, price})
       .card-room__price
         span.card-room__price_bold.js-card-room__price_bold=price + "₽"
         | в сутки
-    .card-room__data
-      +datepicker({
-        firstTitle: "прибытие",
-        secondTitle: "выезд"
-      })
+    .card-room__data.js-card-room__data
+      +datepicker({firstTitle: "прибытие",secondTitle: "выезд" })
       +dropdownSelect({
         extended: true,
         active: false,
@@ -28,25 +25,27 @@ mixin cardRoom({roomNumber, price})
       })
     .card-room__info.js-card-room__info
       .card-room__info-item
-        .card-room__info-name.js-card-room__info-name.js-card-room__pay1=price
+        .card-room__info-name.js-card-room__info-name.js-card-room__t-amount=price
           | ₽
-        .card-room__info-sum.js-card-room__info-sum.js-card-room__pay2=price
+        .card-room__info-sum.js-card-room__info-sum.js-card-room__price-day=price
           | ₽
       .card-room__info-item
         .card-room__info-text
-          .card-room__info-namejs-card-room__info-name.js-card-room__sale1 Сбор за услуги: скидка 2 179₽
+          .card-room__info-namejs-card-room__info-name.js-card-room__sale
+            | Сбор за услуги: скидка 2 179₽
           .card-room__icon(data-text="Информация про сбор за услуги")
-        .card-room__info-sum.js-card-room__info-sum.js-card-room__sale2 0₽
+        .card-room__info-sum.js-card-room__info-sum 0₽
       .card-room__info-item
         .card-room__info-text
-          .card-room__info-name.js-card-room__info-name.js-card-room__dop1 Сбор за дополнительные услуги
+          .card-room__info-name.js-card-room__info-name
+            | Сбор за дополнительные услуги
           .card-room__icon(data-text="В расчет входят стоимость за доп комплекты белья")
-        .card-room__info-sum.js-card-room__info-sum.js-card-room__dop2 3000₽
+        .card-room__info-sum.js-card-room__info-sum.js-card-room__additional 3000₽
       .card-room__info_result
         .card-room__info-name_result Итого
-        .card-room__info-sum_result.js-card-room__info-sum_result=price
+        .card-room__info-sum_result.js-card-room__total-price=price
           | ₽
     +button({
       style: "long",
       text: "забронировать"
-    })
+    })&attributes({style:{"margin-top":"20px"}})

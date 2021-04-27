@@ -2,10 +2,10 @@
   width: 270px;
   background-color: white;
   border-radius: 4px;
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  box-shadow: $box-shadow;
 
-  &__bot {
-    padding: 20px 15px 20px 20px;
+  &__icon{
+    @include font-icon()
   }
 
   &__top {
@@ -14,89 +14,12 @@
     border-radius: 4px 4px 0 0;
     z-index: 10;
     position: relative;
-
-    .swiper-slide__img {
-      border: 4px;
-      max-width: 110%;
-      max-height: 110%;
-      object-fit: cover;
-    }
-
-    .swiper-pagination-img {
-      position: absolute;
-      display: flex;
-      justify-content: flex-end;
-      z-index: 500;
-      padding: 0 10px 4px 0;
-
-      .swiper-pagination-bullet {
-        width: 7.5px;
-        height: 7.5px;
-        margin: 0 2px;
-        background-color: transparent;
-        opacity: 1;
-        border: 1px solid white;
-      }
-
-      .swiper-pagination-bullet-active {
-        background-color: white;
-      }
-    }
-
-    .swiper-button {
-      &-prev, &-next {
-        width: 42px;
-        height: 100%;
-        margin: 0;
-        align-items: center;
-        transform: translate(0, -50%);
-        color: white;
-        opacity: 0;
-        transition: opacity .3s ease-in-out;
-        .icon {
-          transition: opacity .3s ease-in-out;
-          opacity: 0;
-        }
-
-        &::after {
-          display: none;
-          content: '';
-        }
-
-        &:hover {
-          opacity: 1;
-          .icon {
-           opacity: 1;
-          }
-        }
-      }
-
-      &-prev {
-        left: 0;
-
-        .icon {
-          transform: rotate(90deg);
-        }
-
-        &:hover {
-          background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%,
-                  rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);;
-        }
-      }
-
-      &-next {
-        right: 0;
-        .icon {
-          transform: rotate(-90deg);
-        }
-
-        &:hover {
-          background: linear-gradient(-90deg, rgba(0, 0, 0, 0.5) 0%,
-                  rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
-        }
-      }
-    }
   }
+
+  &__bot {
+    padding: 22px 15px 10px 20px;
+  }
+
 
   &__header {
     border-bottom: 1px solid $shadow-color;
@@ -110,9 +33,8 @@
   &__room {
     display: inline-flex;
     align-items: flex-end;
-    font-weight: bold;
-    font-size: $font-size-normal;
-    line-height: 29px;
+
+    @include font-bold($font-size-normal , $lh:29px);
 
     &-number {
       font-size: $font-size-medium;
@@ -165,5 +87,6 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    margin-top: 9px;
   }
 }

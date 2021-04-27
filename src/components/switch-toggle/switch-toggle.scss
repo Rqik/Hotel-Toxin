@@ -1,26 +1,27 @@
 .switch-toggle {
   display: flex;
   flex-direction: column;
-  font-family: 'Montserrat', sans-serif;
-  font-size: $font-size-small;
-  font-style: normal;
-  font-weight: 700;
-  margin-bottom: 1rem;
   text-transform: uppercase;
   padding: 0;
 
+  @include font-bold($font-size-small);
+
+  &__caption{
+    margin-bottom: 14px;
+  }
+  &__items{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
   &__label {
     padding-left: 50px;
     position: relative;
     vertical-align: middle;
     cursor: pointer;
-    font-family: Montserrat, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: $font-size-normal;
     text-transform: none;
-    line-height: 24px;
-    color: $text-color-translucent;
+
+    @include font-normal($color: $text-color-translucent , $lh:24px);
 
     &::before {
       content: '';
@@ -28,7 +29,7 @@
       width: 40px;
       height: 20px;
       border-radius: 10px;
-      border: 1px solid $color-transparent;
+      border: 1px solid $transparent_black;
       left: 0;
       top: 2px;
       transition: border 0.3s ease-in-out;
@@ -42,7 +43,7 @@
       border-radius: 50%;
       left: 4px;
       top: 6px;
-      background: $color-transparent;
+      background: $transparent_black;
       transition: all 0.3s ease-in-out;
     }
   }

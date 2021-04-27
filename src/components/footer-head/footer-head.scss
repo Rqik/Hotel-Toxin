@@ -1,0 +1,85 @@
+.footer-head {
+  margin-bottom: 83px;
+  display: flex;
+  flex-direction: row;
+
+  @include media-lg {
+    justify-content: center;
+  }
+
+  @include media-sm {
+    margin-bottom: 0;
+    align-items: center;
+  }
+
+  &__info {
+    width: 260px;
+    @include media-sm {
+      text-align: center
+    }
+  }
+
+  &__logo {
+    height: 40px;
+
+    &-img {
+      object-fit: contain;
+    }
+  }
+
+  &__text {
+    margin-top: 17px;
+
+    @include font-normal($color: $text-color-secondary, $lh: 24px);
+
+    @include media-sm {
+      display: none;
+    }
+  }
+
+  &__nav {
+    margin-left: 40px;
+    margin-top: 4px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 549px;
+
+    @include media-lg {
+      display: none;
+    }
+  }
+
+  &__subscribe {
+    width: 260px;
+    margin-left: 50px;
+
+    @include media-sm {
+      display: none;
+      margin-top: 0;
+    }
+
+    &-title {
+      margin-top: 4px;
+      font-weight: bold;
+      font-size: $font-size-small;
+      line-height: 15px;
+      text-transform: uppercase;
+      color: $text-color-main;
+    }
+
+    &-text {
+      margin-top: 18px;
+      font-weight: normal;
+      font-size: $font-size-normal;
+      line-height: 24px;
+      color: $text-color-secondary;
+      margin-bottom: 23px;
+    }
+  }
+
+  &__field {
+    max-width: 260px;
+  }
+}

@@ -12,24 +12,16 @@
   }
 
   &__name {
-    font-family: Montserrat, sans-serif;
-    font-style: normal;
-    font-weight: bold;
-    font-size: $font-size-medium;
-    line-height: 28px;
     display: flex;
     align-items: center;
-    color: $text-color-main;
+
+    @include font-bold($font-size-medium, $lh: 28px);
   }
 
   &__code {
-    font-family: Montserrat, sans-serif;
-    font-style: normal;
-    font-weight: normal;
-    font-size: $font-size-medium;
-    line-height: 28px;
     display: flex;
     align-items: center;
-    color: $text-color-main;
+
+    @include font-normal($font-size-medium, $lh: 28px);
   }
 }

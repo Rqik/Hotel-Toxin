@@ -1,5 +1,4 @@
 .bullet-list {
-  font-family: 'Montserrat', sans-serif;
   text-transform: uppercase;
   display: flex;
   flex-direction: column;
@@ -7,22 +6,21 @@
   max-width: 300px;
   width: 100%;
 
+  @include font-normal();
+
   &__title {
-    font-size: $font-size-small;
-    font-style: normal;
-    font-weight: 700;
-    margin-bottom: 10px;
+    margin-bottom: 14px;
+
+    @include font-bold($font-size-small );
   }
 
   &__items {
-    font-weight: normal;
-    font-size: $font-size-normal;
-    line-height: 24px;
-    color: $text-color-secondary;
     list-style: none;
     text-transform: none;
     padding: 0;
     margin: 0;
+
+    @include font-normal($color: $text-color-secondary , $lh: 24px);
   }
 
   &__item {
@@ -40,7 +38,7 @@
       border-radius: 50%;
       left: 0;
       top: 5px;
-      background-color: $color-transparent;
+      background-color: $transparent_black;
     }
   }
 }

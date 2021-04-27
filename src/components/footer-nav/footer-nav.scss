@@ -1,0 +1,31 @@
+.footer-nav {
+  &__title {
+    font-weight: bold;
+    font-size: $font-size-small;
+    line-height: 15px;
+    text-transform: uppercase;
+    color: $text-color-main;
+  }
+
+  &__items {
+    margin-top: 20px;
+    padding: 0;
+    list-style: none;
+    font-size: $font-size-normal;
+    line-height: 19px;
+    color: $text-color-translucent;
+  }
+
+  &__item {
+    margin-top: 20px;
+
+    &-link {
+      color: inherit;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}

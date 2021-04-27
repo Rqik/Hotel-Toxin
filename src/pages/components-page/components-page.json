@@ -199,8 +199,7 @@
     "currentRating": "3.47"
   },
   "rangeSlider": {
-    "title": "range slider",
-    "caption": "Стоимость пребывания за сутки в номере"
+    "title": "range slider"
   },
   "bulletList": {
     "title": "bullet list",

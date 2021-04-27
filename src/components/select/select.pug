@@ -4,4 +4,4 @@ mixin select({name , list} ={})
     select.select__elements (id= name name="dropdown")
       each item in list
         option.select__option(value= item)= item
-    +icon({text:"expand_more"})
+    .select__icon expand_more

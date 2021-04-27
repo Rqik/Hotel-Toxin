@@ -1,10 +1,12 @@
 .input-radio {
-  font-family: 'Montserrat', sans-serif;
-  font-size: $font-size-small;
-  font-style: normal;
   font-weight: 700;
-  margin-bottom: 1rem;
   text-transform: uppercase;
+
+  @include font-normal($font-size-small);
+
+  &__caption {
+    @include font-bold($font-size-small);
+  }
 
   &__items {
     display: flex;
@@ -18,14 +20,10 @@
     &-label {
       padding-left: 30px;
       cursor: pointer;
-      font-family: Montserrat, sans-serif;
-      font-style: normal;
-      font-weight: normal;
-      font-size: $font-size-normal;
       text-transform: none;
-      line-height: 24px;
-      color: $text-color-translucent;
       position: relative;
+
+      @include font-normal($color: $text-color-translucent, $lh: 24px);
 
       &::before {
         content: '';
@@ -33,7 +31,7 @@
         width: 20px;
         height: 20px;
         border-radius: 50%;
-        border: 1px solid $color-transparent;
+        border: 1px solid $transparent_black;
         left: 0;
         top: 0;
         transition: border 0.3s ease-in-out;

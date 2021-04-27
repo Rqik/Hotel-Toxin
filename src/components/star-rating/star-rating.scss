@@ -17,27 +17,28 @@
     -moz-appearance: none;
   }
 
-  &__radio {
+  &__icon {
+    display: block;
     position: relative;
     overflow: hidden;
+    background-image: $purple-gradient;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 
-    .icon {
-      display: block;
-      position: relative;
-      overflow: hidden;
-      background-image: $purple-gradient;
-      background-clip: text;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
+    @include font-icon($font-size-big);
 
-    .star {
+    &_active {
       position: absolute;
       top: 0;
       left: 0;
       right: 0;
       bottom: 0;
-      width: 40%;
     }
+  }
+
+  &__radio {
+    position: relative;
+    overflow: hidden;
   }
 }

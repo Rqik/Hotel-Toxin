@@ -5,20 +5,20 @@
 mixin dropdownSelect({extended=false ,active=false,  name,current , text })
   .dropdown
     .dropdown__title=name
-    div( class= active ? "dropdown_active" : "",
+    div( class= active ? "dropdown_active":"",
       class=extended ? "js-dropdown__select_extended dropdown__select " +
-        "dropdown__select_extended" : "dropdown__select js-dropdown__select")
+        "dropdown__select_extended":"dropdown__select js-dropdown__select")
       .dropdown__item-current.js-dropdown__item-current
-        +icon({text:"expand_more"})
+        .dropdown__icon expand_more
         span.dropdown__text-current.js-dropdown__text-current= current
       .dropdown__items.js-dropdown__items
         each item in text
-          .dropdown__item
+          .dropdown__item.js-dropdown__item
             span.dropdown__item-span.js-dropdown__item-span= item
-            .dropdown__control-panel
-              .dropdown__button.js-dropdown__button.js-control_minus -
+            .dropdown__control-panel.js-dropdown__control-panel
+              .dropdown__button.js-dropdown__button.js-btn_minus -
               span.dropdown__span.js-dropdown__span= 0
-              .dropdown__button.js-dropdown__button.js-control_plus +
+              .dropdown__button.js-dropdown__button.js-btn_plus +
         if extended
           .dropdown__buttons
             button(type="reset" class="dropdown__button-reset " +

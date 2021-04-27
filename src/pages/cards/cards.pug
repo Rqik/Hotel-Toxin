@@ -4,6 +4,7 @@ include ../../components/card-auth/card-auth
 include ../../components/card-registration/card-registration
 include ../../components/card-room/card-room
 include ../../components/card-find/card-find
+include ../../components/calendar/calendar
 
 
 block variables
@@ -19,6 +20,6 @@ block content
       +cardRoom(cardRoom)
       +cardAuth
     .cards__el
-      .calendar
+      +calendar
       +cardSlide(cardSlider)
       +cardSlide(cardSlider2)

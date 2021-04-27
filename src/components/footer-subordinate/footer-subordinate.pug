@@ -1,0 +1,17 @@
+mixin footerSubordinate({social})
+  .footer-subordinate
+    .footer-subordinate__copyright
+      | Copyright © 2018 Toxin отель. Все права защищены.
+    .footer-subordinate__social
+      each element in social
+        - const {href , name , alt} = element
+        case name
+          when "twitter"
+            a.footer-subordinate__link(href=href ? href : "./index.html")
+              include img/twitter.svg
+          when "facebook"
+            a.footer-subordinate__link(href=href ? href : "./index.html")
+              include img/facebook.svg
+          when "instagram"
+            a.footer-subordinate__link(href=href ? href : "./index.html")
+              include img/instagram.svg
