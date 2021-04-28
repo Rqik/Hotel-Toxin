@@ -1,14 +1,18 @@
+@import "~@/libs/swiper-slider/swiper-slider.scss";
+
 .card-slider {
   width: 270px;
   background-color: white;
   border-radius: 4px;
   box-shadow: $box-shadow;
 
-  &__icon{
+  @include swiper();
+
+  &__icon {
     @include font-icon()
   }
 
-  &__top {
+  &__gallery {
     overflow: hidden;
     height: 150px;
     border-radius: 4px 4px 0 0;
@@ -16,10 +20,9 @@
     position: relative;
   }
 
-  &__bot {
+  &__info {
     padding: 22px 15px 10px 20px;
   }
-
 
   &__header {
     border-bottom: 1px solid $shadow-color;
@@ -34,7 +37,7 @@
     display: inline-flex;
     align-items: flex-end;
 
-    @include font-bold($font-size-normal , $lh:29px);
+    @include font-bold($font-size-normal, $lh: 29px);
 
     &-number {
       font-size: $font-size-medium;

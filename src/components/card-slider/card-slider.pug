@@ -1,12 +1,12 @@
 //- url -- image url Array<object> = {src , alt }
 
 include ../star-rating/star-rating
-include ../swiper-slider/swiper-slider
+include ../../libs/swiper-slider/swiper-slider
 mixin cardSlide({url, roomNumber , category="", price="0", review="0",rating="0"})
   .card-slider
-    .card-slider__top
+    .card-slider__gallery.js-card-slider__gallery
       +swiperSlider({url})
-    .card-slider__bot
+    .card-slider__info
       .card-slider__header
         .card-slider__room
           .card-slider__room-number

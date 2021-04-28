@@ -2,7 +2,7 @@ import 'air-datepicker';
 import 'jquery-mask-plugin';
 
 class DatePicker {
-  constructor() {
+  constructor(options) {
     this.props = {
       position: 'bottom center',
       range: true,
@@ -10,16 +10,16 @@ class DatePicker {
         days: 'MM yyyy',
       },
       clearButton: true,
-      prevHtml: '<i class="date-picker__icon">arrow_back</i>',
-      nextHtml: '<i class="date-picker__icon">arrow_forward</i>',
+      prevHtml: options.iconBack,
+      nextHtml: options.iconForward,
       minDate: new Date(),
       keyboardNav: false,
       multipleDates: 2,
       onSelect(formattedDate, date, picker) {
-        const el = picker.$el.siblings('.js-date-picker__label');
-        el.children('.js-date-picker__input_left')
+        const el = picker.$el.siblings(options.labelClass);
+        el.children(options.inputLeftClass)
           .val(formattedDate.split(',')[0]);
-        el.children('.js-date-picker__input_right')
+        el.children(options.inputRightClass)
           .val(formattedDate.split(',')[1]);
       },
     };
@@ -31,31 +31,34 @@ class DatePicker {
       },
       dateFormat: 'd M',
       clearButton: true,
-      prevHtml: '<i class="date-picker__icon">arrow_back</i>',
-      nextHtml: '<i class="date-picker__icon">arrow_forward</i>',
+      prevHtml: options.iconBack,
+      nextHtml: options.iconForward,
       minDate: new Date(),
       keyboardNav: false,
       multipleDates: 2,
       multipleDatesSeparator: ' - ',
     };
     this.selectDate = {};
-    this.nextDay = new Date();
     this.prevDay = new Date();
-    this.$datepickerRange = $('.js-date-picker_range');
-    this.$datepicker = $('.js-date-picker, .js-date-picker_range');
-    this.inputClass = '.js-date-picker__input';
-    this.inputLeftClass = '.js-date-picker__input_left';
-    this.inputRightClass = '.js-date-picker__input_right';
-    this.labelClass = '.js-date-picker__label';
-    this.btnApplyClass = '.js-datepicker--button-apply';
+    this.btnClass = '.datepicker--buttons';
+    this.datepickerRangeClass = options.datepickerRange;
+    this.datepickerClass = options.datepicker;
+    this.inputClass = options.inputClass;
+    this.inputLeftClass = options.inputLeftClass;
+    this.inputRightClass = options.inputRightClass;
+    this.labelClass = options.labelClass;
+    this.btnApplyClass = options.btnApplyClass;
+    this.$datepickerRange = $(this.datepickerRangeClass);
+    this.$datepicker = $(`${this.datepickerClass}, ${this.datepickerRangeClass}`);
   }
 
   init() {
     this.$datepicker.each(this.addClassDatePicker.bind(this));
+    console.log();
     $(this.labelClass)
       .each((_, el) => {
         const $datePicker = $(el)
-          .siblings('.js-date-picker');
+          .siblings(this.datepickerClass);
         $(el)
           .click(this.makeShowSelectLabel($datePicker));
       });
@@ -64,7 +67,7 @@ class DatePicker {
       .each((_, el) => {
         const $datePicker = $(el)
           .closest(this.labelClass)
-          .siblings('.js-date-picker');
+          .siblings(this.datepickerClass);
         $(el)
           .change(this.makeChangeSelectInput($datePicker, el)
             .bind(this));
@@ -73,7 +76,7 @@ class DatePicker {
       .each((_, el) => {
         const $datePicker = $(el)
           .closest(this.labelClass)
-          .siblings('.js-date-picker');
+          .siblings(this.datepickerClass);
         $(el)
           .change(this.makeChangeSelectInput($datePicker, el)
             .bind(this));
@@ -90,15 +93,16 @@ class DatePicker {
       },
     });
 
-    $('.datepicker--buttons')
+    $(this.btnClass)
       .each((_, el) => {
-        $(el)
-          .append(
-            `<span class="datepicker--button-apply js-datepicker--button-apply">
+          $(el)
+            .append(
+              `<span class="datepicker--button-apply ${this.btnApplyClass.replace(/^\./, '')}">
               Применить
              </span>`,
-          );
-      });
+            );
+        },
+      );
 
     this.$datepicker.each((ind, el) => {
       $(el)
@@ -142,8 +146,12 @@ class DatePicker {
 
   addClassDatePicker(i, el) {
     $(el)
-      .addClass(`js-date-picker-${i}`);
-    this.selectDate[`js-date-picker-${i}`] = $(el)
+      .addClass(
+        `js-date-picker-${i}`,
+      );
+    this.selectDate[
+      `js-date-picker-${i}`
+      ] = $(el)
       .datepicker(this.props);
   }
 }
