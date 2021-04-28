@@ -1,0 +1,61 @@
+@import "~ion-rangeslider/css/ion.rangeSlider.min.css";
+
+@mixin ionRangeSlider {
+  .irs {
+    max-width: 266px;
+
+    &--round {
+      height: 30px;
+    }
+
+    &-line {
+      border: 1px solid $transparent_black;
+      height: 6px;
+      border-radius: 3px;
+      top: 23px;
+      background-color: white;
+    }
+
+    &-bar {
+      background-color: $green;
+      background-image: $green-gradient;
+      height: 6px;
+      top: 23px;
+    }
+
+    &-handle {
+      box-sizing: border-box;
+      background-color: $green;
+      background-image: $green-gradient;
+      border: 0 solid white;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      top: 17px;
+      box-shadow: none;
+      cursor: pointer;
+
+      &:before {
+        content: '';
+        position: absolute;
+        box-sizing: border-box;
+        background-color: $green;
+        background-image: $green-gradient;
+        border: 2px solid white;
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        top: 0;
+        box-shadow: none;
+        cursor: pointer;
+        right: 0;
+      }
+
+      &.from {
+        &:before {
+          right: -8px;
+        }
+      }
+    }
+  }
+}

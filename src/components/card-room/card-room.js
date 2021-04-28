@@ -50,7 +50,7 @@ class CardRoom {
 
     $(el)
       .on('click',
-        this.makeEventHandler({
+        CardRoom.makeEventHandler({
           $currentDP,
           $pay,
           $dop,
@@ -61,7 +61,7 @@ class CardRoom {
           .bind(this));
   }
 
-  makeEventHandler(options) {
+  static makeEventHandler(options) {
     const { $currentDP, $pay, $dop, $sale, $price, $resultSum } = options;
     return () => {
       const [to, from] = $currentDP.data('datepicker').selectedDates;

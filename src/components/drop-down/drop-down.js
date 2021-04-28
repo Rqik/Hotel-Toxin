@@ -2,8 +2,8 @@ class DropDown {
   constructor() {
     this.children = {};
     this.dropDown = {};
-    this.dropDownClass = '.js-dropdown__select'
-    this.dropDownExtendClass = '.js-dropdown__select_extended'
+    this.dropDownClass = '.js-dropdown__select';
+    this.dropDownExtendClass = '.js-dropdown__select_extended';
     this.controlPanelClass = '.js-dropdown__control-panel';
     this.buttonClass = '.js-dropdown__button';
     this.dropItemsClass = '.js-dropdown__items';

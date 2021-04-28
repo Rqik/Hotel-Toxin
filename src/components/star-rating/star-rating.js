@@ -18,7 +18,6 @@ class StarRating {
       this.rateInput(`.js-rate-${i}`);
       this.starRateLaunch(`.js-rate-${i}`);
     });
-
   }
 
   starRateLaunch(selector) {

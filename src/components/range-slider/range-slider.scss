@@ -1,5 +1,4 @@
-@import "~ion-rangeslider/css/ion.rangeSlider.min.css";
-@import '~@/libs/css/mixin.scss';
+@import "~@/libs/ion-rangeslider/ion-rangelsider.scss";
 
 .range-slider {
   display: block;
@@ -7,28 +6,28 @@
   width: 100%;
   margin-bottom: 20px;
 
-  &__value {
+  &__caption-head {
     display: flex;
     justify-content: space-between;
     text-transform: uppercase;
 
     @include font-bold($font-size-small, $lh: 15px);
+  }
 
-    &-title {
-      white-space: nowrap;
-    }
+  &__title {
+    white-space: nowrap;
+  }
 
-    &-input {
-      width: 100%;
-      margin: 0;
-      padding: 0;
-      text-align: right;
-      text-transform: uppercase;
-      border: none;
-      box-sizing: border-box;
+  &__input {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    text-align: right;
+    text-transform: uppercase;
+    border: none;
+    box-sizing: border-box;
 
-      @include font-normal($font-size-small, $text-color-translucent);
-    }
+    @include font-normal($font-size-small, $text-color-translucent);
   }
 
   &__caption {

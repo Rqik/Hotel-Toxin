@@ -1,7 +1,15 @@
-import { RangeSlider } from '@/libs/ion-rangeslider';
+import { IonSlider } from '@/libs/ion-rangeslider';
 
 $(() => {
-  const rangeSlider = new RangeSlider('.js-range-slider__app');
+  const options = {
+    selector: '.js-range-slider__app',
+    captionClass: '.js-range-slider__caption-head',
+    inputClass: '.js-range-slider__input',
+    min: 0,
+    max: 15000,
+    from: 5000,
+    to: 10000,
+  };
+  const rangeSlider = new IonSlider(options);
   rangeSlider.init();
 });
-// $('.js-range-slider__app').ionRangeSlider();

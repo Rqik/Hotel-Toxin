@@ -3,8 +3,8 @@ import Swiper, { EffectFade, Navigation, Pagination } from 'swiper';
 Swiper.use([Pagination, EffectFade, Navigation]);
 
 class Slider {
-  constructor(selector) {
-    this.selector = selector;
+  constructor(options) {
+    this.selector = options.selector;
     this.options = {
       loop: true,
       slidesPerView: 1,
