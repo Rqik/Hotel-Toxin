@@ -54,37 +54,41 @@ class DatePicker {
 
   init() {
     this.$datepicker.each(this.addClassDatePicker.bind(this));
-    console.log();
-    $(this.labelClass)
-      .each((_, el) => {
-        const $datePicker = $(el)
-          .siblings(this.datepickerClass);
-        $(el)
-          .click(this.makeShowSelectLabel($datePicker));
-      });
 
-    $(this.inputLeftClass)
-      .each((_, el) => {
-        const $datePicker = $(el)
-          .closest(this.labelClass)
-          .siblings(this.datepickerClass);
-        $(el)
-          .change(this.makeChangeSelectInput($datePicker, el)
-            .bind(this));
-      });
-    $(this.inputRightClass)
-      .each((_, el) => {
-        const $datePicker = $(el)
-          .closest(this.labelClass)
-          .siblings(this.datepickerClass);
-        $(el)
-          .change(this.makeChangeSelectInput($datePicker, el)
-            .bind(this));
-      });
-
+    if (this.labelClass) {
+      $(this.labelClass)
+        .each((_, el) => {
+          const $datePicker = $(el)
+            .siblings(this.datepickerClass);
+          $(el)
+            .click(this.makeShowSelectLabel($datePicker));
+        });
+    }
+    if (this.inputLeftClass) {
+      $(this.inputLeftClass)
+        .each((_, el) => {
+          const $datePicker = $(el)
+            .closest(this.labelClass)
+            .siblings(this.datepickerClass);
+          $(el)
+            .change(this.makeChangeSelectInput($datePicker, el)
+              .bind(this));
+        });
+    }
+    if (this.inputRightClass) {
+      $(this.inputRightClass)
+        .each((_, el) => {
+          const $datePicker = $(el)
+            .closest(this.labelClass)
+            .siblings(this.datepickerClass);
+          $(el)
+            .change(this.makeChangeSelectInput($datePicker, el)
+              .bind(this));
+        });
+    }
+    this.$datepickerRange.datepicker(this.propsRange);
     $(this.inputClass)
       .mask('00.00.0000');
-    this.$datepickerRange.datepicker(this.propsRange);
     this.$datepickerRange.mask('00 ZZZ - 00 ZZZ', {
       translation: {
         Z: {
@@ -92,17 +96,22 @@ class DatePicker {
         },
       },
     });
-
-    $(this.btnClass)
-      .each((_, el) => {
-          $(el)
-            .append(
-              `<span class="datepicker--button-apply ${this.btnApplyClass.replace(/^\./, '')}">
-              Применить
-             </span>`,
-            );
-        },
-      );
+    console.log($(this.btnClass));
+    if (this.btnClass) {
+      $(this.btnClass)
+        .each((_, el) => {
+            if (!$(el)
+              .find('.datepicker--button-apply').length) {
+              $(el)
+                .append(
+                  `<span class="datepicker--button-apply ${this.btnApplyClass.replace(/^\./, '')}">
+                Применить
+               </span>`,
+                );
+            }
+          },
+        );
+    }
 
     this.$datepicker.each((ind, el) => {
       $(el)
