@@ -2,7 +2,7 @@
 
 ---
 
-# [**Демо**](https://rqik.github.io/FSD/dist/index.html)
+# [**Демо**](https://rqik.github.io/FSD)
 
 ## GitHub Pages
 
