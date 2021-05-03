@@ -12,7 +12,7 @@
     },
     {
       "name": "email",
-      "title": "text field",
+      "title": "subscription text field",
       "placeholder": "Email",
       "form": true
     }
@@ -51,7 +51,7 @@
       "text": "CLICK ME"
     },
     {
-      "style": "outline",
+      "style": "outlined",
       "text": "CLICK ME"
     },
     {
@@ -59,13 +59,13 @@
       "text": "перейти к оплате"
     },
     {
-      "style": "outline",
+      "style": "outlined",
       "text": "CLICK ME",
       "href": "#",
       "border": false
     },
     {
-      "style": "outline",
+      "style": "outlined",
       "text": "CLICK ME",
       "href": "#",
       "border": false

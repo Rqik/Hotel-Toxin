@@ -8,11 +8,14 @@ class CardRoom {
     this.buttonApplyClass = '.js-datepicker--button-apply';
     this.roomInfoClass = '.js-card-room__info';
     this.roomDataClass = '.js-card-room__data';
-    this.totalAmountClass = '.js-card-room__t-amount';
+    this.totalAmountClass = '.js-card-room__total-amount';
     this.saleClass = '.js-card-room__sale';
     this.priceDayClass = '.js-card-room__price-day';
     this.totalPriceClass = '.js-card-room__total-price';
     this.additionalClass = '.js-card-room__additional';
+    this.infoSumClass = '.js-card-room__info-sum';
+    this.infoNameClass = '.js-card-room__info-name';
+    this.priceNumberClass = '.js-card-room_ _price-number';
   }
 
   init() {
@@ -27,13 +30,13 @@ class CardRoom {
     });
     button.forEach(this.buttonApply.bind(this));
 
-    $('.js-card-room__info-sum')
+    $(this.infoSumClass)
       .text((_, el) => CardRoom.replace(el));
-    $('.js-card-room__info-name')
+    $(this.infoNameClass)
       .text((_, el) => CardRoom.replace(el));
-    $('.js-card-room__info-sum_result')
+    $(this.totalPriceClass)
       .text((_, el) => CardRoom.replace(el));
-    $('.js-card-room__price_bold')
+    $(this.priceNumberClass)
       .text((_, el) => CardRoom.replace(el));
   }
 
@@ -51,13 +54,13 @@ class CardRoom {
     $(el)
       .on('click',
         CardRoom.makeEventHandler({
-          $currentDP,
-          $pay,
-          $dop,
-          $sale,
-          $price,
-          $resultSum,
-        })
+            $currentDP,
+            $pay,
+            $dop,
+            $sale,
+            $price,
+            $resultSum,
+          })
           .bind(this));
   }
 

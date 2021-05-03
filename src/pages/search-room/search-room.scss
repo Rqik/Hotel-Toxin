@@ -64,17 +64,17 @@
       padding-left: 25px;
     }
 
-    &_result {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 20px 12px;
-      margin-bottom: 40px;
+  }
+  &__result {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px 12px;
+    margin-bottom: 40px;
 
-      @include media-md {
-        justify-content: center;
-        align-items: flex-start;
-      }
+    @include media-md {
+      justify-content: center;
+      align-items: flex-start;
     }
   }
 

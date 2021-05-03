@@ -4,7 +4,7 @@
   justify-content: flex-start;
   flex-wrap: wrap;
   gap: 100px 120px;
-  padding: 60px  0 0 140px;
+  padding: 60px 0 0 140px;
 
   @include media-md {
     padding: 60px 30px;
@@ -31,18 +31,13 @@
   }
 
   &__element {
-
-    font-family: 'Montserrat', sans-serif;
-    font-size: $font-size-small;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 15px;
     text-transform: uppercase;
-    color: $text-color-main;
     display: flex;
     flex-direction: column;
     align-content: flex-start;
-    margin-bottom: 1rem;
+    margin-top: 14px;
+
+    @include font-bold($font-size-small, $text-color-main, 15px)
   }
 
   &__items {

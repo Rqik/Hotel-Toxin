@@ -1,5 +1,6 @@
 .icon-box {
   width: 291px;
+  color: transparent;
 
   @include media-xxs {
     width: 100%;
@@ -21,8 +22,8 @@
 
   &__icon {
     background-image: $purple-gradient;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    background-clip: text;
+
     @include font-icon(48px);
   }
 

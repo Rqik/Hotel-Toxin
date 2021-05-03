@@ -28,8 +28,8 @@
 
     &::placeholder {
       height: 18px;
-
-      @include font-normal($font-size-normal, $transparent_black);
+      font-size: $font-size-normal;
+      color: $transparent_black;
     }
 
     &:hover,
@@ -104,7 +104,7 @@
   }
 
   &__icon {
-    @include font-icon($font-size-big, $purple, $lh: 24px)
+    @include font-icon($font-size-big, transparent, $lh: 24px)
   }
 
   &__btn {
@@ -118,8 +118,6 @@
     color: $text-color-main;
     background-image: $purple-gradient;
     background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
     text-align: center;
     vertical-align: middle;
     padding: 0;

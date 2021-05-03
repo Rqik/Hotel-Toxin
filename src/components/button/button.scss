@@ -18,7 +18,7 @@
   cursor: pointer;
   white-space: nowrap;
 
-  @include font-bold($font-size-small, white, 1rem);
+  @include font-bold($font-size-small, white);
 
   &_small {
     &:hover,
@@ -27,8 +27,7 @@
     }
   }
 
-
-  &_outline {
+  &_outlined {
     position: relative;
     border-radius: 24px;
     background-clip: padding-box;
@@ -53,9 +52,8 @@
       padding: 2px;
       border-radius: 24px;
       background: $purple-gradient;
-      -webkit-mask: linear-gradient(#fff 0 0) content-box,
+     mask: linear-gradient(#fff 0 0) content-box,
       linear-gradient(#fff 0 0);
-      -webkit-mask-composite: destination-out;
       mask-composite: exclude;
       transition: opacity .3s ease-in-out;
     }

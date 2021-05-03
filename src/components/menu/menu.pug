@@ -23,7 +23,7 @@ mixin menu({items, auth})
       if !auth
         li.menu__item
           +button({
-            style: "outline",
+            style: "outlined",
             text: "войти",
             href:'./auth.html'
           })&attributes({style:{height:"38px"}})
