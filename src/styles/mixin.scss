@@ -65,7 +65,7 @@
   $lh: normal ,
   $fw: normal) {
 
-  font-family: "Material Icons";
+  font-family: "Material Icons" , sans-serif;
   font-style: normal;
   font-weight: $fw;
   font-size: $fs;
@@ -77,8 +77,6 @@
   word-wrap: normal;
   white-space: nowrap;
   direction: ltr;
-  -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
   font-feature-settings: 'liga';
 }

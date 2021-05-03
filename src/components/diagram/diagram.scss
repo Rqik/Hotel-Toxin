@@ -30,7 +30,7 @@
   &__unit {
     animation-name: render;
     animation-duration: 1.5s;
-    stroke-width: 2;
+    stroke-width: 1;
     cursor: pointer;
     transition: all .3s ease-in-out;
     z-index: 20;
@@ -72,7 +72,7 @@
           background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
         }
 
-        .unit:nth-child(1) {
+        .diagram__unit:nth-child(1) {
           stroke-width: 4;
         }
       }
@@ -101,9 +101,6 @@
 
   &__chart-number {
     fill: #BC9CFF;
-    -moz-transform: translateY(-0.25em);
-    -ms-transform: translateY(-0.25em);
-    -webkit-transform: translateY(-0.25em);
     transform: translateY(-0.25em);
     text-anchor: middle;
 
@@ -113,10 +110,7 @@
   &__chart-label {
     text-anchor: middle;
     text-transform: uppercase;
-    -moz-transform: translateY(1em);
-    -ms-transform: translateY(01em);
-    -webkit-transform: translateY(1em);
-    transform: translateY(1.2em);
+    transform: translateY(4px);
     fill: $purple;
 
     @include font-bold(3px, $lh: 19px);

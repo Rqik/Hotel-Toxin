@@ -15,10 +15,10 @@ mixin cardRegistration
         name: "name",
         placeholder: "Фамилия"
       })
-    +inputRadio({
-      name: "gender",
-      label: ["Мужчина", "Женщина"]
-     })
+      +inputRadio({
+        name: "gender",
+        label: ["Мужчина", "Женщина"]
+       })
     .card-registration__fields
       +field({
         name: "date",
@@ -50,6 +50,6 @@ mixin cardRegistration
     .card-registration__bot
       .card-registration__span Уже есть аккаунт на Toxin
       +button({
-        style: "outline",
+        style: "outlined",
         text: "Войти"
       })&attributes({ style: { padding: "10px 23px" } })

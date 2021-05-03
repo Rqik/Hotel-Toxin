@@ -33,6 +33,10 @@
     justify-content: space-between;
   }
 
+  &__span {
+    @include font-bold();
+  }
+
   &__room {
     display: inline-flex;
     align-items: flex-end;
@@ -60,30 +64,23 @@
     align-self: flex-end;
     align-items: center;
     text-align: right;
-    line-height: 23px;
-    font-size: $font-size-small;
-    font-weight: normal;
-    color: $text-color-translucent;
+
+    @include font-normal($font-size-small, $text-color-translucent, 23px);
 
     .card-slider__span {
-      font-size: $font-size-normal;
-      line-height: 18px;
-      font-weight: bold;
       margin-right: 3px;
+      @include font-bold($font-size-normal, $text-color-translucent, 23px);
     }
   }
 
   &__review {
-    font-weight: normal;
-    font-size: $font-size-normal;
-    line-height: 18px;
-    color: $text-color-translucent;
+    @include font-normal($font-size-normal, $text-color-translucent, 18px);
 
     .card-slider__span {
-      font-weight: bold;
-      line-height: 18px;
+      @include font-bold($font-size-normal, $text-color-translucent, 18px)
     }
   }
+
 
   &__rate {
     display: flex;

@@ -2,55 +2,55 @@
   "buttons": [
     {
       "href": "./components-page.html",
-      "style": "outline",
+      "style": "outlined",
       "text": "Components",
       "border": false
     },
     {
       "href": "./color-fonts.html",
-      "style": "outline",
+      "style": "outlined",
       "text": "Colors and Fonts",
       "border": false
     },
     {
       "href": "./header-footer.html",
-      "style": "outline",
+      "style": "outlined",
       "text": "Header Footer",
       "border": false
     },
     {
       "href": "./pick-room.html",
-      "style": "outline",
+      "style": "outlined",
       "text": "Pick Room",
       "border": false
     },
     {
       "href": "./auth.html",
-      "style": "outline",
+      "style": "outlined",
       "text": "Auth",
       "border": false
     },
     {
       "href": "./registration.html",
-      "style": "outline",
+      "style": "outlined",
       "text": "Registration",
       "border": false
     },
     {
       "href": "./cards.html",
-      "style": "outline",
+      "style": "outlined",
       "text": "Cards",
       "border": false
     },
     {
       "href": "./room-details.html",
-      "style": "outline",
+      "style": "outlined",
       "text": "Room Details",
       "border": false
     },
     {
       "href": "./search-room.html",
-      "style": "outline",
+      "style": "outlined",
       "text": "Search Room",
       "border": false
     }

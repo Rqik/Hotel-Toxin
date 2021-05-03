@@ -5,6 +5,8 @@
   @include font-normal($font-size-small);
 
   &__caption {
+    margin-top: 14px;
+
     @include font-bold($font-size-small);
   }
 
@@ -15,7 +17,6 @@
   }
 
   &__item {
-    margin-top: 8px;
 
     &-label {
       padding-left: 30px;
@@ -55,15 +56,15 @@
       position: absolute;
       appearance: none;
 
-      &:checked ~ .radio__label::after {
+      &:checked ~ .input-radio__item-label::after {
         opacity: 1;
       }
 
-      &:checked ~ .radio__label::before {
+      &:checked ~ .input-radio__item-label::before {
         border: 1px solid $purple;
       }
 
-      &:checked ~ .radio__label {
+      &:checked ~ .input-radio__item-label {
         color: $text-color-secondary;
       }
     }

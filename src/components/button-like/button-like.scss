@@ -49,14 +49,12 @@
 
     > .button-like__icon  {
       background-image: $purple-gradient;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      color: transparent;
     }
 
     .button-like__text {
-      background-image: $purple-gradient;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
+      color: $purple;
       padding: 1px;
     }
 
@@ -71,9 +69,8 @@
       left: -1px;
       z-index: 1;
       padding: 1px;
-      -webkit-mask: linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
-      -webkit-mask-composite: destination-out;
+      mask: linear-gradient(#fff 0 0) content-box,
+                    linear-gradient(#fff 0 0);
       mask-composite: exclude;
       transition: opacity .3s ease-in-out;
     }

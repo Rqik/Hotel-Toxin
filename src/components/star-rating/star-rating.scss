@@ -13,8 +13,6 @@
     z-index: 20;
     background-color: transparent;
     cursor: pointer;
-    -webkit-appearance: none;
-    -moz-appearance: none;
   }
 
   &__icon {
@@ -23,10 +21,8 @@
     overflow: hidden;
     background-image: $purple-gradient;
     background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
 
-    @include font-icon($font-size-big);
+    @include font-icon($font-size-big , transparent);
 
     &_active {
       position: absolute;

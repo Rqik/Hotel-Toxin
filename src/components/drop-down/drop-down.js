@@ -9,14 +9,14 @@ class DropDown {
     this.dropItemsClass = '.js-dropdown__items';
     this.dropItemClass = '.js-dropdown__item';
     this.itemCurrentClass = '.js-dropdown__item-current';
-    this.btnSubmitClass = '.js-dropdown__button-submit';
+    this.btnSubmitClass = '.js-dropdown__submit-button';
     this.btnMinusClass = '.js-btn_minus';
-    this.btnResetClass = '.js-dropdown__button-reset';
+    this.btnResetClass = '.js-dropdown__reset-button';
     this.spanClass = '.js-dropdown__span';
     this.textCurrentClass = '.js-dropdown__text-current';
     this.itemSpanClass = '.js-dropdown__item-span';
-    this.buttonDisableClass = 'dropdown__button_disable';
-    this.toggleClass = 'dropdown_active';
+    this.buttonDisableClass = 'dropdown__button_disabled';
+    this.toggleClass = 'dropdown__select_active';
   }
 
   init() {
@@ -102,7 +102,6 @@ class DropDown {
 
   makeEventOperationSum(options, callBack) {
     const { selector, i, el } = options;
-    let item = this.children[selector][i];
     const $span = $(el)
       .find(this.spanClass);
     const $btnMinus = $(el)
@@ -111,11 +110,14 @@ class DropDown {
     this.disableButton($btnMinus, $span);
 
     return (e) => {
+      let item = this.children[selector][i];
+
       const sum = e.currentTarget.textContent;
       item += Number(`${sum}1`);
       if (item <= 0) {
         item = 0;
       }
+      this.children[selector][i] = item;
       $span.text(item);
       callBack(selector);
       this.disableButton($btnMinus, $span);
@@ -173,7 +175,8 @@ class DropDown {
           )} ${count} ${nameElem}`;
         }
       });
-    this.dropDown[selector].find(this.textCurrentClass).text(textCurrent);
+    this.dropDown[selector].find(this.textCurrentClass)
+      .text(textCurrent);
   }
 
   static getText(textCurrent, countElem) {

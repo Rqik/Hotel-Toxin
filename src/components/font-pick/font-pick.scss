@@ -8,19 +8,19 @@
   width: 100%;
   @include font-normal();
 
-  &_fs24 {
+  &_size_big {
     @include font-bold($font-size-big, $lh: 29px)
   }
 
-  &_fs19 {
+  &_size_medium {
     @include font-bold($font-size-medium, $lh: 23px)
   }
 
-  &_fs14 {
+  &_size_normal{
     @include font-normal($font-size-normal, $lh: 15px);
   }
 
-  &_fs12 {
+  &_size_small {
     @include font-bold($font-size-small, $lh: 15px);
     .font-pick__tag{
       font-weight: bold;
@@ -38,12 +38,13 @@
   &__text {
     text-align: left;
     color: $text-color-secondary;
-    &_bold {
+
+    &_with_bold_weight {
       color: $text-color-main;
       font-weight: bold;
     }
 
-    &_uppercase {
+    &_transformed_uppercase {
       text-transform: uppercase;
     }
   }

@@ -4,19 +4,19 @@ mixin fontPick({tag , text})
 		let textClass = '';
 		switch(tag){
 			case 'h1':
-				fontClass+='_fs24';
-				textClass+='font-pick__text_bold'
+				fontClass+='_size_big';
+				textClass+='font-pick__text_weight_bold'
 				break;
 			case 'h2':
-				fontClass+='_fs19';
-				textClass+='font-pick__text_bold';
+				fontClass+='_size_medium';
+				textClass+='font-pick__text_weight_bold';
 				break;
 			case 'h3':
-				fontClass+='_fs12';
-				textClass+='font-pick__text_bold font-pick__text_uppercase'
+				fontClass+='_size_small';
+				textClass+='font-pick__text_weight_bold font-pick__text_transform_uppercase'
 				break;
 			default:
-				fontClass+='_fs14'
+				fontClass+='_size_normal'
 				break;
 		}
 	.font-pick(class=fontClass)
