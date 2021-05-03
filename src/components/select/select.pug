@@ -1,7 +1,0 @@
-mixin select({name , list} ={})
-  .select
-    .select__title(for= name)= name
-    select.select__elements (id= name name="dropdown")
-      each item in list
-        option.select__option(value= item)= item
-    .select__icon expand_more
