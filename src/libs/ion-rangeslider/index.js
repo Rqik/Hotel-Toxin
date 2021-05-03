@@ -11,7 +11,6 @@ class IonSlider {
     };
     this.inputClass = options.inputClass
     this.captionClass = options.captionClass
-    console.log(this.params);
   }
 
   init() {
@@ -28,7 +27,6 @@ class IonSlider {
       force_edges: true,
       onChange: (data) => {
         const value = this.$slider.siblings(this.captionClass);
-        console.log(value);
         value.find(this.inputClass)
           .val(`${data.from_pretty}₽ - ${data.to_pretty}₽`);
       },

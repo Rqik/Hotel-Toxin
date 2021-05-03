@@ -96,7 +96,6 @@ class DatePicker {
         },
       },
     });
-    console.log($(this.btnClass));
     if (this.btnClass) {
       $(this.btnClass)
         .each((_, el) => {
