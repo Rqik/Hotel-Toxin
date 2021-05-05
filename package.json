@@ -23,7 +23,6 @@
   "bugs": {
     "url": "https://github.com/Rqik/FSD/issues"
   },
-  "homepage": "https://github.com/Rqik/FSD#readme",
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/plugin-proposal-class-properties": "^7.12.1",

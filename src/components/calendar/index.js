@@ -1,4 +1,3 @@
-import 'air-datepicker';
 import { DatePicker } from '@/libs/datepicker';
 
 $(() => {
