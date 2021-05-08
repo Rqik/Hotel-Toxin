@@ -18,7 +18,7 @@
   }
 
   &__title {
-    margin-left: 15px;
+    margin-left: 12px;
 
     @include font-bold($font-size-medium, $text-color-main, 23px);
 
@@ -48,7 +48,7 @@
     padding: 0;
     list-style: none;
     align-self: center;
-    margin-left: 25px;
+    margin: 21px 0 0 27px;
 
     @include font-normal($color: $text-color-secondary, $lh: 24px);
 
@@ -101,10 +101,10 @@
 
   &__chart-number {
     fill: #BC9CFF;
-    transform: translateY(-0.25em);
+    transform: translateY(-2px);
     text-anchor: middle;
 
-    @include font-bold(6px, $lh: 29px);
+    @include font-bold(6.6px, $lh: 29px);
   }
 
   &__chart-label {
@@ -113,7 +113,7 @@
     transform: translateY(4px);
     fill: $purple;
 
-    @include font-bold(3px, $lh: 19px);
+    @include font-bold(3.4px, $lh: 19px);
   }
 }
 
