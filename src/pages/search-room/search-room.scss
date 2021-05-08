@@ -13,8 +13,6 @@
   position: relative;
   z-index: 2;
 
-
-
   &__slider {
     margin-top: 31px;
   }
@@ -65,8 +63,8 @@
     @include media-xxs {
       padding-left: 25px;
     }
-
   }
+
   &__result {
     display: flex;
     flex-direction: row;

@@ -11,7 +11,7 @@
   &__title {
     margin-bottom: 14px;
 
-    @include font-bold($font-size-small );
+    @include font-bold($font-size-small);
   }
 
   &__items {
@@ -20,16 +20,18 @@
     padding: 0;
     margin: 0;
 
-    @include font-normal($color: $text-color-secondary , $lh: 24px);
+    @include font-normal($color: $text-color-secondary, $lh: 24px);
   }
 
   &__item {
     position: relative;
     padding-left: 21px;
     margin-top: 10px;
-    &:first-child{
+
+    &:first-child {
       margin-top: 0;
     }
+
     &::before {
       content: '';
       position: absolute;

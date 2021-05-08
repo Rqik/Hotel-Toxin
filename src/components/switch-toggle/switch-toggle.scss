@@ -6,14 +6,16 @@
 
   @include font-bold($font-size-small);
 
-  &__caption{
+  &__caption {
     margin-bottom: 14px;
   }
-  &__items{
+
+  &__items {
     display: flex;
     flex-direction: column;
     gap: 10px;
   }
+
   &__label {
     padding-left: 50px;
     position: relative;
@@ -21,7 +23,7 @@
     cursor: pointer;
     text-transform: none;
 
-    @include font-normal($color: $text-color-translucent , $lh:24px);
+    @include font-normal($color: $text-color-translucent, $lh: 24px);
 
     &::before {
       content: '';
@@ -52,15 +54,15 @@
     appearance: none;
     position: absolute;
 
-    &:checked+.switch-toggle__label::before {
+    &:checked + .switch-toggle__label::before {
       border: 1px solid $purple;
     }
 
-    &:checked+.switch-toggle__label {
+    &:checked + .switch-toggle__label {
       color: $text-color-secondary;
     }
 
-    &:checked+.switch-toggle__label::after {
+    &:checked + .switch-toggle__label::after {
       background: $purple-gradient;
       left: 24px;
     }

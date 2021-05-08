@@ -83,11 +83,9 @@
       }
     }
 
-
     &-name {
       width: 214px;
       line-height: 18px;
-
     }
 
     &-sum {
@@ -95,8 +93,8 @@
       text-align: end;
       white-space: nowrap;
     }
-
   }
+
   &__result {
     display: flex;
     flex-direction: row;
@@ -124,11 +122,12 @@
         z-index: 20;
       }
     }
-
   }
+
   &__total-price {
     white-space: nowrap;
   }
+
   &__icon {
     position: absolute;
     background-image: url(~@/components/card-room/image/icon.svg);

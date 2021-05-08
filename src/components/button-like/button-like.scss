@@ -47,7 +47,7 @@
     position: relative;
     background-clip: padding-box;
 
-    > .button-like__icon  {
+    > .button-like__icon {
       background-image: $purple-gradient;
       background-clip: text;
       color: transparent;
@@ -70,7 +70,7 @@
       z-index: 1;
       padding: 1px;
       mask: linear-gradient(#fff 0 0) content-box,
-                    linear-gradient(#fff 0 0);
+      linear-gradient(#fff 0 0);
       mask-composite: exclude;
       transition: opacity .3s ease-in-out;
     }

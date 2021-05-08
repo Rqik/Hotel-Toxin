@@ -54,13 +54,13 @@ class CardRoom {
     $(el)
       .on('click',
         CardRoom.makeEventHandler({
-            $currentDP,
-            $pay,
-            $dop,
-            $sale,
-            $price,
-            $resultSum,
-          })
+          $currentDP,
+          $pay,
+          $dop,
+          $sale,
+          $price,
+          $resultSum,
+        })
           .bind(this));
   }
 

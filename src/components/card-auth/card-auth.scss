@@ -22,7 +22,7 @@
 
   &__title {
     margin-bottom: 22px;
-    @include font-bold($lh:30px);
+    @include font-bold($lh: 30px);
   }
 
   &__bot {

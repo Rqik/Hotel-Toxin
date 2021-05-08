@@ -16,16 +16,18 @@
     @include font-bold($font-size-medium, $lh: 23px)
   }
 
-  &_size_normal{
+  &_size_normal {
     @include font-normal($font-size-normal, $lh: 15px);
   }
 
   &_size_small {
     @include font-bold($font-size-small, $lh: 15px);
-    .font-pick__tag{
+
+    .font-pick__tag {
       font-weight: bold;
     }
   }
+
   &__tag {
     text-transform: capitalize;
     color: $transparent_black;

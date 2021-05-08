@@ -22,18 +22,16 @@
     gap: 10px;
     margin-top: 21px;
   }
-  &__input-radio{
-  }
 
-  &__toggle{
+  &__toggle {
     margin-top: 9px;
   }
+
   &__title {
     font-size: $font-size-big;
     line-height: 30px;
     font-weight: bold;
   }
-
 
   &__bot {
     display: flex;

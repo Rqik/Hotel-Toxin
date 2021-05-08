@@ -12,7 +12,7 @@
     list-style: none;
     padding: 0;
     margin: 0;
-    @include font-normal($font-size-small , $text-color-translucent  , 40px);
+    @include font-normal($font-size-small, $text-color-translucent, 40px);
   }
 
   &__link {
@@ -36,9 +36,8 @@
       border-radius: 50%;
       align-self: center;
 
-      @include font-bold($font-size-small , white , 40px);
+      @include font-bold($font-size-small, white, 40px);
     }
-
   }
 
   &__next {
@@ -51,12 +50,13 @@
     cursor: pointer;
   }
 
-  &__icon{
+  &__icon {
     text-align: center;
     vertical-align: middle;
 
     @include font-icon($font-size-big, white);
   }
+
   &__prev {
     line-height: 40px;
     width: 40px;
@@ -79,6 +79,6 @@
     margin-left: 5px;
     text-transform: none;
 
-    @include font-normal($font-size-normal , $text-color-secondary )
+    @include font-normal($font-size-normal, $text-color-secondary)
   }
 }

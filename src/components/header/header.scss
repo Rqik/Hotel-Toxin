@@ -10,6 +10,7 @@
   @include media-md {
     flex-direction: row-reverse;
   }
+
   &__nav-bar {
     margin: 0 auto;
     max-width: 1160px;
@@ -26,7 +27,7 @@
     align-items: center;
     gap: 20px;
     cursor: pointer;
-    @include media-md{
+    @include media-md {
       flex-direction: row-reverse;
     }
   }

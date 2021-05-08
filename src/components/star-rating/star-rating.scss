@@ -22,7 +22,7 @@
     background-image: $purple-gradient;
     background-clip: text;
 
-    @include font-icon($font-size-big , transparent);
+    @include font-icon($font-size-big, transparent);
 
     &_active {
       position: absolute;
