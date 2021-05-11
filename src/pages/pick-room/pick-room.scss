@@ -8,11 +8,14 @@
   margin: 0;
   padding: 0;
   display: flex;
-  background: url('./img/background.jpg') no-repeat 0;
-
+  background: url('./img/background.jpg')  no-repeat center ;
+  background-size: cover;
+  justify-content: center;
   &__slide {
-    margin: 70px 0 0 140px;
-    height: 500px;
+    margin: 70px 0 ;
+    min-height: 500px;
+    max-width: 1160px;
+    width: 100%;
     float: left;
     display: flex;
 

@@ -97,11 +97,6 @@
       align-items: center;
     }
 
-    @include media-sm {
-      .card-block {
-        margin: 0;
-      }
-    }
 
     @include media-xs {
       padding: 30px 15px;

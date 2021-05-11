@@ -71,17 +71,12 @@
         &::before {
           background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
         }
-
-        .diagram__unit:nth-child(1) {
-          stroke-width: 4;
-        }
       }
 
       &:nth-child(2) {
         &::before {
           background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
         }
-
       }
 
       &:nth-child(3) {
@@ -100,18 +95,25 @@
 
 
   &__chart-number {
-    fill: #BC9CFF;
     transform: translateY(-2px);
     text-anchor: middle;
 
     @include font-bold(6.6px, $lh: 29px);
+
+    &_hidden {
+      display: none;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &_hovered {
+      display: block;
+    }
   }
 
   &__chart-label {
     text-anchor: middle;
     text-transform: uppercase;
-    transform: translateY(4px);
-    fill: $purple;
+    transform: translateY(5.5px);
 
     @include font-bold(3.4px, $lh: 19px);
   }

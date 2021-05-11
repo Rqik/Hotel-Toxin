@@ -1,5 +1,4 @@
-.button,
-.link {
+.button{
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -89,7 +88,7 @@
 
   }
 
-  &_border-none {
+  &_with_border_none {
     border: none;
 
     &::before {

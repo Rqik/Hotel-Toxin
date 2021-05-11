@@ -4,3 +4,4 @@ import '@/components/date-picker';
 import '@/components/drop-down';
 import '@/components/header';
 import '@/components/footer';
+import './header-footer.scss';

@@ -1,4 +1,6 @@
-.wrapper-content {
+@import "~@/styles/mixin.scss";
+
+.components-page {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;

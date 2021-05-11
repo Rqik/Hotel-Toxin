@@ -3,19 +3,17 @@
 //- placeholder
 //- form -- field form  boolean
 mixin field({name, title , placeholder, form=false})
-
   if form
     form(class="field")&attributes(attributes)
       .field__title= title
       .field__block
-        input.field__input-form.js-field_text( type="text"
+        input.field__input-form.js-field__input( type="text"
           placeholder=placeholder, name=name)
         button.field__btn(type="submit" , name=name )
           .field__icon arrow_forward
-
   else
     .field
       label.field__label= title
-        input.field__input.js-field_text( type="text",
+        input.field__input.js-field__input( type="text",
           placeholder=placeholder ,
           name=name)

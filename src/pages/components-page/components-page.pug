@@ -13,7 +13,7 @@ include ../../components/date-picker/date-picker
 include ../../components/drop-down/drop-down
 include ../../components/check-box-list/check-box-list
 include ../../components/bullet-list/bullet-list
-include ../../components/icon-text/icon-text
+include ../../components/icon/icon
 
 block variables
   - const title = "Главная"
@@ -26,44 +26,44 @@ block content
       inputRadio, switchToggle, starRating, rangeSlider, bulletList
     } = require('./components-page.json')
 
-  .wrapper-content
-    .wrapper-content__block
+  .components-page
+    .components-page__block
       each elem in field
         +field(elem)
       +select(select)
       each elem in datepicker
         +datepicker(elem)
-    .wrapper-content__block
+    .components-page__block
       +checkBoxList(checkBoxDefault)
       +inputRadio(inputRadio)
       +switchToggle(switchToggle)
-      .wrapper-content__element
-        .wrapper-content__caption like button
-        .wrapper-content__items
+      .components-page__element
+        .components-page__caption like button
+        .components-page__items
           each like in likeButton
             +likeButton(like)
-      .wrapper-content__element
-        .wrapper-content__caption rate button
-        .wrapper-content__items
+      .components-page__element
+        .components-page__caption rate button
+        .components-page__items
           +starRating(starRating)
-    .wrapper-content__block
+    .components-page__block
       +rangeSlider(rangeSlider)
-      .wrapper-content__element
-        .wrapper-content__caption button
-        .wrapper-content__items
+      .components-page__element
+        .components-page__caption button
+        .components-page__items
           each elem in button
             +button(elem)
-      .wrapper-content__element
-        .wrapper-content__caption pagination
-        .wrapper-content__items
+      .components-page__element
+        .components-page__caption pagination
+        .components-page__items
           +pagination(pagination)
-    .wrapper-content__block
+    .components-page__block
       each dropConfig in dropdownSelect
         +dropdownSelect(dropConfig)
-    .wrapper-content__block
+    .components-page__block
       each checkConfig in checkBoxList
         +checkBoxList(checkConfig)
       +bulletList(bulletList)
-    .wrapper-content__block.wrapper-content__block_big
+    .components-page__block.components-page__block_big
       +review(review)
       +iconText(iconText)

@@ -3,10 +3,10 @@
 //- item.text -- head text for element
 //- item.desc -- text description
 mixin iconText({items})
-  .icon-box
+  .icon
     each item in items
       - const {icon , text , desc} = item
-      .icon-box__item
-        .icon-box__icon= icon
-        .icon-box__text= text
-          span.icon-box__description= desc
+      .icon__item
+        .icon__icon= icon
+        .icon__text= text
+          span.icon__description= desc

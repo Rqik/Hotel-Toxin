@@ -19,11 +19,10 @@
     ]
   },
   "diagram": {
-    "great": 50,
-    "good": 25,
-    "satisfactorily": 25,
-    "bad": 0,
-    "votes": 260
+    "great": 130,
+    "good": 65,
+    "satisfactorily": 65,
+    "bad": 0
   },
   "review": {
     "client_1": {

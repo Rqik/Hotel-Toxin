@@ -4,18 +4,14 @@
 mixin button({ style = "small" , text , href , border = true })
   -
     let classList = []
-    let type = 'button'
-    if (href) {
-      type = 'link'
-    }
-    classList.push(`${type}_${style}`)
-    if (!border) classList.push(`${type}_border-none`)
+    classList.push(`button_${style}`)
+    if (!border) classList.push(`button_with_border_none`)
 
   if (href)
-    a.link(class=classList href = href )&attributes(attributes)
-      span.link__text= text
+    a.button(class=classList href = href )&attributes(attributes)
+      span.button__text= text
       if style === "long"
-        .link__icon arrow_forward
+        .button__icon arrow_forward
   else
     button.button(class=classList)&attributes(attributes)
       span.button__text= text

@@ -6,7 +6,7 @@ block variables
 
 block content
   - const { buttons } = require('./index.json')
-  .pages
+  .index
     each button in buttons
-      .pages__btn
+      .index__btn
         +button(button)&attributes({style:{width:"100%"}})

@@ -1,2 +1,2 @@
 import '@/styles/main.scss';
-import '@/pages/color-fonts/color-fonts.scss';
+import './color-fonts.scss';

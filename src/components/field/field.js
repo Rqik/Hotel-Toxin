@@ -2,7 +2,7 @@ import 'jquery-mask-plugin';
 
 class Field {
   static init() {
-    $('.js-field_text[name*=email]')
+    $('.js-field__input[name*=email]')
       .mask('A', {
         translation: {
           A: {
@@ -11,7 +11,7 @@ class Field {
           },
         },
       });
-    $('.js-field_text[name*=name]')
+    $('.js-field__input[name*=name]')
       .mask('A', {
         translation: {
           A: {

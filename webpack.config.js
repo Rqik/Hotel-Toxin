@@ -71,7 +71,7 @@ module.exports = {
   mode: 'development',
   entry: entryName,
   output: {
-    filename: 'js/[name:7]-[contenthash:5]-bundle.js',
+    filename: 'js/[name:7]-[contenthash]-bundle.js',
     path: PATHS.dist,
     publicPath: '',
   },
