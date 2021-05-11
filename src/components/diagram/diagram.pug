@@ -1,6 +1,6 @@
 mixin diagram({great = 0, good =0, satisfactorily = 0,  bad = 0})
   -
-    const vote = great + good + satisfactorily + bad
+    const votes = great + good + satisfactorily + bad
     const greatPercent = isInteger(great)
     const goodPercent = isInteger(good)
     const satisfactorilyPercent = isInteger(satisfactorily)
@@ -8,9 +8,43 @@ mixin diagram({great = 0, good =0, satisfactorily = 0,  bad = 0})
 
     function isInteger(num) {
       if (Number.isInteger(num)) {
-        return (num / vote)*100;
+        return (num / votes) * 100;
       }
       return 0;
+    }
+    const gradients = [
+      { start: '255,186,156', end: '255,227,156' },
+      { start: '111,207,151', end: '102,210,234' },
+      { start: '188,156,255', end: '139,164,249' },
+      { start: '144,144,144', end: '61,73,117' },
+    ]
+    const legendElements = ['Великолепно', 'Хорошо', 'Удовлетворительно', 'Разочарован']
+    const svgElements = {
+      great: {
+        gradient: 'url(#lgrad0)',
+        strokeDasharray: `${greatPercent} ${100 - greatPercent}`,
+        strokeDashoffset: '25',
+        votes: great
+      },
+      good: {
+        gradient: 'url(#lgrad1)',
+        strokeDasharray: `${goodPercent} ${100 - goodPercent}`,
+        strokeDashoffset: `${100 - greatPercent + 25}`,
+        votes: good
+      },
+      satisfactorily: {
+        gradient: 'url(#lgrad2)',
+        strokeDasharray: `${satisfactorilyPercent} ${100 -
+        satisfactorilyPercent}`,
+        strokeDashoffset: `${100 - goodPercent - greatPercent + 25}`,
+        votes: satisfactorily,
+      },
+      bad: {
+        gradient: 'url(#lgrad3)',
+        strokeDasharray: `${badPercent} ${100 - badPercent}`,
+        strokeDashoffset: `${100 - satisfactorilyPercent - goodPercent - greatPercent + 25}`,
+        votes: bad
+      },
     }
 
   .diagram
@@ -18,62 +52,28 @@ mixin diagram({great = 0, good =0, satisfactorily = 0,  bad = 0})
     .diagram__img
       svg(width="150px" height="150px" viewBox="0 0 42 42" class="donut")
         defs
-          linearGradient( id="lgrad" x1="50%" y1="100%" x2="50%" y2="0%" )
-            stop( offset="0%" style="stop-color:rgb(255,186,156);stop-opacity:1")
-            stop( offset="100%" style="stop-color:rgb(255,227,156); stop-opacity:1" )
-          linearGradient( id="lgrad2" x1="50%" y1="100%" x2="50%" y2="0%" )
-            stop( offset="0%" style="stop-color:rgb(111,207,151);stop-opacity:1")
-            stop( offset="100%" style="stop-color:rgb(102,210,234);stop-opacity:1" )
-          linearGradient( id="lgrad3" x1="50%" y1="100%" x2="50%" y2="0%" )
-            stop( offset="0%" style="stop-color:rgb(188,156,255);stop-opacity:1")
-            stop( offset="100%" style="stop-color:rgb(139,164,249);stop-opacity:1" )
-          linearGradient( id="lgrad4" x1="50%" y1="0%" x2="50%" y2="100%" )
-            stop( offset="0%" style="stop-color:rgb(144,144,144);stop-opacity:1")
-            stop( offset="100%" style="stop-color:rgb(61,73,117);stop-opacity:1" )
+         each element , key in gradients
+           - const {start , end} = element
+           linearGradient( id=`lgrad${key}` x1="50%" y1="100%" x2="50%" y2="0%")
+             stop( offset="0%" style=`stop-color:rgb(${start});stop-opacity:1`)
+             stop( offset="100%" style=`stop-color:rgb(${end});stop-opacity:1`)
 
-        circle(
-          class="diagram__unit js-unit" cx="20" cy="20"
-          r="15.91549430918954" fill="#fff" stroke="url(#lgrad)"
-          stroke-dasharray=`${greatPercent} ${100 - greatPercent}`
-          stroke-dashoffset="25")
-        circle(
-          class="diagram__unit js-unit" cx="20" cy="20"
-          r="15.91549430918954" fill="transparent" stroke="url(#lgrad2)"
-          stroke-dasharray=`${goodPercent} ${100 - goodPercent}`
-          stroke-dashoffset=`${100 - greatPercent + 25}`)
-        circle(
-          class="diagram__unit js-unit" cx="20" cy="20"
-          r="15.91549430918954" fill="transparent" stroke="url(#lgrad3)"
-          stroke-dasharray=`${satisfactorilyPercent} ${100 - satisfactorilyPercent}`
-          stroke-dashoffset=`${100 - goodPercent - greatPercent + 25}`)
-        circle(
-          class="diagram__unit js-unit" cx="20" cy="20"
-          r="15.91549430918954" fill="transparent" stroke="url(#lgrad4)"
-          stroke-dasharray=`${badPercent} ${100 - badPercent}`
-          stroke-dashoffset=`${100 - satisfactorilyPercent - goodPercent - greatPercent + 25}`)
+        each element in svgElements
+          - const {gradient , strokeDasharray ,strokeDashoffset, votes} = element
+          circle(
+            class="diagram__unit js-unit" cx="20" cy="20"
+            r="15.91549430918954" fill="transparent" stroke=gradient
+            stroke-dasharray=strokeDasharray
+            stroke-dashoffset=strokeDashoffset)
+          g(fill=gradient
+            class="diagram__chart-number diagram__chart-number_hidden js-number")
+            text(x="48%" y="50%")=votes
+            text(x="48%" y="50%" class="diagram__chart-label") голосов
 
         g( fill="#1f2041" class="diagram__chart-number js-votes")
-          text(x="48%" y="50%" )=vote
-          text(x="48%" y="50%" class="diagram__chart-label") голосов
-        g(fill="url(#lgrad)"
-          class="diagram__chart-number diagram__chart-number_hidden js-number")
-          text(x="48%" y="50%")=great
-          text(x="48%" y="50%" class="diagram__chart-label") голосов
-        g(fill="url(#lgrad2)"
-          class="diagram__chart-number diagram__chart-number_hidden js-number")
-          text(x="48%" y="50%")=good
-          text(x="48%" y="50%" class="diagram__chart-label") голосов
-        g(fill="url(#lgrad3)"
-          class="diagram__chart-number diagram__chart-number_hidden js-number")
-          text(x="48%" y="50%")=satisfactorily
-          text(x="48%" y="50%" class="diagram__chart-label") голосов
-        g(fill="url(#lgrad4)"
-          class="diagram__chart-number diagram__chart-number_hidden js-number")
-          text(x="48%" y="50%" )=bad
+          text(x="48%" y="50%" )=votes
           text(x="48%" y="50%" class="diagram__chart-label") голосов
 
       ul.diagram__legend.js-legend
-        li.diagram__legend-el.js-legend-el Великолепно
-        li.diagram__legend-el.js-legend-el Хорошо
-        li.diagram__legend-el.js-legend-el Удовлетворительно
-        li.diagram__legend-el.js-legend-el Разочарован
+        each text in legendElements
+          li.diagram__legend-el.js-legend-el= text
