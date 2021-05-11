@@ -26,24 +26,25 @@ block content
     .room-detail__container
       .room-detail__info
         .room-detail__view
-          .room-detail__block
-            h3.room-detail__block-title Сведения о номере
+          .room-detail__section
+            h3.room-detail__title Сведения о номере
             +iconText(iconText)
-          +diagram(diagram)
-        .room-detail__block
-          h3.room-detail__block-title Отзывы посетителей номера
+          .room-detail__diagramm
+            +diagram(diagram)
+        .room-detail__section
+          h3.room-detail__title Отзывы посетителей номера
         .room-detail__review
           +review(client_1)
         .room-detail__review
           +review(client_2)
         .room-detail__subordinate
-          .room-detail__block
-            .room-detail__block-title.detail__block-title_ul Правила
-            .room-detail__block-text
+          .room-detail__specification
+            .room-detail__title.room-detail__title_for_list Правила
+            .room-detail__text
               +bulletList(bulletList)
-          .room-detail__block
-            .room-detail__block-title Отмена
-            .room-detail__block-text
+          .room-detail__specification
+            .room-detail__title Отмена
+            .room-detail__text
               | Бесплатная отмена в течение 48 ч. После этого при отмене не
               | позднее чем за 5 дн. до прибытия вы получите полный возврат за
               | вычетом сбора за услуги.

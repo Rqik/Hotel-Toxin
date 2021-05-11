@@ -2,25 +2,10 @@
 @import '~@/styles/variables.scss';
 
 .room-detail {
-
-  &__photo {
-    width: 100%;
-    display: block;
-    object-fit: contain;
-
-    @include media-sm {
-      height: 100%;
-    }
-
-    @include media-xs {
-      object-fit: cover;
-    }
-  }
-
   &__gallery {
     display: grid;
     gap: 0;
-    grid-template-columns: repeat(8, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(2, 1fr);
 
     @include media-xs {
@@ -29,22 +14,21 @@
     }
   }
 
+  &__photo {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+
+    @include media-sm {
+      height: 100%;
+    }
+  }
+
   &__left {
     display: flex;
     flex-grow: 1;
-    grid-column: 1 / 6;
+    grid-column: 1 /3;
     grid-row: 1 / 3;
-
-    .room-detail__photo {
-      width: 100%;
-      height: 100%;
-      display: block;
-      object-fit: cover;
-
-      @include media-xs {
-        object-fit: contain;
-      }
-    }
   }
 
   &__right {
@@ -53,12 +37,16 @@
     justify-content: flex-start;
     align-items: flex-start;
     align-content: flex-start;
-    grid-column: 6 / 9;
+    grid-column: 3 / 4;
     grid-row: 1 / 3;
   }
 
+  &__diagramm {
+    margin-left: 10px;
+  }
+
   &__subordinate {
-    margin-top: 34px;
+    margin-top: 32px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -71,14 +59,30 @@
       flex-direction: column;
       gap: 35px;
     }
+  }
 
-    .detail__block {
-      margin-right: 10px;
+  &__specification {
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    width: 340px;
 
-      &-text {
-        margin-top: 20px;
-      }
+    @include media-xxs {
+      width: 100%;
     }
+  }
+
+  &__title {
+    margin: 0;
+    @include font-bold($font-size-medium, $text-color-main, 23px);
+
+    &_for_list {
+      margin-left: 20px;
+    }
+  }
+
+  &__text {
+    margin-top: 20px;
   }
 
   &__container {
@@ -96,7 +100,6 @@
       flex-direction: column;
       align-items: center;
     }
-
 
     @include media-xs {
       padding: 30px 15px;
@@ -132,7 +135,7 @@
     }
   }
 
-  &__block {
+  &__section {
     display: flex;
     flex-direction: column;
     width: 340px;
@@ -140,28 +143,6 @@
     @include media-xxs {
       width: 100%;
     }
-
-    &-title {
-      font-family: Montserrat, sans-serif;
-      font-style: normal;
-      font-weight: bold;
-      font-size: $font-size-medium;
-      line-height: 23px;
-      margin: 0;
-      text-transform: none;
-      color: rgba(31, 32, 65, 1);
-
-      &_ul {
-        margin-left: 20px;
-      }
-    }
-
-    &-text {
-      font-size: $font-size-normal;
-      line-height: 24px;
-      color: rgba(31, 32, 65, 0.75);
-    }
-
   }
 
   &__review {
