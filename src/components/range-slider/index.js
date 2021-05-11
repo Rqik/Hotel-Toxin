@@ -3,7 +3,7 @@ import { IonSlider } from '@/libs/ion-rangeslider';
 $(() => {
   const options = {
     selector: '.js-range-slider__app',
-    captionClass: '.js-range-slider__caption-head',
+    sectionClass: '.js-range-slider__section',
     inputClass: '.js-range-slider__input',
     min: 0,
     max: 15000,

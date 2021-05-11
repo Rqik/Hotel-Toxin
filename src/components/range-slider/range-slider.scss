@@ -4,9 +4,8 @@
   display: block;
   max-width: 266px;
   width: 100%;
-  margin-bottom: 20px;
 
-  &__caption-head {
+  &__section {
     display: flex;
     justify-content: space-between;
     text-transform: uppercase;
@@ -31,7 +30,7 @@
   }
 
   &__caption {
-    margin-top: 15px;
+    margin-top: 13px;
 
     @include font-normal($font-size-small, $lh: 14px);
   }

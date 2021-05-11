@@ -10,7 +10,7 @@ class IonSlider {
       to: options.to ?? 10000
     };
     this.inputClass = options.inputClass
-    this.captionClass = options.captionClass
+    this.sectionClass = options.sectionClass
   }
 
   init() {
@@ -26,12 +26,12 @@ class IonSlider {
       hide_from_to: true,
       force_edges: true,
       onChange: (data) => {
-        const value = this.$slider.siblings(this.captionClass);
+        const value = this.$slider.siblings(this.sectionClass);
         value.find(this.inputClass)
           .val(`${data.from_pretty}₽ - ${data.to_pretty}₽`);
       },
       onStart: (data) => {
-        const value = this.$slider.siblings(this.captionClass);
+        const value = this.$slider.siblings(this.sectionClass);
         value.find(this.inputClass)
           .val(`${data.from_pretty}₽ - ${data.to_pretty}₽`);
       },

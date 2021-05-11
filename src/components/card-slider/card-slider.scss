@@ -49,7 +49,7 @@
 
       .card-slider__span {
         font-size: $font-size-normal;
-        margin-right: 1px;
+        margin-right: 4px;
       }
     }
 
@@ -74,9 +74,11 @@
   }
 
   &__review {
+    padding-bottom: 5px;
     @include font-normal($font-size-normal, $text-color-translucent, 18px);
 
     .card-slider__span {
+
       @include font-bold($font-size-normal, $text-color-translucent, 18px)
     }
   }
