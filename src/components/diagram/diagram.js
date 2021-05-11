@@ -9,16 +9,17 @@ class Diagram {
   }
 
   init() {
-    this.$legendEl.each((i, el) => {
-      this.diagramMove(el, i);
-    });
+    this.$legendEl.each(this.diagramMove.bind(this));
+    this.$unitsList.each(this.diagramMove.bind(this));
   }
 
-  diagramMove(el, i) {
+  diagramMove(i, el) {
     $(el)
-      .on('mouseover', this.makeAddHovered(i).bind(this));
+      .on('mouseover', this.makeAddHovered(i)
+        .bind(this));
     $(el)
-      .on('mouseout', this.makeRemoveHovered(i).bind(this));
+      .on('mouseout', this.makeRemoveHovered(i)
+        .bind(this));
   }
 
   makeAddHovered(i) {
