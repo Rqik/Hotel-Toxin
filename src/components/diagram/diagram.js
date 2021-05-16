@@ -1,3 +1,5 @@
+import { boundMethod } from 'autobind-decorator';
+
 class Diagram {
   constructor() {
     this.$legendEl = $('.js-legend-el ');
@@ -9,19 +11,21 @@ class Diagram {
   }
 
   init() {
-    this.$legendEl.each(this.diagramMove.bind(this));
-    this.$unitsList.each(this.diagramMove.bind(this));
+    this.$legendEl.each(this.diagramMove);
+    this.$unitsList.each(this.diagramMove);
   }
 
+  @boundMethod
   diagramMove(i, el) {
     $(el)
-      .on('mouseover', this.makeAddHovered(i)
-        .bind(this));
+      .on(
+        'mouseover', this.makeAddHovered(i),
+      );
     $(el)
-      .on('mouseout', this.makeRemoveHovered(i)
-        .bind(this));
+      .on('mouseout', this.makeRemoveHovered(i));
   }
 
+  @boundMethod
   makeAddHovered(i) {
     return () => {
       this.$votes.addClass(this.hideNumberClass);
@@ -30,6 +34,7 @@ class Diagram {
     };
   }
 
+  @boundMethod
   makeRemoveHovered(i) {
     return () => {
       this.$votes.removeClass(this.hideNumberClass);

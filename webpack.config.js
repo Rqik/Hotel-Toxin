@@ -88,6 +88,7 @@ module.exports = {
       '@': path.resolve(__dirname, 'src'),
     },
   },
+  devtool: "eval-cheap-source-map",
   devServer: {
     contentBase: PATHS.dist,
     compress: true,
