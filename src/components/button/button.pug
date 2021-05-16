@@ -5,7 +5,7 @@ mixin button({ style = "small" , text , href , border = true })
   -
     let classList = []
     classList.push(`button_${style}`)
-    if (!border) classList.push(`button_with_border_none`)
+    if (!border) classList.push(`button_with-border-none`)
 
   if (href)
     a.button(class=classList href = href )&attributes(attributes)
