@@ -109,10 +109,10 @@ class DropDown {
 
     this.disableButton($btnMinus, $span);
 
-    return (e) => {
+    return (event) => {
       let item = this.children[selector][i];
 
-      const sum = e.currentTarget.textContent;
+      const sum = event.currentTarget.textContent;
       item += Number(`${sum}1`);
       if (item <= 0) {
         item = 0;
@@ -141,12 +141,12 @@ class DropDown {
     const $currentText = this.dropDown[selector].find(this.textCurrentClass);
     const $span = this.dropDown[selector].find(this.spanClass);
     const $btnMinus = this.dropDown[selector].find(this.btnMinusClass);
-    return (e) => {
+    return (event) => {
       $currentText.text('Сколько гостей');
       $span.text(0);
       $btnMinus.addClass(this.buttonDisableClass);
       this.children[selector].fill(0);
-      DropDown.btnHide($(e.currentTarget), 0);
+      DropDown.btnHide($(event.currentTarget), 0);
     };
   }
 

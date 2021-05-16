@@ -26,7 +26,7 @@ module.exports = {
   rules: {
     'object-curly-newline': 'off',
     'max-classes-per-file': 'off',
-    'linebreak-style': ['error', 'windows'],
+    'linebreak-style': ['error', 'unix'],
     'import/prefer-default-export': 'off',
     'import/extensions': [
       'error',

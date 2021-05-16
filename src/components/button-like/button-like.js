@@ -17,15 +17,16 @@ class ButtonLike {
 
   makeToggleClass(text) {
     let span = text;
-    return (e) => {
-      const active = e.currentTarget.classList.toggle(this.toggleSelector);
+    return (event) => {
+      const element = event.currentTarget;
+      const active = element.classList.toggle(this.toggleSelector);
       if (active) {
-        e.currentTarget.firstElementChild.textContent = 'favorite';
+        element.firstElementChild.textContent = 'favorite';
         span = +span + 1;
         return;
       }
-      e.currentTarget.classList.remove(this.toggleSelector);
-      e.currentTarget.firstElementChild.textContent = 'favorite_border';
+      element.classList.remove(this.toggleSelector);
+      element.firstElementChild.textContent = 'favorite_border';
       span = +span - 1;
     };
   }

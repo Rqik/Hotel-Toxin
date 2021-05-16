@@ -23,8 +23,8 @@ class CheckBoxList {
   }
 
   makeToggleClass($node, $items) {
-    return (e) => {
-      if (e.target === e.currentTarget) {
+    return (event) => {
+      if (event.target === event.currentTarget) {
         $node.toggleClass(this.toggleClass);
         $items.slideToggle(300);
       }

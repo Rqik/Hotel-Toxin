@@ -26,10 +26,10 @@ class Menu {
     $menuItem.hover(this.handlerIn.bind(this), this.handlerOut.bind(this));
   }
 
-  documentEvent(e) {
-    if ($(e.target)
+  documentEvent(event) {
+    if ($(event.target)
       .closest(this.itemsClass).length
-      || $(e.target)
+      || $(event.target)
         .closest(this.burgerClass).length
     ) {
       return;
