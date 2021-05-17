@@ -1,7 +1,7 @@
 # FSD
 ---
-### <img src="https://img.shields.io/badge/npm-v7.7.6-blue">
-### <img src="https://img.shields.io/badge/node->=15.10.0-ff0062">
+<img src="https://img.shields.io/badge/npm-v7.7.6-blue">
+<img src="https://img.shields.io/badge/node->=15.10.0-ff0062">
 
 ## 🏷️ Содержание
 - [Demo](https://rqik.github.io/FSD)
