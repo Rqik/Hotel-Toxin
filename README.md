@@ -9,7 +9,7 @@
 - [Команды](#commands)
 - [Структура проекта](#structure)
 
-## <a name="pages"></a> Pages
+## <a name="pages"></a> 📝 Pages
 
 [**components**](https://rqik.github.io/FSD/components-page.html) </br>
 
