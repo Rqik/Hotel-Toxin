@@ -1,6 +1,6 @@
 # FSD
-<img src="https://img.shields.io/badge/npm-v7.7.6-blue">
-<img src="https://img.shields.io/badge/node->=15.10.0-ff0062">
+<a href="https://www.npmjs.com/"><img src="https://img.shields.io/badge/npm-v7.13.0-blue"></a>
+<a href="https://nodejs.org/en/"><img src="https://img.shields.io/badge/node->=15.10.0-ff0062"></a>
 
 ## 🏷️ Содержание
 - [Demo](https://rqik.github.io/FSD)
@@ -35,9 +35,9 @@
 
 Инcтрукции данного раздела следует выполнять в командной строке.
 
-1. Clone
+1.Clone
 
-```bash 
+```console 
 // Скачайте репозиторий
 git clone https://github.com/Rqik/FSD.git
 
@@ -45,14 +45,14 @@ git clone https://github.com/Rqik/FSD.git
 git clone git@github.com:Rqik/FSD.git
 ```
 
-2. Open
+2.Open
 
 ```console
 // Перейдите в папку с репозиторием
 cd FSD
 ```
 
-3. Init
+3.Init
 
 ```console
 // Установите зависимости
