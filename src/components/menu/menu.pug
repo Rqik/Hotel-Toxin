@@ -8,14 +8,13 @@ mixin menu({items, auth})
           li.menu__item(
             class=active ? "menu__item_active" : ""
             class=more ? "menu__item_with-list js-menu__item_with-list" : "")
-            a.menu__link(href=href ? href : "./index.html")=text
+            a.menu__link(href=href || "./index.html")=text
             if more
               ul.menu__drop-list.js-menu__drop-list
                 each elem in more
                   - const {href, text} = elem
                   li.menu__drop-item
-                    a.menu__drop-link(href=href ? href : "" +
-                      "./index.html")
+                    a.menu__drop-link(href=href || "./index.html")
                     = text
       else
         li.menu__item.menu__item_active
@@ -37,4 +36,4 @@ mixin menu({items, auth})
     if !!auth
       - const {href, text} = auth
       .menu__auth
-        a.menu__auth-link(href=href ? href : "./index.html")=text
+        a.menu__auth-link(href=href || "./index.html")=text

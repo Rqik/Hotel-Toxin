@@ -14,11 +14,11 @@ mixin footerMobile({social , logo = "img/logo-toxin.svg"})
         - const {href , name , alt} = element
         case name
           when "twitter"
-            a.footer-subordinate__link(href=href ? href : "./index.html")
+            a.footer-subordinate__link(href=href || "./index.html")
               include img/twitter.svg
           when "facebook"
-            a.footer-subordinate__link(href=href ? href : "./index.html")
+            a.footer-subordinate__link(href=href || "./index.html")
               include img/facebook.svg
           when "instagram"
-            a.footer-subordinate__link(href=href ? href : "./index.html")
+            a.footer-subordinate__link(href=href || "./index.html")
               include img/instagram.svg

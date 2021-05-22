@@ -5,4 +5,4 @@ mixin footerNav({title , items})
       each item in items
         - const {href , text} = item
         li.footer-nav__item
-          a.footer-nav__item-link(href=href ? href : "./index.html")=text
+          a.footer-nav__item-link(href=href || "./index.html")=text
