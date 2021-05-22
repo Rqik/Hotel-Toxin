@@ -1,5 +1,6 @@
-.menu {
+@import "../button/button";
 
+.menu {
   &__auth {
     padding-left: 19px;
     border-left: 1px solid $shadow-color;

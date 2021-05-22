@@ -10,9 +10,25 @@ block variables
 
 block content
   -
-    const { iconText, diagram, review,
-            bulletList, cardRoom } = require('./room-detail.json');
-    const { client_1, client_2 } = review
+    const {
+      iconText, diagram, review,
+      bulletList, cardRoom
+    } = require('./room-detail.json');
+    let countReview = Object.keys(review).length;
+
+    switch (true) {
+      case countReview === 1:
+        countReview = countReview + ' отзыв';
+        break;
+      case countReview >= 5:
+        countReview = countReview + ' отзывов';
+        break;
+      case countReview >= 2:
+        countReview = countReview + ' отзыва';
+        break;
+      default:
+        countReview = 'Нет отзывов';
+    }
     const roomPhoto1 = require('./img/gallery-left.jpg').default
     const roomPhoto2 = require('./img/gallery-right-1.jpg').default
     const roomPhoto3 = require('./img/gallery-right-2.jpg').default
@@ -31,12 +47,12 @@ block content
             +iconText(iconText)
           .room-detail__diagramm
             +diagram(diagram)
-        .room-detail__section
+        .room-detail__section.room-detail__section_in-row
           h3.room-detail__title Отзывы посетителей номера
-        .room-detail__review
-          +review(client_1)
-        .room-detail__review
-          +review(client_2)
+          .room-detail__count-review=countReview
+        each item in review
+          .room-detail__review
+            +review(item)
         .room-detail__subordinate
           .room-detail__specification
             .room-detail__title.room-detail__title_for_list Правила

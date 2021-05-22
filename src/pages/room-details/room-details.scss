@@ -1,5 +1,10 @@
 @import "~@/styles/mixin.scss";
 @import '~@/styles/variables.scss';
+@import '~@/components/icon/icon';
+@import '~@/components/review/review';
+@import '~@/components/bullet-list/bullet-list';
+@import '~@/components/diagram/diagram';
+@import '~@/components/card-room/card-room';
 
 .room-detail {
   &__gallery {
@@ -143,9 +148,20 @@
     @include media-xxs {
       width: 100%;
     }
+
+    &_in-row {
+      width: 100%;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
   }
 
   &__review {
     margin-top: 22px;
+  }
+
+  &__count-review {
+    @include font-normal($font-size-normal, $text-color-translucent, 14px);
   }
 }

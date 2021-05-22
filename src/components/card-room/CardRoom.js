@@ -1,5 +1,3 @@
-import '@/components/date-picker';
-import '@/components/drop-down';
 import { boundMethod } from 'autobind-decorator';
 
 class CardRoom {

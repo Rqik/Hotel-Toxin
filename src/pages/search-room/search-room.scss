@@ -1,5 +1,12 @@
 @import "~@/styles/variables.scss";
 @import "~@/styles/mixin.scss";
+@import '~@/components/date-picker/date-picker';
+@import '~@/components/drop-down/drop-down';
+@import '~@/components/button/button';
+@import '~@/components/check-box-list/check-box-list';
+@import '~@/components/range-slider/range-slider';
+@import '~@/components/card-slider/card-slider';
+@import '~@/components/pagination/pagination';
 
 .search-page {
   max-width: 1160px;

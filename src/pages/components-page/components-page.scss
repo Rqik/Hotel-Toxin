@@ -1,4 +1,19 @@
 @import "~@/styles/mixin.scss";
+@import '~@/components/field/field';
+@import '~@/components/button/button';
+@import '~@/components/select/select';
+@import '~@/components/star-rating/star-rating';
+@import '~@/components/button-like/button-like';
+@import '~@/components/pagination/pagination';
+@import '~@/components/review/review';
+@import '~@/components/range-slider/range-slider';
+@import '~@/components/switch-toggle/switch-toggle';
+@import '~@/components/input-radio/input-radio';
+@import '~@/components/date-picker/date-picker';
+@import '~@/components/drop-down/drop-down';
+@import '~@/components/check-box-list/check-box-list';
+@import '~@/components/bullet-list/bullet-list';
+@import '~@/components/icon/icon';
 
 .components-page {
   display: flex;

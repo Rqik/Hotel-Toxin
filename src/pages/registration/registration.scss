@@ -1,3 +1,10 @@
+@import "~@/styles/mixin";
+@import '~@/components/field/field';
+@import '~@/components/card-registration/card-registration';
+@import '~@/components/button/button';
+@import '~@/components/input-radio/input-radio';
+@import '~@/components/switch-toggle/switch-toggle';
+
 .registration {
   display: flex;
   align-items: center;

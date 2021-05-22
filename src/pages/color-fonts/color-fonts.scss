@@ -1,5 +1,7 @@
 @import '~@/styles/variables.scss';
 @import '~@/styles/mixin.scss';
+@import '~@/components/color-pick/color-pick';
+@import '~@/components/font-pick/font-pick';
 
 .color-fonts {
   display: flex;

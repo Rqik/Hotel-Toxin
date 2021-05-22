@@ -1,3 +1,8 @@
+@import "~@/styles/mixin";
+@import '~@/components/header/header';
+@import '~@/components/footer/footer';
+@import '~@/components/footer-mobile/footer-mobile';
+
 .header-footer {
   display: flex;
   flex-direction: column;
