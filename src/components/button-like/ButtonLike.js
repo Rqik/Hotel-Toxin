@@ -1,3 +1,5 @@
+import { boundMethod } from 'autobind-decorator';
+
 class ButtonLike {
   constructor() {
     this.buttonLike = document.querySelectorAll('.js-button-like');
@@ -6,15 +8,16 @@ class ButtonLike {
   }
 
   init() {
-    this.buttonLike.forEach(this.eventHandler.bind(this));
+    this.buttonLike.forEach(this.eventHandler);
   }
 
+  @boundMethod
   eventHandler(el) {
     const text = el.querySelector(this.textSelector).textContent;
-    el.addEventListener('click', this.makeToggleClass(text)
-      .bind(this));
+    el.addEventListener('click', this.makeToggleClass(text));
   }
 
+  @boundMethod
   makeToggleClass(text) {
     let span = text;
     return (event) => {

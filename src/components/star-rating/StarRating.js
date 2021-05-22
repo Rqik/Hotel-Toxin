@@ -61,7 +61,7 @@ class StarRating {
   rateInput(selector) {
     const $input = $(selector)
       .find(this.inputClass);
-    $input.each((i, el) => {
+    $input.each((_, el) => {
       el.addEventListener('click', this.makeStarRateEvent(selector));
     });
   }

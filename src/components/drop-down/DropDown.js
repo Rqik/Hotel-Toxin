@@ -1,3 +1,5 @@
+import { boundMethod } from 'autobind-decorator';
+
 class DropDown {
   constructor() {
     this.children = {};
@@ -80,7 +82,7 @@ class DropDown {
             selector,
             i,
             el,
-          }, this.textCurrentNew.bind(this)));
+          }, this.textCurrentNew));
       });
   }
 
@@ -95,7 +97,7 @@ class DropDown {
             selector,
             i,
             el,
-          }, this.textModify.bind(this)));
+          }, this.textModify));
         DropDown.btnHide($btnReset, this.children[selector][i]);
       });
   }
@@ -161,11 +163,12 @@ class DropDown {
     };
   }
 
+  @boundMethod
   textCurrentNew(selector) {
     let textCurrent = '';
     let countElem = 0;
     this.dropDown[selector].find(this.dropItemClass)
-      .each((i, el) => {
+      .each((_, el) => {
         const { count, name: nameElem } = this.dropItem(el);
         if (count > 0) {
           countElem += 1;
@@ -183,13 +186,14 @@ class DropDown {
     return `${textCurrent}${countElem >= 2 ? ', ' : ' '}`;
   }
 
+  @boundMethod
   textModify(selector) {
     let textCurrent = 'Сколько гостей';
     let adults = 0; // счетчик взрослых
     let child = 0; // счетчик младенцев
     const $btnReset = this.dropDown[selector].find(this.btnResetClass);
     this.dropDown[selector].find(`${this.dropItemClass}`)
-      .each((i, el) => {
+      .each((_, el) => {
         const { count, name } = this.dropItem(el);
         if (name === 'младенцы') {
           child = count;

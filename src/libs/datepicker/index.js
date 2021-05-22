@@ -1,5 +1,6 @@
 import 'air-datepicker';
 import 'jquery-mask-plugin';
+import { boundMethod } from 'autobind-decorator';
 
 class DatePicker {
   constructor(options) {
@@ -53,7 +54,7 @@ class DatePicker {
   }
 
   init() {
-    this.$datepicker.each(this.addClassDatePicker.bind(this));
+    this.$datepicker.each(this.addClassDatePicker);
 
     if (this.labelClass) {
       $(this.labelClass)
@@ -71,8 +72,7 @@ class DatePicker {
             .closest(this.labelClass)
             .siblings(this.datepickerClass);
           $(el)
-            .change(this.makeChangeSelectInput($datePicker, el)
-              .bind(this));
+            .change(this.makeChangeSelectInput($datePicker, el));
         });
     }
     if (this.inputRightClass) {
@@ -82,8 +82,7 @@ class DatePicker {
             .closest(this.labelClass)
             .siblings(this.datepickerClass);
           $(el)
-            .change(this.makeChangeSelectInput($datePicker, el)
-              .bind(this));
+            .change(this.makeChangeSelectInput($datePicker, el));
         });
     }
     this.$datepickerRange.datepicker(this.propsRange);
@@ -121,6 +120,7 @@ class DatePicker {
     });
   }
 
+  @boundMethod
   makeChangeSelectInput($datepicker, input) {
     const el = $datepicker.data('datepicker');
     return () => {
@@ -152,6 +152,7 @@ class DatePicker {
     };
   }
 
+  @boundMethod
   addClassDatePicker(i, el) {
     $(el)
       .addClass(

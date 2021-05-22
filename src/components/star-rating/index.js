@@ -1,4 +1,4 @@
-import { StarRating } from '@/components/star-rating/star-rating';
+import { StarRating } from '@/components/star-rating/StarRating';
 
 $(() => {
   const starRating = new StarRating();

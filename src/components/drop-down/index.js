@@ -1,4 +1,4 @@
-import { DropDown } from '@/components/drop-down/drop-down';
+import { DropDown } from '@/components/drop-down/DropDown';
 
 $(() => {
   const dropdown = new DropDown();

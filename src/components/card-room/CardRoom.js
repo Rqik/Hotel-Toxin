@@ -1,5 +1,6 @@
 import '@/components/date-picker';
 import '@/components/drop-down';
+import { boundMethod } from 'autobind-decorator';
 
 class CardRoom {
   constructor() {
@@ -28,7 +29,8 @@ class CardRoom {
           .find(this.buttonApplyClass),
       );
     });
-    button.forEach(this.buttonApply.bind(this));
+
+    button.forEach(this.buttonApply);
 
     $(this.infoSumClass)
       .text((_, el) => CardRoom.replace(el));
@@ -40,6 +42,7 @@ class CardRoom {
       .text((_, el) => CardRoom.replace(el));
   }
 
+  @boundMethod
   buttonApply(el, ind) {
     const $currentDP = $(this.$input[ind]);
     const $block = $currentDP
@@ -60,10 +63,10 @@ class CardRoom {
           $sale,
           $price,
           $resultSum,
-        })
-          .bind(this));
+        }));
   }
 
+  @boundMethod
   static makeEventHandler(options) {
     const { $currentDP, $pay, $dop, $sale, $price, $resultSum } = options;
     return () => {

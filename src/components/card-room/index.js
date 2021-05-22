@@ -1,4 +1,4 @@
-import { CardRoom } from '@/components/card-room/card-room';
+import { CardRoom } from '@/components/card-room/CardRoom';
 
 $(() => {
   const cardRoom = new CardRoom();
