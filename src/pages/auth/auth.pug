@@ -5,7 +5,10 @@ include ../../components/card-auth/card-auth
 include ../../components/favicon/favicon
 
 block variables
-  - const title = 'Auth'
+  -
+    const title = 'Auth'
+    const keywords = 'авторизация, вход, войти в аккаунт'
+    const description = 'Страница авторизации пользователя'
 block content
   .auth
     +cardAuth

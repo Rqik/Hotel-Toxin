@@ -6,8 +6,10 @@ include ../../components/input-radio/input-radio
 include ../../components/switch-toggle/switch-toggle
 
 block variables
-  - var title = 'Registration'
-
+  -
+    const title = 'Registration'
+    const keywords = 'регистрация, зарегистрировать аккаунт, создать аккаунт'
+    const description = 'Регистрация нового аккаунта пользователя'
 block content
   .registration
     +cardRegistration
