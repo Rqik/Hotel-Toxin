@@ -17,12 +17,8 @@ class Diagram {
 
   @boundMethod
   diagramMove(i, el) {
-    $(el)
-      .on(
-        'mouseover', this.makeAddHovered(i),
-      );
-    $(el)
-      .on('mouseout', this.makeRemoveHovered(i));
+    $(el).on('mouseover', this.makeAddHovered(i));
+    $(el).on('mouseout', this.makeRemoveHovered(i));
   }
 
   @boundMethod

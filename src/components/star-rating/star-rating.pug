@@ -4,5 +4,5 @@ mixin starRating({currentRating="0"})
     each val,key in ratingValue
       label.star-rating__radio.js-star-rating__radio
         input.star-rating__input.js-star-rating__input(type="radio"  checked
-        name="rate" value=key  aria-label=val)
+        name="rate" value=key+1  aria-label=val)
         i.star-rating__icon.js-star-rating__icon  star_border

@@ -1,59 +1,70 @@
 .check-box {
-  max-width: 222px;
-  width: 100%;
-  text-transform: uppercase;
-  display: flex;
-  flex-direction: column;
-
   @include font-bold($font-size-small, $text-color-main, 15px);
 
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 222px;
+  text-transform: uppercase;
+
   &__icon {
-    transition: all .3s ease-in-out;
-    padding: 0;
-    margin: 0;
-    top: -5px;
+    @include font-icon($font-size-big, $text-color-translucent);
+
+    position: absolute;
     right: 14px;
+    top: -5px;
+    z-index: -1;
+    margin: 0;
+    padding: 0;
     width: 20px;
     height: 20px;
-    position: absolute;
     transform: rotateX(0deg);
+    transition: all 0.3s ease-in-out;
     cursor: pointer;
-    z-index: -1;
-
-    @include font-icon($font-size-big, $text-color-translucent)
   }
 
   &_expanded {
     position: relative;
-    max-width: 266px;
     width: 100%;
-    cursor: pointer;
+    max-width: 266px;
+
+    .check-box__caption {
+      padding-right: 0;
+      width: 100%;
+      cursor: pointer;
+    }
 
     &_active {
       .check-box__icon {
-        top: -0px;
         right: 14px;
+        top: -0;
         transform: rotateX(180deg);
       }
     }
   }
 
   &_rich {
-    max-width: 266px;
     width: 100%;
+    max-width: 266px;
+
+    .check-box__caption {
+      padding-right: 0;
+      width: 100%;
+      cursor: auto;
+    }
   }
 
   &__element {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    margin-top: 10px;
+    min-height: 20px;
+
     &:nth-of-type(1) {
       margin-top: 17px;
     }
-
-    min-height: 20px;
-    vertical-align: middle;
-    position: relative;
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
   }
 
   &__caption {
@@ -62,31 +73,31 @@
   }
 
   &__label {
+    @include font-normal($color: $text-color-translucent, $lh: 20px);
+
     position: relative;
+    margin: 0;
     padding-left: 30px;
     text-transform: none;
-    margin: 0;
     transition: color 0.3s ease-in-out;
     cursor: pointer;
-
-    @include font-normal($color: $text-color-translucent, $lh: 20px);
 
     &::before {
       content: '';
       position: absolute;
+      left: 0;
+      top: 0;
       border: 1px solid $purple;
       border-radius: 4px;
       width: 20px;
       height: 20px;
-      top: 0;
-      left: 0;
     }
 
     &_rich {
+      @include font-bold($font-size-normal, $text-color-secondary, 20px);
+
       display: flex;
       flex-direction: column;
-
-      @include font-bold($font-size-normal, $text-color-secondary, 20px);
     }
   }
 
@@ -95,7 +106,9 @@
     position: absolute;
 
     &:checked ~ .check-box__label::before {
-      background: url('~@/components/check-box-list/img/check.png') no-repeat 4px 2px;
+      background:
+        url('~@/components/check-box-list/img/check.png') no-repeat
+        4px 2px;
       background-size: 10px 11px;
     }
 
@@ -105,8 +118,8 @@
   }
 
   &__span {
-    margin-top: 5px;
-
     @include font-normal($font-size-small, $text-color-translucent, 14px);
+
+    margin-top: 5px;
   }
 }

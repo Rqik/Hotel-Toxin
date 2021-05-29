@@ -11,16 +11,16 @@
 
     @include media-xxs {
       flex-direction: column;
-      height: 280px;
-      width: 100%;
       justify-content: center;
+      width: 100%;
+      height: 280px;
     }
   }
 
   &__title {
-    margin-left: 12px;
-
     @include font-bold($font-size-medium, $text-color-main, 23px);
+
+    margin-left: 12px;
 
     @include media-xs {
       margin: 0;
@@ -28,12 +28,12 @@
   }
 
   &__unit {
+    z-index: 20;
+    stroke-width: 1;
+    transition: all 0.3s ease-in-out;
     animation-name: render;
     animation-duration: 1.5s;
-    stroke-width: 1;
     cursor: pointer;
-    transition: all .3s ease-in-out;
-    z-index: 20;
 
     &:hover {
       stroke-width: 4;
@@ -45,12 +45,12 @@
   }
 
   &__legend {
-    padding: 0;
-    list-style: none;
-    align-self: center;
-    margin: 21px 0 0 27px;
-
     @include font-normal($color: $text-color-secondary, $lh: 24px);
+
+    align-self: center;
+    list-style: none;
+    margin: 21px 0 0 27px;
+    padding: 0;
 
     &-el {
       position: relative;
@@ -58,47 +58,46 @@
 
       &::before {
         content: '';
-        top: 7px;
-        left: -15px;
         position: absolute;
+        left: -15px;
+        top: 7px;
+        border-radius: 50%;
         width: 10px;
         height: 10px;
-        border-radius: 50%;
-        background-color: #BC9CFF;
+        background-color: #bc9cff;
       }
 
       &:nth-child(1) {
         &::before {
-          background: linear-gradient(180deg, #FFE39C 0%, #FFBA9C 100%);
+          background: linear-gradient(180deg, #ffe39c 0%, #ffba9c 100%);
         }
       }
 
       &:nth-child(2) {
         &::before {
-          background: linear-gradient(180deg, #6FCF97 0%, #66D2EA 100%);
+          background: linear-gradient(180deg, #6fcf97 0%, #66d2ea 100%);
         }
       }
 
       &:nth-child(3) {
         &::before {
-          background: linear-gradient(180deg, #BC9CFF 0%, #8BA4F9 100%);
+          background: linear-gradient(180deg, #bc9cff 0%, #8ba4f9 100%);
         }
       }
 
       &:nth-child(4) {
         &::before {
-          background: linear-gradient(180deg, #919191 0%, #3D4975 100%);
+          background: linear-gradient(180deg, #919191 0%, #3d4975 100%);
         }
       }
     }
   }
 
-
   &__chart-number {
-    transform: translateY(-2px);
-    text-anchor: middle;
-
     @include font-bold(6.6px, $lh: 29px);
+
+    text-anchor: middle;
+    transform: translateY(-2px);
 
     &_hidden {
       display: none;
@@ -111,11 +110,11 @@
   }
 
   &__chart-label {
-    text-anchor: middle;
-    text-transform: uppercase;
-    transform: translateY(5.5px);
-
     @include font-bold(3.4px, $lh: 19px);
+
+    text-transform: uppercase;
+    text-anchor: middle;
+    transform: translateY(5.5px);
   }
 }
 

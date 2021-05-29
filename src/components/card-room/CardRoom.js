@@ -21,23 +21,16 @@ class CardRoom {
     const button = [];
     this.$input.each((_, el) => {
       button.push(
-        $(el)
-          .data('datepicker')
-          .$datepicker
-          .find(this.buttonApplyClass),
+        $(el).data('datepicker').$datepicker.find(this.buttonApplyClass),
       );
     });
 
     button.forEach(this.buttonApply);
 
-    $(this.infoSumClass)
-      .text((_, el) => CardRoom.replace(el));
-    $(this.infoNameClass)
-      .text((_, el) => CardRoom.replace(el));
-    $(this.totalPriceClass)
-      .text((_, el) => CardRoom.replace(el));
-    $(this.priceNumberClass)
-      .text((_, el) => CardRoom.replace(el));
+    $(this.infoSumClass).text((_, el) => CardRoom.replace(el));
+    $(this.infoNameClass).text((_, el) => CardRoom.replace(el));
+    $(this.totalPriceClass).text((_, el) => CardRoom.replace(el));
+    $(this.priceNumberClass).text((_, el) => CardRoom.replace(el));
   }
 
   @boundMethod
@@ -52,16 +45,17 @@ class CardRoom {
     const $price = $block.find(this.priceDayClass);
     const $resultSum = $block.find(this.totalPriceClass);
 
-    $(el)
-      .on('click',
-        CardRoom.makeEventHandler({
-          $currentDP,
-          $pay,
-          $dop,
-          $sale,
-          $price,
-          $resultSum,
-        }));
+    $(el).on(
+      'click',
+      CardRoom.makeEventHandler({
+        $currentDP,
+        $pay,
+        $dop,
+        $sale,
+        $price,
+        $resultSum,
+      }),
+    );
   }
 
   @boundMethod
@@ -90,13 +84,11 @@ class CardRoom {
   }
 
   static priceReg($jq) {
-    return $jq.text()
-      .match(/[\d+\s?]+(?=₽)/m);
+    return $jq.text().match(/[\d+\s?]+(?=₽)/m);
   }
 
   static replace(el) {
-    return el.toString()
-      .replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, '$1 ');
+    return el.toString().replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, '$1 ');
   }
 }
 

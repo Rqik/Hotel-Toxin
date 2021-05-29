@@ -1,19 +1,20 @@
 .font-pick {
+  @include font-normal;
+
   display: flex;
   flex-direction: row;
-  gap: 30px;
-  justify-content: flex-start;
   align-items: flex-start;
-  max-width: 436px;
+  justify-content: flex-start;
   width: 100%;
-  @include font-normal();
+  max-width: 436px;
+  gap: 30px;
 
   &_size_big {
-    @include font-bold($font-size-big, $lh: 29px)
+    @include font-bold($font-size-big, $lh: 29px);
   }
 
   &_size_medium {
-    @include font-bold($font-size-medium, $lh: 23px)
+    @include font-bold($font-size-medium, $lh: 23px);
   }
 
   &_size_normal {
@@ -29,12 +30,12 @@
   }
 
   &__tag {
-    text-transform: capitalize;
-    color: $transparent_black;
     justify-self: flex-start;
-    text-align: right;
     min-width: 37px;
     font-weight: normal;
+    text-align: right;
+    text-transform: capitalize;
+    color: $transparent_black;
   }
 
   &__text {
@@ -42,8 +43,8 @@
     color: $text-color-secondary;
 
     &_with_bold_weight {
-      color: $text-color-main;
       font-weight: bold;
+      color: $text-color-main;
     }
 
     &_transformed_uppercase {

@@ -1,4 +1,4 @@
-@import "~swiper/swiper-bundle.min.css";
+@import '~swiper/swiper-bundle.min.css';
 
 @mixin swiper {
   .swiper {
@@ -11,18 +11,18 @@
 
     &-pagination-img {
       position: absolute;
+      z-index: 500;
       display: flex;
       justify-content: flex-end;
-      z-index: 500;
       padding: 0 10px 4px 0;
 
       .swiper-pagination-bullet {
+        margin: 0 2px;
+        border: 1px solid white;
         width: 7.5px;
         height: 7.5px;
-        margin: 0 2px;
         background-color: transparent;
         opacity: 1;
-        border: 1px solid white;
       }
 
       .swiper-pagination-bullet-active {
@@ -31,35 +31,6 @@
     }
 
     &-button {
-      &-prev, &-next {
-        width: 42px;
-        height: 100%;
-        margin: 0;
-        align-items: center;
-        transform: translate(0, -50%);
-        color: white;
-        opacity: 0;
-        transition: opacity .3s ease-in-out;
-
-        .swiper__icon {
-          transition: opacity .3s ease-in-out;
-          opacity: 0;
-        }
-
-        &::after {
-          display: none;
-          content: '';
-        }
-
-        &:hover {
-          opacity: 1;
-
-          .swiper__icon {
-            opacity: 1;
-          }
-        }
-      }
-
       &-prev {
         left: 0;
 
@@ -68,8 +39,13 @@
         }
 
         &:hover {
-          background: linear-gradient(90deg, rgba(0, 0, 0, 0.5) 0%,
-            rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);;
+          background:
+            linear-gradient(
+              90deg,
+              rgba(0, 0, 0, 0.5) 0%,
+              rgba(0, 0, 0, 0) 99.99%,
+              rgba(255, 255, 255, 0) 100%
+            );
         }
       }
 
@@ -81,14 +57,49 @@
         }
 
         &:hover {
-          background: linear-gradient(-90deg, rgba(0, 0, 0, 0.5) 0%,
-            rgba(0, 0, 0, 0) 99.99%, rgba(255, 255, 255, 0) 100%);
+          background:
+            linear-gradient(
+              -90deg,
+              rgba(0, 0, 0, 0.5) 0%,
+              rgba(0, 0, 0, 0) 99.99%,
+              rgba(255, 255, 255, 0) 100%
+            );
+        }
+      }
+
+      &-prev,
+      &-next {
+        align-items: center;
+        margin: 0;
+        width: 42px;
+        height: 100%;
+        color: white;
+        opacity: 0;
+        transform: translate(0, -50%);
+        transition: opacity 0.3s ease-in-out;
+
+        &::after {
+          content: '';
+          display: none;
+        }
+
+        .swiper__icon {
+          opacity: 0;
+          transition: opacity 0.3s ease-in-out;
+        }
+
+        &:hover {
+          opacity: 1;
+
+          .swiper__icon {
+            opacity: 1;
+          }
         }
       }
     }
 
     &__icon {
-      @include font-icon(24px)
+      @include font-icon(24px);
     }
   }
 }

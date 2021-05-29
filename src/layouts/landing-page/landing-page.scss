@@ -1,14 +1,14 @@
-@import "~@/components/header/header";
-@import "~@/components/footer/footer";
+@import '~@/components/header/header';
+@import '~@/components/footer/footer';
 
 .landing-page {
-  margin: 0;
-  padding: 0;
-  background-color: white;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: white;
 
   &__content {
     flex: 1 0 auto;

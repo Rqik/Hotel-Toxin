@@ -15,12 +15,10 @@ class Menu {
     const $menuItem = $(this.menuItemListClass);
 
     this.burger.each((_, el) => {
-      $(el)
-        .click(this.toggleMenuBurger);
+      $(el).click(this.toggleMenuBurger);
     });
 
-    $(document)
-      .click(this.documentEvent);
+    $(document).click(this.documentEvent);
 
     $menuItem.append(this.icon);
     $menuItem.hover(this.handlerIn, this.handlerOut);
@@ -28,29 +26,23 @@ class Menu {
 
   @boundMethod
   documentEvent(event) {
-    if ($(event.target)
-      .closest(this.itemsClass).length
-      || $(event.target)
-        .closest(this.burgerClass).length
+    if (
+      $(event.target).closest(this.itemsClass).length
+      || $(event.target).closest(this.burgerClass).length
     ) {
       return;
     }
-    $(this.itemsClass)
-      .removeClass(this.toggleClass);
+    $(this.itemsClass).removeClass(this.toggleClass);
   }
 
   @boundMethod
   handlerIn(event) {
-    $(this.dropListClass, event.currentTarget)
-      .stop()
-      .slideDown(200);
+    $(this.dropListClass, event.currentTarget).stop().slideDown(200);
   }
 
   @boundMethod
   handlerOut(event) {
-    $(this.dropListClass, event.currentTarget)
-      .stop()
-      .slideUp(200);
+    $(this.dropListClass, event.currentTarget).stop().slideUp(200);
   }
 
   @boundMethod

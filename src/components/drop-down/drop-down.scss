@@ -4,43 +4,30 @@
   }
 
   &__title {
+    @include font-bold($font-size-small, $lh: 14px);
+
     margin: 5px 0;
     text-transform: uppercase;
-
-    @include font-bold($font-size-small, $lh: 14px);
   }
 
   &__select {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    position: relative;
+    border-radius: 4px;
     width: 266px;
     background-color: white;
-    border-radius: 4px;
-
-    @include media-xxs {
-      width: 100%;
-    }
 
     &_extended {
-      max-width: 320px;
-      width: 100%;
+      position: relative;
       display: flex;
       flex-direction: column;
       justify-content: flex-start;
-      position: relative;
-      background-color: white;
       border-radius: 4px;
-
-      &:hover,
-      &:focus {
-
-        .dropdown__item-current,
-        .dropdown__items {
-          border-color: $text-color-translucent;
-        }
-      }
+      width: 100%;
+      max-width: 320px;
+      background-color: white;
 
       .dropdown__buttons {
         display: flex;
@@ -48,125 +35,136 @@
         padding: 0 6px 0 14px;
 
         .dropdown__reset-button {
-          background-color: transparent;
-          width: auto;
-          height: auto;
+          @include font-bold($font-size-small, $purple, 15px);
+
           margin: 18px 0 12px;
-          padding: 0;
           outline: none;
           border: none;
+          padding: 0;
+          width: auto;
+          height: auto;
           text-transform: uppercase;
+          background-color: transparent;
           cursor: pointer;
-
-          @include font-bold($font-size-small, $purple, 15px);
         }
 
         .dropdown__submit-button {
-          background-color: transparent;
-          width: auto;
-          height: auto;
+          @include font-bold($font-size-small, $purple, 15px);
+
           margin: 18px 0 12px;
-          padding: 0;
           outline: none;
           border: none;
+          padding: 0;
+          width: auto;
+          height: auto;
           text-transform: uppercase;
+          background-color: transparent;
           cursor: pointer;
+        }
+      }
 
-          @include font-bold($font-size-small, $purple, 15px);
+      &:hover,
+      &:focus {
+        .dropdown__item-current,
+        .dropdown__items {
+          border-color: $text-color-translucent;
         }
       }
     }
 
     &_active {
       box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-      transition: border .3s ease-in-out;
+      transition: border 0.3s ease-in-out;
 
       .dropdown__item-current {
         border-radius: 4px 4px 0 0;
       }
 
       .dropdown__icon {
-        padding: 0;
         margin: 0;
+        padding: 0;
         transform: rotateX(180deg);
       }
     }
 
     &:hover,
     &:focus {
-
       .dropdown__item-current,
       .dropdown__items {
         border-color: $text-color-translucent;
       }
     }
+
+    @include media-xxs {
+      width: 100%;
+    }
   }
 
   &__span {
+    vertical-align: middle;
     width: 32px;
     height: 30px;
     line-height: 30px;
     text-align: center;
-    vertical-align: middle;
   }
 
   &__text-current {
     display: inline-block;
-    padding: 0;
-    margin: 0;
-    max-width: 95%;
-    height: 30px;
-    line-height: 30px;
-    text-align: start;
     vertical-align: middle;
     overflow: hidden;
-    text-overflow: ellipsis;
+    margin: 0;
+    padding: 0;
+    height: 30px;
+    max-width: 95%;
+    line-height: 30px;
     white-space: nowrap;
+    text-align: start;
+    text-overflow: ellipsis;
     color: $text-color-secondary;
   }
 
   &__item {
-    box-sizing: border-box;
-    padding: 0 6px 0 14px;
-    margin-top: 7px;
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-    height: 30px;
-    text-transform: uppercase;
-
     @include font-bold($font-size-small, $lh: 30px);
 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 7px;
+    padding: 0 6px 0 14px;
+    height: 30px;
+    box-sizing: border-box;
+    text-transform: uppercase;
+
     &-span {
-      padding: 0;
+      vertical-align: middle;
+      overflow: hidden;
       margin: 0;
+      padding: 0;
       width: 80%;
       height: 30px;
       line-height: 26px;
-      text-align: start;
-      vertical-align: middle;
-      overflow: hidden;
-      text-overflow: ellipsis;
       white-space: nowrap;
+      text-align: start;
+      text-overflow: ellipsis;
     }
 
     &-current {
+      @include font-normal($lh: 40px);
+
       position: relative;
       display: block;
-      width: 100%;
-      height: 44px;
-      background-color: transparent;
+      overflow: hidden;
       border: 1px solid $transparent_black;
-      box-sizing: border-box;
       border-radius: 4px;
       padding: 0 14px;
-      overflow: hidden;
-      text-overflow: ellipsis;
+      width: 100%;
+      height: 44px;
+      box-sizing: border-box;
       white-space: nowrap;
-      cursor: pointer;
+      text-overflow: ellipsis;
+      background-color: transparent;
       transition: border 0.3s ease-in-out;
-
-      @include font-normal($lh: 40px);
+      cursor: pointer;
     }
 
     &:last-of-type {
@@ -175,56 +173,56 @@
   }
 
   &__items {
-    border: 1px solid $transparent_black;
-    border-top: none;
-    box-sizing: border-box;
-    border-radius: 0 0 4px 4px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
+    border: 1px solid $transparent_black;
+    border-top: none;
+    border-radius: 0 0 4px 4px;
+    box-sizing: border-box;
   }
 
   &__control-panel {
-    margin-bottom: 2px;
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 2px;
   }
 
   &__button {
+    @include font-normal(18px, $lh: 22px);
+
     display: flex;
     flex-direction: row;
+    align-items: center;
     justify-content: center;
-    height: 30px;
     border: 1px solid $text-color-translucent;
-    width: 30px;
     border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    text-align: center;
     cursor: pointer;
     user-select: none;
-    align-items: center;
-    text-align: center;
-
-    @include font-normal(18px, $lh: 22px);
 
     &_disabled {
       opacity: 0.38;
+      cursor: auto;
     }
   }
 
   &__icon {
-    width: 24px;
-    height: 24px;
+    @include font-icon($font-size-big, $text-color-translucent, 24px);
+
+    position: absolute;
+    right: 9px;
+    top: 9px;
+    z-index: 1;
     display: flex;
     align-items: center;
+    width: 24px;
+    height: 24px;
     text-align: center;
-    position: absolute;
-    top: 9px;
-    right: 9px;
+    transition: transform 0.3s ease-in-out;
     cursor: pointer;
     pointer-events: none;
-    z-index: 1;
-    transition: transform .3s ease-in-out;
-
-    @include font-icon($font-size-big, $text-color-translucent, 24px);
   }
 }
-

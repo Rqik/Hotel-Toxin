@@ -1,7 +1,7 @@
-@import "~normalize.css";
-@import "~@/styles/variables.scss";
-@import "~@/styles/mixin.scss";
-@import "~@/styles/fonts.scss";
+@import '~normalize.css';
+@import '~@/styles/variables.scss';
+@import '~@/styles/mixin.scss';
+@import '~@/styles/fonts.scss';
 
 *,
 ::after,
@@ -10,17 +10,11 @@
 }
 
 html {
-  font-family: 'Montserrat', Arial, sans-serif;
-  font-style: normal;
+  font-family: 'Montserrat', 'Arial', sans-serif;
   font-weight: normal;
+  font-style: normal;
   font-size: $font-size-normal;
   line-height: 24px;
   color: $text-color-secondary;
   background-color: white;
 }
-
-
-
-
-
-

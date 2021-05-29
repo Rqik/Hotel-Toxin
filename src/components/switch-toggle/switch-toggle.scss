@@ -1,10 +1,10 @@
 .switch-toggle {
+  @include font-bold($font-size-small);
+
   display: flex;
   flex-direction: column;
-  text-transform: uppercase;
   padding: 0;
-
-  @include font-bold($font-size-small);
+  text-transform: uppercase;
 
   &__caption {
     margin-bottom: 14px;
@@ -13,38 +13,39 @@
   &__items {
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     gap: 10px;
   }
 
   &__label {
-    padding-left: 50px;
+    @include font-normal($color: $text-color-translucent, $lh: 24px);
+
     position: relative;
     vertical-align: middle;
-    cursor: pointer;
+    padding-left: 50px;
     text-transform: none;
-
-    @include font-normal($color: $text-color-translucent, $lh: 24px);
+    cursor: pointer;
 
     &::before {
       content: '';
       position: absolute;
-      width: 40px;
-      height: 20px;
-      border-radius: 10px;
-      border: 1px solid $transparent_black;
       left: 0;
       top: 2px;
+      border: 1px solid $transparent_black;
+      border-radius: 10px;
+      width: 40px;
+      height: 20px;
       transition: border 0.3s ease-in-out;
     }
 
     &::after {
-      position: absolute;
       content: '';
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
+      position: absolute;
       left: 4px;
       top: 6px;
+      border-radius: 50%;
+      width: 12px;
+      height: 12px;
       background: $transparent_black;
       transition: all 0.3s ease-in-out;
     }
@@ -63,8 +64,8 @@
     }
 
     &:checked + .switch-toggle__label::after {
-      background: $purple-gradient;
       left: 24px;
+      background: $purple-gradient;
     }
   }
 }

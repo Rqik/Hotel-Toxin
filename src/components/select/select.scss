@@ -1,12 +1,8 @@
 .select {
+  position: relative;
   display: flex;
   flex-direction: column;
-  position: relative;
   width: 320px;
-
-  @include media-xxs {
-    width: 100%;
-  }
 
   &__title {
     font-weight: bold;
@@ -17,52 +13,57 @@
   }
 
   &__elements {
+    appearance: none;
     margin-top: 4px;
-    width: 100%;
-    height: 44px;
-    background: #FFFFFF;
     border: 1px solid $transparent_black;
-    box-sizing: border-box;
     border-radius: 4px;
     padding: 0 14px;
+    width: 100%;
+    height: 44px;
+    box-sizing: border-box;
     font-size: $font-size-normal;
     color: rgba(31, 32, 65, 0.75);
-    appearance: none;
-
-    &:hover,
-    &:focus {
-      border: 1px solid $text-color-translucent;
-      cursor: pointer;
-      font-style: normal;
-      font-weight: normal;
-      line-height: 24px;
-      outline: none;
-    }
+    background: #fff;
 
     &__option {
-      font-style: normal;
+      margin: 7px;
+      padding: 6px;
+      height: 30px;
       font-weight: bold;
+      font-style: normal;
       font-size: $font-size-small;
       line-height: 15px;
       text-transform: uppercase;
-      height: 30px;
       color: $text-color-main;
-      margin: 7px;
-      padding: 6px;
+    }
+
+    &:hover,
+    &:focus {
+      outline: none;
+      border: 1px solid $text-color-translucent;
+      font-weight: normal;
+      font-style: normal;
+      line-height: 24px;
+      cursor: pointer;
     }
   }
 
   &__icon {
-    width: 24px;
-    height: 24px;
-    display: flex;
-    align-items: center;
-    text-align: center;
+    @include font-icon($font-size-big, $text-color-translucent, 24px);
+
     position: absolute;
     right: 10px;
     bottom: 10px;
+    display: flex;
+    align-items: center;
+    width: 24px;
+    height: 24px;
+    text-align: center;
     cursor: pointer;
     pointer-events: none;
-    @include font-icon($font-size-big, $text-color-translucent, 24px)
+  }
+
+  @include media-xxs {
+    width: 100%;
   }
 }

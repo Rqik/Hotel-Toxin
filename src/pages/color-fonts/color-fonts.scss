@@ -1,20 +1,13 @@
 @import '~@/styles/mixin.scss';
-@import "~@/layouts/main/main";
+@import '~@/layouts/main/main';
 @import '~@/components/color-pick/color-pick';
 @import '~@/components/font-pick/font-pick';
 
 .color-fonts {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   justify-content: space-around;
-  flex-wrap: wrap;
   gap: 60px;
-
-  @include media-lg {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
 
   &__palette {
     display: flex;
@@ -28,5 +21,10 @@
     justify-content: flex-start;
     gap: 50px;
   }
-}
 
+  @include media-lg {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}

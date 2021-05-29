@@ -1,5 +1,5 @@
-@import "~@/styles/mixin";
-@import "~@/layouts/landing-page/landing-page.scss";
+@import '~@/styles/mixin';
+@import '~@/layouts/landing-page/landing-page.scss';
 @import '~@/components/field/field';
 @import '~@/components/card-registration/card-registration';
 @import '~@/components/button/button';
@@ -10,9 +10,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 20px 0;
   width: 100%;
+  min-height: 580px;
   background: url('img/registration-background.jpg') no-repeat center center;
   background-size: cover;
-  min-height: 580px;
-  padding: 20px 0;
 }

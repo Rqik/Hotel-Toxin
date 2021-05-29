@@ -1,24 +1,16 @@
-@import "../field/field";
-@import "../footer-nav/footer-nav";
+@import '../field/field';
+@import '../footer-nav/footer-nav';
 
 .footer-head {
-  margin-bottom: 83px;
   display: flex;
   flex-direction: row;
-
-  @include media-lg {
-    justify-content: center;
-  }
-
-  @include media-sm {
-    margin-bottom: 0;
-    align-items: center;
-  }
+  margin-bottom: 83px;
 
   &__info {
     width: 260px;
+
     @include media-sm {
-      text-align: center
+      text-align: center;
     }
   }
 
@@ -31,9 +23,9 @@
   }
 
   &__text {
-    margin-top: 17px;
-
     @include font-normal($color: $text-color-secondary, $lh: 24px);
+
+    margin-top: 17px;
 
     @include media-sm {
       display: none;
@@ -41,12 +33,12 @@
   }
 
   &__nav {
-    margin-left: 40px;
-    margin-top: 4px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
+    margin-top: 4px;
+    margin-left: 40px;
     width: 549px;
 
     @include media-lg {
@@ -55,13 +47,8 @@
   }
 
   &__subscribe {
-    width: 260px;
     margin-left: 50px;
-
-    @include media-sm {
-      display: none;
-      margin-top: 0;
-    }
+    width: 260px;
 
     &-title {
       margin-top: 4px;
@@ -74,15 +61,29 @@
 
     &-text {
       margin-top: 18px;
+      margin-bottom: 23px;
       font-weight: normal;
       font-size: $font-size-normal;
       line-height: 24px;
       color: $text-color-secondary;
-      margin-bottom: 23px;
+    }
+
+    @include media-sm {
+      display: none;
+      margin-top: 0;
     }
   }
 
   &__field {
     max-width: 260px;
+  }
+
+  @include media-lg {
+    justify-content: center;
+  }
+
+  @include media-sm {
+    align-items: center;
+    margin-bottom: 0;
   }
 }

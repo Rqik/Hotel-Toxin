@@ -1,5 +1,5 @@
-@import "~@/libs/datepicker/datepicker";
+@import '~@/libs/datepicker/datepicker';
 
 .calendar {
-  @include datepicker
+  @include datepicker;
 }

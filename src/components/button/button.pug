@@ -8,12 +8,12 @@ mixin button({ style = "small" , text , href , border = true })
     if (!border) classList.push(`button_with-border-none`)
 
   if (href)
-    a.button(class=classList href = href )&attributes(attributes)
+    a.button(class=classList href = href type="button")&attributes(attributes)
       span.button__text= text
       if style === "long"
         .button__icon arrow_forward
   else
-    button.button(class=classList)&attributes(attributes)
+    button.button(class=classList type="button")&attributes(attributes)
       span.button__text= text
       if style === "long"
         .button__icon arrow_forward

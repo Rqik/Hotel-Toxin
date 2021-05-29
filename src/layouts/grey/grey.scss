@@ -1,11 +1,12 @@
 .grey {
-  min-height: 100vh;
   padding: 30px;
+  min-height: 100vh;
   background-color: #e5e5e5;
 
   @include media-md {
     padding: 30px 15px;
   }
+
   @include media-xs {
     padding: 0;
   }

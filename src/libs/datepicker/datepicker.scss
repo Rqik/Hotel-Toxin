@@ -2,42 +2,36 @@
 
 @mixin datepicker {
   .datepicker {
-    font-family: 'Montserrat', sans-serif;
-    padding: 20px;
-    width: 320px;
-    box-sizing: border-box;
-    border-radius: 4px;
-    border: 1px solid $transparent_black;
     display: flex;
     flex-direction: column;
+    border: 1px solid $transparent_black;
+    border-radius: 4px;
+    padding: 20px;
+    width: 320px;
     box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
-
-    @include media-xxs {
-      padding: 15px 10px;
-      width: 300px;
-    }
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
 
     .datepicker--pointer {
       display: none;
     }
 
     &--nav {
-      padding: 0;
-      border: none;
       align-items: flex-start;
+      border: none;
+      padding: 0;
 
       .datepicker--nav-title {
         width: 180px;
       }
 
       &-action {
-        color: $purple;
-        width: auto;
         border-radius: 50%;
+        width: auto;
+        color: $purple;
         transition: transform 0.3s ease-in-out;
       }
     }
-
 
     &--nav-action[data-action='prev']:hover {
       transform: translateX(5px);
@@ -48,13 +42,13 @@
     }
 
     &--nav-title {
+      padding: 0;
       width: 114px;
       font-weight: bold;
       font-size: $font-size-medium;
       line-height: 23px;
-      text-align: center;
       letter-spacing: 0.5px;
-      padding: 0;
+      text-align: center;
       background: none;
     }
 
@@ -63,143 +57,157 @@
       padding: 0;
     }
 
+    &--button {
+      border: none;
+
+      &-apply {
+        border: none;
+      }
+    }
+
     &--buttons {
       flex-direction: row;
-      justify-content: space-between;
       align-items: center;
-      padding: 0;
+      justify-content: space-between;
       margin-top: 20px;
       border: none;
+      padding: 0;
 
       :nth-child(n) {
         display: block;
-        font-style: normal;
+        flex: 0;
+        margin: 0;
+        padding: 0;
+        height: auto;
         font-weight: bold;
+        font-style: normal;
         font-size: $font-size-small;
         line-height: 15px;
+        letter-spacing: 0.5px;
         text-transform: uppercase;
         color: $purple;
-        letter-spacing: 0.5px;
         background: transparent;
-        height: auto;
-        flex: 0;
-        padding: 0;
-        margin: 0;
         cursor: pointer;
       }
     }
 
     &--day {
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
     }
 
     &--days-names {
-      justify-content: center;
       align-items: center;
-      width: 280px;
+      justify-content: center;
       margin: 0 auto;
-
+      width: 280px;
     }
 
     &--day-name {
+      @include font-bold($font-size-small, $purple, 15px);
+
       display: flex;
+      align-items: center;
       width: 39.88px;
       height: 40px;
-      align-items: center;
       text-align: center;
       text-transform: capitalize;
-
-      @include font-bold($font-size-small, $purple, 15px);
     }
 
     &--cells {
-      justify-content: center;
       align-items: center;
-      width: 280px;
+      justify-content: center;
       margin: 0 auto;
+      width: 280px;
     }
 
     &--cell {
-      font-style: normal;
-      font-weight: normal;
       border-radius: 50%;
       width: 39.88px;
       height: 40px;
+      font-weight: normal;
+      font-style: normal;
       color: $text-color-translucent;
 
       &-day {
-        &.-disabled-,
-        &.-other-month- {
-          color: $transparent_black;
-        }
+        +.-current- {
+          @include font-bold($font-size-small, white);
 
-        + .-current- {
           background: $green-gradient;
-          @include font-bold($font-size-small, white)
         }
 
-        + .-selected- {
+        +.-selected- {
+          @include font-bold($font-size-small, white);
+
           background: $purple-gradient;
-          @include font-bold($font-size-small, white)
         }
 
-        + .-range-from- {
+        +.-range-from- {
           position: relative;
 
           &::after {
             content: '';
             position: absolute;
-            top: 0px;
             left: 0;
             right: 0;
+            top: 0;
             bottom: 0;
-            background: $purple-gradient;
-            opacity: 0.25;
             z-index: -2;
             border-radius: 50% 0 0 50%;
+            background: $purple-gradient;
+            opacity: 0.25;
           }
         }
 
-        + .-range-to- {
+        +.-range-to- {
           position: relative;
 
           &::after {
             content: '';
             position: absolute;
-            top: 0px;
             left: 0;
             right: 0;
+            top: 0;
             bottom: 0;
-            background: $purple-gradient;
-            opacity: 0.25;
             z-index: -2;
             border-radius: 0 50% 50% 0;
+            background: $purple-gradient;
+            opacity: 0.25;
           }
         }
 
-        + .-in-range- {
+        +.-in-range- {
           background: none;
 
           &::after {
             content: '';
             position: absolute;
-            top: 0px;
             left: 0;
             right: 0;
+            top: 0;
             bottom: 0;
-            background: $purple-gradient;
-            opacity: 0.25;
             z-index: -2;
             border-radius: 0;
+            background: $purple-gradient;
+            opacity: 0.25;
           }
         }
+
+        &.-disabled-,
+        &.-other-month- {
+          color: $transparent_black;
+        }
       }
+    }
+
+    @include media-xxs {
+      padding: 15px 10px;
+      width: 300px;
     }
   }
 }
 
 .datepickers-container {
-  @include datepicker()
+  @include datepicker;
 }

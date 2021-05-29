@@ -1,16 +1,18 @@
-@import "~@/libs/ion-rangeslider/ion-rangelsider.scss";
+@import '~@/libs/ion-rangeslider/ion-rangelsider.scss';
 
 .range-slider {
+  @include ionRangeSlider;
+
   display: block;
-  max-width: 266px;
   width: 100%;
+  max-width: 266px;
 
   &__section {
+    @include font-bold($font-size-small, $lh: 15px);
+
     display: flex;
     justify-content: space-between;
     text-transform: uppercase;
-
-    @include font-bold($font-size-small, $lh: 15px);
   }
 
   &__title {
@@ -18,22 +20,20 @@
   }
 
   &__input {
-    width: 100%;
+    @include font-normal($font-size-small, $text-color-translucent);
+
     margin: 0;
+    border: none;
     padding: 0;
+    width: 100%;
+    box-sizing: border-box;
     text-align: right;
     text-transform: uppercase;
-    border: none;
-    box-sizing: border-box;
-
-    @include font-normal($font-size-small, $text-color-translucent);
   }
 
   &__caption {
-    margin-top: 13px;
-
     @include font-normal($font-size-small, $lh: 14px);
-  }
 
-  @include ionRangeSlider
+    margin-top: 13px;
+  }
 }

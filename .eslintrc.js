@@ -22,7 +22,7 @@ module.exports = {
     },
   },
 
-  plugins: ['pug'],
+  plugins: ['pug', 'prettier'],
   rules: {
     'object-curly-newline': 'off',
     'max-classes-per-file': 'off',

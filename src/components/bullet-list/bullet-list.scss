@@ -1,46 +1,46 @@
 .bullet-list {
-  text-transform: uppercase;
+  @include font-normal;
+
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-  max-width: 264px;
   width: 100%;
-
-  @include font-normal();
+  max-width: 264px;
+  text-transform: uppercase;
 
   &__title {
-    margin-bottom: 14px;
-
     @include font-bold($font-size-small);
+
+    margin-bottom: 14px;
   }
 
   &__items {
-    list-style: none;
-    text-transform: none;
-    padding: 0;
-    margin: 0;
-
     @include font-normal($color: $text-color-secondary, $lh: 24px);
+
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
   }
 
   &__item {
     position: relative;
-    padding-left: 21px;
     margin-top: 10px;
-
-    &:first-child {
-      margin-top: 0;
-    }
+    padding-left: 21px;
 
     &::before {
       content: '';
       position: absolute;
-      width: 10px;
-      height: 10px;
-      border-radius: 50%;
       left: 0;
       top: 5px;
+      border-radius: 50%;
+      width: 10px;
+      height: 10px;
       background-color: $transparent_black;
+    }
+
+    &:first-child {
+      margin-top: 0;
     }
   }
 }

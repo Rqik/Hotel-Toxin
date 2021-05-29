@@ -1,28 +1,25 @@
 @import '~@/libs/datepicker/datepicker';
 
 .date-picker {
+  position: relative;
   display: flex;
   flex-direction: row;
-  gap: 20px;
-  position: relative;
   height: 64px;
+  gap: 20px;
 
   &__label {
+    @include font-bold($font-size-small, $text-color-main, 15px);
+
     position: relative;
     display: flex;
     flex-direction: column;
-    text-transform: uppercase;
     max-width: 150px;
-
-    @include font-bold($font-size-small, $text-color-main, 15px);
-
-    @include media-xxs {
-      width: 100%;
-      white-space: nowrap;
-    }
+    text-transform: uppercase;
+    cursor: pointer;
 
     &_range {
       max-width: 266px;
+
       @include media-xxs {
         max-width: 320px;
       }
@@ -30,7 +27,6 @@
 
     &:hover,
     &:focus {
-
       .date-picker,
       .date-picker_range {
         border: 1px solid $text-color-translucent;
@@ -40,79 +36,85 @@
         color: $text-color-secondary;
       }
     }
-  }
-
-  &__input {
-    width: 150px;
-    height: 44px;
-    border: 1px solid $transparent_black;
-    border-radius: 4px;
-    padding-left: 15px;
-    text-transform: uppercase;
-    margin-top: 5px;
-    cursor: pointer;
-    transition: border .3s ease-in-out;
-    outline: none;
-
-    @include font-normal($lh: 18px);
 
     @include media-xxs {
       width: 100%;
-      font-size: $font-size-small;
+      white-space: nowrap;
     }
+  }
+
+  &__input {
+    @include font-normal($lh: 18px);
+
+    margin-top: 5px;
+    outline: none;
+    border: 1px solid $transparent_black;
+    border-radius: 4px;
+    padding-left: 15px;
+    width: 150px;
+    height: 44px;
+    text-transform: uppercase;
+    transition: border 0.3s ease-in-out;
+    cursor: pointer;
 
     &_range {
       width: 266px;
-      color: $text-color-secondary;
       text-transform: lowercase;
+      color: $text-color-secondary;
+
       @include media-xxs {
-        max-width: 320px;
         width: 100%;
+        max-width: 320px;
       }
     }
 
     &_hide {
       position: absolute;
-      width: 320px;
-      height: 0;
-      padding: 0;
-      margin: 0;
-      border: 0;
-      top: 55px;
       left: 0;
       right: 0;
+      top: 55px;
       bottom: 0;
+      margin: 0;
+      border: 0;
+      padding: 0;
+      width: 320px;
+      height: 0;
 
       @include media-xxs {
         width: 100%;
       }
     }
+
+    @include media-xxs {
+      width: 100%;
+      font-size: $font-size-small;
+    }
   }
 
   &__icon {
+    @include font-icon($font-size-big, $purple);
+
+    z-index: 1;
     display: flex;
     align-items: center;
     text-align: center;
     cursor: pointer;
     pointer-events: none;
-    z-index: 1;
-
-    @include font-icon($font-size-big, $purple);
   }
 
   &__expand-more {
-    width: 24px;
-    height: 24px;
+    @include font-icon($font-size-big, $text-color-translucent, 24px);
+
+    position: absolute;
+    right: 9px;
+    bottom: 9px;
+    z-index: 1;
     display: flex;
     align-items: center;
+    width: 24px;
+    height: 24px;
     text-align: center;
-    position: absolute;
-    bottom: 9px;
-    right: 9px;
     cursor: pointer;
     pointer-events: none;
-    z-index: 1;
-
-    @include font-icon($font-size-big, $text-color-translucent, 24px);
   }
 }

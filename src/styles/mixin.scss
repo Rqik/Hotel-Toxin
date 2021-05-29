@@ -1,4 +1,4 @@
-@import "variables";
+@import 'variables';
 
 @mixin media-lg {
   @media (max-width: 1170px) {
@@ -30,53 +30,47 @@
   }
 }
 
-
 @mixin font-normal(
-  $fs: $font-size-normal ,
-  $color:$text-color-main ,
-  $lh: normal ,
-  $fw: normal) {
-
-  font-family: "Montserrat", Arial, sans-serif;
-  font-style: normal;
+  $fs: $font-size-normal,
+  $color: $text-color-main,
+  $lh: normal,
+  $fw: normal
+) {
+  font-family: 'Montserrat', 'Arial', sans-serif;
   font-weight: $fw;
+  font-style: normal;
   font-size: $fs;
-  color: $color;
   line-height: $lh;
+  color: $color;
 }
 
 @mixin font-bold(
-  $fs: $font-size-big ,
-  $color:$text-color-main ,
-  $lh: normal ,
-  $fw: bold) {
-
-  font-family: "Montserrat", Arial, sans-serif;
-  font-style: normal;
+  $fs: $font-size-big,
+  $color: $text-color-main,
+  $lh: normal,
+  $fw: bold
+) {
+  font-family: 'Montserrat', 'Arial', sans-serif;
   font-weight: $fw;
+  font-style: normal;
   font-size: $fs;
-  color: $color;
   line-height: $lh;
+  color: $color;
 }
 
-@mixin font-icon(
-  $fs: inherit ,
-  $color:inherit ,
-  $lh: normal ,
-  $fw: normal) {
-
-  font-family: "Material Icons", sans-serif;
-  font-style: normal;
-  font-weight: $fw;
-  font-size: $fs;
-  color: $color;
-  line-height: $lh;
+@mixin font-icon($fs: inherit, $color: inherit, $lh: normal, $fw: normal) {
   display: inline-block;
-  text-transform: none;
+  font-family: 'Material Icons', sans-serif;
+  font-weight: $fw;
+  font-style: normal;
+  font-feature-settings: 'liga';
+  font-size: $fs;
+  line-height: $lh;
   letter-spacing: normal;
   word-wrap: normal;
   white-space: nowrap;
-  direction: ltr;
   text-rendering: optimizeLegibility;
-  font-feature-settings: 'liga';
+  text-transform: none;
+  direction: ltr;
+  color: $color;
 }

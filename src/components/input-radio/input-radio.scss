@@ -1,13 +1,13 @@
 .input-radio {
+  @include font-normal($font-size-small);
+
   font-weight: 700;
   text-transform: uppercase;
 
-  @include font-normal($font-size-small);
-
   &__caption {
-    margin-top: 14px;
-
     @include font-bold($font-size-small);
+
+    margin-top: 14px;
   }
 
   &__items {
@@ -17,35 +17,34 @@
   }
 
   &__item {
-
     &-label {
-      padding-left: 30px;
-      cursor: pointer;
-      text-transform: none;
-      position: relative;
-
       @include font-normal($color: $text-color-translucent, $lh: 24px);
+
+      position: relative;
+      padding-left: 30px;
+      text-transform: none;
+      cursor: pointer;
 
       &::before {
         content: '';
         position: absolute;
-        width: 20px;
-        height: 20px;
-        border-radius: 50%;
-        border: 1px solid $transparent_black;
         left: 0;
         top: 0;
+        border: 1px solid $transparent_black;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
         transition: border 0.3s ease-in-out;
       }
 
       &::after {
-        position: absolute;
         content: '';
-        width: 12px;
-        height: 12px;
-        border-radius: 50%;
+        position: absolute;
         left: 4px;
         top: 4px;
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
         background: $purple-gradient;
         opacity: 0;
         transition: all 0.3s ease-in-out;
@@ -53,8 +52,8 @@
     }
 
     &-input {
-      position: absolute;
       appearance: none;
+      position: absolute;
 
       &:checked ~ .input-radio__item-label::after {
         opacity: 1;

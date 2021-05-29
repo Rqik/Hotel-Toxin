@@ -1,24 +1,24 @@
-@import "~@/libs/swiper-slider/swiper-slider";
-@import "../star-rating/star-rating";
+@import '~@/libs/swiper-slider/swiper-slider';
+@import '../star-rating/star-rating';
 
 .card-slider {
-  width: 270px;
-  background-color: white;
-  border-radius: 4px;
-  box-shadow: $box-shadow;
+  @include swiper;
 
-  @include swiper();
+  border-radius: 4px;
+  width: 270px;
+  box-shadow: $box-shadow;
+  background-color: white;
 
   &__icon {
-    @include font-icon()
+    @include font-icon;
   }
 
   &__gallery {
-    overflow: hidden;
-    height: 150px;
-    border-radius: 4px 4px 0 0;
-    z-index: 10;
     position: relative;
+    z-index: 10;
+    overflow: hidden;
+    border-radius: 4px 4px 0 0;
+    height: 150px;
   }
 
   &__info {
@@ -26,70 +26,70 @@
   }
 
   &__header {
-    border-bottom: 1px solid $shadow-color;
-    padding-bottom: 10px;
-    margin-bottom: 7px;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-bottom: 7px;
+    border-bottom: 1px solid $shadow-color;
+    padding-bottom: 10px;
   }
 
   &__span {
-    @include font-bold();
+    @include font-bold;
   }
 
   &__room {
+    @include font-bold($font-size-normal, $lh: 29px);
+
     display: inline-flex;
     align-items: flex-end;
-
-    @include font-bold($font-size-normal, $lh: 29px);
 
     &-number {
       font-size: $font-size-medium;
       line-height: normal;
 
       .card-slider__span {
-        font-size: $font-size-normal;
         margin-right: 4px;
+        font-size: $font-size-normal;
       }
     }
 
     &-category {
-      color: $purple;
       line-height: 1.46;
+      color: $purple;
     }
   }
 
   &__price {
-    display: flex;
-    align-self: flex-end;
-    align-items: center;
-    text-align: right;
-
     @include font-normal($font-size-small, $text-color-translucent, 23px);
 
+    display: flex;
+    align-items: center;
+    align-self: flex-end;
+    text-align: right;
+
     .card-slider__span {
-      margin-right: 3px;
       @include font-bold($font-size-normal, $text-color-translucent, 23px);
+
+      margin-right: 3px;
     }
   }
 
   &__review {
-    padding-bottom: 5px;
     @include font-normal($font-size-normal, $text-color-translucent, 18px);
 
-    .card-slider__span {
+    padding-bottom: 5px;
 
-      @include font-bold($font-size-normal, $text-color-translucent, 18px)
+    .card-slider__span {
+      @include font-bold($font-size-normal, $text-color-translucent, 18px);
     }
   }
-
 
   &__rate {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     margin-top: 9px;
   }
 }

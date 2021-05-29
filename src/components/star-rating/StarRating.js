@@ -21,12 +21,10 @@ class StarRating {
   }
 
   starRateLaunch(selector) {
-    const rating = $(selector)
-      .attr(this.attrDate);
+    const rating = $(selector).attr(this.attrDate);
     const florRating = Math.floor(rating); // rate cell
     const num = Math.round((rating % 1) * 100); // width
-    const $child = $(selector)
-      .children(this.radioClass);
+    const $child = $(selector).children(this.radioClass);
     const stars = [];
 
     $child.each((_, el) => {
@@ -59,8 +57,7 @@ class StarRating {
   }
 
   rateInput(selector) {
-    const $input = $(selector)
-      .find(this.inputClass);
+    const $input = $(selector).find(this.inputClass);
     $input.each((_, el) => {
       el.addEventListener('click', this.makeStarRateEvent(selector));
     });
@@ -70,10 +67,8 @@ class StarRating {
     let rate;
     return (event) => {
       rate = event.currentTarget.value;
-      $(selector)
-        .attr(this.attrDate, rate);
-      $(selector)
-        .data().rate = rate;
+      $(selector).attr(this.attrDate, rate);
+      $(selector).data().rate = rate;
       this.starRateLaunch(selector);
     };
   }

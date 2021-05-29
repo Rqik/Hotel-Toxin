@@ -1,78 +1,77 @@
 .button-like {
-  display: inline-flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-  transition: .3s ease-in-out;
-  transition-property: border, color;
-  background-clip: padding-box;
-  outline: none;
-  text-transform: uppercase;
-  cursor: pointer;
-  white-space: nowrap;
-  padding: 0;
-  margin: 0;
-  width: 40px;
-  height: 20px;
-  border-radius: 10px;
-  border: 1px solid $transparent_black;
-  background-color: #ffffff;
-
   @include font-bold($font-size-little, $transparent_black, 15px);
 
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  outline: none;
+  border: 1px solid $transparent_black;
+  border-radius: 10px;
+  padding: 0;
+  width: 40px;
+  height: 20px;
+  white-space: nowrap;
+  text-transform: uppercase;
+  background-clip: padding-box;
+  background-color: #fff;
+  transition: 0.3s ease-in-out;
+  transition-property: border, color;
+  cursor: pointer;
+
   &__icon {
-    margin-left: 4px;
+    @include font-icon($font-size-little, $lh: 8px);
+
     display: flex;
     align-items: center;
+    margin-left: 4px;
     text-align: center;
-    vertical-align: middle;
-    transition: opacity .3s ease-in-out;
-    @include font-icon($font-size-little, $lh: 8px);
+    transition: opacity 0.3s ease-in-out;
   }
 
   &__text {
+    @include font-normal($font-size-little, $transparent_black, 9px);
+
     vertical-align: middle;
-    text-align: center;
     margin: 0;
     padding: 0;
     min-width: 20px;
-    transition: opacity .3s ease-in-out;
-
-    @include font-normal($font-size-little, $transparent_black, 9px);
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
   }
 
   &_active {
+    position: relative;
     border: 1px solid transparent;
     color: $purple;
-    position: relative;
     background-clip: padding-box;
-
-    > .button-like__icon {
-      background-image: $purple-gradient;
-      background-clip: text;
-      color: transparent;
-    }
-
-    .button-like__text {
-      color: $purple;
-      padding: 1px;
-    }
 
     &::before {
       content: '';
-      border-radius: 15px;
-      background-image: $purple-gradient;
       position: absolute;
+      left: -1px;
+      right: -1px;
       top: -1px;
       bottom: -1px;
-      right: -1px;
-      left: -1px;
       z-index: 1;
-      padding: 1px;
-      mask: linear-gradient(#fff 0 0) content-box,
-      linear-gradient(#fff 0 0);
+      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
       mask-composite: exclude;
-      transition: opacity .3s ease-in-out;
+      border-radius: 15px;
+      padding: 1px;
+      background-image: $purple-gradient;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    > .button-like__icon {
+      color: transparent;
+      background-image: $purple-gradient;
+      background-clip: text;
+    }
+
+    .button-like__text {
+      padding: 1px;
+      color: $purple;
     }
   }
 }

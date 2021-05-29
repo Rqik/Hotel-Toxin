@@ -1,27 +1,27 @@
 .color-pick {
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
   align-items: center;
+  justify-content: flex-start;
   gap: 40px;
 
   &__rectangel {
+    border-radius: 6px;
     width: 70px;
     height: 70px;
-    border-radius: 6px;
   }
 
   &__name {
+    @include font-bold($font-size-medium, $lh: 28px);
+
     display: flex;
     align-items: center;
-
-    @include font-bold($font-size-medium, $lh: 28px);
   }
 
   &__code {
+    @include font-normal($font-size-medium, $lh: 28px);
+
     display: flex;
     align-items: center;
-
-    @include font-normal($font-size-medium, $lh: 28px);
   }
 }

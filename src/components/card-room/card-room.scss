@@ -1,24 +1,18 @@
-@import "../date-picker/date-picker";
-@import "../drop-down/drop-down";
-@import "../button/button";
+@import '../date-picker/date-picker';
+@import '../drop-down/drop-down';
+@import '../button/button';
 
 .card-room {
-  padding: 40px 30px 30px 30px;
-  background-color: white;
-  width: 380px;
-  border-radius: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-  color: $text-color-main;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  @include media-xxs {
-    max-width: 355px;
-    padding: 30px 15px;
-    width: 100%;
-  }
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  padding: 40px 30px 30px;
+  width: 380px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  color: $text-color-main;
+  background-color: white;
 
   &__header {
     display: flex;
@@ -27,42 +21,42 @@
   }
 
   &__detail {
+    @include font-bold($font-size-normal, $lh: inherit);
+
     display: inline-flex;
     align-items: flex-end;
 
-    @include font-bold($font-size-normal, $lh: inherit);
-
     &-number {
-      margin-right: 1px;
+      @include font-bold;
 
-      @include font-bold();
+      margin-right: 1px;
     }
 
     &-category {
-      color: $purple;
       line-height: 24px;
+      color: $purple;
     }
   }
 
   &__price {
+    @include font-normal($font-size-small, $text-color-translucent, 23px);
+
     display: flex;
     align-self: flex-end;
     text-align: right;
 
-    @include font-normal($font-size-small, $text-color-translucent, 23px);
-
     &-number {
-      margin-right: 3px;
-
       @include font-bold($font-size-normal, $text-color-translucent);
+
+      margin-right: 3px;
     }
   }
 
   &__data {
     display: flex;
     flex-direction: column;
-    gap: 15px;
     margin-top: 20px;
+    gap: 15px;
   }
 
   &__info {
@@ -70,20 +64,20 @@
     flex-direction: column;
     justify-content: space-between;
     vertical-align: middle;
-    gap: 15px;
     margin-top: 21px;
+    gap: 15px;
 
     &-item {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
 
-      @include media-xxs {
-        flex-direction: column;
-      }
-
       :nth-child(1) {
         position: relative;
+      }
+
+      @include media-xxs {
+        flex-direction: column;
       }
     }
 
@@ -94,8 +88,8 @@
 
     &-sum {
       line-height: 18px;
-      text-align: end;
       white-space: nowrap;
+      text-align: end;
     }
   }
 
@@ -103,10 +97,10 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    margin-top: 15px;
     font-weight: bold;
     font-size: $font-size-medium;
     line-height: 23px;
-    margin-top: 15px;
 
     &-name {
       position: relative;
@@ -117,13 +111,13 @@
 
       &::after {
         content: '';
-        display: block;
         position: relative;
+        z-index: 20;
+        display: block;
+        border-bottom: 1px dashed $transparent_black;
         width: 100%;
         height: 2px;
-        border-bottom: 1px dashed $transparent_black;
         box-sizing: border-box;
-        z-index: 20;
       }
     }
   }
@@ -133,36 +127,41 @@
   }
 
   &__icon {
+    @include font-bold($font-size-normal, $lh: 14px);
+
     position: absolute;
-    background-image: url(~@/components/card-room/image/icon.svg);
-    top: 0;
     right: -25px;
+    top: 0;
     width: 20px;
     height: 20px;
+    background-image: url('~@/components/card-room/image/icon.svg');
     cursor: pointer;
 
-    @include font-bold($font-size-normal, $lh: 14px);
+    &:hover::after {
+      @include font-normal(11px, white);
+
+      content: attr(data-text);
+      position: absolute;
+      left: 10px;
+      right: 0;
+      top: 50%;
+      z-index: 1;
+      border-radius: 10px;
+      padding: 5px 10px;
+      width: 100px;
+      background-position: center;
+      background-size: 20px;
+      background-color: $text-color-main;
+    }
 
     @include media-xxs {
       right: 0;
     }
+  }
 
-    &:hover::after {
-      position: absolute;
-      background-size: 20px;
-      background-position: center;
-      content: attr(data-text);
-      width: 100px;
-      left: 10px;
-      top: 50%;
-      right: 0;
-      z-index: 1;
-      background-color: $text-color-main;
-      font-family: Arial, sans-serif;
-      font-size: 11px;
-      padding: 5px 10px;
-      border-radius: 10px;
-      @include font-normal(11px, white);
-    }
+  @include media-xxs {
+    padding: 30px 15px;
+    width: 100%;
+    max-width: 355px;
   }
 }

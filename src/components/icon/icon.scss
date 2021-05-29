@@ -1,18 +1,14 @@
-.icon{
+.icon {
   width: 291px;
   color: transparent;
 
-  @include media-xxs {
-    width: 100%;
-  }
-
   &__item {
-    width: 100%;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid $shadow-color;
     display: flex;
     flex-direction: row;
+    border-bottom: 2px solid $shadow-color;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    width: 100%;
     gap: 10px;
 
     &:last-child {
@@ -21,22 +17,26 @@
   }
 
   &__icon {
+    @include font-icon(48px);
+
     background-image: $purple-gradient;
     background-clip: text;
-
-    @include font-icon(48px);
   }
 
   &__text {
+    @include font-bold($font-size-normal, $text-color-secondary, 24px);
+
     display: flex;
     flex-direction: column;
-
-    @include font-bold($font-size-normal, $text-color-secondary, 24px);
   }
 
   &__description {
     font-weight: normal;
     font-size: $font-size-normal;
     line-height: 24px;
+  }
+
+  @include media-xxs {
+    width: 100%;
   }
 }

@@ -10,18 +10,14 @@ class CheckBoxList {
   }
 
   init() {
-    this.$checkBox.find(this.captionClass)
-      .each(this.eventClick);
+    this.$checkBox.find(this.captionClass).each(this.eventClick);
   }
 
   @boundMethod
   eventClick(_, el) {
-    const $checkBox = $(el)
-      .closest(this.checkBoxClass);
-    const $child = $(el)
-      .siblings(this.itemsClass);
-    $(el)
-      .on('click', this.makeToggleClass($checkBox, $child));
+    const $checkBox = $(el).closest(this.checkBoxClass);
+    const $child = $(el).siblings(this.itemsClass);
+    $(el).on('click', this.makeToggleClass($checkBox, $child));
   }
 
   @boundMethod

@@ -1,31 +1,25 @@
-@import "../field/field";
-@import "../input-radio/input-radio";
-@import "../switch-toggle/switch-toggle";
-@import "../button/button";
+@import '../field/field';
+@import '../input-radio/input-radio';
+@import '../switch-toggle/switch-toggle';
+@import '../button/button';
 
 .card-registration {
-  padding: 40px 30px 30px 30px;
-  background-color: white;
-  width: 380px;
-  border-radius: 4px;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-  color: $text-color-main;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  @include media-xxs {
-    max-width: 355px;
-    padding: 30px 15px;
-    width: 100%;
-  }
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  border-radius: 4px;
+  padding: 40px 30px 30px;
+  width: 380px;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  color: $text-color-main;
+  background-color: white;
 
   &__fields {
     display: flex;
     flex-direction: column;
-    gap: 10px;
     margin-top: 21px;
+    gap: 10px;
   }
 
   &__toggle {
@@ -33,16 +27,22 @@
   }
 
   &__title {
+    font-weight: bold;
     font-size: $font-size-big;
     line-height: 30px;
-    font-weight: bold;
   }
 
   &__bot {
+    z-index: 220;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    z-index: 220;
     margin-top: 28px;
+  }
+
+  @include media-xxs {
+    padding: 30px 15px;
+    width: 100%;
+    max-width: 355px;
   }
 }

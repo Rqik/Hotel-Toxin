@@ -1,5 +1,5 @@
 @import '~@/styles/mixin.scss';
-@import "~@/layouts/grey/grey";
+@import '~@/layouts/grey/grey';
 @import '~@/components/calendar/calendar';
 @import '~@/components/card-auth/card-auth';
 @import '~@/components/card-slider/card-slider';
@@ -8,14 +8,13 @@
 @import '~@/components/card-find/card-find';
 
 .cards {
-  margin: 72px 0 0 110px;
-  box-sizing: border-box;
   display: flex;
+  flex-flow: row wrap;
   align-items: flex-start;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 30px;
+  margin: 72px 0 0 110px;
   min-width: 0;
+  box-sizing: border-box;
+  gap: 30px;
 
   &__el {
     display: flex;
@@ -29,10 +28,10 @@
   }
 
   @include media-xs {
-    width: 100%;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin: 0 auto;
-    flex-direction: column;
+    width: 100%;
   }
 }
