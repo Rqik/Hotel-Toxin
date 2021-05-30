@@ -13,7 +13,7 @@ mixin cardSlide({url, roomNumber , category="", price="0", review="0",rating="0"
             span.card-slider__span №
             =roomNumber
           .card-slider__room-category
-            | &nbsp
+            | &nbsp;
             =category
         .card-slider__price
           span.card-slider__span=price
@@ -23,5 +23,5 @@ mixin cardSlide({url, roomNumber , category="", price="0", review="0",rating="0"
         +starRating( { currentRating: rating } )
         .card-slider__review
           span.card-slider__span=review
-          | &nbsp
+          | &nbsp;
           | Отзывов

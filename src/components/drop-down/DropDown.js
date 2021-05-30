@@ -58,9 +58,23 @@ class DropDown {
     );
     const btn = this.dropDown[selector].find(`${this.btnSubmitClass}`);
     current.on('click', this.makeToggleDropDown(selector));
+    document.addEventListener('click', this.makeCloseDropDown(selector));
+
     if (btn.length) {
       btn.on('click', this.makeToggleDropDown(selector));
     }
+  }
+
+  @boundMethod
+  makeCloseDropDown(selector) {
+    return (event) => {
+      const isHave = !!event.target.closest(selector);
+      if (!isHave) {
+        const items = this.dropDown[selector].find(`${this.dropItemsClass}`);
+        items.slideUp(300);
+        this.dropDown[selector].removeClass(this.toggleClass);
+      }
+    };
   }
 
   makeToggleDropDown(selector) {

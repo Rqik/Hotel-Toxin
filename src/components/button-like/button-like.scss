@@ -55,7 +55,9 @@
       top: -1px;
       bottom: -1px;
       z-index: 1;
-      mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+      mask:
+        linear-gradient(90deg, #fff 0%, #fff 100%) content-box,
+        linear-gradient(90deg, #fff 0%, #fff 100%);
       mask-composite: exclude;
       border-radius: 15px;
       padding: 1px;
@@ -63,7 +65,7 @@
       transition: opacity 0.3s ease-in-out;
     }
 
-    > .button-like__icon {
+    >.button-like__icon {
       color: transparent;
       background-image: $purple-gradient;
       background-clip: text;

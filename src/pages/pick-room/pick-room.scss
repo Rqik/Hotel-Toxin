@@ -25,6 +25,10 @@
     min-height: 500px;
     max-width: 1160px;
 
+    @include media-lg {
+      justify-content: center;
+    }
+
     @include media-sm {
       margin-right: auto;
       margin-bottom: 0;

@@ -22,7 +22,7 @@
   }
 
   &__info {
-    padding: 22px 15px 10px 20px;
+    padding: 22px 15px 17px 20px;
   }
 
   &__header {
@@ -77,8 +77,6 @@
 
   &__review {
     @include font-normal($font-size-normal, $text-color-translucent, 18px);
-
-    padding-bottom: 5px;
 
     .card-slider__span {
       @include font-bold($font-size-normal, $text-color-translucent, 18px);

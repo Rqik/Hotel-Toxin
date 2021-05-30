@@ -1,11 +1,11 @@
 //- active --  true || false
 //- number --  Number || String
-mixin likeButton({ active="false" , number="0"} )
+mixin likeButton({ active="false" , number="0" , type = "button"} )
   if active
-    button(type="button").button-like.button-like_active.js-button-like
-      .button-like__icon favorite
+    button(type=type).button-like.button-like_active.js-button-like
+      span.button-like__icon favorite
       span.button-like__text.js-button-like__text= number
   else
-    button(type="button").button-like.js-button-like
-      .button-like__icon favorite_border
+    button(type=type).button-like.js-button-like
+      span.button-like__icon favorite_border
       span.button-like__text.js-button-like__text= number

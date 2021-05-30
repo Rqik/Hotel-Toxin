@@ -7,5 +7,5 @@ mixin switchToggle({caption= "", name="toggle" , label} = {})
       .switch-toggle__caption= caption
     .switch-toggle__items
       each item , indx in label
-        input.switch-toggle__input(id=name + "-" + indx type="checkbox" name=name)
-        label.switch-toggle__label(for=name + "-" + indx class="radio__label")=item
+        input.switch-toggle__input(id=`${name}-${indx}` type="checkbox" name=name)
+        label.switch-toggle__label(for=`${name}-${indx}` class="radio__label")=item

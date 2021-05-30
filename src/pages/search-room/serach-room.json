@@ -4,22 +4,14 @@
       "active": false,
       "name": "Удобства номера",
       "current": "2 спальни, 2 кровати",
-      "text": [
-        "спальни",
-        "кровати",
-        "ванные комнаты"
-      ]
+      "text": ["спальни", "кровати", "ванные комнаты"]
     },
     "dropdownSelectExt": {
       "active": false,
       "extended": true,
       "name": "гости",
       "current": "Сколько гостей",
-      "text": [
-        "взрослые",
-        "дети",
-        "младенцы"
-      ]
+      "text": ["взрослые", "дети", "младенцы"]
     }
   },
   "rangeSlider": {
@@ -72,16 +64,20 @@
   "cardSlider": {
     "url": [
       {
-        "src": "img/room-1.jpg"
+        "src": "img/room-2.jpg",
+        "alt": "общий вид"
       },
       {
-        "src": "img/room-2.jpg"
+        "src": "img/room-1.jpg",
+        "alt": "две кровати"
       },
       {
-        "src": "img/room-3.jpg"
+        "src": "img/room-3.jpg",
+        "alt": "рабочее место"
       },
       {
-        "src": "img/room-4.jpg"
+        "src": "img/room-4.jpg",
+        "alt": "вторая команта"
       }
     ],
     "roomNumber": "840",
@@ -92,16 +88,20 @@
   "cardSlider2": {
     "url": [
       {
-        "src": "img/room-2.jpg"
+        "src": "img/room-2.jpg",
+        "alt": "общий вид"
       },
       {
-        "src": "img/room-1.jpg"
+        "src": "img/room-1.jpg",
+        "alt": "две кровати"
       },
       {
-        "src": "img/room-3.jpg"
+        "src": "img/room-3.jpg",
+        "alt": "рабочее место"
       },
       {
-        "src": "img/room-4.jpg"
+        "src": "img/room-4.jpg",
+        "alt": "вторая команта"
       }
     ],
     "roomNumber": "820",

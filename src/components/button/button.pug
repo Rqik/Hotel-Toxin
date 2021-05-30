@@ -1,19 +1,19 @@
 //- style  -- small, long or outlined
 //- text   -- button caption text
 //- href   -- url address link format https://www.google.com/
-mixin button({ style = "small" , text , href , border = true })
+mixin button({ style = "small" , text , href , border = true , type = "button"  })
   -
     let classList = []
     classList.push(`button_${style}`)
     if (!border) classList.push(`button_with-border-none`)
 
   if (href)
-    a.button(class=classList href = href type="button")&attributes(attributes)
+    a.button(class=classList href = href )&attributes(attributes)
       span.button__text= text
       if style === "long"
-        .button__icon arrow_forward
+        span.button__icon arrow_forward
   else
-    button.button(class=classList type="button")&attributes(attributes)
+    button.button(class=classList type=type)&attributes(attributes)
       span.button__text= text
       if style === "long"
-        .button__icon arrow_forward
+        span.button__icon arrow_forward
