@@ -13,24 +13,26 @@ class ButtonLike {
 
   @boundMethod
   eventHandler(el) {
-    const text = el.querySelector(this.textSelector).textContent;
+    const text = el.querySelector(this.textSelector);
+
     el.addEventListener('click', this.makeToggleClass(text));
   }
 
   @boundMethod
-  makeToggleClass(text) {
-    let span = text;
+  makeToggleClass(element) {
+    const text = element;
     return (event) => {
-      const element = event.currentTarget;
-      const active = element.classList.toggle(this.toggleSelector);
+      const target = event.currentTarget;
+      const span = element.textContent;
+      const active = target.classList.toggle(this.toggleSelector);
       if (active) {
-        element.firstElementChild.textContent = 'favorite';
-        span = +span + 1;
+        target.firstElementChild.textContent = 'favorite';
+        text.textContent = Number(span) + 1;
         return;
       }
-      element.classList.remove(this.toggleSelector);
-      element.firstElementChild.textContent = 'favorite_border';
-      span = +span - 1;
+      target.classList.remove(this.toggleSelector);
+      target.firstElementChild.textContent = 'favorite_border';
+      text.textContent = Number(span) - 1;
     };
   }
 }

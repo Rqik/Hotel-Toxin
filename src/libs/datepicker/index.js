@@ -121,7 +121,7 @@ class DatePicker {
     return () => {
       // eslint-disable-next-line prefer-const
       let [year, month, day] = $(input).val().split('.').reverse();
-      month = +month - 1;
+      month = Number(month) - 1;
       this.prevDay =
         new Date(year, month, day) > new Date()
           ? new Date(year, month, day)
