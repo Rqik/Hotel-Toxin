@@ -16,12 +16,12 @@ mixin cardSlide({url, roomNumber , category="", price="0", review="0",rating="0"
             | &nbsp;
             =category
         .card-slider__price
-          span.card-slider__span=price
+          span.card-slider__span.js-card-slider_price=price
             | ₽
           | в сутки
       .card-slider__rate
         +starRating( { currentRating: rating } )
         .card-slider__review
-          span.card-slider__span=review
+          span.card-slider__span.js-card-slider_review=review
           | &nbsp;
           | Отзывов
