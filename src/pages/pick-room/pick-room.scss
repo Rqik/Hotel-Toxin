@@ -8,17 +8,22 @@
 
 .pick-room {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   min-height: 500px;
   background: url('./img/background.jpg') no-repeat center;
   background-size: cover;
 
   &__slide {
+    @include font-normal($font-size-normal, $text-color-secondary);
+
     display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
     float: left;
     margin: 70px 0;
     width: 100%;
@@ -31,8 +36,17 @@
 
     @include media-sm {
       margin-right: auto;
-      margin-bottom: 0;
       margin-left: auto;
     }
+  }
+
+  &__caption {
+    align-self: flex-end;
+    width: 297px;
+    text-align: right;
+  }
+
+  @include media-md {
+    height: 100%;
   }
 }

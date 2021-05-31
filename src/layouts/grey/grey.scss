@@ -1,7 +1,10 @@
 .grey {
-  padding: 30px;
   min-height: 100vh;
   background-color: #e5e5e5;
+
+  &__logo {
+    padding: 30px 0 0 30px;
+  }
 
   @include media-md {
     padding: 30px 15px;

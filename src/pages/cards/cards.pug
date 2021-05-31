@@ -16,13 +16,13 @@ block variables
 block content
   - const { cardSlider, cardSlider2, cardRoom } = require('./card.json')
   .cards
-    .cards__el
+    .cards__element
       +cardFind
       +cardRegistration
-    .cards__el
+    .cards__element
       +cardRoom(cardRoom)
       +cardAuth
-    .cards__el
+    .cards__element
       +calendar
       +cardSlide(cardSlider)
       +cardSlide(cardSlider2)

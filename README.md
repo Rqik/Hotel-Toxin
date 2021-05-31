@@ -65,8 +65,7 @@ npm install
 
 ### `npm run dev`
 
-Запускает _development_ сборку и сохраняет результат
-в папку `/dist`. Детали работы в [webpack.dev.js](./config/webpack.dev.js).
+Запускает _development_ сборку и сохраняет результат в папку `/dist`.
 
 ### `npm run watch`
 
@@ -78,7 +77,7 @@ npm install
 
 ### `npm run build`
 
-Запускает _production_ сборку и сохраняет результат в папку `/dist`. Детали работы в [webpack.prod.js](./config/webpack.prod.js).
+Запускает _production_ сборку и сохраняет результат в папку `/dist`.
 
 ### `npm run lint`
 
