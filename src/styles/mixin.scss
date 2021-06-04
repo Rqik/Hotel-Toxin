@@ -1,5 +1,6 @@
 @import 'variables';
 
+
 @mixin media-lg {
   @media (max-width: 1170px) {
     @content;
@@ -30,12 +31,10 @@
   }
 }
 
-@mixin font-normal(
-  $fs: $font-size-normal,
+@mixin font-normal($fs: $font-size-normal,
   $color: $text-color-main,
   $lh: normal,
-  $fw: normal
-) {
+  $fw: normal) {
   font-family: 'Montserrat', 'Arial', sans-serif;
   font-weight: $fw;
   font-style: normal;
@@ -44,12 +43,10 @@
   color: $color;
 }
 
-@mixin font-bold(
-  $fs: $font-size-big,
+@mixin font-bold($fs: $font-size-big,
   $color: $text-color-main,
   $lh: normal,
-  $fw: bold
-) {
+  $fw: bold) {
   font-family: 'Montserrat', 'Arial', sans-serif;
   font-weight: $fw;
   font-style: normal;

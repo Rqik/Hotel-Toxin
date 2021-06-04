@@ -9,7 +9,7 @@
   padding: 120px 30px;
   width: 100%;
   max-width: 768px;
-  box-shadow: 0 1px 0 $shadow-color;
+  box-shadow: $box-shadow-bold;
   background-color: white;
 
   &__copyright {

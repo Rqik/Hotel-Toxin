@@ -17,11 +17,13 @@ mixin cardAuth
     .card-auth__submit
       +button({
         style: "long",
-        text: "войти"
+        text: "войти",
+        type: "submit"
       })&attributes({ style: { "padding": "10px 23px" } })
       .card-auth__bot
         .card-auth__bot_text Нет аккаунта на Toxin
         +button({
           style: "outlined",
-          text: "Создать"
+          text: "Создать",
+          href: "./index.html"
         })&attributes({ style: { "padding": "10px 17px" } })

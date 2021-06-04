@@ -90,8 +90,12 @@
     &_active {
       @include media-md {
         display: flex;
+        align-items: center;
+        justify-content: center;
         border-right: 1px solid rgba(184, 184, 184, 0.2);
+        height: 100%;
         min-width: 230px;
+        box-shadow: 19px 0 39px -3px rgba(34, 60, 80, 0.24);
       }
     }
 

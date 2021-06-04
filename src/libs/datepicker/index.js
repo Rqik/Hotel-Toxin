@@ -95,11 +95,11 @@ class DatePicker {
         if (!$(el).find('.datepicker--button-apply').length) {
           $(el).find('span.datepicker--button').remove();
           $(el).append(
-            `<button class="datepicker--button" data-action="clear">
+            `<button class="datepicker--button" data-action="clear" type="button">
                Очистить
             </button>
             <button class="datepicker--button-apply
-            ${this.btnApplyClass.replace(/^\./, '')}">
+            ${this.btnApplyClass.replace(/^\./, '')}" type="button">
               Применить
             </button>`,
           );

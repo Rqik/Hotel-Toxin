@@ -11,8 +11,8 @@
   &::before {
     content: '';
     position: absolute;
-    left: -2220px;
-    right: -2220px;
+    left: -100vmax;
+    right: -100vmax;
     top: -1px;
     overflow: hidden;
     margin: 0 auto;

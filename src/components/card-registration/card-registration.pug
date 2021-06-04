@@ -44,11 +44,13 @@ mixin cardRegistration
         })
     +button({
       style: "long",
-      text: "перейти к оплате"
+      text: "перейти к оплате",
+      type: "submit"
     })&attributes({style:{"margin-top": "21px"}})
     .card-registration__bot
       .card-registration__span Уже есть аккаунт на Toxin
       +button({
         style: "outlined",
-        text: "Войти"
+        text: "Войти",
+        href:"./index.html"
       })&attributes({ style: { padding: "10px 25px" } })
