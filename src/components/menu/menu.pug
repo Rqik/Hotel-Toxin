@@ -3,6 +3,8 @@ include ../button/button
 mixin menu({items, auth})
   .menu(class=attributes.class)
     ul.menu__items.js-menu__items
+      li.menu__close.js-menu__close
+        .menu__icon close
       if items
         each item in items
           - const {more , text , href , active} = item
@@ -26,7 +28,7 @@ mixin menu({items, auth})
             style: "outlined",
             text: "войти",
             href:'./auth.html'
-          })&attributes({style:{height:"38px"}})
+          })&attributes({style:{height:"40px"}})
         li.menu__item
           +button({
             text: "зарегистрироваться",

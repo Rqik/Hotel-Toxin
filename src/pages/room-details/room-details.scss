@@ -13,7 +13,7 @@
     grid-template-rows: repeat(2, 1fr);
     gap: 0;
 
-    @include media-xs {
+    @include media-sm {
       display: flex;
       flex-direction: column;
     }
@@ -97,9 +97,12 @@
     align-items: flex-start;
     justify-content: space-between;
     margin: 0 auto;
-    padding-top: 70px;
-    padding-bottom: 70px;
-    max-width: 1160px;
+    padding: 70px 140px;
+    max-width: 1920px;
+
+    @include media-xxx {
+      padding: 70px;
+    }
 
     @include media-lg {
       flex-direction: column;
@@ -110,7 +113,6 @@
 
     @include media-xs {
       padding: 30px 15px;
-      max-width: 320px;
     }
 
     @include media-xxs {
@@ -135,6 +137,7 @@
     @include media-sm {
       flex-direction: column;
       align-items: center;
+      gap: 15px;
     }
 
     @include media-xs {
@@ -165,5 +168,7 @@
 
   &__count-review {
     @include font-normal($font-size-normal, $text-color-translucent, 14px);
+
+    white-space: nowrap;
   }
 }

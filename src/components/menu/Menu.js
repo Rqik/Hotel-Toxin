@@ -6,7 +6,10 @@ class Menu {
     this.menuItemListClass = '.js-menu__item_with-list';
     this.itemsClass = '.js-menu__items';
     this.burgerClass = '.js-menu__burger';
-    this.burger = $(this.burgerClass);
+    this.closeClass = '.js-menu__close';
+    this.$burger = $(this.burgerClass);
+    this.$menu = $(this.itemsClass);
+    this.$closeButton = $(this.closeClass);
     this.dropListClass = '.js-menu__drop-list';
     this.icon = '<i class="menu__icon"> expand_more </i>';
   }
@@ -14,7 +17,9 @@ class Menu {
   init() {
     const $menuItem = $(this.menuItemListClass);
 
-    this.burger.each((_, el) => {
+    this.$closeButton.on('click', this.hideMenu);
+
+    this.$burger.each((_, el) => {
       $(el).click(this.toggleMenuBurger);
     });
 
@@ -32,7 +37,12 @@ class Menu {
     ) {
       return;
     }
-    $(this.itemsClass).removeClass(this.toggleClass);
+    this.hideMenu();
+  }
+
+  @boundMethod
+  hideMenu() {
+    this.$menu.removeClass(this.toggleClass);
   }
 
   @boundMethod

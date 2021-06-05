@@ -4,7 +4,8 @@
 .footer-head {
   display: flex;
   flex-direction: row;
-  margin-bottom: 83px;
+  justify-content: space-between;
+  margin-bottom: 87px;
 
   &__info {
     width: 260px;

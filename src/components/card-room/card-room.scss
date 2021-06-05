@@ -65,8 +65,8 @@
     flex-direction: column;
     justify-content: space-between;
     vertical-align: middle;
-    margin-top: 21px;
-    gap: 15px;
+    margin-top: 24px;
+    gap: 16px;
 
     &-item {
       display: flex;
@@ -76,15 +76,15 @@
       :nth-child(1) {
         position: relative;
       }
-
-      @include media-xxs {
-        flex-direction: column;
-      }
     }
 
     &-name {
       width: 214px;
       line-height: 18px;
+
+      @include media-xxs {
+        padding-right: 15px;
+      }
     }
 
     &-sum {

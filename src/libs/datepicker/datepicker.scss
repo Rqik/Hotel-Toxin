@@ -131,19 +131,19 @@
       color: $text-color-translucent;
 
       &-day {
-        +.-current- {
+        + .-current- {
           @include font-bold($font-size-small, white);
 
           background: $green-gradient;
         }
 
-        +.-selected- {
+        + .-selected- {
           @include font-bold($font-size-small, white);
 
           background: $purple-gradient;
         }
 
-        +.-range-from- {
+        + .-range-from- {
           position: relative;
 
           &::after {
@@ -160,7 +160,7 @@
           }
         }
 
-        +.-range-to- {
+        + .-range-to- {
           position: relative;
 
           &::after {
@@ -177,7 +177,7 @@
           }
         }
 
-        +.-in-range- {
+        + .-in-range- {
           background: none;
 
           &::after {

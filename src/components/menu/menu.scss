@@ -1,5 +1,27 @@
 @import '../button/button';
 
+@keyframes close-button {
+  from {
+    right: 100%;
+    opacity: 0;
+    transform: rotateZ(-0deg);
+  }
+
+  to {
+    transform: rotateZ(90deg);
+  }
+}
+
+@keyframes rotation {
+  from {
+    transform: rotateZ(90deg);
+  }
+
+  to {
+    transform: rotateZ(0);
+  }
+}
+
 .menu {
   &__auth {
     border-left: 1px solid $shadow-color;
@@ -34,6 +56,7 @@
     align-items: center;
     list-style: none;
     padding: 0;
+    cursor: default;
     gap: 20px;
 
     @include media-md {
@@ -50,12 +73,40 @@
       height: 100vh;
       background-color: white;
     }
+
+    @include media-sm {
+      width: 100%;
+    }
+  }
+
+  &__close {
+    display: none;
+    height: 24px;
+    animation-name: close-button;
+    animation-duration: 0.8s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 1;
+    animation-direction: alternate;
+    cursor: pointer;
+
+    &:hover {
+      transform: rotateZ(180deg);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    @include media-md {
+      position: absolute;
+      right: 10%;
+      top: 10%;
+      display: block;
+    }
   }
 
   &__item {
     vertical-align: middle;
     margin: 0;
     padding: 0;
+    cursor: pointer;
 
     &_with-list {
       position: relative;

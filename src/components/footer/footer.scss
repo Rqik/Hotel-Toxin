@@ -11,7 +11,12 @@
 
   &__container {
     margin: 0 auto;
-    max-width: 1160px;
+    padding: 0 110px;
+    max-width: 1920px;
+
+    @include media-xxx {
+      padding: 0;
+    }
   }
 
   @include media-sm {

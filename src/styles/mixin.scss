@@ -1,5 +1,10 @@
 @import 'variables';
 
+@mixin media-xxx {
+  @media (max-width: 1400px) {
+    @content;
+  }
+}
 
 @mixin media-lg {
   @media (max-width: 1170px) {

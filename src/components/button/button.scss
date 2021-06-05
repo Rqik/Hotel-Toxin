@@ -20,7 +20,6 @@
   cursor: pointer;
 
   &_small {
-
     &:hover,
     &:focus {
       opacity: 0.5;
@@ -34,7 +33,7 @@
     vertical-align: middle;
     border: 2px solid transparent;
     border-radius: 24px;
-    padding: 10px 17px;
+    padding: 10px 20px;
     height: 48px;
     box-sizing: border-box;
     color: $purple;
@@ -77,7 +76,6 @@
     }
 
     &:hover {
-
       .button,
       .link {
         &__icon {

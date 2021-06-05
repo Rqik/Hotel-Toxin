@@ -21,14 +21,17 @@
   &__slide {
     @include font-normal($font-size-normal, $text-color-secondary);
 
+    @include media-xxx {}
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     float: left;
     margin: 70px 0;
+    padding: 0 140px;
     width: 100%;
     min-height: 500px;
-    max-width: 1160px;
+    max-width: 1920px;
 
     @include media-lg {
       justify-content: center;

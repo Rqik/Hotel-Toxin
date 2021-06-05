@@ -1,7 +1,8 @@
 include ../menu/menu
 mixin header({logo, items, auth})
   .header
-    .header__logo
-      a.header__logo-link(href="./index.html")
-        img.header__logo-img(src=logo.src, alt=logo.alt || "logo")
-    +menu({items,auth})(class="header__menu")
+    .header__nav
+      .header__logo
+        a.header__logo-link(href="./index.html")
+          img.header__logo-img(src=logo.src, alt=logo.alt || "logo")
+      +menu({items,auth})(class="header__menu")
