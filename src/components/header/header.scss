@@ -23,18 +23,6 @@
     }
   }
 
-  &__menu {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    cursor: pointer;
-    gap: 20px;
-
-    @include media-md {
-      flex-direction: row-reverse;
-    }
-  }
-
   &__logo {
     margin-top: 9px;
 

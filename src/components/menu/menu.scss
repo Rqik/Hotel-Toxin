@@ -23,6 +23,12 @@
 }
 
 .menu {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  gap: 20px;
+
   &__auth {
     border-left: 1px solid $shadow-color;
     padding-left: 19px;
@@ -191,5 +197,9 @@
       width: 100%;
       text-align: center;
     }
+  }
+
+  @include media-md {
+    flex-direction: row-reverse;
   }
 }
