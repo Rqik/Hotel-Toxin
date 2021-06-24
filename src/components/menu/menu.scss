@@ -55,7 +55,6 @@
   &__items {
     @include font-normal($font-size-normal, $text-color-translucent, 17px);
 
-    z-index: 2222;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -68,6 +67,7 @@
       position: fixed;
       left: 0;
       top: 0;
+      z-index: 22;
       display: none;
       flex-direction: column;
       align-items: center;
@@ -164,7 +164,7 @@
     &-list {
       position: absolute;
       top: 30px;
-      z-index: 2430;
+      z-index: 24;
       display: none;
       flex-direction: row;
       align-items: center;
