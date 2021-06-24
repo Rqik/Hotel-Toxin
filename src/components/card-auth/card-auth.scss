@@ -24,7 +24,6 @@
   }
 
   &__bot {
-    z-index: 22;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -32,12 +31,7 @@
   }
 
   &__submit {
-    z-index: 20;
     margin-top: 10px;
-
-    .card-auth__bot {
-      z-index: 20;
-    }
   }
 
   @include media-xxs {
