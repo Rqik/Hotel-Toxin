@@ -22,27 +22,27 @@ mixin diagram({great = 0, good =0, satisfactorily = 0,  bad = 0})
     const svgElements = {
       great: {
         gradient: 'url(#lgrad0)',
-        strokeDasharray: `${greatPercent} ${100 - greatPercent}`,
-        strokeDashoffset: '25',
+        strokeDasharray: `${greatPercent - 0.5} ${100 - greatPercent + 0.5}`,
+        strokeDashoffset: `${100 - badPercent - satisfactorilyPercent  - goodPercent+ 25}`,
         votes: great
       },
       good: {
         gradient: 'url(#lgrad1)',
-        strokeDasharray: `${goodPercent} ${100 - goodPercent}`,
-        strokeDashoffset: `${100 - greatPercent + 25}`,
+        strokeDasharray: `${goodPercent - 0.5} ${100 - goodPercent + 0.5}`,
+        strokeDashoffset: `${100 - badPercent - satisfactorilyPercent + 25}`,
         votes: good
       },
       satisfactorily: {
         gradient: 'url(#lgrad2)',
-        strokeDasharray: `${satisfactorilyPercent} ${100 -
-        satisfactorilyPercent}`,
-        strokeDashoffset: `${100 - goodPercent - greatPercent + 25}`,
+        strokeDasharray: `${satisfactorilyPercent - 0.5} ${100 -
+        satisfactorilyPercent + 0.5}`,
+        strokeDashoffset: `${100 - badPercent + 25}`,
         votes: satisfactorily,
       },
       bad: {
         gradient: 'url(#lgrad3)',
-        strokeDasharray: `${badPercent} ${100 - badPercent}`,
-        strokeDashoffset: `${100 - satisfactorilyPercent - goodPercent - greatPercent + 25}`,
+        strokeDasharray: `${badPercent - 0.5} ${100 - badPercent + 0.5}`,
+        strokeDashoffset: '25',
         votes: bad
       },
     }
@@ -60,11 +60,12 @@ mixin diagram({great = 0, good =0, satisfactorily = 0,  bad = 0})
 
         each element in svgElements
           - const {gradient , strokeDasharray ,strokeDashoffset, votes} = element
-          circle(
-            class="diagram__unit js-unit" cx="20" cy="20"
-            r="15.91549430918954" fill="none" stroke=gradient
-            stroke-dasharray=strokeDasharray
-            stroke-dashoffset=strokeDashoffset)
+          if votes
+            circle(
+              class="diagram__unit js-unit" cx="20" cy="20"
+              r="15.91549430918954" fill="none" stroke=gradient
+              stroke-dasharray=strokeDasharray
+              stroke-dashoffset=strokeDashoffset)
           g(fill=gradient
             class="diagram__chart-number diagram__chart-number_hidden js-number")
             text(x="48%" y="50%")=votes
