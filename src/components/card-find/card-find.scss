@@ -2,8 +2,6 @@
 @import '../drop-down/drop-down';
 
 .card-find {
-  @include font-normal($color: $text-color-main);
-
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -14,6 +12,12 @@
   height: min-content;
   box-shadow: $box-shadow-light;
   background-color: white;
+
+  @include media-xxs {
+    padding: 30px 15px;
+    width: 100%;
+    max-width: 355px;
+  }
 
   &__title {
     @include font-bold($font-size-big, $text-color-main, 30px);
@@ -27,9 +31,5 @@
     margin-top: 17px;
   }
 
-  @include media-xxs {
-    padding: 30px 15px;
-    width: 100%;
-    max-width: 355px;
-  }
+  @include font-normal($color: $text-color-main);
 }

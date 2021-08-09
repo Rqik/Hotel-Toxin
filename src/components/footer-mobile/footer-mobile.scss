@@ -13,6 +13,10 @@
   box-shadow: $box-shadow-bold;
   background-color: white;
 
+  @include media-sm {
+    box-shadow: none;
+  }
+
   &__copyright {
     margin-top: 16px;
     margin-bottom: 22px;
@@ -36,9 +40,5 @@
   &__img {
     display: block;
     margin: auto;
-  }
-
-  @include media-sm {
-    box-shadow: none;
   }
 }

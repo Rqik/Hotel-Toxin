@@ -1,6 +1,4 @@
 .button-like {
-  @include font-bold($font-size-little, $transparent_black, 15px);
-
   display: inline-flex;
   flex-direction: row;
   align-items: center;
@@ -21,24 +19,24 @@
   cursor: pointer;
 
   &__icon {
-    @include font-icon($font-size-little, $lh: 8px);
-
     display: flex;
     align-items: center;
     margin-left: 4px;
     text-align: center;
     transition: opacity 0.3s ease-in-out;
+
+    @include font-icon($font-size-little, $lh: 8px);
   }
 
   &__text {
-    @include font-normal($font-size-little, $transparent_black, 9px);
-
     vertical-align: middle;
     margin: 0;
     padding: 0;
     min-width: 20px;
     text-align: center;
     transition: opacity 0.3s ease-in-out;
+
+    @include font-normal($font-size-little, $transparent_black, 9px);
   }
 
   &_active {
@@ -76,4 +74,6 @@
       color: $purple;
     }
   }
+
+  @include font-bold($font-size-little, $transparent_black, 15px);
 }

@@ -1,19 +1,17 @@
 .pagination {
-  @include font-normal;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   margin: 0;
 
   &__items {
-    @include font-normal($font-size-small, $text-color-translucent, 40px);
-
     display: flex;
     flex-direction: row;
     list-style: none;
     margin: 0;
     padding: 0;
+
+    @include font-normal($font-size-small, $text-color-translucent, 40px);
   }
 
   &__link {
@@ -31,21 +29,21 @@
     cursor: pointer;
 
     &_current {
-      @include font-bold($font-size-small, white, 40px);
-
       align-self: center;
       border-radius: 50%;
       width: 40px;
       height: 40px;
       background-image: $purple-gradient;
+
+      @include font-bold($font-size-small, white, 40px);
     }
   }
 
   &__icon {
-    @include font-icon($font-size-big, white);
-
     vertical-align: middle;
     text-align: center;
+
+    @include font-icon($font-size-big, white);
   }
 
   &__prev {
@@ -56,11 +54,11 @@
   }
 
   &__text {
-    @include font-normal($font-size-normal, $text-color-secondary);
-
     margin-top: 11px;
     margin-left: 5px;
     text-transform: none;
+
+    @include font-normal($font-size-normal, $text-color-secondary);
   }
 
   &__next,
@@ -73,4 +71,6 @@
     background-image: $green-gradient;
     cursor: pointer;
   }
+
+  @include font-normal;
 }

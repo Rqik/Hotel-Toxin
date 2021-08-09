@@ -12,6 +12,11 @@
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 
+    @include media-xxs {
+      padding: 15px 10px;
+      width: 300px;
+    }
+
     .datepicker--pointer {
       display: none;
     }
@@ -105,14 +110,14 @@
     }
 
     &--day-name {
-      @include font-bold($font-size-small, $purple, 15px);
-
       display: flex;
       align-items: center;
       width: 39.88px;
       height: 40px;
       text-align: center;
       text-transform: capitalize;
+
+      @include font-bold($font-size-small, $purple, 15px);
     }
 
     &--cells {
@@ -132,15 +137,15 @@
 
       &-day {
         + .-current- {
-          @include font-bold($font-size-small, white);
-
           background: $green-gradient;
+
+          @include font-bold($font-size-small, white);
         }
 
         + .-selected- {
-          @include font-bold($font-size-small, white);
-
           background: $purple-gradient;
+
+          @include font-bold($font-size-small, white);
         }
 
         + .-range-from- {
@@ -199,11 +204,6 @@
           color: $transparent_black;
         }
       }
-    }
-
-    @include media-xxs {
-      padding: 15px 10px;
-      width: 300px;
     }
   }
 }

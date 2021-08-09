@@ -1,6 +1,4 @@
 .font-pick {
-  @include font-normal;
-
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -22,11 +20,11 @@
   }
 
   &_size_small {
-    @include font-bold($font-size-small, $lh: 15px);
-
     .font-pick__tag {
       font-weight: bold;
     }
+
+    @include font-bold($font-size-small, $lh: 15px);
   }
 
   &__tag {
@@ -51,4 +49,6 @@
       text-transform: uppercase;
     }
   }
+
+  @include font-normal;
 }

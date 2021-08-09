@@ -23,6 +23,18 @@
   padding: 60px 0 0 140px;
   gap: 100px 120px;
 
+  @include media-md {
+    padding: 60px 30px;
+  }
+
+  @include media-sm {
+    gap: 60px;
+  }
+
+  @include media-xxs {
+    padding: 30px 10px;
+  }
+
   &__block {
     display: flex;
     flex-direction: column;
@@ -36,13 +48,13 @@
   }
 
   &__element {
-    @include font-bold($font-size-small, $text-color-main, 15px);
-
     display: flex;
     flex-direction: column;
     align-content: flex-start;
     margin-top: 14px;
     text-transform: uppercase;
+
+    @include font-bold($font-size-small, $text-color-main, 15px);
   }
 
   &__items {
@@ -50,17 +62,5 @@
     flex-flow: row wrap;
     margin-top: 17px;
     gap: 6px 10px;
-  }
-
-  @include media-md {
-    padding: 60px 30px;
-  }
-
-  @include media-sm {
-    gap: 60px;
-  }
-
-  @include media-xxs {
-    padding: 30px 10px;
   }
 }

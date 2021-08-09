@@ -1,6 +1,4 @@
 .bullet-list {
-  @include font-normal;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -9,18 +7,18 @@
   text-transform: uppercase;
 
   &__title {
-    @include font-bold($font-size-small);
-
     margin-bottom: 14px;
+
+    @include font-bold($font-size-small);
   }
 
   &__items {
-    @include font-normal($color: $text-color-secondary, $lh: 24px);
-
     list-style: none;
     margin: 0;
     padding: 0;
     text-transform: none;
+
+    @include font-normal($color: $text-color-secondary, $lh: 24px);
   }
 
   &__item {
@@ -43,4 +41,6 @@
       margin-top: 0;
     }
   }
+
+  @include font-normal;
 }

@@ -26,13 +26,13 @@
   &__logo {
     margin-top: 9px;
 
+    @include media-xs {
+      width: 80px;
+    }
+
     &-img {
       width: 100%;
       object-fit: contain;
-    }
-
-    @include media-xs {
-      width: 80px;
     }
   }
 }

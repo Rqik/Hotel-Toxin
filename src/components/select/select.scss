@@ -4,6 +4,10 @@
   flex-direction: column;
   width: 320px;
 
+  @include media-xxs {
+    width: 100%;
+  }
+
   &__title {
     font-weight: bold;
     font-size: $font-size-small;
@@ -49,8 +53,6 @@
   }
 
   &__icon {
-    @include font-icon($font-size-big, $text-color-translucent, 24px);
-
     position: absolute;
     right: 10px;
     bottom: 10px;
@@ -61,9 +63,7 @@
     text-align: center;
     cursor: pointer;
     pointer-events: none;
-  }
 
-  @include media-xxs {
-    width: 100%;
+    @include font-icon($font-size-big, $text-color-translucent, 24px);
   }
 }

@@ -78,13 +78,13 @@
   }
 
   &__title {
-    @include font-bold($font-size-medium, $text-color-main, 23px);
-
     margin: 0;
 
     &_for_list {
       margin-left: 20px;
     }
+
+    @include font-bold($font-size-medium, $text-color-main, 23px);
   }
 
   &__text {
@@ -150,14 +150,14 @@
     flex-direction: column;
     width: 340px;
 
+    @include media-xxs {
+      width: 100%;
+    }
+
     &_in-row {
       flex-direction: row;
       align-items: center;
       justify-content: space-between;
-      width: 100%;
-    }
-
-    @include media-xxs {
       width: 100%;
     }
   }
@@ -167,8 +167,8 @@
   }
 
   &__count-review {
-    @include font-normal($font-size-normal, $text-color-translucent, 14px);
-
     white-space: nowrap;
+
+    @include font-normal($font-size-normal, $text-color-translucent, 14px);
   }
 }

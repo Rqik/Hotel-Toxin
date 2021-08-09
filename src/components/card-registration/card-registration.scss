@@ -15,6 +15,12 @@
   color: $text-color-main;
   background-color: white;
 
+  @include media-xxs {
+    padding: 30px 15px;
+    width: 100%;
+    max-width: 355px;
+  }
+
   &__fields {
     display: flex;
     flex-direction: column;
@@ -38,11 +44,5 @@
     align-items: center;
     justify-content: space-between;
     margin-top: 28px;
-  }
-
-  @include media-xxs {
-    padding: 30px 15px;
-    width: 100%;
-    max-width: 355px;
   }
 }

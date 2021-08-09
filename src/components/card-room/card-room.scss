@@ -15,6 +15,12 @@
   color: $text-color-main;
   background-color: white;
 
+  @include media-xxs {
+    padding: 30px 15px;
+    width: 100%;
+    max-width: 355px;
+  }
+
   &__header {
     display: flex;
     flex-direction: row;
@@ -22,35 +28,35 @@
   }
 
   &__detail {
-    @include font-bold($font-size-normal, $lh: inherit);
-
     display: inline-flex;
     align-items: flex-end;
 
     &-number {
-      @include font-bold;
-
       margin-right: 1px;
+
+      @include font-bold;
     }
 
     &-category {
       line-height: 24px;
       color: $purple;
     }
+
+    @include font-bold($font-size-normal, $lh: inherit);
   }
 
   &__price {
-    @include font-normal($font-size-small, $text-color-translucent, 23px);
-
     display: flex;
     align-self: flex-end;
     text-align: right;
 
     &-number {
-      @include font-bold($font-size-normal, $text-color-translucent);
-
       margin-right: 3px;
+
+      @include font-bold($font-size-normal, $text-color-translucent);
     }
+
+    @include font-normal($font-size-small, $text-color-translucent, 23px);
   }
 
   &__data {
@@ -128,8 +134,6 @@
   }
 
   &__icon {
-    @include font-bold($font-size-normal, $lh: 14px);
-
     position: absolute;
     right: -25px;
     top: 0;
@@ -138,9 +142,11 @@
     background-image: url('~@/components/card-room/image/icon.svg');
     cursor: pointer;
 
-    &:hover::after {
-      @include font-normal(11px, white);
+    @include media-xxs {
+      right: 0;
+    }
 
+    &:hover::after {
       content: attr(data-text);
       position: absolute;
       left: 10px;
@@ -153,16 +159,10 @@
       background-position: center;
       background-size: 20px;
       background-color: $text-color-main;
+
+      @include font-normal(11px, white);
     }
 
-    @include media-xxs {
-      right: 0;
-    }
-  }
-
-  @include media-xxs {
-    padding: 30px 15px;
-    width: 100%;
-    max-width: 355px;
+    @include font-bold($font-size-normal, $lh: 14px);
   }
 }

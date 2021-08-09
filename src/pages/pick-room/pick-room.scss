@@ -18,9 +18,11 @@
   background: url('./img/background.jpg') no-repeat center;
   background-size: cover;
 
-  &__slide {
-    @include font-normal($font-size-normal, $text-color-secondary);
+  @include media-md {
+    height: 100%;
+  }
 
+  &__slide {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -39,6 +41,8 @@
       margin-right: auto;
       margin-left: auto;
     }
+
+    @include font-normal($font-size-normal, $text-color-secondary);
   }
 
   &__caption {
@@ -46,9 +50,5 @@
     width: 297px;
     line-height: 1.5;
     text-align: right;
-  }
-
-  @include media-md {
-    height: 100%;
   }
 }

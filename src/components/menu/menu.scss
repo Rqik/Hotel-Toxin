@@ -28,11 +28,19 @@
   align-items: center;
   gap: 20px;
 
+  @include media-md {
+    flex-direction: row-reverse;
+  }
+
   &__auth {
     border-left: 1px solid $shadow-color;
     padding-left: 19px;
     font-size: $font-size-normal;
     color: $text-color-translucent;
+
+    @include media-xxs {
+      padding-left: 5px;
+    }
 
     &-link {
       text-decoration: none;
@@ -42,10 +50,6 @@
         text-decoration: underline;
       }
     }
-
-    @include media-xxs {
-      padding-left: 5px;
-    }
   }
 
   &__icon {
@@ -53,8 +57,6 @@
   }
 
   &__items {
-    @include font-normal($font-size-normal, $text-color-translucent, 17px);
-
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -82,6 +84,8 @@
     @include media-sm {
       width: 100%;
     }
+
+    @include font-normal($font-size-normal, $text-color-translucent, 17px);
   }
 
   &__close {
@@ -94,16 +98,16 @@
     animation-direction: alternate;
     cursor: pointer;
 
-    &:hover {
-      transform: rotateZ(180deg);
-      transition: transform 0.3s ease-in-out;
-    }
-
     @include media-md {
       position: absolute;
       right: 10%;
       top: 10%;
       display: block;
+    }
+
+    &:hover {
+      transform: rotateZ(180deg);
+      transition: transform 0.3s ease-in-out;
     }
   }
 
@@ -112,6 +116,12 @@
     margin: 0;
     padding: 0;
     cursor: pointer;
+
+    @include media-md {
+      position: relative;
+      align-self: center;
+      text-align: center;
+    }
 
     &_with-list {
       position: relative;
@@ -122,12 +132,6 @@
     &_active {
       font-weight: bold;
       color: $text-color-secondary;
-    }
-
-    @include media-md {
-      position: relative;
-      align-self: center;
-      text-align: center;
     }
   }
 
@@ -143,6 +147,10 @@
   &__burger {
     display: none;
 
+    @include media-md {
+      display: flex;
+    }
+
     &_active {
       @include media-md {
         display: flex;
@@ -153,10 +161,6 @@
         min-width: 230px;
         box-shadow: 19px 0 39px -3px rgba(34, 60, 80, 0.24);
       }
-    }
-
-    @include media-md {
-      display: flex;
     }
   }
 
@@ -196,9 +200,5 @@
       width: 100%;
       text-align: center;
     }
-  }
-
-  @include media-md {
-    flex-direction: row-reverse;
   }
 }

@@ -9,6 +9,11 @@
   box-shadow: $box-shadow-bold;
   background-color: white;
 
+  @include media-sm {
+    padding-top: 120px;
+    box-shadow: none;
+  }
+
   &__container {
     margin: 0 auto;
     padding: 0 110px;
@@ -17,10 +22,5 @@
     @include media-xxx {
       padding: 0;
     }
-  }
-
-  @include media-sm {
-    padding-top: 120px;
-    box-shadow: none;
   }
 }

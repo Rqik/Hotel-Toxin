@@ -20,6 +20,10 @@
   height: 100%;
   max-width: 1920px;
 
+  @include media-xxx {
+    padding: 30px 0 0 30px;
+  }
+
   &__slider {
     margin-top: 31px;
   }
@@ -49,8 +53,6 @@
   }
 
   &__icon {
-    @include font-icon($font-size-big);
-
     position: absolute;
     left: 0;
     right: 0;
@@ -61,6 +63,8 @@
     text-align: center;
     transform: rotate(-90deg);
     transition: transform 0.3s ease-in-out;
+
+    @include font-icon($font-size-big);
   }
 
   &__cards {
@@ -95,6 +99,25 @@
     margin-right: 60px;
     transition: transform 0.3s ease-in-out;
 
+    @include media-lg {
+      margin-left: 15px;
+    }
+
+    @include media-md {
+      position: absolute;
+      left: 0;
+      top: 100px;
+      z-index: 30;
+      margin: 0;
+      padding: 50px 60px 50px 30px;
+      background-color: white;
+      transform: translateX(-100%);
+    }
+
+    @include media-xs {
+      padding: 30px 10px;
+    }
+
     &-btn {
       display: none;
       cursor: pointer;
@@ -113,25 +136,6 @@
         color: white;
         background-image: $green-gradient;
       }
-    }
-
-    @include media-lg {
-      margin-left: 15px;
-    }
-
-    @include media-md {
-      position: absolute;
-      left: 0;
-      top: 100px;
-      z-index: 30;
-      margin: 0;
-      padding: 50px 60px 50px 30px;
-      background-color: white;
-      transform: translateX(-100%);
-    }
-
-    @include media-xs {
-      padding: 30px 10px;
     }
   }
 
@@ -162,9 +166,5 @@
     @include media-xxx {
       padding: 7px;
     }
-  }
-
-  @include media-xxx {
-    padding: 30px 0 0 30px;
   }
 }

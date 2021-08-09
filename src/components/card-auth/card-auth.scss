@@ -13,14 +13,20 @@
   color: $text-color-main;
   background-color: white;
 
+  @include media-xxs {
+    padding: 30px 15px;
+    width: 100%;
+    max-width: 355px;
+  }
+
   &__field {
     margin-bottom: 10px;
   }
 
   &__title {
-    @include font-bold($lh: 30px);
-
     margin-bottom: 22px;
+
+    @include font-bold($lh: 30px);
   }
 
   &__bot {
@@ -32,11 +38,5 @@
 
   &__submit {
     margin-top: 8px;
-  }
-
-  @include media-xxs {
-    padding: 30px 15px;
-    width: 100%;
-    max-width: 355px;
   }
 }

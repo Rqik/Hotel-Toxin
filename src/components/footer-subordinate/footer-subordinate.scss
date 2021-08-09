@@ -8,6 +8,32 @@
   font-size: $font-size-normal;
   color: $text-color-secondary;
 
+  @include media-sm {
+    flex-direction: column;
+    align-items: center;
+    margin: 17px auto 120px;
+    border: none;
+    padding: 0;
+    max-width: 768px;
+    background-color: white;
+
+    &::before {
+      display: none;
+    }
+
+    &__copyright {
+      margin-top: 0;
+      margin-bottom: 22px;
+      text-align: center;
+    }
+
+    &__social {
+      display: flex;
+      justify-content: space-between;
+      width: 112px;
+    }
+  }
+
   &::before {
     content: '';
     position: absolute;
@@ -36,31 +62,5 @@
   &__img {
     display: block;
     margin: auto;
-  }
-
-  @include media-sm {
-    flex-direction: column;
-    align-items: center;
-    margin: 17px auto 120px;
-    border: none;
-    padding: 0;
-    max-width: 768px;
-    background-color: white;
-
-    &::before {
-      display: none;
-    }
-
-    &__copyright {
-      margin-top: 0;
-      margin-bottom: 22px;
-      text-align: center;
-    }
-
-    &__social {
-      display: flex;
-      justify-content: space-between;
-      width: 112px;
-    }
   }
 }
