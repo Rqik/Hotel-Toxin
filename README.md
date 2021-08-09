@@ -1,4 +1,6 @@
-# FSD Toxin
+# Демо сайт гостиницы Toxin
+
+Проект создан в целях обучения.
 
 <a href="https://www.npmjs.com/"><img src="https://img.shields.io/badge/npm-v7.13.0-blue"></a>
 <a href="https://nodejs.org/en/"><img src="https://img.shields.io/badge/node->=15.10.0-ff0062"></a>
@@ -6,10 +8,22 @@
 ## 🏷️ Содержание
 
 - [Demo](https://rqik.github.io/FSD)
+- [Технологии](#technology)
 - [Pages](#pages)
 - [Установка](#installation)
 - [Команды](#commands)
 - [Структура проекта](#structure)
+
+## <a name="technology"></a> 🤖 Использованные технологии
+
+`JavaScript`
+`JQ`
+`PUG`
+`SCSS`
+`Webpack`
+`Eslint`
+`Prettier`
+`Babel`
 
 ## <a name="pages"></a> 📝 Pages
 
