@@ -3,6 +3,8 @@ include ../../components/header/header
 include ../../components/footer/footer
 include ../../components/favicon/favicon
 
+- const { header , footer } = require('@/layouts/landing-page/landing-page.json')
+
 doctype html
 html(lang="ru")
   head
@@ -15,71 +17,6 @@ html(lang="ru")
       +favicon
   body.landing-page
     .landing-page__content
-      +header(
-        {
-          logo: { src: "img/logo-toxin.svg" },
-          items: [
-            {
-              text: "О нас",
-            },
-            {
-              text: "Услуги",
-              more: [
-                { text: "Дополнительные пункты" },
-                { text: "Дополнительные пункты большие" },
-                { text: "Дополнительные пункты" }],
-            },
-            {
-              text: "Вакансии"
-            },
-            {
-              text: "Новости"
-            },
-            {
-              text: "Соглашения",
-              more: [
-                { text: "Дополнительные пункты" },
-                { text: "Дополнительные пункты большие" },
-                { text: "Дополнительные пункты" }],
-            },
-          ]
-        }
-      )
+      +header(header)
       block content
-    +footer({
-      social: [
-        {
-          name: "twitter",
-          alt: "twitter_logo",
-          href: "https://www.twitter.com/",
-        },
-        {
-          name: "facebook",
-          alt: "facebook_logo",
-          href: "https://www.facebook.com/",
-        },
-        {
-          name: "instagram",
-          alt: "instagram_logo",
-          href: "https://www.instagram.com/",
-        },
-      ],
-      menu: [
-      {
-        title: "Навигация",
-        items: [
-        { text: "О нас" },
-        { text: "Новости" },
-        { text: "Служба поддержки" },
-        { text: "Услуги" }
-        ],
-      }, {
-        title: "О нас",
-        items: [{ text: "О сервисе" }, { text: "Наша команда" },
-          { text: "Вакансии" }, { text: "Инвесторы" }]
-      }, {
-        title: "Служба поддержки",
-        items: [{ text: "Соглашения" }, { text: "Сообщества" },
-          { text: "Связь с нами" }]
-      },]
-    })
+    +footer(footer)
