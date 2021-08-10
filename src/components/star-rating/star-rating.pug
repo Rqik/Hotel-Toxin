@@ -1,4 +1,4 @@
-mixin starRating({currentRating="0"})
+mixin starRating({ currentRating = "0" })
   - const ratingValue = ['Ужасно','Сносно','Нормально','Хорошо','Отлично']
   form.star-rating.js-star-rating(data-rate=currentRating)
     each val,key in ratingValue

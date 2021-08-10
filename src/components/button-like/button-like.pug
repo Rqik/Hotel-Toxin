@@ -1,6 +1,6 @@
 //- active --  true || false
 //- number --  Number || String
-mixin likeButton({ active="false" , number="0" , type = "button"} )
-  button(type=type).button-like.js-button-like(class=active&&'button-like_active')
+mixin likeButton({ active = "false", number = "0", type = "button" })
+  button(type=type, class=active&&'button-like_active').button-like.js-button-like
     span.button-like__icon favorite
     span.button-like__text.js-button-like__text= number

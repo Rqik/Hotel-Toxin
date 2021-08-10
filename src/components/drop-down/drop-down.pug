@@ -2,7 +2,7 @@
 //- extended -- extended version +2 button typeof Boolean
 //- current -- present value typeof String
 //- text -- row items name
-mixin dropdownSelect({extended=false ,active=false,  name,current , text })
+mixin dropdownSelect({ extended = false, active = false, name, current, text })
   .dropdown
     .dropdown__title=name
     div( class= active ? "dropdown__select_active":"",

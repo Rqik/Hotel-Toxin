@@ -2,7 +2,7 @@
 //- title -- text description
 //- placeholder
 //- form -- field form  boolean
-mixin field({name, title , placeholder, form=false})
+mixin field({ name, title , placeholder, form = false })
   if form
     form(class="field")&attributes(attributes)
       .field__title= title

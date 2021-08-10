@@ -1,7 +1,7 @@
 //- prev       -- Boolean true = add elem pagination__prev
 //- next       -- Boolean true = add elem pagination__next
 //- pagination -- Array<object> = {number , link, current}
-mixin pagination({prev=false, pagination, next=false , text})
+mixin pagination({ prev = false, pagination, next = false , text })
   .pagination
     ul.pagination__items
       if prev === true
