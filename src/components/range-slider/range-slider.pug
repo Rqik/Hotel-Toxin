@@ -2,7 +2,7 @@ mixin rangeSlider({ title, caption })
   - const [titleFor] = title.split(' ').map(e=>e+ Date.now())
   .range-slider
     .range-slider__section.js-range-slider__section
-      label.range-slider__title( for=titleFor)=title
+      label.range-slider__title(for=titleFor)=title
       input.range-slider__input.js-range-slider__input(type="text" id=titleFor
         readonly)
     input.js-range-slider__app

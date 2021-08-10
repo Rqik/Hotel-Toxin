@@ -1,4 +1,4 @@
-@import 'variables';
+@import './variables';
 
 @mixin media-xxx {
   @media (max-width: 1400px) {

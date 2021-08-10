@@ -24,13 +24,13 @@ mixin diagram({ great = 0, good = 0, satisfactorily = 0,  bad = 0 })
         gradient: 'url(#lgrad0)',
         strokeDasharray: `${greatPercent - 0.5} ${100 - greatPercent + 0.5}`,
         strokeDashoffset: `${100 - badPercent - satisfactorilyPercent  - goodPercent+ 25}`,
-        votes: great
+        votes: great,
       },
       good: {
         gradient: 'url(#lgrad1)',
         strokeDasharray: `${goodPercent - 0.5} ${100 - goodPercent + 0.5}`,
         strokeDashoffset: `${100 - badPercent - satisfactorilyPercent + 25}`,
-        votes: good
+        votes: good,
       },
       satisfactorily: {
         gradient: 'url(#lgrad2)',
@@ -43,7 +43,7 @@ mixin diagram({ great = 0, good = 0, satisfactorily = 0,  bad = 0 })
         gradient: 'url(#lgrad3)',
         strokeDasharray: `${badPercent - 0.5} ${100 - badPercent + 0.5}`,
         strokeDashoffset: '25',
-        votes: bad
+        votes: bad,
       },
     }
 
@@ -53,13 +53,13 @@ mixin diagram({ great = 0, good = 0, satisfactorily = 0,  bad = 0 })
       svg(width="150px" height="150px" viewBox="0 0 42 42" class="donut")
         defs
          each element , key in gradients
-           - const {start , end} = element
+           - const { start , end } = element
            linearGradient( id=`lgrad${key}` x1="50%" y1="100%" x2="50%" y2="0%")
              stop( offset="0%" style=`stop-color:rgb(${start});stop-opacity:1`)
              stop( offset="100%" style=`stop-color:rgb(${end});stop-opacity:1`)
 
         each element in svgElements
-          - const {gradient , strokeDasharray ,strokeDashoffset, votes} = element
+          - const { gradient , strokeDasharray ,strokeDashoffset, votes } = element
           if votes
             circle(
               class="diagram__unit js-unit" cx="20" cy="20"

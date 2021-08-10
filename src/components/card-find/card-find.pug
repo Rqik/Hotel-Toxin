@@ -7,7 +7,7 @@ mixin cardFind
     .card-find__date-picker
       +datepicker({
         firstTitle: "прибытие",
-        secondTitle: "выезд"
+        secondTitle: "выезд",
       })
     .card-find__dropdown
       +dropdownSelect({
@@ -17,7 +17,9 @@ mixin cardFind
         current: "Сколько гостей",
         text: [
           "взрослые",
-          "дети", "младенцы"]
+          "дети",
+          "младенцы",
+        ]
       })
     +button({
       style: "long",

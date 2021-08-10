@@ -9,15 +9,15 @@ mixin cardRegistration
     .card-registration__fields
       +field({
         name: "name",
-        placeholder: "Имя"
+        placeholder: "Имя",
       })
       +field({
         name: "name",
-        placeholder: "Фамилия"
+        placeholder: "Фамилия",
       })
       +inputRadio({
         name: "gender",
-        label: ["Мужчина", "Женщина"]
+        label: ["Мужчина", "Женщина"],
        })
     .card-registration__fields
       +field({
@@ -30,27 +30,27 @@ mixin cardRegistration
         +field({
           name: "email",
           title: "Данный для входа в сервис",
-          placeholder: "Email"
+          placeholder: "Email",
         })
         +field({
           name: "name",
-          placeholder: "Пароль"
+          placeholder: "Пароль",
         })
       .card-registration__toggle
         +switchToggle({
           caption: "",
           name: "toogle",
-          label: ["Получать спецпредложения"]
+          label: ["Получать спецпредложения"],
         })
     +button({
       style: "long",
       text: "перейти к оплате",
-      type: "submit"
+      type: "submit",
     })&attributes({style:{"margin-top": "21px"}})
     .card-registration__bot
       .card-registration__span Уже есть аккаунт на Toxin
       +button({
         style: "outlined",
         text: "Войти",
-        href:"./index.html"
+        href:"./index.html",
       })&attributes({ style: { padding: "10px 25px" } })

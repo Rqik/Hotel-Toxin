@@ -18,24 +18,31 @@ html(lang="ru")
       +header(
         {
           logo: { src: "img/logo-toxin.svg" },
-          items: [{
-            text: "О нас",
-          },
+          items: [
+            {
+              text: "О нас",
+            },
             {
               text: "Услуги",
               more: [
                 { text: "Дополнительные пункты" },
                 { text: "Дополнительные пункты большие" },
-                { text: "Дополнительные пункты" }]
+                { text: "Дополнительные пункты" }],
             },
-            { text: "Вакансии" }, { text: "Новости" },
+            {
+              text: "Вакансии"
+            },
+            {
+              text: "Новости"
+            },
             {
               text: "Соглашения",
               more: [
                 { text: "Дополнительные пункты" },
                 { text: "Дополнительные пункты большие" },
-                { text: "Дополнительные пункты" }]
-            }]
+                { text: "Дополнительные пункты" }],
+            },
+          ]
         }
       )
       block content
@@ -44,23 +51,28 @@ html(lang="ru")
         {
           name: "twitter",
           alt: "twitter_logo",
-          href: "https://www.twitter.com/"
+          href: "https://www.twitter.com/",
         },
         {
           name: "facebook",
           alt: "facebook_logo",
-          href: "https://www.facebook.com/"
+          href: "https://www.facebook.com/",
         },
         {
           name: "instagram",
           alt: "instagram_logo",
-          href: "https://www.instagram.com/"
-        }
+          href: "https://www.instagram.com/",
+        },
       ],
-      menu: [{
+      menu: [
+      {
         title: "Навигация",
-        items: [{ text: "О нас" }, { text: "Новости" },
-          { text: "Служба поддержки" }, { text: "Услуги" }]
+        items: [
+        { text: "О нас" },
+        { text: "Новости" },
+        { text: "Служба поддержки" },
+        { text: "Услуги" }
+        ],
       }, {
         title: "О нас",
         items: [{ text: "О сервисе" }, { text: "Наша команда" },

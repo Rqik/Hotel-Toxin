@@ -1,7 +1,6 @@
 @import '~normalize.css';
-@import '~@/styles/variables.scss';
-@import '~@/styles/mixin.scss';
-@import '~@/styles/fonts.scss';
+@import './variables';
+@import './fonts';
 
 *,
 ::after,

@@ -1,7 +1,7 @@
 mixin swiperSlider({url})
   .swiper-wrapper
     each key in url
-      - const {src , alt} = key
+      - const { src, alt } = key
       .swiper-slide
         img.swiper-slide__img(src=src, alt=alt)
   .swiper-pagination-img
