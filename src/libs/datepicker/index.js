@@ -68,6 +68,7 @@ class DatePicker {
         const $datePicker = $(el)
           .closest(this.labelClass)
           .siblings(this.datepickerClass);
+
         $(el).change(this.makeChangeSelectInput($datePicker, el));
       });
     }
@@ -119,13 +120,19 @@ class DatePicker {
   makeChangeSelectInput($datepicker, input) {
     const el = $datepicker.data('datepicker');
     return () => {
-      // eslint-disable-next-line prefer-const
-      let [year, month, day] = $(input).val().split('.').reverse();
+      let [day, month, year] = $(input).val().split('.');
       month = Number(month) - 1;
+
       this.prevDay =
         new Date(year, month, day) > new Date()
           ? new Date(year, month, day)
           : new Date();
+      if (el.selectedDates[0]?.getTime() === this.prevDay.getTime()) {
+        return;
+      }
+      if (el.selectedDates[1]?.getTime() === this.prevDay.getTime()) {
+        return;
+      }
       el.selectDate(this.prevDay);
     };
   }
