@@ -1,3 +1,4 @@
+@import "~@/styles/variables";
 @import '~air-datepicker/dist/css/datepicker.min.css';
 
 @mixin datepicker {
@@ -93,6 +94,10 @@
         color: $purple;
         background: transparent;
         cursor: pointer;
+        transition: color .2s ease-in-out;
+        &:hover{
+          color: $text-color-translucent;
+        }
       }
     }
 

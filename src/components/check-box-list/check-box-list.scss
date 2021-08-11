@@ -36,12 +36,12 @@
       cursor: pointer;
     }
 
-    &_active {
-      .check-box__icon {
-        right: 14px;
-        top: -5px;
-        transform: rotateX(0deg);
-      }
+  }
+  &_active {
+    .check-box__icon {
+      right: 14px;
+      top: -5px;
+      transform: rotateX(0deg);
     }
   }
 

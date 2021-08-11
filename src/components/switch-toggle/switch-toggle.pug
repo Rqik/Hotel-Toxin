@@ -1,11 +1,12 @@
 //- caption - text caption for toggle
 //- name - name for input
 //- label - array text element
-mixin switchToggle({ caption =  "", name = "toggle", label })
+mixin switchToggle({ caption =  "", name = "toggle", label, checkedItemIndexDefault})
   .switch-toggle
     if (caption)
       .switch-toggle__caption= caption
     .switch-toggle__items
-      each item , indx in label
-        input.switch-toggle__input(id=`${name}-${indx}` type="checkbox" name=name)
-        label.switch-toggle__label(for=`${name}-${indx}` class="radio__label")=item
+      each item , index in label
+        input.switch-toggle__input(id=`${name}-${index}`
+          checked=checkedItemIndexDefault === index type="checkbox" name=name)
+        label.switch-toggle__label(for=`${name}-${index}` class="radio__label")=item

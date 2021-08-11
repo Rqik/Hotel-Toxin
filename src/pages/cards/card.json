@@ -18,20 +18,21 @@
         "alt": "вторая команта"
       }
     ],
-    "roomNumber": "840",
-    "price": "9900",
-    "review": 65,
-    "rating": "3.4"
+    "roomNumber": "888",
+    "category": "люкс",
+    "price": "9990",
+    "review": 284,
+    "rating": "2.6"
   },
   "cardSlider2": {
     "url": [
       {
-        "src": "img/room-2.jpg",
-        "alt": "общий вид"
-      },
-      {
         "src": "img/room-1.jpg",
         "alt": "две кровати"
+      },
+      {
+        "src": "img/room-2.jpg",
+        "alt": "общий вид"
       },
       {
         "src": "img/room-3.jpg",
@@ -42,10 +43,10 @@
         "alt": "вторая команта"
       }
     ],
-    "roomNumber": "820",
-    "price": "29900",
-    "review": 784,
-    "rating": "4.4"
+    "roomNumber": "840",
+    "price": "9900",
+    "review": 65,
+    "rating": "3.4"
   },
   "cardRoom": {
     "roomNumber": "888",

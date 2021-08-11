@@ -25,6 +25,7 @@
     font-size: $font-size-normal;
     color: $text-color-secondary;
     background: #fff;
+    transition: border 0.1s linear;
 
     @include media-xxs {
       width: 100%;
@@ -92,6 +93,7 @@
     width: 267px;
     height: 44px;
     box-sizing: border-box;
+    transition: border 0.1s linear;
 
     @include media-xxs {
       width: 100%;

@@ -5,12 +5,17 @@ class CheckBoxList {
     this.checkBoxClass = '.js-check-box_expanded';
     this.captionClass = '.js-check-box__caption';
     this.itemsClass = '.js-check-box__items';
-    this.toggleClass = 'check-box_expanded_active';
+    this.toggleClass = 'check-box_active';
     this.$checkBox = $(this.checkBoxClass);
   }
 
   init() {
     this.$checkBox.find(this.captionClass).each(this.eventClick);
+    this.$checkBox.each((_, el) => {
+      if (el.classList.contains(this.toggleClass)) {
+        $(el).find(this.itemsClass).slideToggle(300);
+      }
+    });
   }
 
   @boundMethod

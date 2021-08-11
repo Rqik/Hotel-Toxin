@@ -4,17 +4,17 @@
       {
         "icon": "insert_emoticon",
         "text": "Комфорт",
-        "desc": "Шумопоглощающие стены"
+        "description": "Шумопоглощающие стены"
       },
       {
         "icon": "location_city",
         "text": "Удобство",
-        "desc": "Окно в каждой из спален"
+        "description": "Окно в каждой из спален"
       },
       {
         "icon": "whatshot",
         "text": "Уют",
-        "desc": "Номер оснащён камином"
+        "description": "Номер оснащён камином"
       }
     ]
   },

@@ -1,8 +1,9 @@
 //- caption -- text caption for checkBox
 //- name -- name for input
 //- style -- default | expanded | rich
-//- labels -- Array<string> or if style === rich Array<object>
-//-                            object = {text: "example" ,desc:"example"}
+//- labels -- Array<{text: string, checked:boolean}>
+//- or if style === rich Array<object>
+//-           object = {text: string ,desc:string ,checked:boolean}
 
 mixin checkBoxList({ style, caption, name, labels = [] })
   -
@@ -12,7 +13,7 @@ mixin checkBoxList({ style, caption, name, labels = [] })
     switch (style) {
       case 'expanded':
         classList.push('check-box_expanded', 'js-check-box_expanded',
-                'expanded_active')
+                'check-box_active')
         tumbler = true
         jsToggle = 'js-check-box__items'
         break
@@ -26,15 +27,14 @@ mixin checkBoxList({ style, caption, name, labels = [] })
     if tumbler
       .check-box__icon expand_more
     .check-box__items(class=jsToggle)
-      each item , indx in labels
-        - const {text , desc} = item
+      each item , index in labels
+        - const { text , description, checked = false} = item
         .check-box__element
+          input.check-box__input(id=`${name} - ${index}` name=name
+            type="checkbox" checked=checked)
           if style === "rich"
-            input.check-box__input(id=name + "-" + indx name=name
-              type="checkbox" )
             label.check-box__label.check-box__label_rich(for=name + "-" +
-            indx)= text
-              span.check-box__span= desc
+            index)= text
+              span.check-box__span= description
           else
-            input.check-box__input(id=name + "-" + indx type="checkbox" )
-            label.check-box__label(for=name + "-" + indx)= item
+            label.check-box__label(for=`${name} - ${index}`)= text

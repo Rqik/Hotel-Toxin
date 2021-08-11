@@ -9,7 +9,7 @@
 
 ## 🏷️ Содержание
 
-- [Demo](https://rqik.github.io/FSD)
+- [Demo](https://rqik.github.io/Hotel-Toxin)
 - [Технологии](#technology)
 - [Pages](#pages)
 - [Установка](#installation)

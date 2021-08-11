@@ -14,7 +14,8 @@ block variables
     const description = 'Выбор номера по параметрам'
 block content
   -
-    const { dropdown, rangeSlider, cardSlider, cardSlider2, checkBox,
+    const { dropdown, rangeSlider, cardSlider, cardSlider2,
+      cardSlider3, checkBox,
       pagination } = require('./serach-room.json')
     const { checkBoxList, checkBoxHome, checkBoxRich } = checkBox
     const { dropdownSelect, dropdownSelectExt } = dropdown
@@ -40,6 +41,7 @@ block content
       h2.search-page__cards-title Номера, которые мы для вас подобрали
       .search-page__result
         - for (let i = 1 ; i <= 6 ; i+=1)
+          +cardSlide(cardSlider3)
           +cardSlide(cardSlider)
           +cardSlide(cardSlider2)
       .search-page__pagination
