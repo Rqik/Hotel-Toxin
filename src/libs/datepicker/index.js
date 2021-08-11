@@ -68,7 +68,6 @@ class DatePicker {
         const $datePicker = $(el)
           .closest(this.labelClass)
           .siblings(this.datepickerClass);
-
         $(el).change(this.makeChangeSelectInput($datePicker, el));
       });
     }
@@ -122,7 +121,6 @@ class DatePicker {
     return () => {
       let [day, month, year] = $(input).val().split('.');
       month = Number(month) - 1;
-
       this.prevDay =
         new Date(year, month, day) > new Date()
           ? new Date(year, month, day)
