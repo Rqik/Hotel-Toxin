@@ -34,7 +34,7 @@
   &__caption {
     margin-top: 13px;
 
-    @include font-normal($font-size-small, $text-color-translucent , $lh: 14px);
+    @include font-normal($font-size-small, $text-color-translucent, $lh: 14px);
   }
 
   @include ionRangeSlider;
