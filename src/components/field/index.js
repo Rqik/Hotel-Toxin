@@ -1,4 +1,4 @@
-import { Field } from '@/components/field/Field';
+import Field from '@/components/field/Field';
 
 $(() => {
   Field.init();

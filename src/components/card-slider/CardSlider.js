@@ -31,4 +31,4 @@ class CardSlider {
   }
 }
 
-export { CardSlider };
+export default CardSlider;

@@ -1,5 +1,5 @@
 import { Slider } from '@/libs/swiper-slider';
-import { CardSlider } from './CardSlider';
+import CardSlider from './CardSlider';
 import '../star-rating';
 
 $(() => {

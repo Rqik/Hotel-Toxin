@@ -1,4 +1,4 @@
-import { CheckBoxList } from '@/components/check-box-list/CheckBoxList';
+import CheckBoxList from '@/components/check-box-list/CheckBoxList';
 
 $(() => {
   const checkBoxList = new CheckBoxList();

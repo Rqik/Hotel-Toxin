@@ -49,8 +49,7 @@
       right: 0;
       top: 0;
       bottom: 0;
-      mask:
-        linear-gradient(90deg, #fff 0%, #fff 100%) content-box,
+      mask: linear-gradient(90deg, #fff 0%, #fff 100%) content-box,
         linear-gradient(90deg, #fff 0%, #fff 100%);
       mask-composite: exclude;
       border-radius: 24px;

@@ -60,7 +60,9 @@ class CardRoom {
 
   @boundMethod
   static makeEventHandler(options) {
-    const { $currentDP, $pay, $dop, $sale, $price, $resultSum } = options;
+    const {
+      $currentDP, $pay, $dop, $sale, $price, $resultSum,
+    } = options;
     return () => {
       const [to, from] = $currentDP.data('datepicker').selectedDates;
       let date = Math.ceil((from - to) / 1000 / 60 / 60 / 24);
@@ -92,4 +94,4 @@ class CardRoom {
   }
 }
 
-export { CardRoom };
+export default CardRoom;

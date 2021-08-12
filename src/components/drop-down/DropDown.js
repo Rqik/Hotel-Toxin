@@ -259,4 +259,4 @@ class DropDown {
   }
 }
 
-export { DropDown };
+export default DropDown;

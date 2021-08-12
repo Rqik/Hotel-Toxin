@@ -37,4 +37,4 @@ class ButtonLike {
   }
 }
 
-export { ButtonLike };
+export default ButtonLike;

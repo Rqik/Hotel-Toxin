@@ -36,4 +36,4 @@ class CheckBoxList {
   }
 }
 
-export { CheckBoxList };
+export default CheckBoxList;

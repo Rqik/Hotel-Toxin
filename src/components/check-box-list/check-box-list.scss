@@ -107,8 +107,7 @@
     position: absolute;
 
     &:checked ~ .check-box__label::before {
-      background:
-        url('~@/components/check-box-list/img/check.png') no-repeat
+      background: url('~@/components/check-box-list/img/check.png') no-repeat
         4px 2px;
       background-size: 10px 11px;
     }

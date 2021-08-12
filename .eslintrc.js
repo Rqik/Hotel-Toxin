@@ -24,10 +24,7 @@ module.exports = {
 
   plugins: ['pug', 'prettier'],
   rules: {
-    'object-curly-newline': 'off',
-    'max-classes-per-file': 'off',
     'linebreak-style': ['error', 'unix'],
-    'import/prefer-default-export': 'off',
     'import/extensions': [
       'error',
       'ignorePackages',
@@ -38,6 +35,5 @@ module.exports = {
         tsx: 'never',
       },
     ],
-    'no-use-before-define': 'off',
   },
 };

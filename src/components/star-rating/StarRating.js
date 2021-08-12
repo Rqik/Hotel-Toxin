@@ -74,4 +74,4 @@ class StarRating {
   }
 }
 
-export { StarRating };
+export default StarRating;

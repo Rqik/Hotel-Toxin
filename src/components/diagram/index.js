@@ -1,4 +1,4 @@
-import { Diagram } from '@/components/diagram/Diagram';
+import Diagram from '@/components/diagram/Diagram';
 
 $(() => {
   const diagram = new Diagram();

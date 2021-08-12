@@ -40,4 +40,4 @@ class Diagram {
   }
 }
 
-export { Diagram };
+export default Diagram;
