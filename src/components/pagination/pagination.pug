@@ -12,10 +12,10 @@ mixin pagination({ prev = false, pagination, next = false , text })
           let { current = false, number, href } = key
         if current
           li.pagination__item.pagination__item_current
-            a.pagination__link(href=href || "./index.html")= number
+            a.pagination__link(href = href || "./index.html")= number
         else
           li.pagination__item
-            a.pagination__link(href=href || "./index.html")= number
+            a.pagination__link(href = href || "./index.html")= number
       if next === true
         li.pagination__next
           .pagination__icon arrow_forward

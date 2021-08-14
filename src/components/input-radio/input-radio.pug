@@ -8,6 +8,7 @@ mixin inputRadio({ caption, name, label , checkedItemIndexDefault = 0 })
     .input-radio__items
       each item , index in label
         .input-radio__item
-          input.input-radio__item-input(id=`${name}-${index}`
-            checked=checkedItemIndexDefault === index type="radio" name=name)
+          input.input-radio__item-input(id = `${name}-${index}` type = "radio"
+            checked = checkedItemIndexDefault === index name = name)
           label.input-radio__item-label(for=`${name}-${index}`)= item
+

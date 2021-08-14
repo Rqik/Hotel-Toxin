@@ -50,30 +50,30 @@ mixin diagram({ great = 0, good = 0, satisfactorily = 0,  bad = 0 })
   .diagram
     .diagram__title Впечатления от номера
     .diagram__img
-      svg(width="150px" height="150px" viewBox="0 0 42 42" class="donut")
+      svg(width = "150px" height = "150px" viewBox = "0 0 42 42" class = "donut")
         defs
          each element , key in gradients
            - const { start , end } = element
-           linearGradient( id=`lgrad${key}` x1="50%" y1="100%" x2="50%" y2="0%")
-             stop( offset="0%" style=`stop-color:rgb(${start});stop-opacity:1`)
-             stop( offset="100%" style=`stop-color:rgb(${end});stop-opacity:1`)
+           linearGradient( id = `lgrad${key}` x1 = "50%" y1 = "100%" x2 = "50%" y2 = "0%")
+             stop( offset = "0%" style = `stop-color:rgb(${start});stop-opacity:1`)
+             stop( offset = "100%" style = `stop-color:rgb(${end});stop-opacity:1`)
 
         each element in svgElements
           - const { gradient , strokeDasharray ,strokeDashoffset, votes } = element
           if votes
             circle(
-              class="diagram__unit js-unit" cx="20" cy="20"
-              r="15.91549430918954" fill="none" stroke=gradient
-              stroke-dasharray=strokeDasharray
-              stroke-dashoffset=strokeDashoffset)
-          g(fill=gradient
-            class="diagram__chart-number diagram__chart-number_hidden js-number")
-            text(x="48%" y="50%")=votes
-            text(x="48%" y="50%" class="diagram__chart-label") голосов
+              class = "diagram__unit js-unit" cx = "20" cy = "20"
+              r = "15.91549430918954" fill = "none" stroke = gradient
+              stroke-dasharray = strokeDasharray
+              stroke-dashoffset = strokeDashoffset)
+          g(fill = gradient
+            class = "diagram__chart-number diagram__chart-number_hidden js-number")
+            text(x = "48%" y = "50%")= votes
+            text(x = "48%" y = "50%" class = "diagram__chart-label") голосов
 
-        g( fill="#1f2041" class="diagram__chart-number js-votes")
-          text(x="48%" y="50%" )=votes
-          text(x="48%" y="50%" class="diagram__chart-label") голосов
+        g(fill = "#1f2041" class = "diagram__chart-number js-votes")
+          text(x = "48%" y = "50%" )= votes
+          text(x = "48%" y = "50%" class = "diagram__chart-label") голосов
 
       ul.diagram__legend.js-legend
         each text in legendElements

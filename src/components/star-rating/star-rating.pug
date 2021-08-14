@@ -1,8 +1,8 @@
 mixin starRating({ currentRating = "0" })
-  - const ratingValue = ['Ужасно','Сносно','Нормально','Хорошо','Отлично']
+  - const ratingValue = ['Ужасно', 'Сносно', 'Нормально', 'Хорошо', 'Отлично']
   form.star-rating.js-star-rating(data-rate=currentRating)
     each val, key in ratingValue
       label.star-rating__radio.js-star-rating__radio
-        input.star-rating__input.js-star-rating__input(type="radio"  checked
-        name="rate" value=key+1  aria-label=val)
+        input.star-rating__input.js-star-rating__input(type = "radio"  checked
+        name = "rate" value = key+1  aria-label = val)
         i.star-rating__icon.js-star-rating__icon  star_border

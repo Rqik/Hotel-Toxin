@@ -7,6 +7,6 @@ mixin switchToggle({ caption =  "", name = "toggle", label, checkedItemIndexDefa
       .switch-toggle__caption= caption
     .switch-toggle__items
       each item , index in label
-        input.switch-toggle__input(id=`${name}-${index}`
-          checked=checkedItemIndexDefault === index type="checkbox" name=name)
-        label.switch-toggle__label(for=`${name}-${index}` class="radio__label")=item
+        input.switch-toggle__input(id = `${name}-${index}`
+          checked = checkedItemIndexDefault === index type="checkbox" name = name)
+        label.switch-toggle__label(for = `${name}-${index}` class = "radio__label")= item

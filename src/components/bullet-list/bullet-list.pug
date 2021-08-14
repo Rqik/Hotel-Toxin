@@ -3,7 +3,7 @@
 mixin bulletList({ title, items })
   .bullet-list
     if title
-      .bullet-list__title=title
+      .bullet-list__title= title
     ul.bullet-list__items
       each item in items
-        li.bullet-list__item=item
+        li.bullet-list__item= item

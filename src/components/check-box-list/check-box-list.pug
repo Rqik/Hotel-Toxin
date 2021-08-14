@@ -26,14 +26,14 @@ mixin checkBoxList({ style, caption, name, labels = [] })
     .check-box__caption.js-check-box__caption= caption
     if tumbler
       .check-box__icon expand_more
-    .check-box__items(class=jsToggle)
+    .check-box__items(class = jsToggle)
       each item , index in labels
         - const { text , description, checked = false} = item
         .check-box__element
-          input.check-box__input(id=`${name}-${index}` name=name
-            type="checkbox" checked=checked)
+          input.check-box__input(id = `${name}-${index}` name = name
+            type = "checkbox" checked = checked)
           if style === "rich"
-            label.check-box__label.check-box__label_rich(for=`${name}-${index}`)= text
+            label.check-box__label.check-box__label_rich(for = `${name}-${index}`)= text
               span.check-box__span= description
           else
             label.check-box__label(for=`${name}-${index}`)= text

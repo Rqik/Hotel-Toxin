@@ -7,10 +7,10 @@ mixin cardRoom({ roomNumber, price })
     .card-room__header
       .card-room__detail
         | №
-        span.card-room__detail-number=roomNumber
-        .card-room__detail-category люкс
+        span.card-room__detail-number= roomNumber
+        .card-room__detail-category &nbsp;люкс
       .card-room__price
-        span.card-room__price-number.js-card-room__price-number=price + "₽"
+        span.card-room__price-number.js-card-room__price-number= price + "₽"
         | в сутки
     .card-room__data.js-card-room__data
       +datepicker({ firstTitle: "прибытие", secondTitle: "выезд" })
@@ -28,9 +28,9 @@ mixin cardRoom({ roomNumber, price })
     .card-room__info.js-card-room__info
       .card-room__info-item
         .card-room__info-name.js-card-room__info-name(
-          class="js-card-room__total-amount")=price
+          class="js-card-room__total-amount")= price
           | ₽
-        .card-room__info-sum.js-card-room__info-sum.js-card-room__price-day=price
+        .card-room__info-sum.js-card-room__info-sum.js-card-room__price-day= price
           | ₽
       .card-room__info-item
         .card-room__info-text
@@ -46,7 +46,7 @@ mixin cardRoom({ roomNumber, price })
         .card-room__info-sum.js-card-room__info-sum.js-card-room__additional 3000₽
       .card-room__result
         .card-room__result-name Итого
-        .card-room__total-price.js-card-room__total-price=price
+        .card-room__total-price.js-card-room__total-price= price
           | ₽
     +button({
       style: "long",

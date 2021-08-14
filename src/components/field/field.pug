@@ -7,12 +7,12 @@ mixin field({ name, title , placeholder, form = false })
     form(class="field")&attributes(attributes)
       .field__title= title
       .field__block
-        input.field__input-form.js-field__input( type="text"
-          placeholder=placeholder, name=name)
-        button.field__btn(type="submit" , name=name )
+        input.field__input-form.js-field__input(type = "text"
+          placeholder = placeholder, name = name)
+        button.field__btn(type = "submit", name = name)
           span.field__icon arrow_forward
   else
     .field
       label.field__label= title
-        input.field__input.js-field__input( type="text",
-          placeholder=placeholder name=name)
+        input.field__input.js-field__input(type = "text",
+          placeholder = placeholder name = name)

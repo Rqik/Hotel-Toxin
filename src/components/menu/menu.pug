@@ -9,9 +9,9 @@ mixin menu({ items, auth })
         each item in items
           - const { more, text, href, active } = item
           li.menu__item(
-            class=active ? "menu__item_active" : ""
-            class=more ? "menu__item_with-list js-menu__item_with-list" : "")
-            a.menu__link(href=href || "./index.html")=text
+            class = active ? "menu__item_active" : ""
+            class = more ? "menu__item_with-list js-menu__item_with-list" : "")
+            a.menu__link(href = href || "./index.html")= text
             if more
               ul.menu__drop-list.js-menu__drop-list
                 each elem in more
@@ -21,22 +21,22 @@ mixin menu({ items, auth })
                     = text
       else
         li.menu__item.menu__item_active
-          a(href="./index.html") нет элементов
+          a(href = "./index.html") нет элементов
       if !auth
         li.menu__item
           +button({
             style: "outlined",
             text: "войти",
-            href:'./auth.html',
+            href: './auth.html',
           })&attributes({style:{height:"40px"}})
         li.menu__item
           +button({
             text: "зарегистрироваться",
-            href:'./registration.html',
+            href: './registration.html',
           })&attributes({style:{height:"34px"}})
     .menu__burger.js-menu__burger
       .menu__icon menu
     if !!auth
       - const { href, text } = auth
       .menu__auth
-        a.menu__auth-link(href=href || "./index.html")=text
+        a.menu__auth-link(href = href || "./index.html")= text
