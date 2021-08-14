@@ -2,7 +2,15 @@ import { boundMethod } from 'autobind-decorator';
 
 class ButtonLike {
   constructor() {
+    this.findButton();
+    this.setDefaultProps();
+  }
+
+  findButton() {
     this.buttonLike = document.querySelectorAll('.js-button-like');
+  }
+
+  setDefaultProps() {
     this.textSelector = '.js-button-like__text';
     this.toggleSelector = 'button-like_active';
   }

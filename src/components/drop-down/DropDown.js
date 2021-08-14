@@ -2,8 +2,16 @@ import { boundMethod } from 'autobind-decorator';
 
 class DropDown {
   constructor() {
+    this.setDefaultProps();
+    this.setDefaultClassName();
+  }
+
+  setDefaultProps() {
     this.children = {};
     this.dropDown = {};
+  }
+
+  setDefaultClassName() {
     this.dropDownClass = '.js-drop-down__select';
     this.dropDownExtendClass = '.js-drop-down__select_extended';
     this.controlPanelClass = '.js-drop-down__control-panel';
@@ -210,7 +218,8 @@ class DropDown {
       } else {
         adults += +count;
       }
-      textCurrent = DropDown.countAdult(adults, child) + DropDown.countChild(child);
+      textCurrent =
+        DropDown.countAdult(adults, child) + DropDown.countChild(child);
     });
     this.dropDown[selector].find(this.textCurrentClass).text(textCurrent);
     DropDown.btnHide($btnReset, adults, child);

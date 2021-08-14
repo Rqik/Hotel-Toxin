@@ -2,10 +2,18 @@ import { boundMethod } from 'autobind-decorator';
 
 class CheckBoxList {
   constructor() {
+    this.setDefaultClassName();
+    this.findCheckBox();
+  }
+
+  setDefaultClassName() {
     this.checkBoxClass = '.js-check-box_expanded';
     this.captionClass = '.js-check-box__caption';
     this.itemsClass = '.js-check-box__items';
     this.toggleClass = 'check-box_active';
+  }
+
+  findCheckBox() {
     this.$checkBox = $(this.checkBoxClass);
   }
 

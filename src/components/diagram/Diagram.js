@@ -2,12 +2,20 @@ import { boundMethod } from 'autobind-decorator';
 
 class Diagram {
   constructor() {
+    this.setDefaultClassName();
+    this.findDiagramElements();
+  }
+
+  setDefaultClassName() {
+    this.hoverClass = 'diagram__hovered';
+    this.hideNumberClass = 'diagram__chart-number_hidden';
+  }
+
+  findDiagramElements() {
     this.$legendEl = $('.js-legend-el ');
     this.$votes = $('.js-votes');
     this.$unitsList = $('.js-unit');
     this.$numberList = $('.js-number');
-    this.hoverClass = 'diagram__hovered';
-    this.hideNumberClass = 'diagram__chart-number_hidden';
   }
 
   init() {

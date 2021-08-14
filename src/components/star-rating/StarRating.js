@@ -1,15 +1,27 @@
 class StarRating {
   constructor() {
-    this.$star = $('.js-star-rating');
+    this.setDefaultClassName();
+    this.setStarValue();
+    this.findStar();
+  }
+
+  setDefaultClassName() {
     this.starClass = '.js-star-rating__icon';
     this.activeClass = 'star-rating__icon_active';
     this.disableClass = '.star-rating__icon_disable';
     this.radioClass = '.js-star-rating__radio';
     this.inputClass = '.js-star-rating__input';
     this.starClassList = 'star-rating__icon star-rating__icon_disable';
+  }
+
+  setStarValue() {
     this.starFill = 'star';
     this.starBorder = 'star_border';
     this.attrDate = 'data-rate';
+  }
+
+  findStar() {
+    this.$star = $('.js-star-rating');
   }
 
   init() {
