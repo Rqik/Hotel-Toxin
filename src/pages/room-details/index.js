@@ -1,5 +1,4 @@
 import 'jquery-ui';
-import '@/styles/main.scss';
 import '@/components/header';
 import '@/components/diagram';
 import '@/components/review';

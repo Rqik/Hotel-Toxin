@@ -4,21 +4,21 @@ class DropDown {
   constructor() {
     this.children = {};
     this.dropDown = {};
-    this.dropDownClass = '.js-dropdown__select';
-    this.dropDownExtendClass = '.js-dropdown__select_extended';
-    this.controlPanelClass = '.js-dropdown__control-panel';
-    this.buttonClass = '.js-dropdown__button';
-    this.dropItemsClass = '.js-dropdown__items';
-    this.dropItemClass = '.js-dropdown__item';
-    this.itemCurrentClass = '.js-dropdown__item-current';
-    this.btnSubmitClass = '.js-dropdown__submit-button';
+    this.dropDownClass = '.js-drop-down__select';
+    this.dropDownExtendClass = '.js-drop-down__select_extended';
+    this.controlPanelClass = '.js-drop-down__control-panel';
+    this.buttonClass = '.js-drop-down__button';
+    this.dropItemsClass = '.js-drop-down__items';
+    this.dropItemClass = '.js-drop-down__item';
+    this.itemCurrentClass = '.js-drop-down__item-current';
+    this.btnSubmitClass = '.js-drop-down__submit-button';
     this.btnMinusClass = '.js-btn_minus';
-    this.btnResetClass = '.js-dropdown__reset-button';
-    this.spanClass = '.js-dropdown__span';
-    this.textCurrentClass = '.js-dropdown__text-current';
-    this.itemSpanClass = '.js-dropdown__item-span';
-    this.buttonDisableClass = 'dropdown__button_disabled';
-    this.toggleClass = 'dropdown__select_active';
+    this.btnResetClass = '.js-drop-down__reset-button';
+    this.spanClass = '.js-drop-down__span';
+    this.textCurrentClass = '.js-drop-down__text-current';
+    this.itemSpanClass = '.js-drop-down__item-span';
+    this.buttonDisableClass = 'drop-down__button_disabled';
+    this.toggleClass = 'drop-down__select_active';
   }
 
   init() {

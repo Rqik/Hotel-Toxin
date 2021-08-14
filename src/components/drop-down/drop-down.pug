@@ -2,26 +2,26 @@
 //- extended -- extended version +2 button typeof Boolean
 //- current -- present value typeof String
 //- text -- row items name
-mixin dropdownSelect({ extended = false, active = false, name, current, text })
-  .dropdown
-    .dropdown__title= name
-    div( class = active ? "dropdown__select_active" : "",
-      class = extended ? "js-dropdown__select_extended dropdown__select " +
-        "dropdown__select_extended" : "dropdown__select js-dropdown__select")
-      .dropdown__item-current.js-dropdown__item-current
-        .dropdown__icon expand_more
-        span.dropdown__text-current.js-dropdown__text-current= current
-      .dropdown__items.js-dropdown__items
+mixin dropDown({ extended = false, active = false, name, current, text })
+  .drop-down
+    .drop-down__title= name
+    div( class = active ? "drop-down__select_active" : "",
+      class = extended ? "js-drop-down__select_extended drop-down__select " +
+        "drop-down__select_extended" : "drop-down__select js-drop-down__select")
+      .drop-down__item-current.js-drop-down__item-current
+        .drop-down__icon expand_more
+        span.drop-down__text-current.js-drop-down__text-current= current
+      .drop-down__items.js-drop-down__items
         each item in text
-          .dropdown__item.js-dropdown__item
-            span.dropdown__item-span.js-dropdown__item-span= item
-            .dropdown__control-panel.js-dropdown__control-panel
-              .dropdown__button.js-dropdown__button.js-btn_minus -
-              span.dropdown__span.js-dropdown__span= 0
-              .dropdown__button.js-dropdown__button.js-btn_plus +
+          .drop-down__item.js-drop-down__item
+            span.drop-down__item-span.js-drop-down__item-span= item
+            .drop-down__control-panel.js-drop-down__control-panel
+              .drop-down__button.js-drop-down__button.js-btn_minus -
+              span.drop-down__span.js-drop-down__span= 0
+              .drop-down__button.js-drop-down__button.js-btn_plus +
         if extended
-          .dropdown__buttons
-            button(type = "button" class = "dropdown__reset-button " +
-            "js-dropdown__reset-button") очистить
-            button(type = "button" class = "dropdown__submit-button " +
-            "js-dropdown__submit-button") применить
+          .drop-down__buttons
+            button(type = "button" class = "drop-down__reset-button " +
+            "js-drop-down__reset-button") очистить
+            button(type = "button" class = "drop-down__submit-button " +
+            "js-drop-down__submit-button") применить

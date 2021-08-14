@@ -1,7 +1,6 @@
 @import '~@/styles/mixin';
-@import '~@/styles/variables';
-@import '~@/layouts/landing-page/landing-page.scss';
-@import '~@/components/icon/icon';
+@import '~@/layouts/landing-page/landing-page';
+@import '~@/components/icon-text/icon-text';
 @import '~@/components/review/review';
 @import '~@/components/bullet-list/bullet-list';
 @import '~@/components/diagram/diagram';
@@ -102,7 +101,7 @@
     max-width: 1920px;
 
     @include media-xxx {
-      padding: 70px;
+      padding: 70px 0 70px 70px;
     }
 
     @include media-lg {
@@ -171,5 +170,10 @@
     white-space: nowrap;
 
     @include font-normal($font-size-normal, $text-color-translucent, 14px);
+  }
+
+  &__card-room{
+    position: sticky;
+    top: 70px;
   }
 }

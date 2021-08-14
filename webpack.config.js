@@ -4,11 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+
 const isDev = process.env.NODE_ENV === 'development';
-const isProd = !isDev;
 
 const fs = require('fs');
-const loader = require('sass-loader');
 
 const PATHS = {
   src: path.join(__dirname, './src'),
@@ -18,7 +17,6 @@ const PAGES_DIR = `${PATHS.src}/pages/.`;
 
 const PAGES = fs
   .readdirSync(PAGES_DIR);
-let pageName = '';
 
 let entryName = {};
 

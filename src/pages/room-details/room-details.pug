@@ -1,5 +1,5 @@
 extends ../../layouts/landing-page/landing-page
-include ../../components/icon/icon
+include ../../components/icon-text/icon-text
 include ../../components/review/review
 include ../../components/bullet-list/bullet-list
 include ../../components/diagram/diagram
@@ -31,16 +31,16 @@ block content
       default:
         countReview = 'Нет отзывов';
     }
-    const roomPhoto1 = require('./img/gallery-left.jpg').default
-    const roomPhoto2 = require('./img/gallery-right-1.jpg').default
-    const roomPhoto3 = require('./img/gallery-right-2.jpg').default
+    const roomPhoto1 = require('../../assets/img/gallery-left.jpg').default
+    const roomPhoto2 = require('../../assets/img/gallery-right-1.jpg').default
+    const roomPhoto3 = require('../../assets/img/gallery-right-2.jpg').default
   .room-detail
     .room-detail__gallery
       .room-detail__left
-        img.room-detail__photo(src=roomPhoto1, alt="room-photo-1")
+        img.room-detail__photo(src = roomPhoto1, alt = "room-photo-1")
       .room-detail__right
-        img.room-detail__photo(src=roomPhoto2, alt="room-photo-2")
-        img.room-detail__photo(src=roomPhoto3, alt="room-photo-3")
+        img.room-detail__photo(src = roomPhoto2, alt = "room-photo-2")
+        img.room-detail__photo(src = roomPhoto3, alt = "room-photo-3")
     .room-detail__container
       .room-detail__info
         .room-detail__view
@@ -66,4 +66,5 @@ block content
               | Бесплатная отмена в течение 48 ч. После этого при отмене не
               | позднее чем за 5 дн. до прибытия вы получите полный возврат за
               | вычетом сбора за услуги.
-      +cardRoom(cardRoom)
+      .room-detail__card-room
+        +cardRoom(cardRoom)

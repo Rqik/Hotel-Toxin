@@ -1,7 +1,7 @@
 @import '~@/styles/mixin';
 @import '~@/styles/variables';
 
-.dropdown {
+.drop-down {
   &_extended {
     width: 100%;
   }
@@ -36,13 +36,13 @@
       max-width: 320px;
       background-color: white;
 
-      .dropdown__buttons {
+      .drop-down__buttons {
         display: flex;
         justify-content: space-between;
         padding: 0 6px 0 14px;
 
-        .dropdown__reset-button,
-        .dropdown__submit-button {
+        .drop-down__reset-button,
+        .drop-down__submit-button {
           margin: 18px 0 12px;
           outline: none;
           border: none;
@@ -63,8 +63,8 @@
 
       &:hover,
       &:focus {
-        .dropdown__item-current,
-        .dropdown__items {
+        .drop-down__item-current,
+        .drop-down__items {
           border-color: $text-color-translucent;
         }
       }
@@ -74,11 +74,11 @@
       box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
       transition: border 0.3s ease-in-out;
 
-      .dropdown__item-current {
+      .drop-down__item-current {
         border-radius: 4px 4px 0 0;
       }
 
-      .dropdown__icon {
+      .drop-down__icon {
         margin: 0;
         padding: 0;
         transform: rotateX(180deg);
@@ -87,8 +87,8 @@
 
     &:hover,
     &:focus {
-      .dropdown__item-current,
-      .dropdown__items {
+      .drop-down__item-current,
+      .drop-down__items {
         border-color: $text-color-translucent;
       }
     }

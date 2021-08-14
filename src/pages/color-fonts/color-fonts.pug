@@ -1,11 +1,13 @@
 extends ../../layouts/main/main
 include ../../components/color-pick/color-pick
 include ../../components/font-pick/font-pick
+
 block variables
   -
     const title = 'Color Fonts'
     const keywords = 'цвета, шрифты'
     const description = 'Страница со шрифтами и цветами'
+
 block content
   - const { colors , fonts } = require('./color-fonts.json')
   .color-fonts

@@ -1,6 +1,4 @@
 import 'jquery-ui';
-import '@/styles/main.scss';
-import '@/components/date-picker';
-import '@/components/drop-down';
 import '@/components/header';
+import '@/components/card-find';
 import './pick-room.scss';

@@ -1,6 +1,4 @@
-@import '~@/layouts/landing-page/landing-page.scss';
-@import '~@/components/button/button';
-@import '~@/components/field/field';
+@import '~@/layouts/landing-page/landing-page';
 @import '~@/components/card-auth/card-auth';
 
 .auth {
@@ -10,6 +8,6 @@
   padding: 20px 0;
   width: 100%;
   min-height: 580px;
-  background: url('img/auth-background.jpg') no-repeat center center;
+  background: url('../../assets/img/auth-background.jpg') no-repeat center center;
   background-size: cover;
 }

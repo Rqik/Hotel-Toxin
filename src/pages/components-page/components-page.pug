@@ -13,7 +13,7 @@ include ../../components/date-picker/date-picker
 include ../../components/drop-down/drop-down
 include ../../components/check-box-list/check-box-list
 include ../../components/bullet-list/bullet-list
-include ../../components/icon/icon
+include ../../components/icon-text/icon-text
 
 block variables
   -
@@ -61,7 +61,7 @@ block content
           +pagination(pagination)
     .components-page__block
       each dropConfig in dropdownSelect
-        +dropdownSelect(dropConfig)
+        +dropDown(dropConfig)
     .components-page__block
       each checkConfig in checkBoxList
         +checkBoxList(checkConfig)
