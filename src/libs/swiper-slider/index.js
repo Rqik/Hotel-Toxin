@@ -5,6 +5,9 @@ Swiper.use([Pagination, EffectFade, Navigation]);
 class Slider {
   constructor(options) {
     this.selector = options.selector;
+    this.setDefaultOption();
+  }
+  setDefaultOption() {
     this.options = {
       loop: true,
       slidesPerView: 1,
@@ -20,7 +23,6 @@ class Slider {
       },
     };
   }
-
   init() {
     this.slider = new Swiper(this.selector, this.options);
   }

@@ -2,8 +2,20 @@ import { boundMethod } from 'autobind-decorator';
 
 class CardRoom {
   constructor() {
+    this.findCardRoom();
+    this.findInput();
+    this.setDefaultClassName();
+  }
+
+  findCardRoom() {
     this.$card = $('.js-card-room');
+  }
+
+  findInput() {
     this.$input = this.$card.find('.js-date-picker');
+  }
+
+  setDefaultClassName() {
     this.buttonApplyClass = '.js-datepicker--button-apply';
     this.roomInfoClass = '.js-card-room__info';
     this.roomDataClass = '.js-card-room__data';
@@ -60,9 +72,7 @@ class CardRoom {
 
   @boundMethod
   static makeEventHandler(options) {
-    const {
-      $currentDP, $pay, $dop, $sale, $price, $resultSum,
-    } = options;
+    const { $currentDP, $pay, $dop, $sale, $price, $resultSum } = options;
     return () => {
       const [to, from] = $currentDP.data('datepicker').selectedDates;
       let date = Math.ceil((from - to) / 1000 / 60 / 60 / 24);

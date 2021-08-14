@@ -37,9 +37,6 @@ class DatePicker {
       multipleDates: 2,
       multipleDatesSeparator: ' - ',
     };
-    this.selectDate = {};
-    this.prevDay = new Date();
-    this.btnClass = '.datepicker--buttons';
     this.datepickerRangeClass = options.datepickerRange;
     this.datepickerClass = options.datepicker;
     this.inputClass = options.inputClass;
@@ -47,12 +44,20 @@ class DatePicker {
     this.inputRightClass = options.inputRightClass;
     this.labelClass = options.labelClass;
     this.btnApplyClass = options.btnApplyClass;
+    this.defaultProps();
+    this.findDatepicker();
+  }
+  defaultProps() {
+    this.selectDate = {};
+    this.prevDay = new Date();
+    this.btnClass = '.datepicker--buttons';
+  }
+  findDatepicker() {
     this.$datepickerRange = $(this.datepickerRangeClass);
     this.$datepicker = $(
       `${this.datepickerClass}, ${this.datepickerRangeClass}`,
     );
   }
-
   init() {
     this.$datepicker.each(this.addClassDatePicker);
 

@@ -2,8 +2,16 @@ import { boundMethod } from 'autobind-decorator';
 
 class CardSlider {
   constructor() {
+    this.setDefaultClassName();
+    this.findCardElement();
+  }
+
+  setDefaultClassName() {
     this.isRatedDate = 'data-is-rated';
     this.cardReviewClassName = '.js-card-slider_review';
+  }
+
+  findCardElement() {
     this.$cardPrice = $('.js-card-slider_price');
     this.$cardReview = $(this.cardReviewClassName);
     this.$cardRating = $('.js-star-rating');

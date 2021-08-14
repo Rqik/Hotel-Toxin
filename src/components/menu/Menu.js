@@ -2,16 +2,24 @@ import { boundMethod } from 'autobind-decorator';
 
 class Menu {
   constructor() {
+    this.setDefaultClassName();
+
+    this.icon = '<i class="menu__icon"> expand_more </i>';
+  }
+
+  setDefaultClassName() {
     this.toggleClass = 'menu__burger_active';
     this.menuItemListClass = '.js-menu__item_with-list';
     this.itemsClass = '.js-menu__items';
     this.burgerClass = '.js-menu__burger';
     this.closeClass = '.js-menu__close';
+    this.dropListClass = '.js-menu__drop-list';
+  }
+
+  findMenuItem() {
     this.$burger = $(this.burgerClass);
     this.$menu = $(this.itemsClass);
     this.$closeButton = $(this.closeClass);
-    this.dropListClass = '.js-menu__drop-list';
-    this.icon = '<i class="menu__icon"> expand_more </i>';
   }
 
   init() {
@@ -32,8 +40,8 @@ class Menu {
   @boundMethod
   documentEvent(event) {
     if (
-      $(event.target).closest(this.itemsClass).length
-      || $(event.target).closest(this.burgerClass).length
+      $(event.target).closest(this.itemsClass).length ||
+      $(event.target).closest(this.burgerClass).length
     ) {
       return;
     }
