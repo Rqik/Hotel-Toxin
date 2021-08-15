@@ -47,13 +47,13 @@
   }
 
   &__element {
+    @include font-bold($font-size-small, $text-color-main, 15px);
+
     display: flex;
     flex-direction: column;
     align-content: flex-start;
     margin-top: 14px;
     text-transform: uppercase;
-
-    @include font-bold($font-size-small, $text-color-main, 15px);
   }
 
   &__items {

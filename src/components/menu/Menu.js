@@ -3,7 +3,7 @@ import { boundMethod } from 'autobind-decorator';
 class Menu {
   constructor() {
     this.setDefaultClassName();
-
+    this.findMenuItem();
     this.icon = '<i class="menu__icon"> expand_more </i>';
   }
 

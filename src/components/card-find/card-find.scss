@@ -4,6 +4,8 @@
 @import '../drop-down/drop-down';
 
 .card-find {
+  @include font-normal($color: $text-color-main);
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -21,6 +23,10 @@
     max-width: 355px;
   }
 
+  .card-find__submit {
+    margin-top: 31px;
+  }
+
   &__title {
     @include font-bold($font-size-big, $text-color-main, 30px);
   }
@@ -32,6 +38,4 @@
   &__dropdown {
     margin-top: 17px;
   }
-
-  @include font-normal($color: $text-color-main);
 }

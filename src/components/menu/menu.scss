@@ -59,6 +59,8 @@
   }
 
   &__items {
+    @include font-normal($font-size-normal, $text-color-translucent, 17px);
+
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -86,8 +88,6 @@
     @include media-sm {
       width: 100%;
     }
-
-    @include font-normal($font-size-normal, $text-color-translucent, 17px);
   }
 
   &__close {

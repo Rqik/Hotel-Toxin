@@ -78,13 +78,13 @@
   }
 
   &__title {
+    @include font-bold($font-size-medium, $text-color-main, 23px);
+
     margin: 0;
 
     &_for_list {
       margin-left: 20px;
     }
-
-    @include font-bold($font-size-medium, $text-color-main, 23px);
   }
 
   &__text {
@@ -167,12 +167,12 @@
   }
 
   &__count-review {
-    white-space: nowrap;
-
     @include font-normal($font-size-normal, $text-color-translucent, 14px);
+
+    white-space: nowrap;
   }
 
-  &__card-room{
+  &__card-room {
     position: sticky;
     top: 70px;
   }

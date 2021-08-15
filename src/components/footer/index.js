@@ -1,1 +1,1 @@
-import '../field';
+import '@/components/field';

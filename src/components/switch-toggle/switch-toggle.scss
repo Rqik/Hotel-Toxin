@@ -2,6 +2,8 @@
 @import '~@/styles/variables';
 
 .switch-toggle {
+  @include font-bold($font-size-small);
+
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -19,6 +21,8 @@
   }
 
   &__label {
+    @include font-normal($color: $text-color-translucent, $lh: 24px);
+
     position: relative;
     vertical-align: middle;
     padding-left: 50px;
@@ -48,8 +52,6 @@
       background: $transparent_black;
       transition: all 0.3s ease-in-out;
     }
-
-    @include font-normal($color: $text-color-translucent, $lh: 24px);
   }
 
   &__input {
@@ -69,6 +71,4 @@
       background: $purple-gradient;
     }
   }
-
-  @include font-bold($font-size-small);
 }

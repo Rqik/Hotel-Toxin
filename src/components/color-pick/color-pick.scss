@@ -15,16 +15,16 @@
   }
 
   &__name {
+    @include font-bold($font-size-medium, $lh: 28px);
+
     display: flex;
     align-items: center;
-
-    @include font-bold($font-size-medium, $lh: 28px);
   }
 
   &__code {
+    @include font-normal($font-size-medium, $lh: 28px);
+
     display: flex;
     align-items: center;
-
-    @include font-normal($font-size-medium, $lh: 28px);
   }
 }

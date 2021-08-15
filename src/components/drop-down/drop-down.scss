@@ -7,10 +7,10 @@
   }
 
   &__title {
+    @include font-bold($font-size-small, $lh: 14px);
+
     margin: 5px 0;
     text-transform: uppercase;
-
-    @include font-bold($font-size-small, $lh: 14px);
   }
 
   &__select {
@@ -24,6 +24,14 @@
 
     @include media-xxs {
       width: 100%;
+    }
+
+    &:hover,
+    &:focus {
+      .drop-down__item-current,
+      .drop-down__items {
+        border-color: $text-color-translucent;
+      }
     }
 
     &_extended {
@@ -43,6 +51,8 @@
 
         .drop-down__reset-button,
         .drop-down__submit-button {
+          @include font-bold($font-size-small, $purple, 15px);
+
           margin: 18px 0 12px;
           outline: none;
           border: none;
@@ -56,8 +66,6 @@
           &:hover {
             color: $text-color-translucent;
           }
-
-          @include font-bold($font-size-small, $purple, 15px);
         }
       }
 
@@ -82,14 +90,6 @@
         margin: 0;
         padding: 0;
         transform: rotateX(180deg);
-      }
-    }
-
-    &:hover,
-    &:focus {
-      .drop-down__item-current,
-      .drop-down__items {
-        border-color: $text-color-translucent;
       }
     }
   }
@@ -118,6 +118,8 @@
   }
 
   &__item {
+    @include font-bold($font-size-small, $lh: 30px);
+
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -141,6 +143,8 @@
     }
 
     &-current {
+      @include font-normal($lh: 40px);
+
       position: relative;
       display: block;
       overflow: hidden;
@@ -155,15 +159,11 @@
       background-color: transparent;
       transition: border 0.3s ease-in-out;
       cursor: pointer;
-
-      @include font-normal($lh: 40px);
     }
 
     &:last-of-type {
       margin-bottom: 5px;
     }
-
-    @include font-bold($font-size-small, $lh: 30px);
   }
 
   &__items {
@@ -183,6 +183,8 @@
   }
 
   &__button {
+    @include font-normal(18px, $lh: 22px);
+
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -199,11 +201,11 @@
       opacity: 0.38;
       cursor: auto;
     }
-
-    @include font-normal(18px, $lh: 22px);
   }
 
   &__icon {
+    @include font-icon($font-size-big, $text-color-translucent, 24px);
+
     position: absolute;
     right: 9px;
     top: 9px;
@@ -216,7 +218,5 @@
     transition: transform 0.3s ease-in-out;
     cursor: pointer;
     pointer-events: none;
-
-    @include font-icon($font-size-big, $text-color-translucent, 24px);
   }
 }

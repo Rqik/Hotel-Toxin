@@ -10,5 +10,4 @@ block content
   - const { buttons } = require('./index.json')
   .index
     each button in buttons
-      .index__btn
-        +button(button)&attributes({style:{width:"100%"}})
+      +button(button)

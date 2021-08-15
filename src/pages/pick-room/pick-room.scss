@@ -18,6 +18,8 @@
   }
 
   &__slide {
+    @include font-normal($font-size-normal, $text-color-secondary);
+
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -36,8 +38,6 @@
       margin-right: auto;
       margin-left: auto;
     }
-
-    @include font-normal($font-size-normal, $text-color-secondary);
   }
 
   &__caption {

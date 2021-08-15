@@ -4,7 +4,7 @@
 //- form -- field form  boolean
 mixin field({ name, title , placeholder, form = false })
   if form
-    form(class="field")&attributes(attributes)
+    form(class="field")
       .field__title= title
       .field__block
         input.field__input-form.js-field__input(type = "text"

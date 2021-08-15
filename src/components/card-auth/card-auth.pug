@@ -16,14 +16,15 @@ mixin cardAuth
       })
     .card-auth__submit
       +button({
-        style: "long",
+        style: "filled",
+        size: "long",
         text: "войти",
         type: "submit",
-      })&attributes({ style: { "padding": "10px 23px" } })
-      .card-auth__bot
-        | Нет аккаунта на Toxin
-        +button({
-          style: "outlined",
-          text: "Создать",
-          href: "./index.html",
-        })&attributes({ style: { "padding": "10px 17px" } })
+      })
+    .card-auth__bot
+      | Нет аккаунта на Toxin
+      +button({
+        style: "outlined",
+        text: "Создать",
+        href: "./index.html",
+      })

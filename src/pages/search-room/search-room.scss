@@ -52,6 +52,8 @@
   }
 
   &__icon {
+    @include font-icon($font-size-big);
+
     position: absolute;
     left: 0;
     right: 0;
@@ -62,8 +64,6 @@
     text-align: center;
     transform: rotate(-90deg);
     transition: transform 0.3s ease-in-out;
-
-    @include font-icon($font-size-big);
   }
 
   &__cards {

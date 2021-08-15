@@ -1,1 +1,1 @@
-import '../menu';
+import '@/components/menu';

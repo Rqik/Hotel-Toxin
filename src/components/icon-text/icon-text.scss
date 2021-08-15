@@ -24,17 +24,17 @@
   }
 
   &__icon {
+    @include font-icon(48px);
+
     background-image: $purple-gradient;
     background-clip: text;
-
-    @include font-icon(48px);
   }
 
   &__text {
+    @include font-bold($font-size-normal, $text-color-secondary, 24px);
+
     display: flex;
     flex-direction: column;
-
-    @include font-bold($font-size-normal, $text-color-secondary, 24px);
   }
 
   &__description {

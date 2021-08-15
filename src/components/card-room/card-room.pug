@@ -3,6 +3,7 @@ include ../../components/drop-down/drop-down
 include ../../components/button/button
 
 mixin cardRoom({ roomNumber, price })
+  - const localePrice = Number(price).toLocaleString('ru')
   .card-room.js-card-room
     .card-room__header
       .card-room__detail
@@ -10,7 +11,8 @@ mixin cardRoom({ roomNumber, price })
         span.card-room__detail-number= roomNumber
         .card-room__detail-category &nbsp;люкс
       .card-room__price
-        span.card-room__price-number.js-card-room__price-number= price + "₽"
+        span.card-room__price-number.js-card-room__price-number
+          = localePrice + "₽"
         | в сутки
     .card-room__data.js-card-room__data
       +datepicker({ firstTitle: "прибытие", secondTitle: "выезд" })
@@ -48,8 +50,10 @@ mixin cardRoom({ roomNumber, price })
         .card-room__result-name Итого
         .card-room__total-price.js-card-room__total-price= price
           | ₽
-    +button({
-      style: "long",
-      text: "забронировать",
-      type: "submit",
-    })&attributes({style:{"margin-top":"20px"}})
+    .card-room__submit
+      +button({
+        style: "filled",
+        size: "long",
+        text: "забронировать",
+        type: "submit",
+      })

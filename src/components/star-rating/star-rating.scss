@@ -19,6 +19,8 @@
   }
 
   &__icon {
+    @include font-icon($font-size-big, transparent);
+
     position: relative;
     display: block;
     overflow: hidden;
@@ -32,8 +34,6 @@
       top: 0;
       bottom: 0;
     }
-
-    @include font-icon($font-size-big, transparent);
   }
 
   &__radio {

@@ -30,35 +30,36 @@
   }
 
   &__detail {
+    @include font-bold($font-size-normal, $lh: inherit);
+
     display: inline-flex;
     align-items: flex-end;
 
     &-number {
-      margin-right: 1px;
-
       @include font-bold;
+
+      margin-right: 1px;
     }
 
     &-category {
       line-height: 24px;
       color: $purple;
     }
-
-    @include font-bold($font-size-normal, $lh: inherit);
   }
 
   &__price {
+    @include font-normal($font-size-small, $text-color-translucent, 23px);
+
     display: flex;
+    align-items: center;
     align-self: flex-end;
     text-align: right;
 
     &-number {
-      margin-right: 3px;
-
       @include font-bold($font-size-normal, $text-color-translucent);
-    }
 
-    @include font-normal($font-size-small, $text-color-translucent, 23px);
+      margin-right: 3px;
+    }
   }
 
   &__data {
@@ -136,6 +137,8 @@
   }
 
   &__icon {
+    @include font-bold($font-size-normal, $lh: 14px);
+
     position: absolute;
     right: -25px;
     top: 0;
@@ -149,6 +152,8 @@
     }
 
     &:hover::after {
+      @include font-normal(11px, white);
+
       content: attr(data-text);
       position: absolute;
       left: 10px;
@@ -161,10 +166,10 @@
       background-position: center;
       background-size: 20px;
       background-color: $text-color-main;
-
-      @include font-normal(11px, white);
     }
+  }
 
-    @include font-bold($font-size-normal, $lh: 14px);
+  &__submit {
+    margin-top: 20px;
   }
 }

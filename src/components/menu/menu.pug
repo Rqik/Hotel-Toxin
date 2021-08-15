@@ -26,14 +26,17 @@ mixin menu({ items, auth })
         li.menu__item
           +button({
             style: "outlined",
+            size: "small",
             text: "войти",
             href: './auth.html',
-          })&attributes({style:{height:"40px"}})
+          })
         li.menu__item
           +button({
+            style: "filled",
+            size: "small",
             text: "зарегистрироваться",
             href: './registration.html',
-          })&attributes({style:{height:"34px"}})
+          })
     .menu__burger.js-menu__burger
       .menu__icon menu
     if !!auth

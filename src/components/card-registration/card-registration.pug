@@ -43,15 +43,19 @@ mixin cardRegistration
           name: "toogle",
           label: ["Получать спецпредложения"],
         })
-    +button({
-      style: "long",
-      text: "перейти к оплате",
-      type: "submit",
-    })&attributes({style:{"margin-top": "21px"}})
+    .card-registration__button
+      +button({
+        style: "filled",
+        size: "long",
+        text: "перейти к оплате",
+        type: "submit",
+      })
     .card-registration__bot
       .card-registration__span Уже есть аккаунт на Toxin
-      +button({
-        style: "outlined",
-        text: "Войти",
-        href:"./index.html",
-      })&attributes({ style: { padding: "10px 25px" } })
+      .card-registration__signin
+        +button({
+          style: "outlined",
+          grow: true,
+          text: "Войти",
+          href: "./index.html",
+        })

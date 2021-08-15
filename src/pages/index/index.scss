@@ -4,16 +4,10 @@
 .index {
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
   margin: 0 auto;
   border: 1px solid $transparent_black;
   max-width: 380px;
   background-color: white;
-
-  &__btn {
-    &:hover {
-      border: 2px solid $transparent_black;
-      cursor: pointer;
-    }
-  }
 }

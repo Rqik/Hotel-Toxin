@@ -2,13 +2,15 @@
 @import '~@/styles/variables';
 
 .input-radio {
+  @include font-normal($font-size-small);
+
   font-weight: 700;
   text-transform: uppercase;
 
   &__caption {
-    margin-top: 14px;
-
     @include font-bold($font-size-small);
+
+    margin-top: 14px;
   }
 
   &__items {
@@ -19,6 +21,8 @@
 
   &__item {
     &-label {
+      @include font-normal($color: $text-color-translucent, $lh: 24px);
+
       position: relative;
       padding-left: 30px;
       text-transform: none;
@@ -48,8 +52,6 @@
         opacity: 0;
         transition: all 0.3s ease-in-out;
       }
-
-      @include font-normal($color: $text-color-translucent, $lh: 24px);
     }
 
     &-input {
@@ -69,6 +71,4 @@
       }
     }
   }
-
-  @include font-normal($font-size-small);
 }

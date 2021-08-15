@@ -21,8 +21,10 @@ mixin cardFind
           "младенцы",
         ]
       })
-    +button({
-      style: "long",
-      text: "подобрать номер",
-      type: "submit"
-    })&attributes({style:{"margin-top":"31px"}})
+    .card-find__submit
+      +button({
+        style: "filled",
+        size: "long",
+        text: "подобрать номер",
+        type: "submit"
+      })

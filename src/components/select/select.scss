@@ -32,6 +32,16 @@
     color: rgba(31, 32, 65, 0.75);
     background: #fff;
 
+    &:hover,
+    &:focus {
+      outline: none;
+      border: 1px solid $text-color-translucent;
+      font-weight: normal;
+      font-style: normal;
+      line-height: 24px;
+      cursor: pointer;
+    }
+
     &__option {
       margin: 7px;
       padding: 6px;
@@ -43,19 +53,11 @@
       text-transform: uppercase;
       color: $text-color-main;
     }
-
-    &:hover,
-    &:focus {
-      outline: none;
-      border: 1px solid $text-color-translucent;
-      font-weight: normal;
-      font-style: normal;
-      line-height: 24px;
-      cursor: pointer;
-    }
   }
 
   &__icon {
+    @include font-icon($font-size-big, $text-color-translucent, 24px);
+
     position: absolute;
     right: 10px;
     bottom: 10px;
@@ -66,7 +68,5 @@
     text-align: center;
     cursor: pointer;
     pointer-events: none;
-
-    @include font-icon($font-size-big, $text-color-translucent, 24px);
   }
 }

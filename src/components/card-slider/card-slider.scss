@@ -4,6 +4,8 @@
 @import '../star-rating/star-rating';
 
 .card-slider {
+  @include swiper;
+
   border-radius: 4px;
   width: 270px;
   box-shadow: $box-shadow-bold;
@@ -39,6 +41,8 @@
   }
 
   &__room {
+    @include font-bold($font-size-normal, $lh: 29px);
+
     display: inline-flex;
     align-items: flex-end;
 
@@ -56,31 +60,29 @@
       line-height: 1.46;
       color: $purple;
     }
-
-    @include font-bold($font-size-normal, $lh: 29px);
   }
 
   &__price {
+    @include font-normal($font-size-small, $text-color-translucent, 23px);
+
     display: flex;
     align-items: center;
     align-self: flex-end;
     text-align: right;
 
     .card-slider__span {
-      margin-right: 3px;
-
       @include font-bold($font-size-normal, $text-color-translucent, 23px);
-    }
 
-    @include font-normal($font-size-small, $text-color-translucent, 23px);
+      margin-right: 3px;
+    }
   }
 
   &__review {
+    @include font-normal($font-size-normal, $text-color-translucent, 18px);
+
     .card-slider__span {
       @include font-bold($font-size-normal, $text-color-translucent, 18px);
     }
-
-    @include font-normal($font-size-normal, $text-color-translucent, 18px);
   }
 
   &__rate {
@@ -90,6 +92,4 @@
     justify-content: space-between;
     margin-top: 9px;
   }
-
-  @include swiper;
 }

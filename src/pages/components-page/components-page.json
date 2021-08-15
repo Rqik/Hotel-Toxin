@@ -42,7 +42,7 @@
   ],
   "button": [
     {
-      "style": "small",
+      "style": "filled",
       "text": "CLICK ME"
     },
     {
@@ -50,17 +50,16 @@
       "text": "CLICK ME"
     },
     {
-      "style": "long",
+      "style": "filled",
+      "size": "long",
       "text": "перейти к оплате"
     },
     {
-      "style": "outlined",
       "text": "CLICK ME",
       "href": "#",
       "border": false
     },
     {
-      "style": "outlined",
       "text": "CLICK ME",
       "href": "#",
       "border": false

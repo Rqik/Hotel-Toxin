@@ -10,6 +10,8 @@
   gap: 20px;
 
   &__label {
+    @include font-bold($font-size-small, $text-color-main, 15px);
+
     position: relative;
     display: flex;
     flex-direction: column;
@@ -20,14 +22,6 @@
     @include media-xxs {
       width: 100%;
       white-space: nowrap;
-    }
-
-    &_range {
-      max-width: 266px;
-
-      @include media-xxs {
-        max-width: 320px;
-      }
     }
 
     &:hover,
@@ -42,10 +36,18 @@
       }
     }
 
-    @include font-bold($font-size-small, $text-color-main, 15px);
+    &_range {
+      max-width: 266px;
+
+      @include media-xxs {
+        max-width: 320px;
+      }
+    }
   }
 
   &__input {
+    @include font-normal($lh: 18px);
+
     margin-top: 5px;
     outline: none;
     border: 1px solid $transparent_black;
@@ -89,22 +91,22 @@
         width: 100%;
       }
     }
-
-    @include font-normal($lh: 18px);
   }
 
   &__icon {
+    @include font-icon($font-size-big, $purple);
+
     z-index: 1;
     display: flex;
     align-items: center;
     text-align: center;
     cursor: pointer;
     pointer-events: none;
-
-    @include font-icon($font-size-big, $purple);
   }
 
   &__expand-more {
+    @include font-icon($font-size-big, $text-color-translucent, 24px);
+
     position: absolute;
     right: 9px;
     bottom: 9px;
@@ -116,7 +118,5 @@
     text-align: center;
     cursor: pointer;
     pointer-events: none;
-
-    @include font-icon($font-size-big, $text-color-translucent, 24px);
   }
 }
