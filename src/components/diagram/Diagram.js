@@ -12,7 +12,7 @@ class Diagram {
   }
 
   findDiagramElements() {
-    this.$legendEl = $('.js-legend-el ');
+    this.$legendEl = $('.js-legend-el');
     this.$votes = $('.js-votes');
     this.$unitsList = $('.js-unit');
     this.$numberList = $('.js-number');
@@ -33,8 +33,8 @@ class Diagram {
   makeAddHovered(i) {
     return () => {
       this.$votes.addClass(this.hideNumberClass);
-      this.$numberList[i].classList.remove(this.hideNumberClass);
-      this.$unitsList[i].classList.add(this.hoverClass);
+      this.$numberList[i]?.classList.remove(this.hideNumberClass);
+      this.$unitsList[i]?.classList.add(this.hoverClass);
     };
   }
 
@@ -42,8 +42,8 @@ class Diagram {
   makeRemoveHovered(i) {
     return () => {
       this.$votes.removeClass(this.hideNumberClass);
-      this.$numberList[i].classList.add(this.hideNumberClass);
-      this.$unitsList[i].classList.remove(this.hoverClass);
+      this.$numberList[i]?.classList.add(this.hideNumberClass);
+      this.$unitsList[i]?.classList.remove(this.hoverClass);
     };
   }
 }

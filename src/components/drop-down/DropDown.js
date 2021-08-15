@@ -35,10 +35,10 @@ class DropDown {
       const name = `js-dpd_slt-${i}`;
       this.dropDown[className] = $(el);
       el.classList.add(name);
-      this.active(className);
+      this.showDropItems(className);
       this.slideDrop(className);
       this.childrenCurrentVal(className);
-      this.actionDropDown(className);
+      this.addHandleButtonClick(className);
     });
 
     $(this.dropDownExtendClass).each((i, el) => {
@@ -46,7 +46,7 @@ class DropDown {
       const name = `js-dp_ext-${i}`;
       this.dropDown[className] = $(el);
       el.classList.add(name);
-      this.active(className);
+      this.showDropItems(className);
       this.slideDrop(className);
       this.childrenCurrentVal(className);
       this.actionDropDownExtended(className);
@@ -54,7 +54,7 @@ class DropDown {
     });
   }
 
-  active(selector) {
+  showDropItems(selector) {
     if (!$(selector).hasClass(this.toggleClass)) {
       $(`${selector} ${this.dropItemsClass}`).slideToggle(0);
     }
@@ -65,16 +65,16 @@ class DropDown {
       `${this.itemCurrentClass}`,
     );
     const btn = this.dropDown[selector].find(`${this.btnSubmitClass}`);
-    current.on('click', this.makeToggleDropDown(selector));
-    document.addEventListener('click', this.makeCloseDropDown(selector));
+    current.on('click', this.makeToggleDropDownHandler(selector));
+    document.addEventListener('click', this.makeCloseDropDownHandler(selector));
 
     if (btn.length) {
-      btn.on('click', this.makeToggleDropDown(selector));
+      btn.on('click', this.makeToggleDropDownHandler(selector));
     }
   }
 
   @boundMethod
-  makeCloseDropDown(selector) {
+  makeCloseDropDownHandler(selector) {
     return (event) => {
       const isHave = !!event.target.closest(selector);
       if (!isHave) {
@@ -85,7 +85,7 @@ class DropDown {
     };
   }
 
-  makeToggleDropDown(selector) {
+  makeToggleDropDownHandler(selector) {
     const items = this.dropDown[selector].find(`${this.dropItemsClass}`);
     return () => {
       items.slideToggle(300);
@@ -93,11 +93,11 @@ class DropDown {
     };
   }
 
-  actionDropDown(selector) {
+  addHandleButtonClick(selector) {
     this.dropDown[selector].find(this.controlPanelClass).each((i, el) => {
       $(el).children(this.buttonClass).on(
         'click',
-        this.makeEventOperationSum(
+        this.makeOperationSumHandler(
           {
             selector,
             i,
@@ -115,7 +115,7 @@ class DropDown {
     this.dropDown[selector].find(this.controlPanelClass).each((i, el) => {
       $(el).children(this.buttonClass).on(
         'click',
-        this.makeEventOperationSum(
+        this.makeOperationSumHandler(
           {
             selector,
             i,
@@ -128,7 +128,7 @@ class DropDown {
     });
   }
 
-  makeEventOperationSum(options, callBack) {
+  makeOperationSumHandler(options, callBack) {
     const { selector, i, el } = options;
     const $span = $(el).find(this.spanClass);
     const $btnMinus = $(el).children(this.btnMinusClass);
@@ -161,10 +161,10 @@ class DropDown {
   buttonAction(selector) {
     this.dropDown[selector]
       .find(this.btnResetClass)
-      .on('click', this.makeEventReset(selector));
+      .on('click', this.makeResetHandler(selector));
   }
 
-  makeEventReset(selector) {
+  makeResetHandler(selector) {
     const $currentText = this.dropDown[selector].find(this.textCurrentClass);
     const $span = this.dropDown[selector].find(this.spanClass);
     const $btnMinus = this.dropDown[selector].find(this.btnMinusClass);
@@ -218,8 +218,7 @@ class DropDown {
       } else {
         adults += +count;
       }
-      textCurrent =
-        DropDown.countAdult(adults, child) + DropDown.countChild(child);
+      textCurrent = DropDown.countAdult(adults, child) + DropDown.countChild(child);
     });
     this.dropDown[selector].find(this.textCurrentClass).text(textCurrent);
     DropDown.btnHide($btnReset, adults, child);

@@ -23,11 +23,11 @@ class ButtonLike {
   eventHandler(el) {
     const text = el.querySelector(this.textSelector);
 
-    el.addEventListener('click', this.makeToggleClass(text));
+    el.addEventListener('click', this.makeToggleClassHandler(text));
   }
 
   @boundMethod
-  makeToggleClass(element) {
+  makeToggleClassHandler(element) {
     const text = element;
     return (event) => {
       const target = event.currentTarget;

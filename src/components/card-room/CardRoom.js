@@ -30,14 +30,14 @@ class CardRoom {
   }
 
   init() {
-    const button = [];
+    const buttons = [];
     this.$input.each((_, el) => {
-      button.push(
+      buttons.push(
         $(el).data('datepicker').$datepicker.find(this.buttonApplyClass),
       );
     });
 
-    button.forEach(this.buttonApply);
+    buttons.forEach(this.handleButtonApply);
 
     $(this.infoSumClass).text((_, el) => CardRoom.replace(el));
     $(this.infoNameClass).text((_, el) => CardRoom.replace(el));
@@ -46,7 +46,7 @@ class CardRoom {
   }
 
   @boundMethod
-  buttonApply(el, ind) {
+  handleButtonApply(el, ind) {
     const $currentDP = $(this.$input[ind]);
     const $block = $currentDP
       .closest(this.roomDataClass)
@@ -72,7 +72,9 @@ class CardRoom {
 
   @boundMethod
   static makeEventHandler(options) {
-    const { $currentDP, $pay, $dop, $sale, $price, $resultSum } = options;
+    const {
+      $currentDP, $pay, $dop, $sale, $price, $resultSum,
+    } = options;
     return () => {
       const [to, from] = $currentDP.data('datepicker').selectedDates;
       let date = Math.ceil((from - to) / 1000 / 60 / 60 / 24);

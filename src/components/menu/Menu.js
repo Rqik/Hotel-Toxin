@@ -4,7 +4,6 @@ class Menu {
   constructor() {
     this.setDefaultClassName();
     this.findMenuItem();
-    this.icon = '<i class="menu__icon"> expand_more </i>';
   }
 
   setDefaultClassName() {
@@ -22,34 +21,32 @@ class Menu {
     this.$closeButton = $(this.closeClass);
   }
 
+  showBurgerMenu(_, el) {
+    $(el).on('click', this.handleToggleMenuBurgerClick);
+  }
+
   init() {
-    const $menuItem = $(this.menuItemListClass);
+    this.$burger.each(this.showBurgerMenu);
 
-    this.$closeButton.on('click', this.hideMenu);
+    this.$closeButton.on('click', this.handlerHideBurgerMenuClick);
+    $(document).on('click', this.handlerDocumentClick);
 
-    this.$burger.each((_, el) => {
-      $(el).click(this.toggleMenuBurger);
-    });
-
-    $(document).click(this.documentEvent);
-
-    $menuItem.append(this.icon);
-    $menuItem.hover(this.handlerIn, this.handlerOut);
+    $(this.menuItemListClass).hover(this.handlerIn, this.handlerOut);
   }
 
   @boundMethod
-  documentEvent(event) {
+  handlerDocumentClick(event) {
     if (
-      $(event.target).closest(this.itemsClass).length ||
-      $(event.target).closest(this.burgerClass).length
+      $(event.target).closest(this.itemsClass).length
+      || $(event.target).closest(this.burgerClass).length
     ) {
       return;
     }
-    this.hideMenu();
+    this.handlerHideBurgerMenuClick();
   }
 
   @boundMethod
-  hideMenu() {
+  handlerHideBurgerMenuClick() {
     this.$menu.removeClass(this.toggleClass);
   }
 
@@ -64,7 +61,7 @@ class Menu {
   }
 
   @boundMethod
-  toggleMenuBurger(event) {
+  handleToggleMenuBurgerClick(event) {
     $(event.currentTarget)
       .siblings(this.itemsClass)
       .toggleClass(this.toggleClass);

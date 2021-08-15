@@ -13,21 +13,23 @@ class CardSlider {
 
   findCardElement() {
     this.$cardPrice = $('.js-card-slider_price');
-    this.$cardReview = $(this.cardReviewClassName);
     this.$cardRating = $('.js-star-rating');
   }
 
   init() {
-    this.$cardPrice.each((_, e) => {
-      e.textContent = e.textContent
-        .toString()
-        .replace(/(\d)(?=(\d{3}\D+)+$)/g, '$1 ');
-    });
-    this.$cardRating.on('click', this.changeReviews);
+    this.$cardPrice.each(CardSlider.localeText);
+    this.$cardRating.on('click', this.handleChangeReviews);
+  }
+
+  static localeText(_, el) {
+    // eslint-disable-next-line no-param-reassign
+    el.textContent = el.textContent
+      .toString()
+      .replace(/(\d)(?=(\d{3}\D+)+$)/g, '$1 ');
   }
 
   @boundMethod
-  changeReviews(e) {
+  handleChangeReviews(e) {
     const $target = $(e.currentTarget);
     if (!$target.attr(this.isRatedDate)) {
       $target.attr(this.isRatedDate, true);

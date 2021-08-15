@@ -33,10 +33,10 @@ class StarRating {
   }
 
   starRateLaunch(selector) {
+    const $child = $(selector).children(this.radioClass);
     const rating = $(selector).attr(this.attrDate);
     const florRating = Math.floor(rating); // rate cell
     const num = Math.round((rating % 1) * 100); // width
-    const $child = $(selector).children(this.radioClass);
     const stars = [];
 
     $child.each((_, el) => {
@@ -48,10 +48,10 @@ class StarRating {
       el.textContent = this.starBorder;
     });
 
-    for (let i = 0; i < florRating; i += 1) {
+    [...Array(florRating).keys()].forEach((i) => {
       stars[i].textContent = this.starFill;
       stars[i].style.width = '100%';
-    }
+    });
 
     if (num) {
       const $starLastActive = stars[florRating];
@@ -71,11 +71,11 @@ class StarRating {
   rateInput(selector) {
     const $input = $(selector).find(this.inputClass);
     $input.each((_, el) => {
-      el.addEventListener('click', this.makeStarRateEvent(selector));
+      el.addEventListener('click', this.makeStarRateHandler(selector));
     });
   }
 
-  makeStarRateEvent(selector) {
+  makeStarRateHandler(selector) {
     let rate;
     return (event) => {
       rate = event.currentTarget.value;
