@@ -29,23 +29,23 @@
 
 ## <a name="pages"></a> 📝 Pages
 
-[**components**](https://rqik.github.io/FSD/components-page.html) </br>
+[**components**](https://rqik.github.io/Hotel-Toxin/components-page.html) </br>
 
-[**color-fonts**](https://rqik.github.io/FSD/color-fonts.html)
+[**color-fonts**](https://rqik.github.io/Hotel-Toxin/color-fonts.html)
 
-[**cards**](https://rqik.github.io/FSD/cards.html)
+[**cards**](https://rqik.github.io/Hotel-Toxin/cards.html)
 
-[**header-footer**](https://rqik.github.io/FSD/header-footer.html)
+[**header-footer**](https://rqik.github.io/Hotel-Toxin/header-footer.html)
 
-[**pick-room**](https://rqik.github.io/FSD/pick-room.html)
+[**pick-room**](https://rqik.github.io/Hotel-Toxin/pick-room.html)
 
-[**auth**](https://rqik.github.io/FSD/auth.html)
+[**auth**](https://rqik.github.io/Hotel-Toxin/auth.html)
 
-[**registration**](https://rqik.github.io/FSD/registration.html)
+[**registration**](https://rqik.github.io/Hotel-Toxin/registration.html)
 
-[**search-room**](https://rqik.github.io/FSD/search-room.html)
+[**search-room**](https://rqik.github.io/Hotel-Toxin/search-room.html)
 
-[**room-details**](https://rqik.github.io/FSD/room-details.html)
+[**room-details**](https://rqik.github.io/Hotel-Toxin/room-details.html)
 
 ---
 
