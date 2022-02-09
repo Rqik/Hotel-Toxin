@@ -21,13 +21,8 @@ class Menu {
     this.$closeButton = $(this.closeClass);
   }
 
-  showBurgerMenu(_, el) {
-    $(el).on('click', this.handleToggleMenuBurgerClick);
-  }
-
   init() {
-    this.$burger.each(this.showBurgerMenu);
-
+    this.$burger.on('click', this.handleToggleMenuBurgerClick);
     this.$closeButton.on('click', this.handlerHideBurgerMenuClick);
     $(document).on('click', this.handlerDocumentClick);
 
