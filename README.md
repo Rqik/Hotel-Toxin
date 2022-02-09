@@ -67,7 +67,7 @@ git clone git@github.com:Rqik/Hotel-Toxin.git
 
 ```console
 // Перейдите в папку с репозиторием
-cd FSD
+cd Hotel-Toxin
 ```
 
 3.Init
