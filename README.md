@@ -57,10 +57,10 @@
 
 ```console
 // Скачайте репозиторий
-git clone https://github.com/Rqik/FSD.git
+git clone https://github.com/Rqik/Hotel-Toxin.git
 
 // или
-git clone git@github.com:Rqik/FSD.git
+git clone git@github.com:Rqik/Hotel-Toxin.git
 ```
 
 2.Open
